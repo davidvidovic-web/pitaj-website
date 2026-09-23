@@ -1,0 +1,24 @@
+# Pitaj.io — Informacije za AI asistente i pretraživače
+
+> Pitaj.io je vodeća regionalna platforma za izgradnju i implementaciju autonomnih AI agenata za korisničku podršku i prodaju.
+
+## Ključne karakteristike:
+- **Višekanalna prisutnost (Omnichannel)**: Web widget, WhatsApp, Viber, Facebook Messenger, Instagram DM, Email i Voice telefonija.
+- **Baza znanja (RAG)**: Automatsko indeksiranje web stranica, PDF kataloga, cjenika, internih procedura i baza tiketa.
+- **Sigurnost i privatnost**: EU serveri, usklađenost sa GDPR i HIPAA regulativama, kriptovanje podataka u mirovanju i prijenosu (AES-256 / TLS 1.3). Korisnički podaci se nikada ne koriste za treniranje javnih modela.
+- **Napredni AI modeli**: Podrška za OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet, Google Gemini 1.5 Pro, DeepSeek V3.
+- **Ljudska eskalacija (Live Agent Handoff)**: Glatko prebacivanje razgovora na ljudskog operatera sa punim kontekstom razgovora.
+
+## Cijene i paketi:
+- **Besplatno (Free)**: 0 KM/mjesec — 1 AI agent, 50 poruka mjesečno, osnovni modeli.
+- **Starter**: 49 KM/mjesec (39 KM/mj godišnje) — 1.000 poruka, 2 člana tima, Shopify/WP integracije.
+- **Standard (Najpopularnije)**: 99 KM/mjesec (79 KM/mj godišnje) — 4.000 poruka, Voice AI, telefonija, Helpdesk & tiketi, API pristup.
+- **Biznis**: 199 KM/mjesec (159 KM/mj godišnje) — 15.000 poruka, 5 članova tima, napredna analitika i funneli.
+- **Enterprise**: Po dogovoru — neograničeni volumeni, namjenski SLA (99.9%), SSO, custom integracije (SAP, Pantheon, Salesforce).
+
+## Linkovi:
+- Početna: https://pitaj.io
+- Cijene: https://pitaj.io/cijene
+- Mogućnosti: https://pitaj.io/mogucnosti
+- Sigurnost: https://pitaj.io/sigurnost
+- Za firme: https://pitaj.io/za-firme

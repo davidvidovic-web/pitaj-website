@@ -1,0 +1,243 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import LiveWidgetShowcase from '../../components/LiveWidgetShowcase.astro';
+
+const pillars = [
+  {
+    title: 'Sinkronizacija zaliha i kataloga uživo',
+    badge: 'WooCommerce & Shopify',
+    desc: 'Agent u milisekundi provjerava stanje skladišta, dostupne boje, veličine i cijene. Nikada ne nudi artikle koji su rasprodani.'
+  },
+  {
+    title: 'Automatska provjera statusa narudžbe',
+    badge: 'Logistika & Kuriri',
+    desc: 'Kupac unese broj narudžbe ili email, a agent izravno dohvaća status brze pošte s kartom i procijenjenim vremenom isporuke.'
+  },
+  {
+    title: 'Zamjene veličina i reklamacije u chatu',
+    badge: 'Zadovoljstvo kupaca',
+    desc: 'Umjesto prebacivanja na telefone, agent vodi kupca kroz proceduru zamjene, provjerava dostupnost novog broja i kreira nalog za kurira.'
+  },
+  {
+    title: 'Povećanje prodaje i preporuke proizvoda',
+    badge: '+24% Konverzija',
+    desc: 'Kupcu koji traži kremu za lice ili radnu stolicu agent predlaže odgovarajuće artikle s direktnim linkom ili gumbom za košaricu.'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Kako se pitaj.io povezuje s mojom WooCommerce ili Shopify trgovinom?',
+    a: 'Instalirate naš službeni WordPress dodatak ili povežete Shopify aplikaciju. Agent u nekoliko minuta automatski preuzima nazive proizvoda, opise, cijene i stanje zaliha.'
+  },
+  {
+    q: 'Može li agent provjeriti status brze pošte za naše kupce?',
+    a: 'Da. Kroz integraciju s kurirskim službama ili tracking sustavom vaše trgovine, agent prepoznaje broj narudžbe i prikazuje točnu fazu dostave unutar chata.'
+  },
+  {
+    q: 'Što se događa kada kupac želi povrat novca ili reklamaciju?',
+    a: 'Agent prati vaša definirana pravila (npr. rok od 14 dana). Ako je uvjet ispunjen, prikupi fotografiju i podatke o računu, a po potrebi uključi vašeg djelatnika u Helpdesk.'
+  },
+  {
+    q: 'Može li agent raditi i na našem službenom WhatsApp i Instagram profilu?',
+    a: 'Apsolutno. Isti AI agent koji radi na vašoj web trgovini odgovara na poruke kupaca u WhatsAppu, Instagram DM-u i Messengeru.'
+  }
+];
+---
+
+<Layout
+  title="AI agenti za Web Trgovine i E-Commerce | pitaj.io"
+  description="Povežite AI agenta s WooCommerce i Shopify katalogom. Rješavajte upite o veličinama, cijenama, zalihama i dostavi 24/7. Povećajte konverziju."
+  currentPath="/industrije/web-trgovine"
+>
+  <!-- Hero Section with Background Industry Video -->
+  <section class="relative w-full bg-slate-950 text-white overflow-hidden border-b border-[#27272a]">
+    <video
+      src="/chatbase-assets/industry-retail.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      preload="auto"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
+      style="transform: scale(1.05);"
+    ></video>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+
+    <div class="relative z-10 mx-auto max-w-[1240px] px-6 py-20 lg:border-x border-[#27272a] lg:px-16 lg:py-28">
+      <div class="max-w-[760px]">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+          E-Commerce & Retail
+        </div>
+        <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.08] tracking-[-0.035em] text-white sm:text-[3.25rem] lg:text-[3.75rem]">
+          Web trgovine i E-Commerce <span class="font-proza font-bold italic">AI agenti</span>
+        </h1>
+        <p class="mt-6 text-[17px] leading-relaxed text-slate-300 sm:text-[19px]">
+          Kupci žele znati veličinu, cijenu dostave i status paketa odmah. Pitaj.io agenti sinkronizirani s vašom trgovinom vode kupce do naplate i smanjuju pritisak na podršku za 60%.
+        </p>
+
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href="/cijene"
+            class="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-7 text-[15px] font-semibold text-[#09090b] shadow-md transition-all hover:bg-slate-100"
+          >
+            Isprobajte na svojoj trgovini
+          </a>
+          <a
+            href="/za-firme"
+            class="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/20 bg-black/40 px-7 text-[15px] font-medium text-white backdrop-blur-md hover:bg-white/10"
+          >
+            Zakažite prezentaciju
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Interactive Widget Simulation for E-Commerce -->
+  <section class="reveal-on-scroll w-full bg-[#fafafa] border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#09090b]">
+            Stvarni widget uživo
+          </span>
+          <h2 class="mt-4 text-[2.25rem] font-medium tracking-tight text-[#09090b]">
+            Kupac bira proizvod i završava narudžbu <span class="font-proza font-bold italic">u samom chatu</span>
+          </h2>
+          <p class="mt-4 text-[16px] text-[#52525b] leading-relaxed">
+            Isprobajte interaktivni demo desno: kupac postavlja upit o patikama, agent u sekundi pretražuje katalog, prikazuje karticu sa slikom i cijenom u KM, te omogućava direktno dodavanje u korpu i naručivanje.
+          </p>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-2.5 text-[14px] text-[#27272a]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+              <span>Sinkronizirano s WooCommerce i Shopify zalihama u stvarnom vremenu</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-[14px] text-[#27272a]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+              <span>Prikaz varijacija veličina, boja i cijena sa popustom</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-[14px] text-[#27272a]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+              <span>Dovršavanje kupovine bez preusmjeravanja i gubitka kupca</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <LiveWidgetShowcase initialTab="ecommerce" theme="dark" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Core Pillars -->
+  <section class="reveal-on-scroll w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="text-center max-w-[700px] mx-auto">
+        <h2 class="text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Treniran na vašem katalogu, zalihama i uvjetima poslovanja
+        </h2>
+        <p class="mt-3 text-[16px] text-[#52525b]">
+          Agent ne daje generičke savjete — koristi stvarne podatke iz vaše trgovine.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {pillars.map((p) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-7 shadow-xs transition-all hover:border-[#d4d4d8] hover:shadow-md">
+            <div>
+              <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#09090b]">
+                {p.badge}
+              </span>
+              <h3 class="mt-4 text-[19px] font-semibold text-[#09090b]">{p.title}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison: Legacy Chatbots vs pitaj.io AI Agents -->
+  <section class="reveal-on-scroll w-full bg-[#fafafa] border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="text-center max-w-[700px] mx-auto">
+        <h2 class="text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Isti kupac s dva potpuno različita iskustva
+        </h2>
+        <p class="mt-3 text-[16px] text-[#52525b]">
+          Pogledajte razliku između starih krutih botova s gumbima i autonomnog pitaj.io agenta.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <!-- Legacy Chatbots -->
+        <div class="rounded-2xl border border-rose-200 bg-white p-7 shadow-xs">
+          <div class="flex items-center gap-2 text-rose-600 font-bold text-[14px]">
+            <span>✕</span> Stari chatbotovi i forme za kontakt
+          </div>
+          <ul class="mt-5 space-y-3 text-[14px] text-[#52525b]">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Kupac mora klikati na drvo izbornika ("Pritisnite 1 za dostavu").</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Ne zna provjeriti stanje zaliha niti status narudžbe u sustavu.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Prebacuje kupca na email formu, što dovodi do napuštanja košarice.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- pitaj.io AI Agents -->
+        <div class="rounded-2xl border border-emerald-200 bg-white p-7 shadow-xs">
+          <div class="flex items-center gap-2 text-emerald-700 font-bold text-[14px]">
+            <span>✓</span> pitaj.io AI agenti
+          </div>
+          <ul class="mt-5 space-y-3 text-[14px] text-[#27272a]">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">•</span>
+              <span>Razumije prirodan jezik, žargon i greške u pisanju na našim jezicima.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">•</span>
+              <span>Provjerava bazu u sekundi i prikazuje vizualnu karticu s proizvodom.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold">•</span>
+              <span>Dovršava cijeli proces (zamjena, provjera, preporuka) unutar chata.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="reveal-on-scroll w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="max-w-[700px] mx-auto">
+        <h2 class="text-center text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Česta pitanja za e-commerce trgovine
+        </h2>
+
+        <div class="mt-10 space-y-4">
+          {faqs.map((faq) => (
+            <div class="rounded-xl border border-[#e4e4e7] bg-[#fafafa] p-6 shadow-xs">
+              <h3 class="text-[16px] font-semibold text-[#09090b]">{faq.q}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

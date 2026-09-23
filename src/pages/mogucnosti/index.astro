@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Mogućnosti platforme: Izgradnja, integracija i optimizacija | pitaj.io"
+  description="Upoznajte pitaj.io platformu: Agentic Harness, procedure u običnom jeziku, interaktivni widgeti, zajednički helpdesk i Backstage analitika."
+  currentPath="/mogucnosti"
+>
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <div class="text-center max-w-[760px] mx-auto">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">
+        Arhitektura platforme
+      </div>
+      <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.1] tracking-[-0.035em] text-[#09090b] sm:text-[3rem] lg:text-[3.5rem]">
+        Kompletna platforma za napredne <span class="font-proza font-bold italic">AI agente</span>
+      </h1>
+      <p class="mt-5 text-[17px] text-[#52525b]">
+        pitaj.io Agentic Harness omogućuje timovima korisničke podrške i prodaje izgradnju, testiranje i postavljanje pouzdanih AI agenata na sve komunikacijske kanale.
+      </p>
+    </div>
+
+    <!-- 4 Detailed Pillars -->
+    <div class="mt-20 space-y-16">
+      <!-- Section 1: Procedures -->
+      <div id="procedures" class="scroll-mt-24 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 lg:p-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">Mogućnost 01</span>
+            <h2 class="mt-4 text-[26px] font-semibold text-[#09090b]">Procedure: Poslovna logika u običnom jeziku</h2>
+            <p class="mt-3 text-[15px] leading-relaxed text-[#52525b]">
+              Umjesto kompliciranog programiranja ili nepreglednih dijagrama toka, definirajte svoja poslovna pravila na običnom jeziku. Vaš agent sustavno prati svaki korak, traži potrebne podatke od kupca i sigurno komunicira s vašom bazom ili web trgovinom.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-[14px] text-[#27272a]">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Determinističko korak-po-korak izvršavanje procedura</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Sigurno pozivanje API servisa (WooCommerce, Shopify, ERP sustavi)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Automatsko prepoznavanje situacija za prijenos ljudskom operateru</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="/mogucnosti/procedure" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#09090b] hover:text-[#2563eb] transition-colors">
+                Istražite sve o procedurama
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-sm">
+            <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-2 text-[12px] font-mono text-[#71717a]">
+              <span>provjera_narudzbe.yaml</span>
+              <span class="text-emerald-600 font-sans font-medium text-[11px]">Aktivna procedura</span>
+            </div>
+            <pre class="mt-3 rounded-lg bg-[#09090b] p-4 text-[12px] text-emerald-400 overflow-x-auto leading-relaxed"><code>naziv: provjera_statusa_narudzbe
+okidac: korisnik pita gdje je paket ili status dostave
+koraci:
+  - pitaj: "Možete li mi navesti broj narudžbe i email adresu?"
+  - akcija: pozovi_api(woocommerce.status, &#123;broj_narudzbe, email&#125;)
+  - uvjet: ako je narudzba_pronadena
+      onda: prikazi_widget(status_posiljke, &#123;broj_posiljke, brza_posta&#125;)
+      inace: ponudi_pomoc_operatera()</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Widgets -->
+      <div id="widgets" class="scroll-mt-24 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 lg:p-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-sm">
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-4">
+              <div class="flex items-center justify-between text-[13px] font-semibold text-[#09090b]">
+                <div class="flex items-center gap-2">
+                  <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                  <span>Narudžba #18420</span>
+                </div>
+                <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-bold">U dostavi</span>
+              </div>
+              <div class="mt-4 flex items-center justify-between text-[12px] text-[#71717a]">
+                <div>
+                  <div class="font-bold text-[#09090b]">Sarajevo (Skladište)</div>
+                  <div>Predano kurirskoj službi</div>
+                </div>
+                <div class="text-center font-mono font-medium text-[#09090b]">🚚 EuroExpress</div>
+                <div class="text-right">
+                  <div class="font-bold text-[#09090b]">Zagreb (Adresa)</div>
+                  <div>Očekivano sutra do 14h</div>
+                </div>
+              </div>
+              <!-- Progress bar -->
+              <div class="mt-3 h-1.5 w-full rounded-full bg-[#e4e4e7] overflow-hidden">
+                <div class="h-full w-3/4 rounded-full bg-emerald-600"></div>
+              </div>
+            </div>
+            <a href="https://app.pitaj.io" class="mt-4 flex w-full items-center justify-center rounded-lg bg-[#09090b] py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-[#27272a]">
+              Pogledaj detalje pošiljke
+            </a>
+          </div>
+          <div>
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">Mogućnost 02</span>
+            <h2 class="mt-4 text-[26px] font-semibold text-[#09090b]">Interaktivni widgeti unutar chata</h2>
+            <p class="mt-3 text-[15px] leading-relaxed text-[#52525b]">
+              Tekstualne poruke često nisu dovoljne. pitaj.io agenti u razgovor ubacuju dinamične interaktivne widgete — vizualno praćenje statusa dostave, odabir slobodnih termina, kartice proizvoda s cijenama i direktne gumbe za kupovinu.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-[14px] text-[#27272a]">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Kartice s proizvodima i cijenama izravno iz trgovine</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Interaktivni kalendar za odabir slobodnog termina</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Prilagođene brze akcije i gumbi s odgovorima</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="/mogucnosti/widgeti" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#09090b] hover:text-[#2563eb] transition-colors">
+                Istražite sve widgete
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Helpdesk -->
+      <div id="helpdesk" class="scroll-mt-24 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 lg:p-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">Mogućnost 03</span>
+            <h2 class="mt-4 text-[26px] font-semibold text-[#09090b]">Objedinjeni Tiketi & Helpdesk</h2>
+            <p class="mt-3 text-[15px] leading-relaxed text-[#52525b]">
+              Besprijekorna sinergija umjetne inteligencije i vaših zaposlenika. Kada upit zahtijeva ljudsku procjenu ili odobrenje, pitaj.io generira prijedlog odgovora za vašeg operatera ili trenutno prosljeđuje razgovor pravom timu.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-[14px] text-[#27272a]">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>AI ko-pilot način: generiranje nacrta odgovora jednim klikom</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Objedinjeni inbox za web chat, WhatsApp i društvene mreže</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Automatsko kreiranje tiketa iz neuspješnih razgovora</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="/mogucnosti/helpdesk" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#09090b] hover:text-[#2563eb] transition-colors">
+                Saznajte više o Helpdesku i ko-pilotu
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-sm">
+            <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3 text-[12px]">
+              <span class="font-medium text-[#09090b]">Način rada: AI Ko-pilot</span>
+              <span class="text-blue-600 font-semibold">Preuzimanje u 1 klik</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="rounded-lg bg-[#f4f4f5] p-3 text-[13px] text-[#27272a]">
+                <div class="text-[11px] font-semibold text-[#71717a] mb-1">Kupac (WhatsApp)</div>
+                “Zanima me ponuda za opremanje 10 radnih mjesta uz količinski popust i rok isporuke.”
+              </div>
+              <div class="rounded-lg border border-blue-200 bg-blue-50/50 p-3 text-[13px] text-blue-950">
+                <div class="text-[11px] font-semibold text-blue-700 mb-1">Predloženi AI odgovor za operatera</div>
+                “Poštovani, prosljeđujem vaš upit kolegi Marku iz odjela veleprodaje koji će vam poslati ponudu s rabatom do kraja dana.”
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Backstage -->
+      <div id="backstage" class="scroll-mt-24 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 lg:p-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-sm">
+            <div class="flex items-center justify-between text-[13px] font-semibold text-[#09090b]">
+              <span>Sentiment i najčešće teme</span>
+              <span class="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-[12px]">94% Pozitivno</span>
+            </div>
+            <div class="mt-4 space-y-3 text-[12px]">
+              <div class="flex items-center justify-between rounded-lg bg-[#fafafa] p-3 border border-[#e4e4e7]">
+                <span>Praćenje statusa dostave</span>
+                <span class="font-bold text-[#09090b]">44%</span>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-[#fafafa] p-3 border border-[#e4e4e7]">
+                <span>Zamjena veličine ili povrat</span>
+                <span class="font-bold text-[#09090b]">26%</span>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-[#fafafa] p-3 border border-[#e4e4e7]">
+                <span>Dostupnost zaliha u poslovnicama</span>
+                <span class="font-bold text-[#09090b]">18%</span>
+              </div>
+              <div class="flex items-center justify-between rounded-lg bg-[#fafafa] p-3 border border-[#e4e4e7]">
+                <span>Načini plaćanja i rate</span>
+                <span class="font-bold text-[#09090b]">12%</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">Mogućnost 04</span>
+            <h2 class="mt-4 text-[26px] font-semibold text-[#09090b]">Backstage: Dubinska analitika i učenje</h2>
+            <p class="mt-3 text-[15px] leading-relaxed text-[#52525b]">
+              Backstage analizira sve razgovore "iza kulisa". Automatski prepoznaje nedostatke u bazi znanja, otkriva točke gdje su posjetitelji odustali od kupovine i predlaže točne dopune za vaš sadržaj.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-[14px] text-[#27272a]">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Automatsko prepoznavanje nepoznatih pitanja i prijedlozi odgovora</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Praćenje zadovoljstva korisnika (CSAT) i sentimenta</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span>Analitika konverzije iz razgovora u uspješnu narudžbu</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="/mogucnosti/analitika" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#09090b] hover:text-[#2563eb] transition-colors">
+                Otkrijte moć Backstage analitike
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <div class="mt-20 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center sm:p-12">
+      <h2 class="text-[24px] font-medium text-[#09090b] sm:text-[30px]">
+        Isprobajte pitaj.io mogućnosti u praksi
+      </h2>
+      <p class="mt-3 text-[15px] text-[#52525b] max-w-[580px] mx-auto">
+        Kreirajte svog prvog AI agenta za manje od 5 minuta. Povežite svoju web stranicu i isprobajte kako odgovara na vaša stvarna pitanja.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="/cijene"
+          class="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-lg bg-[#09090b] px-7 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+        >
+          Započnite besplatno
+        </a>
+        <a
+          href="/za-firme"
+          class="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-lg border border-[#e4e4e7] bg-white px-7 text-[15px] font-medium text-[#09090b] shadow-xs transition-all hover:bg-[#f4f4f5]"
+        >
+          Zakažite prezentaciju
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

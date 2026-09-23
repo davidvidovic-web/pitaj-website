@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stories = [
+  {
+    company: "Poliklinika DentArt",
+    industry: "Stomatologija & Zdravstvo",
+    quote: "Preko 70% pacijenata šalje upite o cijenama i slobodnim terminima izvan radnog vremena. pitaj.io im odgovara u sekundi, priprema ih za pregled i popunjava naš raspored.",
+    author: "Dr. Emir Kovačević",
+    role: "Voditelj poliklinike",
+    metricNum: "78%",
+    metricLabel: "Automatiziranih upita",
+    logo: null,
+    bg: "bg-gradient-to-br from-emerald-50 to-white"
+  },
+  {
+    company: "TrendShop Balkan",
+    industry: "E-Commerce & Moda",
+    quote: "Kupci na webu stalno pitaju 'gdje je moj paket' i 'koji broj odabrati'. pitaj.io provjerava WooCommerce narudžbe u trenutku i prepolovio je broj ponavljajućih tiketa.",
+    author: "Kristina Radić",
+    role: "Voditeljica e-trgovine",
+    metricNum: "62%",
+    metricLabel: "Manje ponovljenih tiketa",
+    logo: null,
+    bg: "bg-gradient-to-br from-blue-50 to-white"
+  },
+  {
+    company: "Adria Grand Resort",
+    industry: "Hotelijerstvo & Turizam",
+    quote: "Strani gosti pitaju na engleskom, njemačkom i talijanskom o check-inu, wellness uslugama i parkingu. Naš asistent odgovara tečno na svim jezicima 24 sata dnevno bez čekanja na recepciju.",
+    author: "Luka Marić",
+    role: "Direktor hotelskih operacija",
+    metricNum: "< 2s",
+    metricLabel: "Vrijeme prvog odgovora",
+    logo: null,
+    bg: "bg-gradient-to-br from-amber-50 to-white"
+  },
+  {
+    company: "Studio Bella",
+    industry: "Ljepota & Wellness",
+    quote: "Više ne moramo prekidati tretmane da bismo se javili na telefon ili odgovorili na Instagram poruke. pitaj.io upoznaje klijente s cjenikom i vodi ih do rezervacije termina.",
+    author: "Senada Hodžić",
+    role: "Vlasnica salona",
+    metricNum: "3.5x",
+    metricLabel: "Više večernjih rezervacija",
+    logo: null,
+    bg: "bg-gradient-to-br from-purple-50 to-white"
+  },
+  {
+    company: "Apex Digital Agency",
+    industry: "Digitalna agencija & Whitelabel",
+    quote: "Whitelabel opcija nam omogućuje da klijentima ponudimo AI agente pod vlastitim agencijskim brendom. To nam je donijelo potpuno novi, stabilni izvor mjesečnog prihoda bez programiranja.",
+    author: "Dario Vidaković",
+    role: "Direktor agencije",
+    metricNum: "14+",
+    metricLabel: "Aktivnih klijenata",
+    logo: null,
+    bg: "bg-gradient-to-br from-pink-50 to-white"
+  },
+  {
+    company: "TechOprema Direct",
+    industry: "Potrošačka elektronika",
+    quote: "Povezali smo Shopify katalog od 3.000 artikala za 15 minuta. Agent točno zna koje su komponente međusobno kompatibilne i kupce vodi direktno u košaricu.",
+    author: "Mirza Hadžić",
+    role: "Voditelj korisničke podrške",
+    metricNum: "+24%",
+    metricLabel: "Povećanje konverzije",
+    logo: null,
+    bg: "bg-gradient-to-br from-sky-50 to-white"
+  }
+];
+---
+
+<Layout
+  title="Iskustva naših klijenata | pitaj.io"
+  description="Saznajte kako web trgovine, poliklinike, hoteli i agencije koriste pitaj.io AI asistente za automatizaciju podrške, veću prodaju i uštedu vremena."
+  currentPath="/klijenti"
+>
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <div class="text-center max-w-[700px] mx-auto">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">
+        Studije slučaja i rezultati
+      </div>
+      <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.1] tracking-[-0.035em] text-[#09090b] sm:text-[3rem] lg:text-[3.5rem]">
+        Rezultati naših <span class="font-proza font-bold italic">korisnika</span>
+      </h1>
+      <p class="mt-5 text-[17px] text-[#52525b]">
+        Pogledajte kako vodeće regionalne kompanije automatiziraju komunikaciju, rasterećuju svoje timove i pružaju vrhunsko korisničko iskustvo 24/7.
+      </p>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {stories.map((story) => (
+        <div class={`flex flex-col justify-between rounded-2xl border border-[#e4e4e7] ${story.bg} p-7 shadow-xs transition-all hover:shadow-md hover:border-[#d4d4d8]`}>
+          <div>
+            <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-4">
+              <span class="text-[15px] font-bold tracking-tight text-[#09090b]">{story.company}</span>
+              <span class="text-[11px] font-medium uppercase tracking-wider text-[#71717a]">{story.industry}</span>
+            </div>
+
+            <div class="mt-6">
+              <div class="text-[32px] font-bold tracking-tight text-[#09090b]">{story.metricNum}</div>
+              <div class="text-[12px] font-semibold uppercase tracking-wider text-emerald-700">{story.metricLabel}</div>
+            </div>
+
+            <p class="mt-4 text-[14px] italic leading-relaxed text-[#27272a]">
+              “{story.quote}”
+            </p>
+          </div>
+
+          <div class="mt-6 border-t border-[#e4e4e7] pt-4">
+            <div class="text-[13px] font-semibold text-[#09090b]">{story.author}</div>
+            <div class="text-[12px] text-[#71717a]">{story.role}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center sm:p-12">
+      <h2 class="text-[24px] font-medium text-[#09090b] sm:text-[28px]">
+        Spremni za iste rezultate u vašem poslovanju?
+      </h2>
+      <p class="mt-3 text-[15px] text-[#52525b] max-w-[560px] mx-auto">
+        Isprobajte pitaj.io besplatno ili zakažite kratku prezentaciju gdje ćemo kreirati prototip agenta prilagođen vašoj web stranici.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="/cijene"
+          class="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-lg bg-[#09090b] px-7 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+        >
+          Započnite besplatno
+        </a>
+        <a
+          href="/za-firme"
+          class="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-lg border border-[#e4e4e7] bg-white px-7 text-[15px] font-medium text-[#09090b] shadow-xs transition-all hover:bg-[#f4f4f5]"
+        >
+          Zatražite prezentaciju
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,212 @@
+---
+---
+
+<section class="reveal-on-scroll w-full bg-white">
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <!-- Section Heading -->
+    <div class="max-w-[840px]">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b] mb-4">
+        Paket alata
+      </div>
+      <h2 class="text-balance text-[1.85rem] font-medium leading-[1.18] tracking-[-0.025em] text-[#09090b] sm:text-[2.25rem] lg:text-[2.5rem]">
+        Kompletan paket alata za vašeg agenta. <span class="text-[#71717a]">Izgradite, povežite i automatizirajte sve kanale na jednom mjestu.</span>
+      </h2>
+    </div>
+
+    <!-- 2x2 Bento Grid -->
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+      <!-- Card 1: Procedures -->
+      <div class="group flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-8 transition-all hover:border-[#d4d4d8] hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#09090b]">Procedure</span>
+          </div>
+          <h3 class="mt-4 text-[20px] font-semibold text-[#09090b]">
+            Procedure <span class="text-[#71717a] font-normal">napisane u običnom jeziku, izvršavaju se korak po korak s ugrađenim akcijama.</span>
+          </h3>
+        </div>
+
+        <!-- Interactive Procedure Workflow Preview -->
+        <div class="mt-8 rounded-xl border border-[#e4e4e7] bg-white p-5 shadow-xs">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3 text-[12px] text-[#71717a]">
+            <span class="font-medium text-[#09090b] font-mono">provjera_narudzbe_procedura.yml</span>
+            <span class="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-[11px]">
+              <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Aktivno pravilo
+            </span>
+          </div>
+          <ol class="mt-4 flex flex-col gap-2.5 text-[13px]">
+            <li class="flex items-start gap-2.5 text-[#09090b]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-700">1</span>
+              <span>Zatraži broj narudžbe i email kupca.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[#09090b]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-700">2</span>
+              <span>Pozovi funkciju <code class="rounded bg-[#f4f4f5] px-1.5 py-0.5 text-[12px] font-mono text-[#b0067e]">lookup_order</code> u trgovini.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[#09090b]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[11px] font-bold text-blue-700">3</span>
+              <span>Dohvati status kurira i procijenjeno vrijeme dostave.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[#52525b]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f4f4f5] text-[11px] font-bold text-[#71717a]">4</span>
+              <span>Prikaži kupcu tracking karticu unutar chata.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[#71717a]">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f4f4f5] text-[11px] font-bold text-[#a1a1aa]">5</span>
+              <span>Ponudi opciju promjene termina ili adrese dostave.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Card 2: Interactive Widgets with Authentic Map Texture -->
+      <div class="group flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-8 transition-all hover:border-[#d4d4d8] hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#09090b]">Widgeti</span>
+          </div>
+          <h3 class="mt-4 text-[20px] font-semibold text-[#09090b]">
+            Interaktivni widgeti <span class="text-[#71717a] font-normal">omogućuju agentu prikaz grafičkih elemenata, a ne samo teksta.</span>
+          </h3>
+        </div>
+
+        <!-- Interactive Widget Component with Tracker Map Texture -->
+        <div class="mt-8 rounded-xl border border-[#e4e4e7] bg-white overflow-hidden shadow-xs">
+          <!-- Realistic Map Texture Area -->
+          <div class="relative h-32 w-full overflow-hidden bg-slate-900 border-b border-[#e4e4e7]">
+            <img
+              src="/chatbase-assets/tracker-map.webp"
+              alt="Karta rute dostave"
+              class="h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
+            <!-- Live Pin -->
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 rounded-full border border-white/20 bg-black/75 px-3 py-1 text-[12px] text-white shadow-lg backdrop-blur-md">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+              </span>
+              <span>Dostavno vozilo u tranzitu</span>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <div class="flex items-center justify-between text-[13px] font-semibold text-[#09090b]">
+              <span>Narudžba #18420</span>
+              <span class="rounded bg-emerald-50 px-2 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-200">U dostavi</span>
+            </div>
+            <div class="mt-3 text-[14px] text-[#27272a]">
+              Vaša narudžba je u kombiju brze pošte i stiže sutra do 14:00h.
+            </div>
+            <div class="mt-3 flex items-center justify-between text-[11px] text-[#71717a]">
+              <span>Skladište</span>
+              <span class="font-semibold text-blue-600">Tranzitni centar</span>
+              <span>Dostava kupcu</span>
+            </div>
+            <div class="mt-1.5 h-1.5 w-full rounded-full bg-[#f4f4f5] overflow-hidden">
+              <div class="h-full w-2/3 rounded-full bg-blue-600 transition-all duration-1000"></div>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button type="button" class="flex-1 rounded-lg border border-[#e4e4e7] bg-white py-2 text-[12px] font-medium text-[#09090b] hover:bg-[#fafafa]">
+                Prati na mapi
+              </button>
+              <button type="button" class="flex-1 rounded-lg bg-[#09090b] py-2 text-[12px] font-medium text-white hover:bg-[#27272a]">
+                Izmijeni termin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Helpdesk & Pitaj Tiketi -->
+      <div class="group flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-8 transition-all hover:border-[#d4d4d8] hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#09090b]">Tiketi & Helpdesk</span>
+          </div>
+          <h3 class="mt-4 text-[20px] font-semibold text-[#09090b]">
+            Pitaj Tiketi <span class="text-[#71717a] font-normal">spajaju umjetnu inteligenciju i vaš tim u istom razgovoru.</span>
+          </h3>
+        </div>
+
+        <!-- Helpdesk Co-pilot Mockup -->
+        <div class="mt-8 rounded-xl border border-[#e4e4e7] bg-white p-5 shadow-xs">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3 text-[12px]">
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-[#09090b]">Ana Petrović</span>
+              <span class="rounded bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 border border-amber-200">Veleprodajni upit</span>
+            </div>
+            <span class="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Preuzimanje u 1 klik</span>
+          </div>
+          <div class="mt-3 rounded-lg bg-blue-50/60 p-3.5 border border-blue-100">
+            <div class="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-blue-700 mb-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-600 animate-ping"></span>
+              AI predloženi odgovor za operatera
+            </div>
+            <p class="text-[13px] text-[#1e293b] leading-relaxed">
+              "Poštovana Ana, za narudžbe veće od 50 komada odobravamo 15% popusta uz besplatnu dostavu. Želite li da vam pošaljemo predračun na email?"
+            </p>
+          </div>
+          <div class="mt-3 flex items-center justify-end gap-2">
+            <button type="button" class="rounded-md border border-[#e4e4e7] px-3 py-1.5 text-[12px] font-medium text-[#52525b] hover:bg-[#fafafa]">
+              Izmijeni tekst
+            </button>
+            <button type="button" class="rounded-md bg-[#09090b] px-3.5 py-1.5 text-[12px] font-medium text-white hover:bg-[#27272a] shadow-xs">
+              Odobri i pošalji
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Backstage -->
+      <div class="group flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-8 transition-all hover:border-[#d4d4d8] hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#09090b]">Backstage Analitika</span>
+          </div>
+          <h3 class="mt-4 text-[20px] font-semibold text-[#09090b]">
+            Backstage <span class="text-[#71717a] font-normal">analizira razgovore iza kulisa. Pokazuje šta kupci traže i gdje gubite prodaju.</span>
+          </h3>
+        </div>
+
+        <!-- Backstage Analytics Mockup -->
+        <div class="mt-8 rounded-xl border border-[#e4e4e7] bg-white p-5 shadow-xs">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3 text-[12px]">
+            <span class="font-medium text-[#09090b]">Teme razgovora ovog tjedna</span>
+            <span class="text-purple-600 font-semibold bg-purple-50 px-2 py-0.5 rounded text-[11px]">1.420 obrađenih upita</span>
+          </div>
+          <div class="mt-3 space-y-3">
+            <div>
+              <div class="flex justify-between text-[12px] text-[#52525b]">
+                <span>Status dostave i paketa</span>
+                <span class="font-semibold text-[#09090b]">48% (Automatski riješeno)</span>
+              </div>
+              <div class="mt-1 h-2 w-full rounded-full bg-[#f4f4f5] overflow-hidden">
+                <div class="h-full w-[48%] rounded-full bg-purple-600 transition-all duration-1000"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[12px] text-[#52525b]">
+                <span>Preporuka veličina i zalihe</span>
+                <span class="font-semibold text-[#09090b]">34% (Vodi do kupovine)</span>
+              </div>
+              <div class="mt-1 h-2 w-full rounded-full bg-[#f4f4f5] overflow-hidden">
+                <div class="h-full w-[34%] rounded-full bg-blue-500 transition-all duration-1000"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[12px] text-[#52525b]">
+                <span>Zakazivanje termina</span>
+                <span class="font-semibold text-[#09090b]">18% (Zabilježeno u kalendar)</span>
+              </div>
+              <div class="mt-1 h-2 w-full rounded-full bg-[#f4f4f5] overflow-hidden">
+                <div class="h-full w-[18%] rounded-full bg-emerald-500 transition-all duration-1000"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

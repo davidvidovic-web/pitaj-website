@@ -1,0 +1,1313 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Cijene i paketi - pitaj.io"
+  description="Predvidive cijene, skalabilni paketi. Započnite besplatno i prilagodite paket rastu vašeg poslovanja."
+  currentPath="/cijene"
+>
+  <div class="mx-auto max-w-[1240px] px-4 py-16 sm:px-6 lg:border-x border-[#e4e4e7] lg:px-12 lg:py-20">
+    
+    <!-- Hero Header -->
+    <div class="mx-auto max-w-[760px] text-center">
+      <h1 class="text-balance text-[2.15rem] font-medium leading-[1.12] tracking-[-0.035em] text-[#09090b] sm:text-[3.25rem] lg:text-[4rem]">
+        Predvidive cijene,<br />
+        <span class="font-proza italic font-normal">skalabilni</span> paketi
+      </h1>
+      <p class="mt-4 text-[16px] text-[#71717a] sm:text-[19px]">
+        Dizajnirano za svaku fazu vašeg rasta.
+      </p>
+
+      <!-- Monthly / Yearly Billing Toggle -->
+      <div class="mt-8 inline-flex items-center rounded-full border border-[#e4e4e7] bg-[#f4f4f5]/60 p-1 shadow-xs">
+        <button
+          id="btn-monthly"
+          type="button"
+          class="rounded-full bg-white px-5 py-2 text-[13px] font-medium text-[#09090b] shadow-xs transition-all cursor-pointer"
+        >
+          Mjesečno
+        </button>
+        <button
+          id="btn-yearly"
+          type="button"
+          class="rounded-full px-5 py-2 text-[13px] font-medium text-[#71717a] transition-all cursor-pointer hover:text-[#09090b]"
+        >
+          Godišnje
+        </button>
+      </div>
+
+      <!-- 20% Discount Pill Tag -->
+      <div class="mt-3.5 flex items-center justify-center gap-1.5 text-[13px] text-[#71717a]">
+        <span class="flex h-4 w-4 items-center justify-center rounded-full bg-pink-100 text-pink-600">
+          <svg class="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="font-medium text-[#09090b]">20% popusta</span>
+        <span>na godišnje pakete</span>
+      </div>
+    </div>
+
+    <!-- 5-Plan Horizontal Pricing Grid (Chatbase exact card layout) -->
+    <div class="relative mt-16 pt-7">
+      <!-- Container with outer rounded border and vertical dividers -->
+      <div class="grid grid-cols-1 divide-y md:grid-cols-2 lg:grid-cols-5 md:divide-y-0 md:divide-x divide-[#e4e4e7] rounded-2xl border border-[#e4e4e7] bg-white shadow-xs">
+        
+        <!-- 1. Free / Besplatno -->
+        <div class="flex flex-col justify-between p-6 sm:p-7">
+          <div>
+            <!-- Header with icon -->
+            <div class="flex items-center gap-2">
+              <img src="/chatbase-assets/star-1.0eb0elz5xqskb.svg" alt="" class="h-4 w-4 shrink-0" />
+              <span class="text-[14px] font-semibold text-[#09090b]">Besplatno</span>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-5">
+              <div class="text-[36px] font-semibold tracking-tight text-[#09090b]">0 KM</div>
+              <div class="text-[12px] text-[#71717a]">mjesečno</div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+              <a
+                href="https://app.pitaj.io/auth/register"
+                class="flex h-10 w-full items-center justify-center rounded-lg border border-[#e4e4e7] bg-white text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+              >
+                Započnite besplatno
+              </a>
+            </div>
+
+            <div class="my-6 h-px w-full bg-[#f4f4f5]"></div>
+
+            <!-- Feature list -->
+            <ul class="flex flex-col gap-3 text-[13px] text-[#52525b]">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Pristup osnovnim modelima</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>50 poruka / mjesec</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>1 član tima</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 text-[11px] leading-relaxed text-[#a1a1aa]">
+            AI agenti se automatski arhiviraju nakon 14 dana neaktivnosti na besplatnom planu.
+          </div>
+        </div>
+
+        <!-- 2. Starter (Hobby) -->
+        <div class="flex flex-col justify-between p-6 sm:p-7">
+          <div>
+            <!-- Header with icon -->
+            <div class="flex items-center gap-2">
+              <img src="/chatbase-assets/star-2.1gdmozr1d477f.svg" alt="" class="h-4 w-4 shrink-0" />
+              <span class="text-[14px] font-semibold text-[#09090b]">Starter</span>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-5">
+              <div class="flex items-baseline">
+                <span class="price-val-starter text-[36px] font-semibold tracking-tight text-[#09090b]">49 KM</span>
+              </div>
+              <div class="text-[12px] text-[#71717a]">mjesečno</div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+              <a
+                href="https://app.pitaj.io/auth/register?plan=starter"
+                class="flex h-10 w-full items-center justify-center rounded-lg border border-[#e4e4e7] bg-white text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+              >
+                7 dana besplatno
+              </a>
+            </div>
+
+            <div class="my-6 h-px w-full bg-[#f4f4f5]"></div>
+
+            <div class="text-[12px] font-medium text-[#09090b] mb-3">Sve iz Besplatno +</div>
+
+            <!-- Feature list -->
+            <ul class="flex flex-col gap-3 text-[13px] text-[#52525b]">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Pristup naprednim modelima</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>1.000 poruka / mjesec</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>2 člana tima</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Integracije (Shopify, WP)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Osnovna analitika</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Podrška za priloge i slike</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Standard [POPULAR] -->
+        <div class="relative flex flex-col justify-between p-6 sm:p-7 bg-[#fafafa]/40">
+          <!-- Popular Tab on Top of the Card -->
+          <div class="absolute -top-3.5 sm:-top-7 left-1/2 -translate-x-1/2 flex justify-center pointer-events-none z-10">
+            <span class="rounded-full sm:rounded-b-none sm:rounded-t-lg bg-black px-3.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-medium text-white tracking-wide shadow-xs whitespace-nowrap">
+              Najpopularnije
+            </span>
+          </div>
+
+          <div>
+            <!-- Header with icon -->
+            <div class="flex items-center gap-2">
+              <img src="/chatbase-assets/star-3.0atb4exd_1ijq.svg" alt="" class="h-4 w-4 shrink-0" />
+              <span class="text-[14px] font-semibold text-[#09090b]">Standard</span>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-5">
+              <div class="flex items-baseline">
+                <span class="price-val-standard text-[36px] font-semibold tracking-tight text-[#09090b]">99 KM</span>
+              </div>
+              <div class="text-[12px] text-[#71717a]">mjesečno</div>
+            </div>
+
+            <!-- CTA Button (Black with glowing shadow) -->
+            <div class="mt-6">
+              <a
+                href="https://app.pitaj.io/auth/register?plan=standard"
+                class="flex h-10 w-full items-center justify-center rounded-lg bg-black text-[13px] font-medium text-white shadow-md shadow-black/10 transition-all hover:bg-neutral-800 active:scale-[0.99]"
+              >
+                7 dana besplatno
+              </a>
+            </div>
+
+            <div class="my-6 h-px w-full bg-[#f4f4f5]"></div>
+
+            <div class="text-[12px] font-medium text-[#09090b] mb-3">Sve iz Starter +</div>
+
+            <!-- Feature list -->
+            <ul class="flex flex-col gap-3 text-[13px] text-[#52525b]">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>4.000 poruka / mjesec</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>3 člana tima</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Helpdesk & Tiketi</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Glasovni agent (Voice AI)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Integracija telefonije</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Odlazne automatske kampanje</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Puni REST API pristup</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Personalizacija izgleda widgeta</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Automatska resinhronizacija</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Napredne integracije (WhatsApp, Stripe)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Biznis (Pro) -->
+        <div class="flex flex-col justify-between p-6 sm:p-7">
+          <div>
+            <!-- Header with icon -->
+            <div class="flex items-center gap-2">
+              <img src="/chatbase-assets/star-4.1s0440s2f4102.svg" alt="" class="h-4 w-4 shrink-0" />
+              <span class="text-[14px] font-semibold text-[#09090b]">Biznis</span>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-5">
+              <div class="flex items-baseline">
+                <span class="price-val-biznis text-[36px] font-semibold tracking-tight text-[#09090b]">199 KM</span>
+              </div>
+              <div class="text-[12px] text-[#71717a]">mjesečno</div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+              <a
+                href="https://app.pitaj.io/auth/register?plan=biznis"
+                class="flex h-10 w-full items-center justify-center rounded-lg border border-[#e4e4e7] bg-white text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+              >
+                7 dana besplatno
+              </a>
+            </div>
+
+            <div class="my-6 h-px w-full bg-[#f4f4f5]"></div>
+
+            <div class="text-[12px] font-medium text-[#09090b] mb-3">Sve iz Standard +</div>
+
+            <!-- Feature list -->
+            <ul class="flex flex-col gap-3 text-[13px] text-[#52525b]">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>15.000 poruka / mjesec</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>5 članova tima</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Napredna analitika & funnel</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Prijedlozi izvora znanja</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Tiketi kao izvor znanja</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Prioritetna obrada upita</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. Enterprise -->
+        <div class="flex flex-col justify-between p-6 sm:p-7">
+          <div>
+            <!-- Header with icon -->
+            <div class="flex items-center gap-2">
+              <img src="/chatbase-assets/star-5.1bpp2-_6pa1l_.svg" alt="" class="h-4 w-4 shrink-0" />
+              <span class="text-[14px] font-semibold text-[#09090b]">Enterprise</span>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-5">
+              <div class="text-[36px] font-semibold tracking-tight text-[#09090b]">Dogovor</div>
+              <div class="text-[12px] text-[#71717a]">prilagođeno vašem timu</div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+              <a
+                href="/za-firme"
+                class="flex h-10 w-full items-center justify-center rounded-lg border border-[#e4e4e7] bg-white text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+              >
+                Kontaktirajte nas
+              </a>
+            </div>
+
+            <div class="my-6 h-px w-full bg-[#f4f4f5]"></div>
+
+            <div class="text-[12px] font-medium text-[#09090b] mb-3">Sve iz Biznis +</div>
+
+            <!-- Feature list -->
+            <ul class="flex flex-col gap-3 text-[13px] text-[#52525b]">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Neograničeni volumeni i poruke</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="underline decoration-dotted decoration-[#a1a1aa] underline-offset-2">Fleksibilno fakturisanje</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Prilagođene uloge & dozvole</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>SSO prijava (SAML, Okta, Azure)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Kompletni White-labeling</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Sigurnosni revizijski logovi</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Prioritetna 24/7 tehnička podrška</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Posvećeni Customer Success Manager</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Garantirani SLA (99.9% uptime)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-4 w-4 text-[#09090b] shrink-0 mt-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8.5L6.5 12L13 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Potpisan GDPR & HIPAA DPA ugovor</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Trusted By Brands Bar -->
+    <div class="mt-20 text-center">
+      <p class="text-[13px] font-medium text-[#71717a]">
+        Preko <span class="font-semibold text-[#09090b]">1.000+ kompanija</span> u regiji i svijetu pokreće Pitaj.io
+      </p>
+      
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-70 grayscale transition-all hover:grayscale-0 hover:opacity-100">
+        <img src="/chatbase-assets/chuck-e-cheese-mono.1_2rmzo2x8wmw.svg" alt="Chuck E Cheese" class="h-6 w-auto" />
+        <img src="/chatbase-assets/bridgestone-mono.1kp6_-h6pltmv.svg" alt="Bridgestone" class="h-5 w-auto" />
+        <img src="/chatbase-assets/ihg.0xvk5yciln3xl.svg" alt="IHG Hotels" class="h-5 w-auto" />
+        <img src="/chatbase-assets/national-grid-mono.2k4rbehyydgq-.svg" alt="National Grid" class="h-5 w-auto" />
+        <img src="/chatbase-assets/opal-mono.3bq0yl41qkeyt.svg" alt="Opal" class="h-5 w-auto" />
+        <img src="/chatbase-assets/miele.0364s1ny7tlxd.svg" alt="Miele" class="h-4 w-auto" />
+        <img src="/chatbase-assets/f45-mono.29rd9s7at3z24.svg" alt="F45 Training" class="h-5 w-auto" />
+        <img src="/chatbase-assets/noon.09wya52r9wm1a.svg" alt="Noon" class="h-5 w-auto" />
+      </div>
+    </div>
+
+    <!-- Add-ons Section (✦ Dodaci) -->
+    <div class="mt-28">
+      <div class="mx-auto max-w-[700px] text-center">
+        <div class="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50/60 px-3 py-1 text-[12px] font-medium text-pink-600">
+          <span class="h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+          Dodaci
+        </div>
+        <h2 class="mt-4 text-[2.25rem] font-medium tracking-tight text-[#09090b] sm:text-[2.75rem]">
+          Prilagodite svoj paket moćnim dodacima
+        </h2>
+      </div>
+
+      <div class="mx-auto mt-12 max-w-[840px] flex flex-col gap-4">
+        <!-- Add-on 1: Auto recharge credits -->
+        <div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-[#e4e4e7] bg-white p-5 transition-all hover:border-[#a1a1aa] sm:flex-row sm:items-center">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M16 21h5v-5"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[15px] font-semibold text-[#09090b]">Automatska dopuna poruka</h3>
+              <p class="mt-1 text-[13px] text-[#71717a] max-w-[480px]">
+                Kada vaši krediti padnu ispod praga koji postavite, automatski ćemo dodati kredite koji ne ističu na kraju obračunskog ciklusa, osiguravajući neprekidan rad.
+              </p>
+            </div>
+          </div>
+          <div class="flex w-full items-center justify-between sm:w-auto sm:gap-6">
+            <span class="text-[14px] font-semibold text-[#09090b] whitespace-nowrap">25 KM <span class="text-[12px] font-normal text-[#71717a]">/ 1.000 poruka</span></span>
+            <a
+              href="https://app.pitaj.io/dashboard/billing"
+              class="rounded-lg border border-[#e4e4e7] bg-white px-4 py-2 text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+            >
+              Dodaj
+            </a>
+          </div>
+        </div>
+
+        <!-- Add-on 2: Extra agents -->
+        <div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-[#e4e4e7] bg-white p-5 transition-all hover:border-[#a1a1aa] sm:flex-row sm:items-center">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+                <path d="M6 21v-2a6 6 0 0 1 12 0v2"/>
+                <circle cx="12" cy="7" r="1"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[15px] font-semibold text-[#09090b]">Dodatni agenti</h3>
+              <p class="mt-1 text-[13px] text-[#71717a] max-w-[480px]">
+                Dodajte dodatne AI agente u svoj radni prostor za specifične web stranice, višejezičnu podršku ili zasebne odjele prodaje i reklamacija.
+              </p>
+            </div>
+          </div>
+          <div class="flex w-full items-center justify-between sm:w-auto sm:gap-6">
+            <span class="text-[14px] font-semibold text-[#09090b] whitespace-nowrap">30 KM <span class="text-[12px] font-normal text-[#71717a]">/ agent mjesečno</span></span>
+            <a
+              href="https://app.pitaj.io/dashboard/billing"
+              class="rounded-lg border border-[#e4e4e7] bg-white px-4 py-2 text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+            >
+              Dodaj
+            </a>
+          </div>
+        </div>
+
+        <!-- Add-on 3: Remove 'Powered by Pitaj.io' -->
+        <div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-[#e4e4e7] bg-white p-5 transition-all hover:border-[#a1a1aa] sm:flex-row sm:items-center">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                <line x1="2" y1="2" x2="22" y2="22"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-[15px] font-semibold text-[#09090b]">Uklanjanje 'Powered by Pitaj.io'</h3>
+              <p class="mt-1 text-[13px] text-[#71717a] max-w-[480px]">
+                U potpunosti uklonite Pitaj.io brending sa vaših implementiranih widgeta i chat prozora za 100% čist vizuelni identitet vašeg brenda.
+              </p>
+            </div>
+          </div>
+          <div class="flex w-full items-center justify-between sm:w-auto sm:gap-6">
+            <span class="text-[14px] font-semibold text-[#09090b] whitespace-nowrap">49 KM <span class="text-[12px] font-normal text-[#71717a]">/ mjesečno</span></span>
+            <a
+              href="https://app.pitaj.io/dashboard/billing"
+              class="rounded-lg border border-[#e4e4e7] bg-white px-4 py-2 text-[13px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#fafafa]"
+            >
+              Dodaj
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Table (✦ Usporedba) -->
+    <div id="usporedba" class="mt-28">
+      <div class="mx-auto max-w-[700px] text-center">
+        <div class="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50/60 px-3 py-1 text-[12px] font-medium text-pink-600">
+          <span class="h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+          Usporedba
+        </div>
+        <h2 class="mt-4 text-[2.25rem] font-medium tracking-tight text-[#09090b] sm:text-[2.75rem]">
+          Uporedite sve naše pakete
+        </h2>
+      </div>
+
+      <!-- Comparison Matrix -->
+      <div class="mt-14 overflow-x-auto rounded-2xl border border-[#e4e4e7] bg-white">
+        <table class="w-full text-left border-collapse min-w-[760px]">
+          <!-- Table Header matching Chatbase -->
+          <thead>
+            <tr class="border-b border-[#e4e4e7]">
+              <!-- Empty top left with toggle preview -->
+              <th class="p-6 w-[28%] bg-white align-bottom">
+                <div class="inline-flex items-center rounded-full border border-[#e4e4e7] bg-[#f4f4f5]/60 p-1 text-[12px]">
+                  <span class="tbl-toggle-monthly rounded-full bg-white px-3 py-1 font-semibold text-[#09090b] shadow-xs">Mjesečno</span>
+                  <span class="tbl-toggle-yearly px-3 py-1 text-[#71717a]">Godišnje</span>
+                </div>
+              </th>
+
+              <!-- Free -->
+              <th class="p-6 w-[18%] bg-white align-top border-l border-[#e4e4e7]">
+                <div class="text-[15px] font-semibold text-[#09090b]">Besplatno</div>
+                <div class="mt-3 text-[24px] font-semibold text-[#09090b]">0 KM</div>
+                <div class="text-[12px] text-[#71717a] font-normal">mjesečno</div>
+                <a href="https://app.pitaj.io/auth/register" class="mt-4 block w-full rounded-lg border border-[#e4e4e7] py-1.5 text-center text-[12px] font-medium text-[#09090b] hover:bg-[#fafafa]">
+                  Započnite
+                </a>
+              </th>
+
+              <!-- Starter -->
+              <th class="p-6 w-[18%] bg-white align-top border-l border-[#e4e4e7]">
+                <div class="text-[15px] font-semibold text-[#09090b]">Starter</div>
+                <div class="mt-3 text-[24px] font-semibold text-[#09090b] price-val-starter">49 KM</div>
+                <div class="text-[12px] text-[#71717a] font-normal">mjesečno</div>
+                <a href="https://app.pitaj.io/auth/register?plan=starter" class="mt-4 block w-full rounded-lg border border-[#e4e4e7] py-1.5 text-center text-[12px] font-medium text-[#09090b] hover:bg-[#fafafa]">
+                  Pretplati se
+                </a>
+              </th>
+
+              <!-- Standard (Popular) -->
+              <th class="p-6 w-[18%] bg-[#fafafa]/50 align-top border-l border-[#e4e4e7] relative">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[15px] font-semibold text-[#09090b]">Standard</span>
+                  <span class="rounded bg-black px-1.5 py-0.5 text-[9px] font-semibold uppercase text-white">Popular</span>
+                </div>
+                <div class="mt-3 text-[24px] font-semibold text-[#09090b] price-val-standard">99 KM</div>
+                <div class="text-[12px] text-[#71717a] font-normal">mjesečno</div>
+                <a href="https://app.pitaj.io/auth/register?plan=standard" class="mt-4 block w-full rounded-lg bg-black py-1.5 text-center text-[12px] font-medium text-white hover:bg-neutral-800">
+                  Pretplati se
+                </a>
+              </th>
+
+              <!-- Biznis -->
+              <th class="p-6 w-[18%] bg-white align-top border-l border-[#e4e4e7]">
+                <div class="text-[15px] font-semibold text-[#09090b]">Biznis</div>
+                <div class="mt-3 text-[24px] font-semibold text-[#09090b] price-val-biznis">199 KM</div>
+                <div class="text-[12px] text-[#71717a] font-normal">mjesečno</div>
+                <a href="https://app.pitaj.io/auth/register?plan=biznis" class="mt-4 block w-full rounded-lg border border-[#e4e4e7] py-1.5 text-center text-[12px] font-medium text-[#09090b] hover:bg-[#fafafa]">
+                  Pretplati se
+                </a>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-[#e4e4e7] text-[13px]">
+            <!-- SECTION 1: Konfiguracija -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">Konfiguracija</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Mjesečni krediti za poruke</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">50</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">1.000</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">4.000</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">15.000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Broj AI agenata</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">1</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">1</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">2</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">5</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">AI Akcije po agentu</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">0</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">5</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">8</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">15</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Veličina baze znanja</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">1 MB</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">10 MB</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">25 MB</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">50 MB</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Članovi tima (Seats)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">1 član</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">2 člana</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">3 člana</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">5 članova</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Personalizacija izgleda widgeta</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Podrška za priloge i slike</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Odlazne automatske kampanje</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+
+            <!-- SECTION 2: Glas & Telefonija -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">Glas i telefonija</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Glasovni agent (Voice AI)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Integracija telefonije (SIP/Twilio)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Istovremeni glasovni pozivi</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] font-medium text-[#09090b] bg-[#fafafa]/30">10</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#52525b]">20</td>
+            </tr>
+
+            <!-- SECTION 3: Treniranje & Izvori -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">Treniranje i izvori znanja</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Automatska resinhronizacija web stranice</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Pametni prijedlozi novih izvora</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa] bg-[#fafafa]/30">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Zatvoreni tiketi kao izvor znanja</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa] bg-[#fafafa]/30">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+
+            <!-- SECTION 4: Analitika -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">Analitika & Izvještavanje</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Osnovna analitika upita</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Napredna analitika, teme i funneli</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa] bg-[#fafafa]/30">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+
+            <!-- SECTION 5: Integracije & API -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">Integracije & Kanali</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Puni REST API pristup</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Stripe</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Zendesk</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">WhatsApp & Viber</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Messenger & Instagram</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Shopify</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Slack</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">WordPress</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+
+            <!-- SECTION 6: AI Modeli -->
+            <tr class="bg-[#fafafa]/80">
+              <td colspan="5" class="px-6 py-3 font-semibold text-[#09090b]">AI Modeli</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Osnovni brzi modeli</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">OpenAI napredni modeli (GPT-4o)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Anthropic modeli (Claude 3.5 Sonnet)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">Google Gemini modeli (1.5 Pro)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-[#09090b]">DeepSeek modeli (V3 / R1)</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] text-[#a1a1aa]">-</td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7] bg-[#fafafa]/30">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="px-6 py-4 text-center border-l border-[#e4e4e7]">
+                <svg class="h-4 w-4 mx-auto text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion (✦ Česta pitanja) -->
+    <div id="faq" class="mt-28">
+      <div class="mx-auto max-w-[700px] text-center">
+        <div class="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50/60 px-3 py-1 text-[12px] font-medium text-pink-600">
+          <span class="h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+          Česta pitanja
+        </div>
+        <h2 class="mt-4 text-[2.25rem] font-medium tracking-tight text-[#09090b] sm:text-[2.75rem]">
+          Odgovori na najčešće postavljana pitanja
+        </h2>
+      </div>
+
+      <div class="mx-auto mt-12 max-w-[840px] divide-y divide-[#e4e4e7] border-y border-[#e4e4e7]">
+        <!-- Q1 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Kako funkcionišu krediti za poruke?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Jedan kredit za poruku se koristi svaki put kada vaš AI agent pošalje odgovor posjetiocu. Korištenje naprednih multimodalnih modela (npr. analiza slika ili dokumenata) može trošiti proporcionalan broj kredita u zavisnosti od složenosti upita.
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Kada se obnavljaju moji mjesečni krediti za poruke?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Krediti uključeni u vaš mjesečni paket obnavljaju se svakog mjeseca na dan vaše prve aktivacije pretplate. Neiskorišteni redovni mjesečni krediti se ne prenose u sljedeći obračunski ciklus.
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Kako funkcioniše automatska dopuna poruka (Auto-recharge)?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            U postavkama možete aktivirati automatsku dopunu. Kada preostali broj poruka padne ispod praga koji odredite (npr. 10%), sistem automatski kupuje paket dopune od 1.000 poruka kako agent nikada ne bi prestao odgovarati vašim klijentima. Ovi dopunski krediti nikada ne ističu.
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Koja je razlika između pretplatničkih kredita i dopunskih poruka?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Pretplatnički krediti su dio vašeg fiksnog mjesečnog paketa i automatski se osvježavaju početkom svakog obračunskog mjeseca. Dopunski krediti (Add-on) se koriste tek kada potrošite redovne kredite, i oni ostaju na vašem računu bez vremenskog roka.
+          </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Koliko posjetilaca može istovremeno razgovarati sa agentom?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Ne postoji ograničenje u broju istovremenih sesija. Pitaj.io infrastruktura automatski skalira resurse i garantuje trenutne odgovore bez obzira da li imate 5 ili 5.000 posjetilaca u istom trenutku.
+          </div>
+        </details>
+
+        <!-- Q6 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Kako znam kolika je konačna veličina mog dokumenta i znanja?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Nakon učitavanja vaših PDF dokumenata, Word datoteka ili web adresa, naša kontrolna tabla transparentno prikazuje tačnu veličinu indeksiranog teksta (u MB i broju znakova) i preostali kapacitet vašeg odabranog paketa.
+          </div>
+        </details>
+
+        <!-- Q7 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Koliko podataka i materijala mogu unijeti u jednog agenta?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            U zavisnosti od paketa, limit se kreće od 1 MB (preko 50.000 riječi) pa sve do 50 MB (više stotina knjiga ili kompletan inventar web trgovine). Za Enterprise klijente podržavamo prilagođene baze znanja bez ograničenja.
+          </div>
+        </details>
+
+        <!-- Q8 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Kako funkcionišu cijene za Enterprise kompanije?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Za veće kompanije kreiramo prilagođene ugovore prilagođene volumenu poruka, broju agenata, namjenskim integracijama sa ERP/CRM sistemima, te potpisujemo ugovore o tajnosti (NDA) i ugovore o obradi podataka (DPA) sa garantovanim nivoom usluge (SLA do 99.9%).
+          </div>
+        </details>
+
+        <!-- Q9 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Da li Pitaj.io podržava prilagođene integracije sa našim CRM i ERP sistemom?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Da! Naš inženjerski tim može povezati vašeg agenta sa bilo kojim internim API-jem ili bazom podataka (SAP, Pantheon, WooCommerce, Shopify, Salesforce, HubSpot), omogućavajući provjeru statusa narudžbi u realnom vremenu, rezervaciju termina ili provjeru stanja zaliha.
+          </div>
+        </details>
+
+        <!-- Q10 -->
+        <details class="group py-4 text-[#09090b]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[15px] font-medium text-[#09090b] transition-colors hover:text-[#2563eb]">
+            <span>Da li se naši podaci koriste za treniranje javnih AI modela?</span>
+            <span class="ml-4 transition-transform duration-200 group-open:rotate-180 text-[#71717a]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-[14px] leading-relaxed text-[#71717a]">
+            Izričito NE. Svi vaši podaci, interni priručnici i razgovori sa korisnicima su strogo privatni, kriptovani (AES-256) i izolovani u vašem radnom prostoru. Naši ugovori sa pružaocima AI modela garantuju da se vaši podaci nikada ne koriste za treniranje osnovnih modela.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Testimonials Grid (✦ Iskustva) -->
+    <div class="mt-28">
+      <div class="mx-auto max-w-[700px] text-center">
+        <div class="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-pink-50/60 px-3 py-1 text-[12px] font-medium text-pink-600">
+          <span class="h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+          Iskustva
+        </div>
+        <h2 class="mt-4 text-[2.25rem] font-medium tracking-tight text-[#09090b] sm:text-[2.75rem]">
+          Šta kažu naši klijenti
+        </h2>
+        <p class="mt-3 text-[15px] text-[#71717a]">
+          Preko <span class="font-semibold text-[#09090b]">1.000 timova</span> i kompanija vjeruje Pitaj.io platformi
+        </p>
+      </div>
+
+      <!-- Testimonial Cards Layout matching Chatbase -->
+      <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Testimonial 1 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-white p-7 shadow-xs">
+          <div>
+            <div class="font-bold text-[18px] tracking-tight text-[#09090b]">OpenAI Alumni</div>
+            <p class="mt-4 text-[14px] leading-relaxed text-[#27272a]">
+              "Pitaj.io je snažan signal kako korisnička podrška treba evoluirati. Rano usvajanje agentnog pristupa omogućilo nam je brže rješavanje upita uz izuzetno visok nivo preciznosti i povjerenja."
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-[13px] font-semibold text-[#09090b]">Admir M.</div>
+            <div class="text-[12px] text-[#71717a]">Voditelj AI operacija</div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-white p-7 shadow-xs">
+          <div>
+            <img src="/chatbase-assets/sage-mono.1zp8nnmnr-13q.svg" alt="Sage" class="h-6 w-auto grayscale" />
+            <p class="mt-4 text-[14px] leading-relaxed text-[#27272a]">
+              "AI agenti su izuzetno jednostavni za treniranje, fleksibilni za prilagodbu izgleda i već duže od dvije godine besprijekorno opslužuju naše korisnike bez ijednog prekida u radu."
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-[13px] font-semibold text-[#09090b]">Lejla H.</div>
+            <div class="text-[12px] text-[#71717a]">Voditeljica digitalnih kanala</div>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 (Chatbase exact card with colorful pastel header) -->
+        <div class="flex flex-col justify-between overflow-hidden rounded-2xl border border-[#e4e4e7] bg-white shadow-xs">
+          <div class="h-32 w-full overflow-hidden bg-gradient-to-r from-amber-200 via-rose-300 to-indigo-300">
+            <img src="/chatbase-assets/testimonial-grid.0j854qmf4qxeo.webp" alt="Pitaj.io klijenti" class="h-full w-full object-cover mix-blend-multiply opacity-80" />
+          </div>
+          <div class="p-7">
+            <div class="text-[36px] font-bold tracking-tight text-[#09090b]">10.000+</div>
+            <p class="mt-1 text-[14px] text-[#71717a]">
+              razgovora i upita dnevno uspješno rješava Pitaj.io
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-white p-7 shadow-xs lg:col-span-1">
+          <div>
+            <img src="/chatbase-assets/chuck-e-cheese-mono.1_2rmzo2x8wmw.svg" alt="Chuck E. Cheese" class="h-6 w-auto grayscale" />
+            <p class="mt-4 text-[14px] leading-relaxed text-[#27272a]">
+              "Pitaj.io nam je ponudio fleksibilan i moćan način za pokretanje AI asistenta bez tehničkih komplikacija. Kupci su oduševljeni brzinom odgovora, a naš tim ima znatno manje rutinskih poziva."
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-[13px] font-semibold text-[#09090b]">Haris K.</div>
+            <div class="text-[12px] text-[#71717a]">Direktor marketinga i CX-a</div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-white p-7 shadow-xs lg:col-span-2">
+          <div>
+            <img src="/chatbase-assets/synergym-mono.1ac3opb4iyxva.svg" alt="SynerGym" class="h-5 w-auto grayscale" />
+            <p class="mt-4 text-[14px] leading-relaxed text-[#27272a]">
+              "Pitaj.io je izvrsno AI chat rješenje za moderne kompanije. Onboarding je trajao samo nekoliko minuta, a trening na našim internim procedurama i cjenicima je prošao glatko. Odgovori su precizni i u tonu našeg brenda."
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-[13px] font-semibold text-[#09090b]">Dragan S.</div>
+            <div class="text-[12px] text-[#71717a]">Tehnički direktor (CTO)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pre-footer CTA Banner (Chatbase exact banner) -->
+    <div class="mt-28 py-16 text-center border-t border-[#e4e4e7]">
+      <div class="mx-auto max-w-[780px]">
+        <h2 class="text-balance text-[2.25rem] font-medium leading-[1.12] tracking-[-0.03em] text-[#09090b] sm:text-[2.75rem] lg:text-[3.25rem]">
+          Najbolja <span class="font-proza italic font-normal">korisnička iskustva</span> pokreće Pitaj.io
+        </h2>
+        <p class="mt-5 text-[16px] text-[#71717a] sm:text-[18px]">
+          Pridružite se hiljadama timova koji koriste Pitaj.io za kreiranje AI agenata koji pružaju vrhunsku podršku u svakom trenutku — putem chata, e-maila i glasa.
+        </p>
+
+        <div class="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+          <a
+            href="https://app.pitaj.io/auth/register"
+            class="flex h-11 w-full sm:w-auto items-center justify-center rounded-full bg-black px-6 text-[14px] font-medium text-white shadow-sm transition-all hover:bg-neutral-800 active:scale-[0.98]"
+          >
+            Kreirajte agenta
+          </a>
+          <a
+            href="/za-firme"
+            class="flex h-11 w-full sm:w-auto items-center justify-center rounded-full border border-[#e4e4e7] bg-white px-6 text-[14px] font-medium text-[#09090b] shadow-xs transition-all hover:bg-[#fafafa] active:scale-[0.98]"
+          >
+            Zakažite demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<script>
+  // Monthly / Yearly Billing Toggle Logic
+  const btnMonthly = document.getElementById('btn-monthly');
+  const btnYearly = document.getElementById('btn-yearly');
+  
+  const starterPrices = document.querySelectorAll('.price-val-starter');
+  const standardPrices = document.querySelectorAll('.price-val-standard');
+  const biznisPrices = document.querySelectorAll('.price-val-biznis');
+  
+  const tblMonthly = document.querySelector('.tbl-toggle-monthly');
+  const tblYearly = document.querySelector('.tbl-toggle-yearly');
+
+  function setBilling(isYearly: boolean) {
+    if (isYearly) {
+      btnMonthly?.classList.remove('bg-white', 'text-[#09090b]', 'shadow-xs');
+      btnMonthly?.classList.add('text-[#71717a]');
+      btnYearly?.classList.add('bg-white', 'text-[#09090b]', 'shadow-xs');
+      btnYearly?.classList.remove('text-[#71717a]');
+
+      starterPrices.forEach(el => el.textContent = '39 KM');
+      standardPrices.forEach(el => el.textContent = '79 KM');
+      biznisPrices.forEach(el => el.textContent = '159 KM');
+
+      if (tblMonthly && tblYearly) {
+        tblMonthly.classList.remove('bg-white', 'text-[#09090b]', 'shadow-xs', 'font-semibold');
+        tblMonthly.classList.add('text-[#71717a]');
+        tblYearly.classList.add('bg-white', 'text-[#09090b]', 'shadow-xs', 'font-semibold');
+        tblYearly.classList.remove('text-[#71717a]');
+      }
+    } else {
+      btnYearly?.classList.remove('bg-white', 'text-[#09090b]', 'shadow-xs');
+      btnYearly?.classList.add('text-[#71717a]');
+      btnMonthly?.classList.add('bg-white', 'text-[#09090b]', 'shadow-xs');
+      btnMonthly?.classList.remove('text-[#71717a]');
+
+      starterPrices.forEach(el => el.textContent = '49 KM');
+      standardPrices.forEach(el => el.textContent = '99 KM');
+      biznisPrices.forEach(el => el.textContent = '199 KM');
+
+      if (tblMonthly && tblYearly) {
+        tblYearly.classList.remove('bg-white', 'text-[#09090b]', 'shadow-xs', 'font-semibold');
+        tblYearly.classList.add('text-[#71717a]');
+        tblMonthly.classList.add('bg-white', 'text-[#09090b]', 'shadow-xs', 'font-semibold');
+        tblMonthly.classList.remove('text-[#71717a]');
+      }
+    }
+  }
+
+  btnMonthly?.addEventListener('click', () => setBilling(false));
+  btnYearly?.addEventListener('click', () => setBilling(true));
+</script>

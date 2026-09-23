@@ -1,0 +1,262 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 border-b border-[#e4e4e7] bg-white/95 backdrop-blur-md transition-all">
+  <nav aria-label="Glavna navigacija" class="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-6 lg:border-x lg:border-[#e4e4e7]">
+    <!-- Brand Logo -->
+    <div class="flex items-center gap-8">
+      <a href="/" class="group flex items-center gap-2.5 text-[#09090b] transition-opacity hover:opacity-90" aria-label="pitaj.io početna">
+        <svg class="h-6 w-auto" viewBox="0 0 22 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7496 9.34505L19.1201 11.9746L21.7496 14.6041V23.9493H3.22785C1.44518 23.9493 0 22.5042 0 20.7216V3.22785C0 1.44517 1.44517 0 3.22785 0H21.7496V9.34505ZM8.1196 4.9486C6.337 4.9486 4.8918 6.3938 4.8918 8.1765V16.5C4.8918 17.8807 6.0111 19.0007 7.3918 19.0007H9.412V14.4797H13.5C15.0906 14.4797 16.38 13.1903 16.38 11.6V7.8283C16.38 6.238 15.0906 4.9486 13.5 4.9486H8.1196ZM9.412 8.0H13.0C13.8284 8.0 14.5 8.6716 14.5 9.5V9.9283C14.5 10.7567 13.8284 11.4283 13.0 11.4283H9.412V8.0Z" />
+        </svg>
+        <span class="text-[19px] font-semibold tracking-tight text-[#09090b]">pitaj<span class="text-[#71717a] font-normal">.io</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden items-center gap-1 lg:flex">
+        <!-- Proizvod / Mogućnosti Dropdown -->
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium text-[#52525b] hover:text-[#09090b] transition-colors rounded-md" aria-expanded="false">
+            Mogućnosti
+            <svg class="h-3.5 w-3.5 text-[#a1a1aa] group-hover:text-[#09090b] transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+              <path d="M4 6L8 10L12 6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
+            <div class="w-[360px] rounded-xl border border-[#e4e4e7] bg-white p-3 shadow-xl shadow-black/5 ring-1 ring-black/5">
+              <div class="space-y-1">
+                <a href="/mogucnosti" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Pregled platforme</div>
+                    <div class="text-[12px] text-[#71717a]">Kompletna arhitektura, povezivanje i postavljanje</div>
+                  </div>
+                </a>
+
+                <a href="/mogucnosti/procedure" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Procedure i pravila</div>
+                    <div class="text-[12px] text-[#71717a]">Deterministička pravila u običnom jeziku</div>
+                  </div>
+                </a>
+
+                <a href="/mogucnosti/widgeti" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Interaktivni widgeti</div>
+                    <div class="text-[12px] text-[#71717a]">Praćenje pošiljki, forme i kalendar unutar chata</div>
+                  </div>
+                </a>
+
+                <a href="/mogucnosti/helpdesk" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Helpdesk & Ko-pilot</div>
+                    <div class="text-[12px] text-[#71717a]">Ljudski operater i AI suradnja s 1-klik preuzimanjem</div>
+                  </div>
+                </a>
+
+                <a href="/mogucnosti/analitika" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Backstage analitika</div>
+                    <div class="text-[12px] text-[#71717a]">Kontinuirano učenje i uvidi iz stvarnih razgovora</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-2 border-t border-[#f4f4f5] pt-2">
+                <a href="/sigurnost" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-[12px] text-[#52525b] transition-colors hover:bg-[#f4f4f5] hover:text-[#09090b]">
+                  <span class="flex items-center gap-2">
+                    <svg class="h-3.5 w-3.5 text-[#71717a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Sigurnost podataka i GDPR
+                  </span>
+                  <span class="text-[#a1a1aa]">EU serveri &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rješenja / Industrije Dropdown -->
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium text-[#52525b] hover:text-[#09090b] transition-colors rounded-md" aria-expanded="false">
+            Rješenja
+            <svg class="h-3.5 w-3.5 text-[#a1a1aa] group-hover:text-[#09090b] transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+              <path d="M4 6L8 10L12 6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
+            <div class="w-[360px] rounded-xl border border-[#e4e4e7] bg-white p-3 shadow-xl shadow-black/5 ring-1 ring-black/5">
+              <div class="mb-1.5 px-2.5 text-[11px] font-semibold uppercase tracking-wider text-[#a1a1aa]">Po industrijama</div>
+              <div class="space-y-1">
+                <a href="/industrije/web-trgovine" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Web trgovine & Retail</div>
+                    <div class="text-[12px] text-[#71717a]">WooCommerce, Shopify, praćenje pošiljki i prodaja</div>
+                  </div>
+                </a>
+
+                <a href="/industrije/tehnologija" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Tehnologija & SaaS</div>
+                    <div class="text-[12px] text-[#71717a]">B2B korisnička podrška, onboarding i API integracije</div>
+                  </div>
+                </a>
+
+                <a href="/industrije/turizam" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Turizam & Ugostiteljstvo</div>
+                    <div class="text-[12px] text-[#71717a]">Hoteli, apartmani, booking i podrška na 95+ jezika</div>
+                  </div>
+                </a>
+
+                <a href="/industrije/zdravstvo-i-usluge" class="flex items-start gap-3 rounded-lg p-2.5 transition-colors hover:bg-[#f4f4f5]">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa]">
+                    <svg class="h-4 w-4 text-[#09090b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[13px] font-medium text-[#09090b]">Zdravstvo & Usluge</div>
+                    <div class="text-[12px] text-[#71717a]">Poliklinike, saloni, GDPR privatnost i zakazivanje</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-2 border-t border-[#f4f4f5] pt-2">
+                <a href="/za-firme" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-[12px] text-[#52525b] transition-colors hover:bg-[#f4f4f5] hover:text-[#09090b]">
+                  <span class="flex items-center gap-2">
+                    <svg class="h-3.5 w-3.5 text-[#71717a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    Enterprise & Whitelabel agencije
+                  </span>
+                  <span class="text-[#a1a1aa]">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/klijenti" class={`px-3 py-2 text-[14px] font-medium transition-colors rounded-md ${currentPath === '/klijenti' ? 'text-[#09090b] font-semibold' : 'text-[#52525b] hover:text-[#09090b]'}`}>Klijenti</a>
+        <a href="/za-firme" class={`px-3 py-2 text-[14px] font-medium transition-colors rounded-md ${currentPath === '/za-firme' ? 'text-[#09090b] font-semibold' : 'text-[#52525b] hover:text-[#09090b]'}`}>Za kompanije</a>
+        <a href="/cijene" class={`px-3 py-2 text-[14px] font-medium transition-colors rounded-md ${currentPath === '/cijene' ? 'text-[#09090b] font-semibold' : 'text-[#52525b] hover:text-[#09090b]'}`}>Cijene</a>
+      </div>
+    </div>
+
+    <!-- Right Side CTAs -->
+    <div class="hidden items-center gap-3 lg:flex">
+      <a href="https://app.pitaj.io/auth/login" class="px-3.5 py-2 text-[14px] font-medium text-[#52525b] hover:text-[#09090b] transition-colors">
+        Prijava
+      </a>
+      <a href="/cijene" class="inline-flex items-center justify-center rounded-lg bg-[#09090b] px-4 py-2 text-[14px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a] active:scale-[0.98]">
+        Isprobaj besplatno
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex lg:hidden">
+      <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-[#52525b] hover:bg-[#f4f4f5] hover:text-[#09090b]" aria-label="Otvori navigaciju" aria-expanded="false">
+        <svg id="hamburger-icon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg id="close-icon" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="hidden max-h-[calc(100vh-64px)] overflow-y-auto border-b border-[#e4e4e7] bg-white px-6 py-6 lg:hidden">
+    <div class="flex flex-col gap-5">
+      <!-- Mogućnosti -->
+      <div>
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-[#a1a1aa] mb-2">Mogućnosti</div>
+        <div class="flex flex-col gap-2">
+          <a href="/mogucnosti" class="text-[14px] font-medium text-[#09090b] hover:text-black">Pregled platforme</a>
+          <a href="/mogucnosti/procedure" class="text-[14px] font-medium text-[#09090b] hover:text-black">Procedure i pravila</a>
+          <a href="/mogucnosti/widgeti" class="text-[14px] font-medium text-[#09090b] hover:text-black">Interaktivni widgeti</a>
+          <a href="/mogucnosti/helpdesk" class="text-[14px] font-medium text-[#09090b] hover:text-black">Helpdesk & Ko-pilot</a>
+          <a href="/mogucnosti/analitika" class="text-[14px] font-medium text-[#09090b] hover:text-black">Backstage analitika</a>
+        </div>
+      </div>
+
+      <div class="h-px w-full bg-[#f4f4f5]"></div>
+
+      <!-- Industrije -->
+      <div>
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-[#a1a1aa] mb-2">Industrije</div>
+        <div class="flex flex-col gap-2">
+          <a href="/industrije/web-trgovine" class="text-[14px] font-medium text-[#09090b] hover:text-black">Web trgovine & Retail</a>
+          <a href="/industrije/tehnologija" class="text-[14px] font-medium text-[#09090b] hover:text-black">Tehnologija & SaaS</a>
+          <a href="/industrije/turizam" class="text-[14px] font-medium text-[#09090b] hover:text-black">Turizam & Ugostiteljstvo</a>
+          <a href="/industrije/zdravstvo-i-usluge" class="text-[14px] font-medium text-[#09090b] hover:text-black">Zdravstvo & Usluge</a>
+        </div>
+      </div>
+
+      <div class="h-px w-full bg-[#f4f4f5]"></div>
+
+      <!-- Glavne stranice -->
+      <div class="flex flex-col gap-2.5">
+        <a href="/klijenti" class="text-[14px] font-medium text-[#09090b]">Iskustva klijenata</a>
+        <a href="/za-firme" class="text-[14px] font-medium text-[#09090b]">Za kompanije & Agencije</a>
+        <a href="/sigurnost" class="text-[14px] font-medium text-[#09090b]">Sigurnost & Privatnost</a>
+        <a href="/cijene" class="text-[14px] font-medium text-[#09090b]">Cijene i paketi</a>
+      </div>
+
+      <div class="h-px w-full bg-[#e4e4e7]"></div>
+
+      <div class="flex flex-col gap-3 pt-1">
+        <a href="https://app.pitaj.io/auth/login" class="flex h-11 w-full items-center justify-center rounded-lg border border-[#e4e4e7] bg-white text-[14px] font-medium text-[#09090b]">
+          Prijava na račun
+        </a>
+        <a href="/cijene" class="flex h-11 w-full items-center justify-center rounded-lg bg-[#09090b] text-[14px] font-medium text-white shadow-sm hover:bg-[#27272a]">
+          Započni besplatno
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const close = document.getElementById('close-icon');
+
+  if (toggleBtn && menu && hamburger && close) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      menu.classList.toggle('hidden');
+      hamburger.classList.toggle('hidden');
+      close.classList.toggle('hidden');
+    });
+  }
+</script>

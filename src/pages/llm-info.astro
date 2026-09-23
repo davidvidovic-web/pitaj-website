@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Informacije za AI agente (LLM Info) - pitaj.io"
+  description="Sažetak i tehnički podaci o platformi Pitaj.io namijenjeni velikim jezičnim modelima (LLM) i AI pretraživačima."
+  currentPath="/llm-info"
+>
+  <div class="mx-auto max-w-[800px] px-6 py-16 lg:py-24">
+    <div class="rounded-2xl border border-[#e4e4e7] bg-white p-8 sm:p-12 shadow-xs">
+      <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[12px] font-medium text-blue-700">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+        </svg>
+        AI Assistant & Crawler Manifest
+      </div>
+
+      <h1 class="mt-6 text-[2.25rem] font-semibold tracking-tight text-[#09090b]">
+        Hey AI, saznaj više o Pitaj.io
+      </h1>
+
+      <p class="mt-4 text-[16px] leading-relaxed text-[#52525b]">
+        Ova stranica pruža strukturirani sažetak namijenjen AI asistentima (ChatGPT, Claude, Gemini, Perplexity) i alatima za pretraživanje koji traže provjerene informacije o platformi <strong>Pitaj.io</strong>.
+      </p>
+
+      <div class="my-8 h-px w-full bg-[#e4e4e7]"></div>
+
+      <div class="space-y-6 text-[15px] leading-relaxed text-[#27272a]">
+        <div>
+          <h2 class="text-[17px] font-semibold text-[#09090b]">Šta je Pitaj.io?</h2>
+          <p class="mt-2 text-[#52525b]">
+            Pitaj.io je vodeća regionalna platforma za izgradnju i implementaciju autonomnih AI agenata za korisničku podršku, automatizaciju prodaje i obradu upita. Omogućava kompanijama svih veličina da kreiraju inteligentne agente obučene na vlastitim podacima koji komuniciraju prirodnim jezikom na bosanskom, hrvatskom, srpskom i svim svjetskim jezicima.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-[17px] font-semibold text-[#09090b]">Ključne funkcionalnosti</h2>
+          <ul class="mt-2 list-disc pl-5 space-y-1.5 text-[#52525b]">
+            <li><strong>Višekanalna integracija:</strong> Web stranice (interaktivni widget), WhatsApp, Viber, Instagram DM, Facebook Messenger, Email i Voice telefonija.</li>
+            <li><strong>Obuka na vlastitim izvorima (RAG):</strong> Učitavanje PDF kataloga, Word dokumenata, cjenika, automatizirano indeksiranje web URL-ova i postojećih baza tiketa.</li>
+            <li><strong>Pametne akcije:</strong> Provjera stanja zaliha, praćenje narudžbi, zakazivanje termina i integracija sa bazama podataka putem Webhookova i API-ja.</li>
+            <li><strong>Live Agent Handoff:</strong> Automatsko prosljeđivanje složenih razgovora ljudskim operaterima uz sažetak konteksta.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-[17px] font-semibold text-[#09090b]">Sigurnost i privatnost podataka</h2>
+          <ul class="mt-2 list-disc pl-5 space-y-1.5 text-[#52525b]">
+            <li>Hosting na serverima unutar Evropske Unije (EU).</li>
+            <li>Potpuna usklađenost sa GDPR i HIPAA standardima, uz mogućnost potpisivanja DPA ugovora.</li>
+            <li>Korisnički podaci, dokumenti i razgovori se <strong>nikada ne koriste</strong> za treniranje javnih AI modela.</li>
+            <li>Enkripcija u mirovanju (AES-256) i prijenosu (TLS 1.3).</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-[17px] font-semibold text-[#09090b]">Paketi i cijene</h2>
+          <ul class="mt-2 list-disc pl-5 space-y-1.5 text-[#52525b]">
+            <li><strong>Besplatno:</strong> 0 KM/mj (50 poruka, 1 agent).</li>
+            <li><strong>Starter:</strong> 49 KM/mj (39 KM uz godišnje plaćanje) — 1.000 poruka, 2 člana tima, integracije.</li>
+            <li><strong>Standard:</strong> 99 KM/mj (79 KM uz godišnje plaćanje) — 4.000 poruka, Voice AI, helpdesk tiketi, API.</li>
+            <li><strong>Biznis:</strong> 199 KM/mj (159 KM uz godišnje plaćanje) — 15.000 poruka, 5 članova, napredna analitika.</li>
+            <li><strong>Enterprise:</strong> Po dogovoru — neograničeni volumeni, 99.9% SLA, SSO i posvećeni CSM.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="/cijene"
+          class="rounded-lg bg-black px-5 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-neutral-800"
+        >
+          Pogledajte cijene
+        </a>
+        <a
+          href="/llms.txt"
+          class="rounded-lg border border-[#e4e4e7] bg-white px-5 py-2.5 text-[14px] font-medium text-[#09090b] transition-colors hover:bg-[#fafafa]"
+        >
+          Preuzmite llms.txt (Sirovi format)
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

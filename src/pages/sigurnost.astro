@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Sigurnost i zaštita podataka | pitaj.io"
+  description="Saznajte više o sigurnosnim protokolima pitaj.io platforme: GDPR usklađenost, EU poslužitelji, AES-256 enkripcija i nulto treniranje na podacima."
+  currentPath="/sigurnost"
+>
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <div class="text-center max-w-[720px] mx-auto">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">
+        Centar za sigurnost i povjerenje
+      </div>
+      <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.1] tracking-[-0.035em] text-[#09090b] sm:text-[3rem] lg:text-[3.5rem]">
+        Povjerenje i sigurnost na platformi <span class="font-proza font-bold italic">pitaj</span>
+      </h1>
+      <p class="mt-5 text-[17px] text-[#52525b]">
+        Primjenjujemo najviše europske standarde, modernu enkripciju i stroga pravila privatnosti kako bi vaši poslovni podaci i komunikacija s klijentima ostali 100% zaštićeni.
+      </p>
+    </div>
+
+    <!-- 3 Core Badges -->
+    <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div class="flex flex-col items-center rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center shadow-xs">
+        <img src="/chatbase-assets/badge-gdpr.0mwhtxr8zcwlz.webp" alt="GDPR usklađenost" class="h-16 w-auto object-contain" />
+        <h3 class="mt-6 text-[18px] font-semibold text-[#09090b]">GDPR usklađenost & EU poslužitelji</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-[#71717a]">
+          Potpuna usklađenost s Općom uredbom o zaštiti podataka. Podaci se pohranjuju na europskim poslužiteljima (Frankfurt), a sa svakim korisnikom potpisujemo DPA ugovor.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center shadow-xs">
+        <img src="/chatbase-assets/badge-soc2.0nzdz4e2zqxf5.webp" alt="SOC 2 načela" class="h-16 w-auto object-contain" />
+        <h3 class="mt-6 text-[18px] font-semibold text-[#09090b]">SOC 2 sigurnosna načela</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-[#71717a]">
+          Arhitektura izgrađena prema strogim kriterijima povjerljivosti, cjelovitosti podataka, dostupnosti sustava i mrežne izolacije.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center shadow-xs">
+        <img src="/chatbase-assets/badge-hipaa.262e6npya536m.webp" alt="Zaštita osjetljivih podataka" class="h-16 w-auto object-contain" />
+        <h3 class="mt-6 text-[18px] font-semibold text-[#09090b]">Zaštita osjetljivih podataka</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-[#71717a]">
+          Pogodno za poliklinike, ordinacije i osjetljive poslovne podatke. Automatsko maskiranje osjetljivih informacija i stroga kontrola pristupa.
+        </p>
+      </div>
+    </div>
+
+    <!-- Data Principles -->
+    <div class="mt-20 border-t border-[#e4e4e7] pt-16">
+      <h2 class="text-[2rem] font-medium text-[#09090b] text-center">Naša temeljna sigurnosna načela</h2>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-[#e4e4e7] bg-[#fafafa] text-[#09090b]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="text-[17px] font-semibold text-[#09090b]">Nulto treniranje na vašim podacima</h3>
+          </div>
+          <p class="mt-3 text-[14px] leading-relaxed text-[#52525b]">
+            Vaši dokumenti, proizvodi iz web trgovine, cjenici i razgovori s kupcima služe isključivo za odgovaranje u stvarnom vremenu. Ni pod kojim uvjetima ne treniramo javne jezične modele na vašim podacima.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-[#e4e4e7] bg-[#fafafa] text-[#09090b]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="text-[17px] font-semibold text-[#09090b]">Enkripcija u prijenosu i mirovanju</h3>
+          </div>
+          <p class="mt-3 text-[14px] leading-relaxed text-[#52525b]">
+            Sva komunikacija između vaših posjetitelja, widgeta i naših poslužitelja šifrirana je TLS 1.3 protokolom. Svi podaci u bazi i vektorskim skladištima zaštićeni su vojnim standardom AES-256.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-[#e4e4e7] bg-[#fafafa] text-[#09090b]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="text-[17px] font-semibold text-[#09090b]">Stroga multi-tenant izolacija</h3>
+          </div>
+          <p class="mt-3 text-[14px] leading-relaxed text-[#52525b]">
+            Svaka organizacija posluje u zasebnom logičkom prostoru s izoliranim bazama podataka i vektorskim particijama. Nijedan korisnik ne može pristupiti podacima druge organizacije.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-[#e4e4e7] bg-[#fafafa] text-[#09090b]">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="text-[17px] font-semibold text-[#09090b]">Uloge i kontrola pristupa timu</h3>
+          </div>
+          <p class="mt-3 text-[14px] leading-relaxed text-[#52525b]">
+            Dodijelite članovima tima odgovarajuće ovlasti (Administrator, Urednik baze znanja, Agent za podršku). Detaljni revizijski zapisi omogućuju praćenje svih izmjena u sustavu.
+          </p>
+        </div>
+      </div>
+
+      <!-- Security CTA box -->
+      <div class="mt-14 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-8 text-center sm:p-10">
+        <h3 class="text-[19px] font-semibold text-[#09090b]">Trebate potpisati Ugovor o obradi podataka (DPA)?</h3>
+        <p class="mt-2 text-[14px] text-[#52525b] max-w-[600px] mx-auto">
+          Pružamo standardni DPA usklađen s GDPR-om za sve korisnike naših paketa. Za specifične sigurnosne upitnike ili revizijske zahtjeve, kontaktirajte naš pravni tim.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a
+            href="mailto:podrska@pitaj.io?subject=Zahtjev%20za%20DPA%20ugovor"
+            class="inline-flex h-11 items-center justify-center rounded-lg bg-[#09090b] px-6 text-[14px] font-medium text-white shadow-xs transition-colors hover:bg-[#27272a]"
+          >
+            Zatražite DPA ugovor
+          </a>
+          <a
+            href="/za-firme"
+            class="inline-flex h-11 items-center justify-center rounded-lg border border-[#e4e4e7] bg-white px-6 text-[14px] font-medium text-[#09090b] shadow-xs transition-colors hover:bg-[#f4f4f5]"
+          >
+            Razgovarajte s Enterprise timom
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

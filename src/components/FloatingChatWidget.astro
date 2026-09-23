@@ -1,0 +1,48 @@
+---
+// FloatingChatWidget.astro - Live floating chat widget powered by pitaj-widget in mock/demo mode
+---
+
+<div id="pitaj-io-widget-root"></div>
+
+<script is:inline>
+  (function () {
+    if (window.__pitajLoaded) return;
+    window.__pitajLoaded = true;
+
+    function initPitajWidget() {
+      const script = document.createElement('script');
+      script.src = '/chat-widget/widget.iife.js';
+      script.defer = true;
+      script.onload = function () {
+        if (window.PitajIO && typeof window.PitajIO.init === 'function') {
+          window.PitajIO.init({
+            containerId: 'pitaj-io-widget-root',
+            widgetId: 'default',
+            position: 'bottom-right',
+            startOpen: false,
+            config: {
+              mockMode: true,
+              name: 'pitaj.io Agent',
+              title: 'pitaj.io Asistent',
+              welcomeHeadline: 'Pozdrav! Kako vam možemo pomoći?',
+              welcomeMessage: 'Isprobajte stvarni pitaj.io chat widget! Možete postaviti pitanje o cijenama, integraciji sa web trgovinama ili zatražiti demo prezentaciju.',
+              placeholder: 'Napišite pitanje...',
+              suggestedQuestions: [
+                'Koje su cijene i paketi?',
+                'Kako integrirati widget na web sajt?',
+                'Podržava li WooCommerce i Shopify?'
+              ]
+            }
+          });
+        }
+      };
+      document.body.appendChild(script);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPitajWidget);
+    } else {
+      initPitajWidget();
+    }
+  })();
+</script>

@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const insights = [
+  {
+    q: '“Što kupci najčešće pitaju prije nego što odustanu od kupovine?”',
+    answer: 'U 38% slučajeva kupci pitaju za točan rok dostave u manje gradove i mogućnost plaćanja pouzećem.',
+    action: 'Dodan odgovor o plaćanju pouzećem u bazu znanja',
+    impact: '+18% dovršenih kupovina'
+  },
+  {
+    q: '“Na koja pitanja agent ovog tjedna nije znao točan odgovor?”',
+    answer: 'Pojavilo se 14 upita o popustu za studente i radnom vremenu poslovnice tijekom nadolazećeg praznika.',
+    action: 'Generiran prijedlog dopune baze u 1 kliku',
+    impact: '100% pokrivenost prazničnih upita'
+  },
+  {
+    q: '“Koji proizvodi iz WooCommerce kataloga imaju najviše upita o zalihama?”',
+    answer: 'Model "AirGlide Pro" u veličini 42 tražen je 47 puta u zadnjih 7 dana dok je bio označen kao rasprodan.',
+    action: 'Obavijest poslana voditelju nabave',
+    impact: 'Popunjavanje zaliha na vrijeme'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Što točno Backstage čita i analizira?',
+    a: 'Backstage analizira sve transkripte razgovora s weba, WhatsAppa i Instagrama, uključujući pitanja kupaca, odgovore agenta, preglede proizvoda i reakcije posjetitelja.'
+  },
+  {
+    q: 'Moram li sam postavljati analitičke ploče ili pisati upite?',
+    a: 'Ne. Nema složenih filtera niti SQL baza. Pitanja postavljate na običnom jeziku, kao da razgovarate sa svojim voditeljem korisničkog iskustva ili prodaje.'
+  },
+  {
+    q: 'Mijenja li Backstage postavke agenta automatski bez mog znanja?',
+    a: 'Nikada. Backstage otkriva obrasce i priprema točan prijedlog dopune (novi tekst ili proceduru), ali promjena se ne objavljuje dok je vi ručno ne pregledate i ne odobrite.'
+  },
+  {
+    q: 'Kako se provjerava da predložena izmjena ne pokvari postojeće odgovore?',
+    a: 'Prije nego što vam predloži izmjenu, Backstage automatski pokreće simulacijske testove nad prethodnim uspješnim razgovorima kako bi osigurao da nova pravila ne narušavaju točnost agenta.'
+  }
+];
+---
+
+<Layout
+  title="Backstage analitika i učenje | pitaj.io"
+  description="Onstage služi vašim kupcima, Backstage radi za vas: postavite pitanje vlastitim razgovorima u običnom jeziku i saznajte što kupci žele."
+  currentPath="/mogucnosti/analitika"
+>
+  <!-- Hero Section -->
+  <section class="w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-24">
+      <div class="max-w-[820px] mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">
+          Dubinska analitika razgovora
+        </div>
+        <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.08] tracking-[-0.035em] text-[#09090b] sm:text-[3.25rem] lg:text-[3.75rem]">
+          Na sceni služi vašim kupcima, <span class="font-proza font-bold italic">Backstage</span> radi za vas
+        </h1>
+        <p class="mt-6 text-[17px] leading-relaxed text-[#52525b] sm:text-[19px]">
+          Isti agent, okrenut prema vašem menadžmentu. Postavite pitanje vlastitoj arhivi razgovora na običnom jeziku i saznajte gdje kupci nailaze na prepreke i kako u par klikova poboljšati bazu znanja.
+        </p>
+
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="/cijene"
+            class="inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#09090b] px-7 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+          >
+            Isprobajte Backstage
+          </a>
+          <a
+            href="/za-firme"
+            class="inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#e4e4e7] bg-white px-7 text-[15px] font-medium text-[#09090b] shadow-xs transition-all hover:bg-[#fafafa]"
+          >
+            Zakažite prezentaciju
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Backstage Interface Simulation -->
+      <div class="mt-16 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-12 shadow-sm">
+        <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-md space-y-6">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-4">
+            <div class="flex items-center gap-2.5">
+              <span class="flex h-3 w-3 rounded-full bg-purple-600 animate-pulse"></span>
+              <span class="text-[14px] font-semibold text-[#09090b]">Backstage analitičar • Pretraživanje baze razgovora</span>
+            </div>
+            <span class="rounded bg-purple-50 px-2.5 py-1 text-[11px] font-bold text-purple-700">Analizirano 2.840 razgovora</span>
+          </div>
+
+          <!-- Prompt Question from Owner -->
+          <div class="rounded-xl bg-[#fafafa] p-4 border border-[#e4e4e7]">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a] mb-1">Vaše pitanje u običnom jeziku</div>
+            <p class="text-[15px] font-medium text-[#09090b]">
+              "Koja su tri glavna razloga zašto posjetitelji odustaju od kupovine ovog tjedna i što možemo popraviti?"
+            </p>
+          </div>
+
+          <!-- Backstage AI Answer with Proposed Fixes -->
+          <div class="rounded-xl border border-purple-200 bg-purple-50/40 p-5 space-y-4">
+            <div class="flex items-center gap-2 text-[12px] font-bold text-purple-900">
+              <span class="h-2 w-2 rounded-full bg-purple-600"></span>
+              Sinteza podataka iz svih razgovora:
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+              <div class="rounded-lg bg-white p-3.5 border border-purple-100 shadow-2xs">
+                <div class="text-[11px] font-semibold text-rose-600">Problem 01 • 42 kupca</div>
+                <div class="mt-1 text-[13px] font-medium text-[#09090b]">Cijena dostave na otoke</div>
+                <p class="mt-1 text-[12px] text-[#52525b]">Kupci nisu znali da je dostava na otoke također besplatna iznad 100 KM.</p>
+              </div>
+              <div class="rounded-lg bg-white p-3.5 border border-purple-100 shadow-2xs">
+                <div class="text-[11px] font-semibold text-amber-600">Problem 02 • 28 kupaca</div>
+                <div class="mt-1 text-[13px] font-medium text-[#09090b]">Plaćanje na rate karticama</div>
+                <p class="mt-1 text-[12px] text-[#52525b]">Agent nije imao u bazi popis podržanih banaka za obročno plaćanje.</p>
+              </div>
+              <div class="rounded-lg bg-white p-3.5 border border-purple-100 shadow-2xs">
+                <div class="text-[11px] font-semibold text-blue-600">Problem 03 • 19 kupaca</div>
+                <div class="mt-1 text-[13px] font-medium text-[#09090b]">Zalihe veličine 42</div>
+                <p class="mt-1 text-[12px] text-[#52525b]">Popularni model je rasprodan; kupci su tražili obavijest kada stignu novi parovi.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-purple-200/60">
+              <span class="text-[12px] text-purple-900 font-medium">Predložene 2 dopune baze znanja su spremne za pregled.</span>
+              <button type="button" class="rounded-lg bg-[#09090b] px-4 py-2 text-[12px] font-medium text-white hover:bg-[#27272a] shadow-xs">
+                Pregledaj i odobri izmjene
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Examples of Backstage Insights -->
+  <section class="reveal-on-scroll w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="text-center max-w-[700px] mx-auto">
+        <h2 class="text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Primjeri uvida koje Backstage otkriva automatski
+        </h2>
+        <p class="mt-3 text-[16px] text-[#52525b]">
+          Pretvorite tisuće pojedinačnih poruka u jasne poslovne odluke i veći prihod.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {insights.map((item) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-7 shadow-xs transition-all hover:border-[#d4d4d8] hover:shadow-md">
+            <div>
+              <div class="text-[13px] font-bold text-[#09090b]">{item.q}</div>
+              <p class="mt-3 text-[13px] text-[#52525b] leading-relaxed">{item.answer}</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#e4e4e7]">
+              <div class="text-[11px] font-semibold text-purple-700">{item.action}</div>
+              <div class="mt-1 text-[13px] font-bold text-emerald-700">{item.impact}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="reveal-on-scroll w-full bg-[#fafafa] border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="max-w-[700px] mx-auto">
+        <h2 class="text-center text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Česta pitanja o Backstage analitici
+        </h2>
+
+        <div class="mt-10 space-y-4">
+          {faqs.map((faq) => (
+            <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+              <h3 class="text-[16px] font-semibold text-[#09090b]">{faq.q}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Other Features Navigation -->
+  <section class="w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[20px] font-semibold text-[#09090b]">Istražite ostale mogućnosti platforme</h2>
+        <a href="/mogucnosti" class="text-[14px] font-medium text-[#09090b] hover:underline">Pregled svih alata →</a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <a href="/mogucnosti/widgeti" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Sučelja</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Interaktivni widgeti</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Prikaz kartica proizvoda, mapa za praćenje i kalendara.</p>
+        </a>
+        <a href="/mogucnosti/procedure" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Pravila</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Procedure</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Definirajte poslovna pravila i logiku običnim jezikom.</p>
+        </a>
+        <a href="/mogucnosti/helpdesk" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Timski rad</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Tiketi & Helpdesk</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Objedinjeni inbox i AI ko-pilot za vaše ljudske operatere.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

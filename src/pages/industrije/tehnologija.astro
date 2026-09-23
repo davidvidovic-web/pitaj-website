@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const pillars = [
+  {
+    title: 'Treniran na vašoj dokumentaciji i API specifikacijama',
+    badge: 'Docs & Baza znanja',
+    desc: 'Unesite link na svoju dokumentaciju, GitBook ili sitemap. Agent točno tumači postavke, tehničke korake i kodne primjere bez haluciniranja.'
+  },
+  {
+    title: 'Pomoć unutar same web aplikacije (In-App)',
+    badge: 'Korisničko iskustvo',
+    desc: 'Ugradite widget unutar aplikacije. Agent prepoznaje ID prijavljenog korisnika i pruža personaliziranu tehničku pomoć.'
+  },
+  {
+    title: 'Whitelabel partnerski program za agencije',
+    badge: 'Za agencije',
+    desc: 'Nudite AI asistente svojim klijentima pod vlastitim vizualnim identitetom, domenom i cijenama, uz centraliziranu agencijsku kontrolnu ploču.'
+  },
+  {
+    title: 'Automatska kvalifikacija B2B leadova',
+    badge: 'Rast prodaje',
+    desc: 'Agent postavlja ključna pitanja o veličini tima i budžetu, a zatim najperspektivnije potencijalne klijente spaja direktno s vašim prodajnim timom.'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Može li pitaj.io čitati tehničku dokumentaciju i Swagger API?',
+    a: 'Da. Naš crawler i procesor dokumenata optimizirani su za Markdown, PDF priručnike i OpenAPI/Swagger specifikacije.'
+  },
+  {
+    q: 'Kako funkcionira Whitelabel za digitalne agencije?',
+    a: 'Kao agencija, dobivate administratorski račun putem kojeg kreirate radne prostore za svoje klijente. Widget i administratorsko sučelje nose vaš logotip i boje, a pitaj.io brending je potpuno uklonjen.'
+  },
+  {
+    q: 'Možemo li agenta povezati s našim Slack ili Discord radnim prostorom?',
+    a: 'Da. Podržavamo slanje obavijesti i eskalaciju tiketa na vaše interne komunikacijske kanale (Slack, Teams, Discord ili webhook).'
+  },
+  {
+    q: 'Je li moguće ograničiti agenta da odgovara samo na teme vezane uz softver?',
+    a: 'Apsolutno. Kroz sustavne upute i procedure možete postaviti stroge granice koje sprječavaju odgovaranje na irelevantna ili konkurentska pitanja.'
+  }
+];
+---
+
+<Layout
+  title="AI agenti za Tehnologiju, SaaS i Agencije | pitaj.io"
+  description="Postavite verificiranog AI agenta u svoju web aplikaciju, dokumentaciju i komunikacijske kanale. Tehnička podrška, onboarding i whitelabel za agencije."
+  currentPath="/industrije/tehnologija"
+>
+  <!-- Hero Section with Background Industry Video -->
+  <section class="relative w-full bg-slate-950 text-white overflow-hidden border-b border-[#27272a]">
+    <video
+      src="/chatbase-assets/industry-technology.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      preload="auto"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35"
+      style="transform: scale(1.05);"
+    ></video>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+
+    <div class="relative z-10 mx-auto max-w-[1240px] px-6 py-20 lg:border-x border-[#27272a] lg:px-16 lg:py-28">
+      <div class="max-w-[760px]">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+          Tehnologija, SaaS & Agencije
+        </div>
+        <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.08] tracking-[-0.035em] text-white sm:text-[3.25rem] lg:text-[3.75rem]">
+          Jedan AI agent za podršku i <span class="font-proza font-bold italic">rast prihoda</span>
+        </h1>
+        <p class="mt-6 text-[17px] leading-relaxed text-slate-300 sm:text-[19px]">
+          Korisnici žele pomoć unutar aplikacije i dokumentacije bez čekanja na tiket. Pitaj.io agenti educiraju korisnike, rješavaju tehničke upite i pružaju digitalnim agencijama gotov whitelabel proizvod za klijente.
+        </p>
+
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href="/cijene"
+            class="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-7 text-[15px] font-semibold text-[#09090b] shadow-md transition-all hover:bg-slate-100"
+          >
+            Započnite besplatno
+          </a>
+          <a
+            href="/za-firme"
+            class="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/20 bg-black/40 px-7 text-[15px] font-medium text-white backdrop-blur-md hover:bg-white/10"
+          >
+            Whitelabel prezentacija
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Core Pillars -->
+  <section class="reveal-on-scroll w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="text-center max-w-[700px] mx-auto">
+        <h2 class="text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Treniran na vašem proizvodu i tehničkoj dokumentaciji
+        </h2>
+        <p class="mt-3 text-[16px] text-[#52525b]">
+          Precizni odgovori bez nagađanja, direktno iz vaših službenih izvora.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {pillars.map((p) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-7 shadow-xs transition-all hover:border-[#d4d4d8] hover:shadow-md">
+            <div>
+              <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#09090b]">
+                {p.badge}
+              </span>
+              <h3 class="mt-4 text-[19px] font-semibold text-[#09090b]">{p.title}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="reveal-on-scroll w-full bg-[#fafafa] border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="max-w-[700px] mx-auto">
+        <h2 class="text-center text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Česta pitanja za tehnološke kompanije i agencije
+        </h2>
+
+        <div class="mt-10 space-y-4">
+          {faqs.map((faq) => (
+            <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+              <h3 class="text-[16px] font-semibold text-[#09090b]">{faq.q}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

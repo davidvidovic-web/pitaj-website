@@ -1,0 +1,186 @@
+---
+---
+
+<section class="reveal-on-scroll w-full bg-white overflow-visible">
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <div class="flex flex-col gap-12 lg:flex-row-reverse lg:items-center lg:gap-16">
+      <!-- Right Side: Channel Switcher -->
+      <div class="flex flex-1 flex-col justify-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b] mb-4 w-max">
+          Omnichannel pokrivenost
+        </div>
+        <h2 class="text-balance text-[1.85rem] font-medium leading-[1.18] tracking-[-0.025em] text-[#09090b] sm:text-[2.25rem] lg:text-[2.5rem]">
+          Povežite jednom, <span class="font-proza font-bold italic">odgovarajte</span> svuda
+        </h2>
+        <p class="mt-4 text-[16px] text-[#52525b]">
+          Jedan pametni mozak koji upravlja svim komunikacijskim kanalima vašeg poslovanja.
+        </p>
+
+        <!-- Channel Selector Buttons -->
+        <div class="mt-8 flex flex-col gap-4" id="channel-selector">
+          <!-- Channel 1: Web Widget -->
+          <button
+            type="button"
+            class="channel-btn group flex flex-col text-left rounded-xl border border-[#09090b] bg-[#fafafa] p-5 transition-all cursor-pointer shadow-xs"
+            data-channel="chat"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[17px] font-semibold text-[#09090b]">Web Chat Widget</span>
+              <span class="rounded bg-black px-2.5 py-0.5 text-[11px] font-medium text-white shadow-2xs">Preporučeno</span>
+            </div>
+            <p class="mt-2 text-[14px] text-[#52525b]">
+              Postavite moderan, prilagodljiv widget na svoj web sajt u samo 2 minute. Podržava glasovni unos i prilagodbu boja.
+            </p>
+          </button>
+
+          <!-- Channel 2: WhatsApp -->
+          <button
+            type="button"
+            class="channel-btn group flex flex-col text-left rounded-xl border border-[#e4e4e7] bg-white p-5 transition-all cursor-pointer hover:border-[#d4d4d8]"
+            data-channel="whatsapp"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[17px] font-semibold text-[#09090b]">WhatsApp Business</span>
+              <span class="rounded bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 border border-emerald-200">Najpopularnije</span>
+            </div>
+            <p class="mt-2 text-[14px] text-[#52525b]">
+              Kupci u regiji najviše vole komunicirati preko WhatsAppa. Budite im dostupni 24 sata dnevno s trenutnim odgovorima.
+            </p>
+          </button>
+
+          <!-- Channel 3: Instagram & Messenger -->
+          <button
+            type="button"
+            class="channel-btn group flex flex-col text-left rounded-xl border border-[#e4e4e7] bg-white p-5 transition-all cursor-pointer hover:border-[#d4d4d8]"
+            data-channel="meta"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[17px] font-semibold text-[#09090b]">Instagram DM & Messenger</span>
+              <span class="rounded bg-[#f4f4f5] px-2.5 py-0.5 text-[11px] font-medium text-[#71717a]">Društvene mreže</span>
+            </div>
+            <p class="mt-2 text-[14px] text-[#52525b]">
+              Zaboravite na gomilanje nepročitanih poruka u Instagram sandučetu. Agent automatski odgovara na cijene i detalje.
+            </p>
+          </button>
+        </div>
+
+        <div class="mt-8">
+          <a
+            href="/cijene"
+            class="inline-flex h-12 items-center justify-center rounded-lg bg-[#09090b] px-6 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+          >
+            Kreiraj svog agenta
+          </a>
+        </div>
+      </div>
+
+      <!-- Left Side: Interactive Channel Preview Device with Texture and Pattern -->
+      <div class="relative flex flex-1 items-center justify-center rounded-2xl border border-[#e4e4e7] bg-gradient-to-b from-[#2c41b3] to-[#1e293b] p-8 lg:p-12 overflow-hidden shadow-xl min-h-[480px]">
+        <!-- Pattern and Grain Background -->
+        <img
+          src="/chatbase-assets/pattern.svg"
+          alt=""
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10"
+        />
+        <img
+          src="/chatbase-assets/grain.2yo71lp6k8fnp.webp"
+          alt=""
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-color-dodge"
+        />
+
+        <!-- Web Chat View -->
+        <div id="channel-view-chat" class="channel-view relative w-full max-w-[380px] rounded-2xl border border-white/20 bg-white/95 p-5 shadow-2xl backdrop-blur-md animate-fade-rise">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3">
+            <div class="flex items-center gap-2.5">
+              <div class="h-8 w-8 rounded-full bg-[#09090b] flex items-center justify-center text-white text-[12px] font-bold">P</div>
+              <div>
+                <div class="text-[13px] font-semibold text-[#09090b]">Pitaj.io Web Widget</div>
+                <div class="text-[11px] text-emerald-600 font-medium">Dostupan 24/7</div>
+              </div>
+            </div>
+            <span class="text-[11px] text-[#a1a1aa]">Widget v1.2</span>
+          </div>
+
+          <div class="mt-4 flex flex-col gap-3">
+            <div class="self-end rounded-2xl rounded-tr-xs bg-[#09090b] px-3.5 py-2 text-[13px] text-white">
+              Koje je radno vrijeme vaše poliklinike u Banja Luci?
+            </div>
+            <div class="self-start rounded-2xl rounded-tl-xs bg-[#f4f4f5] px-3.5 py-2 text-[13px] text-[#09090b]">
+              Radimo radnim danima od 08:00 do 20:00h, a subotom od 09:00 do 14:00h. Želite li zakazati termin za pregled?
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between gap-2 rounded-xl border border-[#e4e4e7] bg-white px-3 py-2 text-[12px] text-[#71717a]">
+            <span>Upišite poruku...</span>
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
+        </div>
+
+        <!-- WhatsApp View -->
+        <div id="channel-view-whatsapp" class="channel-view hidden relative w-full max-w-[380px] rounded-2xl border border-white/20 bg-[#e5ddd5] p-5 shadow-2xl animate-fade-rise">
+          <div class="flex items-center justify-between border-b border-black/10 pb-3 bg-[#075e54] -m-5 p-4 rounded-t-2xl text-white">
+            <div class="flex items-center gap-2.5">
+              <div class="h-8 w-8 rounded-full bg-white text-[#075e54] flex items-center justify-center font-bold text-[13px]">W</div>
+              <div>
+                <div class="text-[13px] font-semibold">Web Trgovina Podrška</div>
+                <div class="text-[11px] text-emerald-200">WhatsApp Business</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3">
+            <div class="self-end rounded-lg bg-[#dcf8c6] px-3.5 py-2 text-[13px] text-[#09090b] shadow-2xs">
+              Pozdrav, imate li crnu jaknu u veličini XL?
+            </div>
+            <div class="self-start rounded-lg bg-white px-3.5 py-2 text-[13px] text-[#09090b] shadow-2xs">
+              Pozdrav! Imamo još 3 komada na stanju u veličini XL. Cijena je 129 KM uz besplatnu dostavu. Želite li link za narudžbu?
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta Instagram / Messenger View -->
+        <div id="channel-view-meta" class="channel-view hidden relative w-full max-w-[380px] rounded-2xl border border-white/20 bg-white/95 p-5 shadow-2xl backdrop-blur-md animate-fade-rise">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3 text-[12px]">
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-[#09090b]">Instagram Direct Message</span>
+              <span class="rounded bg-pink-50 px-1.5 py-0.5 text-[10px] font-medium text-pink-700">Automatski odgovor</span>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-col gap-3">
+            <div class="self-end rounded-2xl rounded-tr-xs bg-gradient-to-r from-purple-600 to-pink-600 px-3.5 py-2 text-[13px] text-white">
+              Koja je cijena tretmana lica?
+            </div>
+            <div class="self-start rounded-2xl rounded-tl-xs bg-[#f4f4f5] px-3.5 py-2 text-[13px] text-[#09090b]">
+              Cijena klasičnog tretmana čišćenja lica je 60 KM, a tretman traje 60 minuta. Slobodni termini su dostupni već od sutra!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const channelBtns = document.querySelectorAll<HTMLElement>('.channel-btn');
+  const channelViews = document.querySelectorAll<HTMLElement>('.channel-view');
+
+  channelBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const channel = btn.getAttribute('data-channel');
+
+      channelBtns.forEach((b) => {
+        b.classList.remove('border-[#09090b]', 'bg-[#fafafa]');
+        b.classList.add('border-[#e4e4e7]', 'bg-white');
+      });
+
+      btn.classList.add('border-[#09090b]', 'bg-[#fafafa]');
+      btn.classList.remove('border-[#e4e4e7]', 'bg-white');
+
+      channelViews.forEach((v) => v.classList.add('hidden'));
+      const activeView = document.getElementById(`channel-view-${channel}`);
+      if (activeView) activeView.classList.remove('hidden');
+    });
+  });
+</script>

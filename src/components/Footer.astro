@@ -1,0 +1,313 @@
+---
+interface Props {
+  showLattice?: boolean;
+}
+
+const { showLattice = true } = Astro.props;
+
+const promptQuery = encodeURIComponent("Šta je Pitaj.io i kako pomaže kompanijama u automatizaciji korisničke podrške?");
+---
+
+<!-- Diamond lattice divider row (sits above the blue footer, inside the 1240px column, on white background) -->
+{showLattice && (
+  <div class="w-full bg-white">
+    <div class="mx-auto max-w-[1240px] lg:border-x border-[#e4e4e7]">
+      <div class="border-t border-[#e4e4e7]">
+        <svg aria-hidden="true" width="100%" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-full text-[#e4e4e7]">
+          <title>Diamond row divider</title>
+          <defs>
+            <pattern id="diamond-row-divider" width="23.3725" height="24" patternUnits="userSpaceOnUse">
+              <path d="M11.6863 1.0208 L22.6655 12 L11.6863 22.9792 L0.7071 12 Z" stroke="currentColor"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="24" fill="url(#diamond-row-divider)"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+)}
+
+<!-- Main Footer Container with Full-Width Blue Background and Cut-in White Card -->
+<footer class="relative isolate w-full">
+  <div class="relative isolate w-full">
+    <!-- Blue textured background spanning the ENTIRE footer section -->
+    <div aria-hidden="true" class="-z-10 pointer-events-none absolute inset-0 bg-[#162ea8]">
+      <img
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover mix-blend-color-dodge opacity-50 select-none pointer-events-none"
+        src="/chatbase-assets/grain.2yo71lp6k8fnp.webp"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- White Content Box (cuts into the blue background) -->
+    <div class="relative z-10 mx-auto max-w-[1240px] bg-white border-x border-b border-[#e4e4e7]">
+      
+      <!-- Top Links & AI Summary Area -->
+      <div class="px-6 pt-16 pb-12 sm:px-12 lg:px-20 lg:pt-20">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          
+          <!-- Brand & Socials & AI Summary (Left column) -->
+          <div class="flex flex-col justify-between gap-10 lg:col-span-4">
+            <div class="flex flex-col gap-5">
+              <!-- Logo -->
+              <a href="/" class="group flex items-center gap-2.5 text-[#09090b] transition-opacity hover:opacity-90" aria-label="pitaj.io početna">
+                <svg class="h-6 w-auto" viewBox="0 0 22 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7496 9.34505L19.1201 11.9746L21.7496 14.6041V23.9493H3.22785C1.44518 23.9493 0 22.5042 0 20.7216V3.22785C0 1.44517 1.44517 0 3.22785 0H21.7496V9.34505ZM8.1196 4.9486C6.337 4.9486 4.8918 6.3938 4.8918 8.1765V16.5C4.8918 17.8807 6.0111 19.0007 7.3918 19.0007H9.412V14.4797H13.5C15.0906 14.4797 16.38 13.1903 16.38 11.6V7.8283C16.38 6.238 15.0906 4.9486 13.5 4.9486H8.1196ZM9.412 8.0H13.0C13.8284 8.0 14.5 8.6716 14.5 9.5V9.9283C14.5 10.7567 13.8284 11.4283 13.0 11.4283H9.412V8.0Z" />
+                </svg>
+                <span class="text-[19px] font-semibold tracking-tight text-[#09090b]">pitaj<span class="text-[#71717a] font-normal">.io</span></span>
+              </a>
+
+              <!-- Social Icons -->
+              <div class="flex items-center gap-3.5 text-[#71717a]">
+                <!-- X (Twitter) -->
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-[#09090b]" aria-label="X (Twitter)">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-[#09090b]" aria-label="LinkedIn">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-[#09090b]" aria-label="Instagram">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-[#09090b]" aria-label="YouTube">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Request AI Summary Row -->
+            <div class="flex flex-col gap-2 pt-2">
+              <span class="text-[12px] text-[#71717a]">Zatražite AI sažetak</span>
+              <div class="flex items-center gap-2.5 text-[#52525b]">
+                <!-- Cursor -->
+                <a 
+                  href="https://cursor.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="Istražite na Cursor-u"
+                  class="flex h-7 w-7 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa] transition-colors hover:border-[#09090b] hover:text-[#09090b]"
+                >
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.5 2h13a3.5 3.5 0 0 1 3.5 3.5v13a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 2 18.5v-13A3.5 3.5 0 0 1 5.5 2zm5.7 5.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 4.1-2.4l-2.1-1.2a2.4 2.4 0 1 1 0-2.4l2.1-1.2a4.8 4.8 0 0 0-4.1-2.4z"/>
+                  </svg>
+                </a>
+
+                <!-- Claude -->
+                <a 
+                  href={`https://claude.ai/new?q=${promptQuery}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="Pitajte Claude o Pitaj.io"
+                  class="flex h-7 w-7 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa] transition-colors hover:border-[#09090b] hover:text-[#09090b]"
+                >
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4.5 10.5C3.67 10.5 3 11.17 3 12s.67 1.5 1.5 1.5h1.76l-1.25 1.25c-.59.59-.59 1.54 0 2.12.59.59 1.54.59 2.12 0l1.25-1.25v1.76c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-1.76l1.25 1.25c.59.59 1.54.59 2.12 0 .59-.59.59-1.54 0-2.12l-1.25-1.25h1.76c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-1.76l1.25-1.25c.59-.59.59-1.54 0-2.12-.59-.59-1.54-.59-2.12 0l-1.25 1.25V6.38c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v1.76l-1.25-1.25c-.59-.59-1.54-.59-2.12 0-.59.59-.59 1.54 0 2.12l1.25 1.25H4.5z"/>
+                  </svg>
+                </a>
+
+                <!-- ChatGPT -->
+                <a 
+                  href={`https://chatgpt.com/?q=${promptQuery}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="Pitajte ChatGPT o Pitaj.io"
+                  class="flex h-7 w-7 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa] transition-colors hover:border-[#09090b] hover:text-[#09090b]"
+                >
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1683a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4945 4.4947zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4997 4.4997 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1683a.0757.0757 0 0 1-.071 0l-4.8303-2.7866A4.5045 4.5045 0 0 1 2.3408 7.8956zm16.0993 3.8558L12.5973 8.3829l2.02-1.1636a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4947 4.4947 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.4018-.6862zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.407 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4997 4.4997 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1635a.0804.0804 0 0 1-.038-.0567V6.0748a4.4997 4.4997 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.4598a.7948.7948 0 0 0-.3927.6813v6.7219zm1.1403-3.1378l2.553-1.4727 2.5531 1.4727v2.9455l-2.5531 1.4727-2.553-1.4727z"/>
+                  </svg>
+                </a>
+
+                <!-- Perplexity -->
+                <a 
+                  href={`https://www.perplexity.ai/search?q=${promptQuery}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="Istražite na Perplexity o Pitaj.io"
+                  class="flex h-7 w-7 items-center justify-center rounded-md border border-[#e4e4e7] bg-[#fafafa] transition-colors hover:border-[#09090b] hover:text-[#09090b]"
+                >
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a1 1 0 0 1 1 1v4.382l3.414-3.414a1 1 0 1 1 1.414 1.414L14.414 8.796H19a1 1 0 1 1 0 2h-4.586l3.414 3.414a1 1 0 0 1-1.414 1.414L13 12.21V19a1 1 0 1 1-2 0v-6.79l-3.414 3.414a1 1 0 0 1-1.414-1.414L9.586 10.796H5a1 1 0 0 1 0-2h4.586L6.172 5.382a1 1 0 1 1 1.414-1.414L11 7.382V3a1 1 0 0 1 1-1z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Columns (Right 8 cols) -->
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8 lg:gap-8">
+            
+            <!-- Column 1: Proizvod & Kompanija -->
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-3.5">
+                <h3 class="text-[13px] font-semibold text-[#09090b]">Proizvod</h3>
+                <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Sigurnost & Privatnost</a></li>
+                  <li><a href="/za-firme" class="transition-colors hover:text-[#09090b]">Pitaj.io Partneri</a></li>
+                  <li><a href="/za-firme" class="transition-colors hover:text-[#09090b]">Zakažite stručnjaka</a></li>
+                  <li><a href="/za-firme" class="transition-colors hover:text-[#09090b]">Partnerski program</a></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col gap-3.5">
+                <h3 class="text-[13px] font-semibold text-[#09090b]">Kompanija</h3>
+                <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Povjerenje & Uptime</a></li>
+                  <li><a href="/za-firme" class="transition-colors hover:text-[#09090b]">Za kompanije (Enterprise)</a></li>
+                  <li><a href="/kontakt" class="transition-colors hover:text-[#09090b]">Karijere</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Column 2: Mogućnosti & Pravila -->
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-3.5">
+                <h3 class="text-[13px] font-semibold text-[#09090b]">Mogućnosti</h3>
+                <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                  <li><a href="/mogucnosti" class="transition-colors hover:text-[#09090b]">Pregled platforme</a></li>
+                  <li><a href="/mogucnosti/widgeti" class="transition-colors hover:text-[#09090b]">Interaktivni widgeti</a></li>
+                  <li><a href="/mogucnosti/helpdesk" class="transition-colors hover:text-[#09090b]">Helpdesk & Tiketi</a></li>
+                  <li><a href="/mogucnosti/procedure" class="transition-colors hover:text-[#09090b]">Procedure i pravila</a></li>
+                  <li><a href="/mogucnosti/analitika" class="transition-colors hover:text-[#09090b]">Backstage analitika</a></li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col gap-3.5">
+                <h3 class="text-[13px] font-semibold text-[#09090b]">Pravila</h3>
+                <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Politika privatnosti</a></li>
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Uvjeti korištenja</a></li>
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Ugovor o obradi (DPA)</a></li>
+                  <li><a href="/sigurnost" class="transition-colors hover:text-[#09090b]">Politika kolačića</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Column 3: Usporedba -->
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-3.5">
+                <h3 class="text-[13px] font-semibold text-[#09090b]">Usporedba</h3>
+                <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                  <li><a href="/cijene#usporedba" class="transition-colors hover:text-[#09090b]">Pitaj.io vs Decagon</a></li>
+                  <li><a href="/cijene#usporedba" class="transition-colors hover:text-[#09090b]">Pitaj.io vs Chatbase</a></li>
+                  <li><a href="/cijene#usporedba" class="transition-colors hover:text-[#09090b]">Pitaj.io vs Intercom</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Column 4: Resursi -->
+            <div class="flex flex-col gap-3.5">
+              <h3 class="text-[13px] font-semibold text-[#09090b]">Resursi</h3>
+              <ul class="flex flex-col gap-2.5 text-[13px] text-[#71717a]">
+                <li><a href="/klijenti" class="transition-colors hover:text-[#09090b]">Klijenti & Primjeri</a></li>
+                <li><a href="/blog" class="transition-colors hover:text-[#09090b]">Blog & Novosti</a></li>
+                <li><a href="/cijene" class="transition-colors hover:text-[#09090b]">Cijene i paketi</a></li>
+                <li><a href="/dokumentacija" class="transition-colors hover:text-[#09090b]">Dokumentacija</a></li>
+                <li><a href="/novosti" class="transition-colors hover:text-[#09090b]">Nadogradnje</a></li>
+                <li><a href="/vodic" class="transition-colors hover:text-[#09090b]">Vodič za početak</a></li>
+                <li><a href="/kontakt" class="transition-colors hover:text-[#09090b]">Kontaktirajte nas</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & AI info row inside the white box -->
+      <div class="border-t border-[#e4e4e7] px-6 py-6 sm:px-12 lg:px-20 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div class="text-[13px] text-[#71717a]">
+          © 2026 Pitaj.io d.o.o. Sva prava zadržana.
+        </div>
+        <a 
+          href="/llm-info" 
+          class="inline-flex items-center gap-1.5 text-[13px] text-[#71717a] transition-colors hover:text-[#09090b]"
+        >
+          <svg class="h-3.5 w-3.5 text-[#2563eb]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+          </svg>
+          <span>Hey AI, saznaj više o nama</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Giant Wordmark Banner at the bottom of the blue canvas -->
+    <div class="relative overflow-hidden">
+      <!-- Desktop Banner -->
+      <div class="relative mx-auto hidden max-w-[1240px] lg:block" style="aspect-ratio: 1240 / 250;">
+        <img
+          alt="PITAJ.IO"
+          class="pointer-events-none absolute -bottom-[5%] left-1/2 -translate-x-1/2 w-[99%] max-w-none select-none"
+          src="/chatbase-assets/pitaj-wordmark.svg"
+          loading="lazy"
+        />
+        <img
+          alt="GDPR usklađeno"
+          class="absolute drop-shadow-md transition-transform duration-300 hover:scale-105"
+          style="left: -2px; bottom: 35%; width: 112px; height: 112px;"
+          src="/chatbase-assets/badge-gdpr.0mwhtxr8zcwlz.webp"
+          loading="lazy"
+        />
+        <img
+          alt="AICPA SOC 2 Type II certifikat"
+          class="absolute drop-shadow-md transition-transform duration-300 hover:scale-105"
+          style="left: 139px; bottom: 30%; width: 112px; height: 112px;"
+          src="/chatbase-assets/badge-soc2.0nzdz4e2zqxf5.webp"
+          loading="lazy"
+        />
+        <img
+          alt="Sigurnost & HIPAA usklađeno"
+          class="absolute drop-shadow-md transition-transform duration-300 hover:scale-105"
+          style="right: 79px; bottom: 35%; width: 112px; height: 112px;"
+          src="/chatbase-assets/badge-hipaa.262e6npya536m.webp"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Mobile Banner -->
+      <div class="relative h-28 w-full overflow-hidden pt-4 lg:hidden">
+        <img
+          alt="PITAJ.IO"
+          class="pointer-events-none absolute -bottom-[5%] left-1/2 -translate-x-1/2 w-[110%] max-w-none select-none"
+          src="/chatbase-assets/pitaj-wordmark.svg"
+          loading="lazy"
+        />
+        <img
+          alt="GDPR"
+          class="absolute"
+          style="left: 20px; bottom: 20px; width: 56px; height: 56px;"
+          src="/chatbase-assets/badge-gdpr.0mwhtxr8zcwlz.webp"
+          loading="lazy"
+        />
+        <img
+          alt="SOC 2"
+          class="absolute"
+          style="left: 88px; bottom: 28px; width: 56px; height: 56px;"
+          src="/chatbase-assets/badge-soc2.0nzdz4e2zqxf5.webp"
+          loading="lazy"
+        />
+        <img
+          alt="HIPAA"
+          class="absolute"
+          style="right: 25px; bottom: 24px; width: 56px; height: 56px;"
+          src="/chatbase-assets/badge-hipaa.262e6npya536m.webp"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+  </div>
+</footer>

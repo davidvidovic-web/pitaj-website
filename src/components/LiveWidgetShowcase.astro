@@ -1,0 +1,246 @@
+---
+// LiveWidgetShowcase.astro - 100% authentic pitaj.io chat widget running live in Shadow DOM with demo steps
+interface Props {
+  initialTab?: 'ecommerce' | 'hotel' | 'demo' | 'chart';
+  theme?: 'dark' | 'light';
+  compact?: boolean;
+}
+
+const { initialTab = 'demo', theme = 'dark', compact = false } = Astro.props;
+const uniqueId = 'pitaj-demo-' + Math.random().toString(36).substring(2, 9);
+---
+
+<div class={`live-widget-showcase-container ${theme === 'dark' ? 'theme-dark' : 'theme-light'} ${compact ? 'is-compact' : ''}`} data-widget-root={uniqueId}>
+  <!-- Outer Window Shell -->
+  <div class="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-slate-950/90 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10 text-white">
+    
+    <!-- Top Bar: Traffic lights, live status & Demo Steps -->
+    <div class="flex flex-col gap-2.5 border-b border-white/10 bg-white/[0.03] p-3.5 sm:p-4">
+      <!-- Title & Live Badge Row -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="flex gap-1.5">
+            <span class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
+          </div>
+          <span class="h-3 w-px bg-white/20"></span>
+          <div class="flex items-center gap-2">
+            <span class="text-[13px] font-semibold tracking-wide text-slate-100">Stvarni pitaj.io Widget</span>
+            <span class="hidden text-[11px] text-slate-400 sm:inline">• Preact + Shadow DOM</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+          </span>
+          <span>Uživo & Interaktivno</span>
+        </div>
+      </div>
+
+      <!-- Demo Steps Switcher -->
+      <div class="flex items-center gap-1.5 overflow-x-auto rounded-xl bg-white/5 p-1 text-[12px] font-medium text-slate-300">
+        <button
+          type="button"
+          data-step="new"
+          class="demo-step-btn active flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-200 transition-all hover:text-white"
+        >
+          <span>✨</span>
+          <span>1. Novo ćaskanje</span>
+        </button>
+        <button
+          type="button"
+          data-step="chat"
+          class="demo-step-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-200 transition-all hover:text-white"
+        >
+          <span>💬</span>
+          <span>2. AI Razgovor</span>
+        </button>
+        <button
+          type="button"
+          data-step="history"
+          class="demo-step-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-200 transition-all hover:text-white"
+        >
+          <span>🕒</span>
+          <span>3. Historija</span>
+        </button>
+        <button
+          type="button"
+          data-step="embed"
+          class="demo-step-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-slate-200 transition-all hover:text-white"
+        >
+          <span>⚡</span>
+          <span>4. Integracija</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Prompt Pills (1-Click Test Prompts) -->
+    <div class="flex items-center gap-2 overflow-x-auto border-b border-white/10 bg-black/25 px-4 py-2.5 text-[11px]">
+      <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 shrink-0">Isprobaj:</span>
+      <button type="button" class="quick-pill rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-slate-300 transition-all hover:border-blue-400 hover:bg-blue-600/20 hover:text-white shrink-0" data-prompt="Koje su cijene i paketi?">
+        💰 Cijene i paketi
+      </button>
+      <button type="button" class="quick-pill rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-slate-300 transition-all hover:border-blue-400 hover:bg-blue-600/20 hover:text-white shrink-0" data-prompt="Podržava li platforma WooCommerce i Shopify trgovine?">
+        🛒 E-Commerce
+      </button>
+      <button type="button" class="quick-pill rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-slate-300 transition-all hover:border-blue-400 hover:bg-blue-600/20 hover:text-white shrink-0" data-prompt="Kako ugraditi widget na web sajt?">
+        ⚙️ Integracija
+      </button>
+      <button type="button" class="quick-pill rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-slate-300 transition-all hover:border-blue-400 hover:bg-blue-600/20 hover:text-white shrink-0" data-prompt="Kako resetovati lozinku na nalogu?">
+        🔑 Reset lozinke
+      </button>
+    </div>
+
+    <!-- Real Widget Viewport (Shadow DOM Host) -->
+    <div class="relative flex w-full justify-center bg-[#0b0f19] px-2 py-3 sm:px-4 sm:py-4">
+      <div 
+        id={uniqueId} 
+        class="real-widget-mount-point w-full max-w-[420px] h-[460px] sm:h-[490px] relative rounded-2xl overflow-hidden shadow-2xl"
+        data-initial-tab={initialTab}
+      >
+        <!-- Loading Placeholder while script attaches Shadow DOM -->
+        <div class="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#1e293b]/50 p-6 text-center text-slate-400">
+          <div class="h-6 w-6 animate-spin rounded-full border-2 border-blue-500 border-t-transparent"></div>
+          <span class="text-[13px] font-medium text-slate-300">Učitavanje stvarnog pitaj.io widgeta...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .demo-step-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+  }
+</style>
+
+<script is:inline define:vars={{ uniqueId, initialTab }}>
+  (function () {
+    const container = document.getElementById(uniqueId);
+    if (!container) return;
+    const rootEl = container.closest('.live-widget-showcase-container') || container.parentElement;
+
+    function getController() {
+      return container.__pitajController || window.PitajIO;
+    }
+
+    // Setup Step switcher buttons immediately
+    const stepBtns = rootEl ? rootEl.querySelectorAll('.demo-step-btn') : [];
+    function setActiveStep(stepName) {
+      stepBtns.forEach(btn => {
+        if (btn.getAttribute('data-step') === stepName) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    stepBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const step = btn.getAttribute('data-step');
+        setActiveStep(step);
+
+        const ctrl = getController();
+        if (!ctrl) return;
+
+        if (step === 'new') {
+          ctrl.setScreen('new-conversation');
+        } else if (step === 'chat') {
+          ctrl.startConversation('Koje su cijene i paketi usluga?');
+        } else if (step === 'history') {
+          ctrl.setScreen('history');
+        } else if (step === 'embed') {
+          ctrl.startConversation('Kako integrirati widget na web sajt?');
+        }
+      });
+    });
+
+    // Setup Quick Prompt Pills immediately
+    const promptPills = rootEl ? rootEl.querySelectorAll('.quick-pill') : [];
+    promptPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const text = pill.getAttribute('data-prompt');
+        const ctrl = getController();
+        if (text && ctrl) {
+          setActiveStep('chat');
+          ctrl.startConversation(text);
+        }
+      });
+    });
+
+    function loadScript(src, cb) {
+      if (window.PitajIO && typeof window.PitajIO.mount === 'function') {
+        cb();
+        return;
+      }
+      const existing = document.querySelector('script[src="' + src + '"]');
+      if (existing) {
+        const checkInterval = setInterval(() => {
+          if (window.PitajIO && typeof window.PitajIO.mount === 'function') {
+            clearInterval(checkInterval);
+            cb();
+          }
+        }, 40);
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = src;
+      script.defer = true;
+      script.onload = () => {
+        const checkInterval = setInterval(() => {
+          if (window.PitajIO && typeof window.PitajIO.mount === 'function') {
+            clearInterval(checkInterval);
+            cb();
+          }
+        }, 40);
+      };
+      document.body.appendChild(script);
+    }
+
+    loadScript('/chat-widget/widget.iife.js', async function () {
+      if (!window.PitajIO || typeof window.PitajIO.mount !== 'function') return;
+
+      const mountRes = await window.PitajIO.mount(container, {
+        isInline: true,
+        startOpen: true,
+        initialScreen: 'new-conversation',
+        initialConfig: {
+          mockMode: true,
+          name: 'Pitaj.io Asistent',
+          title: 'Pitaj.io AI Podrška',
+          welcomeHeadline: 'Pozdrav! Kako vam možemo pomoći?',
+          welcomeMessage: 'Isprobajte stvarni pitaj.io chat widget! Možete kliknuti na demo korake iznad, odabrati brza pitanja ili upisati vlastito pitanje.',
+          placeholder: 'Postavite pitanje AI asistentu...',
+          suggestedQuestions: [
+            'Koje su cijene i paketi?',
+            'Kako ugraditi widget na web sajt?',
+            'Podržava li WooCommerce i Shopify?'
+          ],
+          colors: {
+            primaryColor: '#2563eb',
+            headerBg: '#09090b'
+          }
+        }
+      });
+
+      if (mountRes?.controller) {
+        container.__pitajController = mountRes.controller;
+      }
+
+      // Initial tab behavior
+      if (initialTab === 'ecommerce') {
+        setActiveStep('chat');
+        container.__pitajController?.startConversation('Podržava li platforma WooCommerce i Shopify trgovine?');
+      } else if (initialTab === 'hotel') {
+        setActiveStep('chat');
+        container.__pitajController?.startConversation('Kako AI asistent pomaže oko rezervacija i prijava gostiju u hotelu?');
+      }
+    });
+  })();
+</script>

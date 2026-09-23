@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Proza Display';
+  src: url('/fonts/ProzaDisplay-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proza Display';
+  src: url('/fonts/ProzaDisplay-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hathama';
+  src: url('/fonts/Hathama-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Proza Display', Georgia, serif;
+  --font-display: 'Proza Display', serif;
+  
+  --color-border-subtle-v2: #e4e4e7;
+  --color-border-subtler-v2: #f4f4f5;
+  --color-border-bolder-v2: #27272a;
+  --color-border-mid-v2: #d4d4d8;
+  
+  --color-bg-surface-v2: #ffffff;
+  --color-bg-surface-raised-v2: #ffffff;
+  --color-bg-surface-sunken-v2: #fafafa;
+  --color-bg-brand-subtler-v2: #f4f4f5;
+  --color-bg-brand-hover-v2: #27272a;
+  --color-bg-inverse-v2: #09090b;
+  
+  --color-text-heading-v2: #09090b;
+  --color-text-heading-description-v2: #52525b;
+  --color-text-paragraph-1-v2: #27272a;
+  --color-text-paragraph-2-v2: #3f3f46;
+  --color-text-paragraph-3-v2: #52525b;
+  --color-text-paragraph-4-v2: #71717a;
+  --color-text-paragraph-5-v2: #a1a1aa;
+  --color-text-inverse-v2: #ffffff;
+  
+  --color-pink-lighter-v2: #b0067e;
+  --color-blue-lighter-v2: #2563eb;
+}
+
+:root {
+  --fontFamilyProza: 'Proza Display', Georgia, serif;
+  --bgSurface: #ffffff;
+  --bgSurfaceRaised: #ffffff;
+  --bgSurfaceSunken: #fafafa;
+  --borderSubtle: #e4e4e7;
+  --borderSubtler: #f4f4f5;
+  --borderMid: #d4d4d8;
+  --borderBolder: #27272a;
+  --textHeading: #09090b;
+  --textParagraph1: #27272a;
+  --textParagraph2: #3f3f46;
+  --textParagraph3: #52525b;
+  --textParagraph4: #71717a;
+  --textParagraph5: #a1a1aa;
+  --textInverse: #ffffff;
+}
+
+html {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #09090b;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-proza {
+  font-family: 'Proza Display', Georgia, serif;
+  font-style: italic;
+}
+
+/* Chatbase Typography utilities */
+.text-desktop-h1-medium {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.text-mobile-h1-medium {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.text-desktop-h1-italic {
+  font-family: 'Proza Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.text-mobile-h1-italic {
+  font-family: 'Proza Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.text-desktop-h2-medium {
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.text-desktop-h3-medium {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.text-mobile-h2-medium {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.text-desktop-h5-medium {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.text-desktop-h7-medium {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.text-desktop-body-l-medium {
+  font-size: 1.0625rem;
+  font-weight: 450;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-desktop-body-m-medium {
+  font-size: 0.9375rem;
+  font-weight: 450;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.text-desktop-body-s-medium {
+  font-size: 0.8125rem;
+  font-weight: 450;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes chipRiseIn {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes viewFadeRiseIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textShimmer {
+  0% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.animate-chip-rise {
+  animation: chipRiseIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-rise {
+  animation: viewFadeRiseIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll-Driven Animations & Reveal */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes revealRise {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal-on-scroll {
+      animation: revealRise auto cubic-bezier(0.16, 1, 0.3, 1) backwards;
+      animation-timeline: view();
+      animation-range: entry 5% entry 35%;
+    }
+  }
+}
+
+/* Fallback for browsers without CSS scroll-timeline */
+@supports not ((animation-timeline: view()) and (animation-range: entry)) {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}

@@ -1,0 +1,318 @@
+---
+---
+
+<section class="reveal-on-scroll w-full bg-white overflow-visible">
+  <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x lg:border-b border-[#e4e4e7] lg:px-16 lg:py-20">
+    <div class="flex flex-col gap-12 lg:flex-row lg:items-stretch lg:gap-16">
+      <!-- Left Column: Step Navigation with Animated Stepper -->
+      <div class="flex flex-1 flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b] mb-4">
+            Jednostavno postavljanje
+          </div>
+          <h2 class="text-balance text-[1.85rem] font-medium leading-[1.18] tracking-[-0.025em] text-[#09090b] sm:text-[2.25rem] lg:text-[2.5rem]">
+            Životni ciklus vašeg agenta
+          </h2>
+          <p class="mt-4 text-[16px] text-[#52525b]">
+            Od povezivanja vaših podataka do samostalnog rada u četiri jednostavna koraka bez programiranja.
+          </p>
+
+          <!-- Step Stepper with Vertical Progress Line -->
+          <div class="relative mt-10 flex flex-col border-l border-[#e4e4e7]" id="lifecycle-stepper">
+            <!-- Step 1 -->
+            <button
+              type="button"
+              class="lifecycle-step-btn group relative text-left cursor-pointer transition-all py-3.5 pl-6"
+              data-step="1"
+            >
+              <span class="step-indicator-bar absolute top-0 bottom-0 left-[-2px] w-1 bg-[#b0067e] rounded-full transition-transform duration-500 scale-y-100 origin-top"></span>
+              <div class="flex items-center gap-3">
+                <span class="step-num text-[18px] font-semibold text-[#b0067e] transition-colors">01</span>
+                <span class="step-title text-[18px] font-semibold text-[#09090b] transition-colors">Poveži izvore</span>
+              </div>
+              <div class="step-accordion grid transition-all duration-300" style="grid-template-rows: 1fr;">
+                <div class="overflow-hidden">
+                  <p class="step-desc pt-2 text-[14px] leading-relaxed text-[#52525b]">
+                    Unesite link svoje web stranice, sitemap ili učitajte PDF cjenike, Word dokumente i kataloge. Agent u 2 minute nauči sve o vašoj ponudi.
+                  </p>
+                </div>
+              </div>
+            </button>
+
+            <!-- Step 2 -->
+            <button
+              type="button"
+              class="lifecycle-step-btn group relative text-left cursor-pointer transition-all py-3.5 pl-6 opacity-60 hover:opacity-100"
+              data-step="2"
+            >
+              <span class="step-indicator-bar absolute top-0 bottom-0 left-[-2px] w-1 bg-[#b0067e] rounded-full transition-transform duration-500 scale-y-0 origin-top"></span>
+              <div class="flex items-center gap-3">
+                <span class="step-num text-[18px] font-semibold text-[#71717a] transition-colors">02</span>
+                <span class="step-title text-[18px] font-semibold text-[#71717a] transition-colors">Postavi pravila i ton</span>
+              </div>
+              <div class="step-accordion grid transition-all duration-300" style="grid-template-rows: 0fr;">
+                <div class="overflow-hidden">
+                  <p class="step-desc pt-2 text-[14px] leading-relaxed text-[#52525b]">
+                    Odredite stil komunikacije (ljubazan, stručan), postavite granice (šta smije, a šta ne smije obećati) i testirajte odgovore prije puštanja.
+                  </p>
+                </div>
+              </div>
+            </button>
+
+            <!-- Step 3 -->
+            <button
+              type="button"
+              class="lifecycle-step-btn group relative text-left cursor-pointer transition-all py-3.5 pl-6 opacity-60 hover:opacity-100"
+              data-step="3"
+            >
+              <span class="step-indicator-bar absolute top-0 bottom-0 left-[-2px] w-1 bg-[#b0067e] rounded-full transition-transform duration-500 scale-y-0 origin-top"></span>
+              <div class="flex items-center gap-3">
+                <span class="step-num text-[18px] font-semibold text-[#71717a] transition-colors">03</span>
+                <span class="step-title text-[18px] font-semibold text-[#71717a] transition-colors">Aktiviraj na kanalima</span>
+              </div>
+              <div class="step-accordion grid transition-all duration-300" style="grid-template-rows: 0fr;">
+                <div class="overflow-hidden">
+                  <p class="step-desc pt-2 text-[14px] leading-relaxed text-[#52525b]">
+                    Jednim klikom dodajte widget na web stranicu, WordPress ili Shopify. Povežite WhatsApp Business, Instagram DM i Facebook stranicu.
+                  </p>
+                </div>
+              </div>
+            </button>
+
+            <!-- Step 4 -->
+            <button
+              type="button"
+              class="lifecycle-step-btn group relative text-left cursor-pointer transition-all py-3.5 pl-6 opacity-60 hover:opacity-100"
+              data-step="4"
+            >
+              <span class="step-indicator-bar absolute top-0 bottom-0 left-[-2px] w-1 bg-[#b0067e] rounded-full transition-transform duration-500 scale-y-0 origin-top"></span>
+              <div class="flex items-center gap-3">
+                <span class="step-num text-[18px] font-semibold text-[#71717a] transition-colors">04</span>
+                <span class="step-title text-[18px] font-semibold text-[#71717a] transition-colors">Analiziraj i uči</span>
+              </div>
+              <div class="step-accordion grid transition-all duration-300" style="grid-template-rows: 0fr;">
+                <div class="overflow-hidden">
+                  <p class="step-desc pt-2 text-[14px] leading-relaxed text-[#52525b]">
+                    Pratite stopu riješenih upita, prepoznajte pitanja na koja agent nije znao odgovor i dopunite bazu jednim klikom.
+                  </p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center gap-4">
+          <a
+            href="/cijene"
+            class="inline-flex h-11 items-center justify-center rounded-lg bg-[#09090b] px-6 text-[14px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+          >
+            Kreiraj svog agenta
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Step Preview Container with Grain and Pattern -->
+      <div class="relative flex-1 lg:max-w-[560px] overflow-hidden rounded-2xl border border-[#e4e4e7] bg-[#b0067e]/5 p-6 lg:p-8 flex items-center justify-center">
+        <!-- Background Pattern and Grain overlay from Chatbase -->
+        <img
+          src="/chatbase-assets/pattern.svg"
+          alt=""
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10"
+        />
+        <img
+          src="/chatbase-assets/grain.2yo71lp6k8fnp.webp"
+          alt=""
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-color-dodge"
+        />
+
+        <!-- Step 1 Card: Build -->
+        <div id="step-content-1" class="step-view relative z-10 w-full animate-fade-rise flex flex-col gap-4 rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xl">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3">
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-[13px] font-semibold text-[#09090b]">Konfiguracija baze znanja</span>
+            </div>
+            <span class="rounded bg-[#fafafa] px-2 py-0.5 text-[11px] font-mono text-emerald-700 border border-emerald-200">Live Sync</span>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-center justify-between rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 text-[13px]">
+              <div class="flex items-center gap-2.5">
+                <span class="font-bold text-purple-600">WP</span>
+                <span class="font-medium text-[#09090b]">WooCommerce Proizvodi (1.420)</span>
+              </div>
+              <span class="text-[11px] text-emerald-600 font-semibold">Sinkronizirano</span>
+            </div>
+            <div class="flex items-center justify-between rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 text-[13px]">
+              <div class="flex items-center gap-2.5">
+                <span class="font-bold text-red-500">PDF</span>
+                <span class="font-medium text-[#09090b]">Cjenik_i_Uvjeti_Dostave_2026.pdf</span>
+              </div>
+              <span class="text-[11px] text-emerald-600 font-semibold">Indeksirano</span>
+            </div>
+            <div class="flex items-center justify-between rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 text-[13px]">
+              <div class="flex items-center gap-2.5">
+                <span class="font-bold text-blue-500">WEB</span>
+                <span class="font-medium text-[#09090b]">https://vas-web-shop.ba/sitemap</span>
+              </div>
+              <span class="text-[11px] text-emerald-600 font-semibold">32 stranice</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 Card: Test -->
+        <div id="step-content-2" class="step-view relative z-10 w-full hidden animate-fade-rise flex flex-col gap-4 rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xl">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3">
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+              <span class="text-[13px] font-semibold text-[#09090b]">Simulator testiranja agenta</span>
+            </div>
+            <span class="text-[11px] text-[#71717a]">Sandbox mod</span>
+          </div>
+
+          <div class="space-y-3">
+            <div class="self-end rounded-xl rounded-tr-xs bg-[#f4f4f5] p-3 text-[13px] text-[#09090b]">
+              Kupac: Imate li patike model HyperSpeed u veličini 43?
+            </div>
+            <div class="rounded-xl rounded-tl-xs border border-blue-200 bg-blue-50/50 p-3 text-[13px] text-blue-950">
+              Agent: Da, imamo još 3 para na skladištu! Cijena je 129 KM, a dostava je besplatna. Želite li da vam pošaljem link za narudžbu?
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 Card: Deploy -->
+        <div id="step-content-3" class="step-view relative z-10 w-full hidden animate-fade-rise flex flex-col gap-4 rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xl">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3">
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-[13px] font-semibold text-[#09090b]">Aktivni komunikacijski kanali</span>
+            </div>
+            <span class="text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold">3 Kanala uživo</span>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span class="text-[13px] font-medium text-[#09090b]">Web Chat Widget</span>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-600">Aktivno na domeni</span>
+            </div>
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span class="text-[13px] font-medium text-[#09090b]">WhatsApp Business API</span>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-600">Povezan broj</span>
+            </div>
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span class="text-[13px] font-medium text-[#09090b]">Instagram DM</span>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-600">Automatski odgovori</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 Card: Optimize -->
+        <div id="step-content-4" class="step-view relative z-10 w-full hidden animate-fade-rise flex flex-col gap-4 rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xl">
+          <div class="flex items-center justify-between border-b border-[#e4e4e7] pb-3">
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-purple-500"></span>
+              <span class="text-[13px] font-semibold text-[#09090b]">Učinkovitost i analitika</span>
+            </div>
+            <span class="text-[11px] text-[#71717a]">Osvježeno prije 2m</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-4 text-center">
+              <div class="text-[11px] text-[#71717a] uppercase font-semibold">Stopa rješavanja</div>
+              <div class="mt-1 text-[28px] font-bold text-[#09090b]">88.5%</div>
+              <div class="mt-1 text-[11px] text-emerald-600 font-medium">↑ Bez pomoći operatera</div>
+            </div>
+            <div class="rounded-lg border border-[#e4e4e7] bg-[#fafafa] p-4 text-center">
+              <div class="text-[11px] text-[#71717a] uppercase font-semibold">Odziv odgovora</div>
+              <div class="mt-1 text-[28px] font-bold text-[#09090b]">0.9s</div>
+              <div class="mt-1 text-[11px] text-emerald-600 font-medium">Trenutno</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const stepButtons = document.querySelectorAll<HTMLElement>('.lifecycle-step-btn');
+  const stepViews = document.querySelectorAll<HTMLElement>('.step-view');
+  let currentStep = 1;
+  let cycleTimer: NodeJS.Timeout | null = null;
+
+  function setStep(stepNum: number) {
+    currentStep = stepNum;
+
+    stepButtons.forEach((btn) => {
+      const step = parseInt(btn.getAttribute('data-step') || '1', 10);
+      const bar = btn.querySelector<HTMLElement>('.step-indicator-bar');
+      const num = btn.querySelector<HTMLElement>('.step-num');
+      const title = btn.querySelector<HTMLElement>('.step-title');
+      const accordion = btn.querySelector<HTMLElement>('.step-accordion');
+
+      if (step === stepNum) {
+        btn.classList.remove('opacity-60');
+        if (bar) bar.style.transform = 'scaleY(1)';
+        if (num) {
+          num.classList.add('text-[#b0067e]');
+          num.classList.remove('text-[#71717a]');
+        }
+        if (title) {
+          title.classList.add('text-[#09090b]');
+          title.classList.remove('text-[#71717a]');
+        }
+        if (accordion) accordion.style.gridTemplateRows = '1fr';
+      } else {
+        btn.classList.add('opacity-60');
+        if (bar) bar.style.transform = 'scaleY(0)';
+        if (num) {
+          num.classList.remove('text-[#b0067e]');
+          num.classList.add('text-[#71717a]');
+        }
+        if (title) {
+          title.classList.remove('text-[#09090b]');
+          title.classList.add('text-[#71717a]');
+        }
+        if (accordion) accordion.style.gridTemplateRows = '0fr';
+      }
+    });
+
+    stepViews.forEach((view) => {
+      view.classList.add('hidden');
+    });
+
+    const activeView = document.getElementById(`step-content-${stepNum}`);
+    if (activeView) {
+      activeView.classList.remove('hidden');
+    }
+  }
+
+  function startAutoCycle() {
+    cycleTimer = setInterval(() => {
+      const next = currentStep === 4 ? 1 : currentStep + 1;
+      setStep(next);
+    }, 6000);
+  }
+
+  stepButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (cycleTimer) clearInterval(cycleTimer);
+      const step = parseInt(btn.getAttribute('data-step') || '1', 10);
+      setStep(step);
+      startAutoCycle();
+    });
+  });
+
+  startAutoCycle();
+</script>

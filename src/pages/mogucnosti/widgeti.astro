@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import LiveWidgetShowcase from '../../components/LiveWidgetShowcase.astro';
+
+const widgetTypes = [
+  {
+    title: 'Praćenje pošiljke u stvarnom vremenu',
+    badge: 'E-Commerce & Kuriri',
+    desc: 'Prikazuje točan status paketa, tranzitne centre i procijenjeno vrijeme dolaska na mapi, izravno iz sustava brze pošte.',
+    image: '/chatbase-assets/tracker-map.webp',
+    status: 'U dostavi • Express',
+    action: 'Prati na mapi'
+  },
+  {
+    title: 'Kartica proizvoda s brzom kupnjom',
+    badge: 'WooCommerce & Shopify',
+    desc: 'Kada kupac pita za preporuku, agent prikazuje vizualnu karticu s fotografijom, cijenom, stanjem zaliha i gumbom za dodavanje u košaricu.',
+    status: 'Na stanju • Besplatna dostava',
+    action: 'Dodaj u košaricu'
+  },
+  {
+    title: 'Kalendar za rezervaciju termina',
+    badge: 'Klinike, Saloni & Usluge',
+    desc: 'Interaktivni odabir slobodnih dana i termina za preglede, tretmane ili sastanke, sinkroniziran s vašim Google ili Outlook kalendarom.',
+    status: 'Dostupni termini sutra',
+    action: 'Potvrdi termin'
+  },
+  {
+    title: 'Interaktivna forma za prikupljanje podataka',
+    badge: 'Podrška & Reklamacije',
+    desc: 'Umjesto zamornog dopisivanja, agent servira čistu formu za unos adrese, broja računa ili opisa problema s priloženom slikom.',
+    status: 'Sigurna enkripcija',
+    action: 'Pošalji podatke'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Kako agent zna kada treba prikazati widget umjesto običnog teksta?',
+    a: 'pitaj.io koristi kontekstualno prepoznavanje namjere. Kada kupac pita "Gdje mi je narudžba?" ili "Kada imate slobodan termin?", agent automatski poziva proceduru povezanu s tim widgetom i generira interaktivnu karticu.'
+  },
+  {
+    q: 'Moram li znati programirati kako bih napravio widget?',
+    a: 'Ne. Svi widgeti dolaze unaprijed konfigurirani za web trgovine (WooCommerce i Shopify) te kalendare. Potrebno je samo povezati izvor podataka u postavkama agenta.'
+  },
+  {
+    q: 'Mogu li kupci dovršiti kupovinu ili rezervaciju unutar widgeta?',
+    a: 'Da. Widgeti podržavaju direktne gumbe koji kupca vode izravno u finalnu fazu narudžbe s već unesenim proizvodom, ili trenutno bilježe termin u kalendaru.'
+  },
+  {
+    q: 'Kako widgeti izgledaju na pametnim telefonima?',
+    a: 'Svi widgeti su 100% responzivni i prilagođeni dodirnim zaslonima mobitela. Na kanalima poput WhatsAppa, agent šalje strukturiranu poruku s brzim gumbima i linkom na interaktivnu karticu.'
+  }
+];
+---
+
+<Layout
+  title="Interaktivni widgeti u chatu | pitaj.io"
+  description="Vaš agent odgovara stvarnim sučeljima, a ne samo tekstom: kartice proizvoda, praćenje pošiljke, kalendari za rezervacije i forme unutar razgovora."
+  currentPath="/mogucnosti/widgeti"
+>
+  <!-- Hero Section -->
+  <section class="w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-24">
+      <div class="max-w-[800px] mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#e4e4e7] bg-[#fafafa] px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#09090b]">
+          Interaktivna sučelja
+        </div>
+        <h1 class="mt-6 text-balance text-[2.5rem] font-medium leading-[1.08] tracking-[-0.035em] text-[#09090b] sm:text-[3.25rem] lg:text-[3.75rem]">
+          Vaš agent odgovara stvarnim <span class="font-proza font-bold italic">sučeljima</span>, a ne samo tekstom
+        </h1>
+        <p class="mt-6 text-[17px] leading-relaxed text-[#52525b] sm:text-[19px]">
+          Tekst je samo početak. pitaj.io agenti unutar razgovora generiraju vizualne kartice s proizvodima, mape za praćenje narudžbi, kalendare termina i forme s vašim podacima.
+        </p>
+
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="/cijene"
+            class="inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#09090b] px-7 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#27272a]"
+          >
+            Isprobajte widgete besplatno
+          </a>
+          <a
+            href="/za-firme"
+            class="inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#e4e4e7] bg-white px-7 text-[15px] font-medium text-[#09090b] shadow-xs transition-all hover:bg-[#fafafa]"
+          >
+            Zatražite prezentaciju
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Visual: Live Widget Simulation -->
+      <div class="mt-16 rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 lg:p-12 shadow-sm">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <!-- Left: Dialog simulation -->
+          <div class="space-y-4">
+            <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#09090b]">Primjer u praksi</span>
+            <h2 class="text-[24px] font-semibold text-[#09090b]">Zadatak se rješava unutar samog razgovora</h2>
+            <p class="text-[15px] text-[#52525b] leading-relaxed">
+              Kupac ne mora otvarati nove kartice u pregledniku ili čekati email. Sve radnje — od provjere statusa pošiljke do izbora termina — odvijaju se u 1 kliku unutar widgeta.
+            </p>
+
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-2 text-[14px] text-[#27272a]">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+                <span>Povećava konverziju jer uklanja korake napuštanja stranice</span>
+              </div>
+              <div class="flex items-center gap-2 text-[14px] text-[#27272a]">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+                <span>Prikazuje stvarne podatke iz WooCommerce, Shopify ili ERP baze</span>
+              </div>
+              <div class="flex items-center gap-2 text-[14px] text-[#27272a]">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓</span>
+                <span>Automatski se prilagođava vizualnom identitetu vašeg brenda</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Widget Showcase -->
+          <div class="w-full">
+            <LiveWidgetShowcase initialTab="ecommerce" theme="dark" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Core Widget Types Grid -->
+  <section class="reveal-on-scroll w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="text-center max-w-[700px] mx-auto">
+        <h2 class="text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Vrste widgeta koje agent može prikazati
+        </h2>
+        <p class="mt-3 text-[16px] text-[#52525b]">
+          Sve što je vašim posjetiteljima potrebno za donošenje odluke o kupovini ili rješavanje upita.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {widgetTypes.map((w) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-7 shadow-xs transition-all hover:border-[#d4d4d8] hover:shadow-md">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-md border border-[#e4e4e7] bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#09090b]">
+                  {w.badge}
+                </span>
+                <span class="text-[12px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  {w.status}
+                </span>
+              </div>
+              <h3 class="mt-4 text-[19px] font-semibold text-[#09090b]">{w.title}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{w.desc}</p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-[#e4e4e7] flex items-center justify-between">
+              <span class="text-[12px] font-medium text-[#71717a]">Akcija u 1 klik</span>
+              <button type="button" class="rounded-md bg-[#09090b] px-3.5 py-1.5 text-[12px] font-medium text-white hover:bg-[#27272a]">
+                {w.action}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="reveal-on-scroll w-full bg-[#fafafa] border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="max-w-[700px] mx-auto">
+        <h2 class="text-center text-[2rem] font-medium tracking-tight text-[#09090b]">
+          Česta pitanja o widgetima
+        </h2>
+
+        <div class="mt-10 space-y-4">
+          {faqs.map((faq) => (
+            <div class="rounded-xl border border-[#e4e4e7] bg-white p-6 shadow-xs">
+              <h3 class="text-[16px] font-semibold text-[#09090b]">{faq.q}</h3>
+              <p class="mt-2 text-[14px] leading-relaxed text-[#52525b]">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Other Features Navigation -->
+  <section class="w-full bg-white border-b border-[#e4e4e7]">
+    <div class="mx-auto max-w-[1240px] px-6 py-16 lg:border-x border-[#e4e4e7] lg:px-16 lg:py-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[20px] font-semibold text-[#09090b]">Istražite ostale mogućnosti platforme</h2>
+        <a href="/mogucnosti" class="text-[14px] font-medium text-[#09090b] hover:underline">Pregled svih alata →</a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <a href="/mogucnosti/procedure" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Pravila</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Procedure</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Definirajte poslovna pravila i logiku običnim jezikom.</p>
+        </a>
+        <a href="/mogucnosti/helpdesk" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Timski rad</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Tiketi & Helpdesk</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Objedinjeni inbox i AI ko-pilot za vaše ljudske operatere.</p>
+        </a>
+        <a href="/mogucnosti/analitika" class="group block rounded-2xl border border-[#e4e4e7] bg-[#fafafa] p-6 transition-all hover:border-[#d4d4d8] hover:shadow-md">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Analitika</div>
+          <h3 class="mt-2 text-[17px] font-semibold text-[#09090b] group-hover:underline">Backstage učenje</h3>
+          <p class="mt-1 text-[13px] text-[#52525b]">Otkrijte rupe u bazi znanja i poboljšajte odgovore agenta.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>
