@@ -1,4 +1,4 @@
-import { t as ue, a as B, d as I, A as E, h as T, u as n, b as J, C as Ne, c as me, U as fe, S as pe, e as ve, f as $e, g as we, i as Se, j as xe, k as Ie } from "./widget-CVNDNNY4.js";
+import { t as ue, T as B, d as I, A as E, y as T, u as n, a as J, C as Ne, b as me, U as fe, k as pe, c as ve, e as $e, f as we, M as Se, g as xe, h as Ie } from "./widget-D-3gtn4n.js";
 async function Fe(a) {
   const m = (a.apiUrl || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, "");
   if (!Number.isInteger(a.formId) || a.formId <= 0)
@@ -8,9 +8,9 @@ async function Fe(a) {
   if (p) {
     const f = new FormData();
     f.append("payload", JSON.stringify(a.payload)), a.submissionUuid && f.append("submission_uuid", a.submissionUuid), a.idempotencyKey && f.append("idempotency_key", a.idempotencyKey), Number.isFinite(N) && f.append("conversation_id", String(N)), a.visitorName && f.append("visitor_name", a.visitorName), a.visitorEmail && f.append("visitor_email", a.visitorEmail), a.visitorPhone && f.append("visitor_phone", a.visitorPhone);
-    for (const [M, v] of Object.entries(a.files || {}))
-      v instanceof File && f.append(`files[${M}]`, v, v.name);
-    return u = f, await new Promise((M, v) => {
+    for (const [D, v] of Object.entries(a.files || {}))
+      v instanceof File && f.append(`files[${D}]`, v, v.name);
+    return u = f, await new Promise((D, v) => {
       const k = new XMLHttpRequest();
       k.open("POST", `${m}/api/widget/${a.widgetId}/forms/${a.formId}/submit`, !0), k.setRequestHeader("Accept", "application/json"), a.onUploadProgress && a.onUploadProgress(0), k.upload.onprogress = (d) => {
         if (!a.onUploadProgress || !d.lengthComputable) return;
@@ -24,7 +24,7 @@ async function Fe(a) {
           d = null;
         }
         if (k.status >= 200 && k.status < 300) {
-          a.onUploadProgress && a.onUploadProgress(100), M(d);
+          a.onUploadProgress && a.onUploadProgress(100), D(d);
           return;
         }
         if (k.status === 413) {
@@ -59,25 +59,25 @@ async function Fe(a) {
     method: "POST",
     headers: h,
     body: u
-  }), D = await j.json().catch(() => null);
+  }), M = await j.json().catch(() => null);
   if (!j.ok) {
     if (j.status === 413)
       throw new Error("Datoteka je prevelika za slanje.");
     ue(
       j.status,
-      D,
+      M,
       "Greška pri slanju forme.",
       j.headers.get("Retry-After")
     );
   }
-  return D;
+  return M;
 }
 function ze(a) {
   if (!a) return "";
   const m = /* @__PURE__ */ new Date(`${a}T00:00:00`);
   return Number.isNaN(m.getTime()) ? a : m.toLocaleDateString("bs-BA", { day: "2-digit", month: "2-digit", year: "numeric" });
 }
-const De = [
+const Me = [
   "januar",
   "februar",
   "mart",
@@ -91,8 +91,8 @@ const De = [
   "novembar",
   "decembar"
 ];
-function Me(a) {
-  return `${De[a.getMonth()]} ${a.getFullYear()}`;
+function De(a) {
+  return `${Me[a.getMonth()]} ${a.getFullYear()}`;
 }
 function L(a) {
   const m = a ? /* @__PURE__ */ new Date(`${a}T00:00:00`) : /* @__PURE__ */ new Date(), N = m.getFullYear(), p = String(m.getMonth() + 1).padStart(2, "0");
@@ -128,9 +128,9 @@ function Ce({
   visitorContact: u,
   onBack: h,
   embedded: j = !1,
-  onSubmitted: D,
+  onSubmitted: M,
   onApiError: f,
-  blockedReason: M = null
+  blockedReason: D = null
 }) {
   var le;
   const v = a.forms || [], k = a.actions || [], d = B(
@@ -240,8 +240,8 @@ ${t.join(`
     }
     return P(e), { valid: Object.keys(e).length === 0, firstInvalidFieldKey: t };
   }, je = async (e) => {
-    if (e.preventDefault(), F(null), M) {
-      F({ type: "error", message: M });
+    if (e.preventDefault(), F(null), D) {
+      F({ type: "error", message: D });
       return;
     }
     if (!c) return;
@@ -260,7 +260,7 @@ ${t.join(`
       O(null), F({
         type: "success",
         message: c.success_message || "Hvala! Prijava je poslana."
-      }), D && D(ce(s)), C({}), z({}), P({}), r();
+      }), M && M(ce(s)), C({}), z({}), P({}), r();
       return;
     }
     Y(!0);
@@ -290,7 +290,7 @@ ${t.join(`
       F({
         type: "success",
         message: y.message || c.success_message || "Hvala! Prijava je poslana."
-      }), D && D(ce(i)), C({}), z({}), O(null), P({}), r();
+      }), M && M(ce(i)), C({}), z({}), O(null), P({}), r();
     } catch (s) {
       const i = (s == null ? void 0 : s.message) || "Greška pri slanju forme.";
       O(null), F({ type: "error", message: `Nije poslano. ${i}` }), f == null || f(s, "Greška pri slanju forme.");
@@ -573,7 +573,7 @@ ${t.join(`
                         children: /* @__PURE__ */ n($e, { size: 14 })
                       }
                     ),
-                    /* @__PURE__ */ n("strong", { children: Me(r) }),
+                    /* @__PURE__ */ n("strong", { children: De(r) }),
                     /* @__PURE__ */ n(
                       "button",
                       {
@@ -676,7 +676,7 @@ ${t.join(`
         {
           type: "submit",
           className: `pitaj-contact-submit ${(g == null ? void 0 : g.type) === "success" ? "is-success" : ""} ${(g == null ? void 0 : g.type) === "error" ? "is-error" : ""}`,
-          disabled: V || M !== null,
+          disabled: V || D !== null,
           children: V ? "Slanje..." : (g == null ? void 0 : g.type) === "success" ? "Poslano" : (g == null ? void 0 : g.type) === "error" ? "Nije poslano" : c.submit_label || "Pošalji"
         }
       )
