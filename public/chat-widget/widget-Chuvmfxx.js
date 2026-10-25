@@ -10,14 +10,14 @@ function nt(t) {
   t && t.parentNode && t.parentNode.removeChild(t);
 }
 function _i(t, e, a) {
-  var r, o, n, s = {};
-  for (n in e) n == "key" ? r = e[n] : n == "ref" ? o = e[n] : s[n] = e[n];
-  if (arguments.length > 2 && (s.children = arguments.length > 3 ? Ke.call(arguments, 2) : a), typeof t == "function" && t.defaultProps != null) for (n in t.defaultProps) s[n] === void 0 && (s[n] = t.defaultProps[n]);
-  return He(t, s, r, o, null);
+  var r, s, n, o = {};
+  for (n in e) n == "key" ? r = e[n] : n == "ref" ? s = e[n] : o[n] = e[n];
+  if (arguments.length > 2 && (o.children = arguments.length > 3 ? Ke.call(arguments, 2) : a), typeof t == "function" && t.defaultProps != null) for (n in t.defaultProps) o[n] === void 0 && (o[n] = t.defaultProps[n]);
+  return He(t, o, r, s, null);
 }
-function He(t, e, a, r, o) {
-  var n = { type: t, props: e, key: a, ref: r, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: o ?? ++Ht, __i: -1, __u: 0 };
-  return o == null && X.vnode != null && X.vnode(n), n;
+function He(t, e, a, r, s) {
+  var n = { type: t, props: e, key: a, ref: r, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: s ?? ++Ht, __i: -1, __u: 0 };
+  return s == null && X.vnode != null && X.vnode(n), n;
 }
 function ue(t) {
   return t.children;
@@ -44,24 +44,24 @@ function yt(t) {
   (!t.__d && (t.__d = !0) && _e.push(t) && !qe.__r++ || wt !== X.debounceRendering) && ((wt = X.debounceRendering) || Ot)(qe);
 }
 function qe() {
-  for (var t, e, a, r, o, n, s, u = 1; _e.length; ) _e.length > u && _e.sort(Vt), t = _e.shift(), u = _e.length, t.__d && (a = void 0, o = (r = (e = t).__v).__e, n = [], s = [], e.__P && ((a = be({}, r)).__v = r.__v + 1, X.vnode && X.vnode(a), ot(e.__P, a, r, e.__n, e.__P.namespaceURI, 32 & r.__u ? [o] : null, n, o ?? ze(r), !!(32 & r.__u), s), a.__v = r.__v, a.__.__k[a.__i] = a, Yt(n, a, s), a.__e != o && Wt(a)));
+  for (var t, e, a, r, s, n, o, u = 1; _e.length; ) _e.length > u && _e.sort(Vt), t = _e.shift(), u = _e.length, t.__d && (a = void 0, s = (r = (e = t).__v).__e, n = [], o = [], e.__P && ((a = be({}, r)).__v = r.__v + 1, X.vnode && X.vnode(a), ot(e.__P, a, r, e.__n, e.__P.namespaceURI, 32 & r.__u ? [s] : null, n, s ?? ze(r), !!(32 & r.__u), o), a.__v = r.__v, a.__.__k[a.__i] = a, Yt(n, a, o), a.__e != s && Wt(a)));
   qe.__r = 0;
 }
-function Zt(t, e, a, r, o, n, s, u, m, p, h) {
-  var c, g, d, f, j, I, k = r && r.__k || Kt, z = e.length;
-  for (m = Ni(a, e, k, m, z), c = 0; c < z; c++) (d = a.__k[c]) != null && (g = d.__i === -1 ? Le : k[d.__i] || Le, d.__i = c, I = ot(t, d, g, o, n, s, u, m, p, h), f = d.__e, d.ref && g.ref != d.ref && (g.ref && st(g.ref, null, d), h.push(d.ref, d.__c || f, d)), j == null && f != null && (j = f), 4 & d.__u || g.__k === d.__k ? m = Gt(d, m, t) : typeof d.type == "function" && I !== void 0 ? m = I : f && (m = f.nextSibling), d.__u &= -7);
-  return a.__e = j, m;
+function Zt(t, e, a, r, s, n, o, u, h, p, m) {
+  var c, g, d, f, k, N, _ = r && r.__k || Kt, z = e.length;
+  for (h = Ni(a, e, _, h, z), c = 0; c < z; c++) (d = a.__k[c]) != null && (g = d.__i === -1 ? Le : _[d.__i] || Le, d.__i = c, N = ot(t, d, g, s, n, o, u, h, p, m), f = d.__e, d.ref && g.ref != d.ref && (g.ref && st(g.ref, null, d), m.push(d.ref, d.__c || f, d)), k == null && f != null && (k = f), 4 & d.__u || g.__k === d.__k ? h = Gt(d, h, t) : typeof d.type == "function" && N !== void 0 ? h = N : f && (h = f.nextSibling), d.__u &= -7);
+  return a.__e = k, h;
 }
-function Ni(t, e, a, r, o) {
-  var n, s, u, m, p, h = a.length, c = h, g = 0;
-  for (t.__k = new Array(o), n = 0; n < o; n++) (s = e[n]) != null && typeof s != "boolean" && typeof s != "function" ? (m = n + g, (s = t.__k[n] = typeof s == "string" || typeof s == "number" || typeof s == "bigint" || s.constructor == String ? He(null, s, null, null, null) : We(s) ? He(ue, { children: s }, null, null, null) : s.constructor === void 0 && s.__b > 0 ? He(s.type, s.props, s.key, s.ref ? s.ref : null, s.__v) : s).__ = t, s.__b = t.__b + 1, u = null, (p = s.__i = zi(s, a, m, c)) !== -1 && (c--, (u = a[p]) && (u.__u |= 2)), u == null || u.__v === null ? (p == -1 && (o > h ? g-- : o < h && g++), typeof s.type != "function" && (s.__u |= 4)) : p != m && (p == m - 1 ? g-- : p == m + 1 ? g++ : (p > m ? g-- : g++, s.__u |= 4))) : t.__k[n] = null;
-  if (c) for (n = 0; n < h; n++) (u = a[n]) != null && !(2 & u.__u) && (u.__e == r && (r = ze(u)), Jt(u, u));
+function Ni(t, e, a, r, s) {
+  var n, o, u, h, p, m = a.length, c = m, g = 0;
+  for (t.__k = new Array(s), n = 0; n < s; n++) (o = e[n]) != null && typeof o != "boolean" && typeof o != "function" ? (h = n + g, (o = t.__k[n] = typeof o == "string" || typeof o == "number" || typeof o == "bigint" || o.constructor == String ? He(null, o, null, null, null) : We(o) ? He(ue, { children: o }, null, null, null) : o.constructor === void 0 && o.__b > 0 ? He(o.type, o.props, o.key, o.ref ? o.ref : null, o.__v) : o).__ = t, o.__b = t.__b + 1, u = null, (p = o.__i = zi(o, a, h, c)) !== -1 && (c--, (u = a[p]) && (u.__u |= 2)), u == null || u.__v === null ? (p == -1 && (s > m ? g-- : s < m && g++), typeof o.type != "function" && (o.__u |= 4)) : p != h && (p == h - 1 ? g-- : p == h + 1 ? g++ : (p > h ? g-- : g++, o.__u |= 4))) : t.__k[n] = null;
+  if (c) for (n = 0; n < m; n++) (u = a[n]) != null && !(2 & u.__u) && (u.__e == r && (r = ze(u)), Jt(u, u));
   return r;
 }
 function Gt(t, e, a) {
-  var r, o;
+  var r, s;
   if (typeof t.type == "function") {
-    for (r = t.__k, o = 0; r && o < r.length; o++) r[o] && (r[o].__ = t, e = Gt(r[o], e, a));
+    for (r = t.__k, s = 0; r && s < r.length; s++) r[s] && (r[s].__ = t, e = Gt(r[s], e, a));
     return e;
   }
   t.__e != e && (e && t.type && !a.contains(e) && (e = ze(t)), a.insertBefore(t.__e, e || null), e = t.__e);
@@ -71,15 +71,15 @@ function Gt(t, e, a) {
   return e;
 }
 function zi(t, e, a, r) {
-  var o, n, s = t.key, u = t.type, m = e[a];
-  if (m === null && t.key == null || m && s == m.key && u === m.type && !(2 & m.__u)) return a;
-  if (r > (m != null && !(2 & m.__u) ? 1 : 0)) for (o = a - 1, n = a + 1; o >= 0 || n < e.length; ) {
-    if (o >= 0) {
-      if ((m = e[o]) && !(2 & m.__u) && s == m.key && u === m.type) return o;
-      o--;
+  var s, n, o = t.key, u = t.type, h = e[a];
+  if (h === null && t.key == null || h && o == h.key && u === h.type && !(2 & h.__u)) return a;
+  if (r > (h != null && !(2 & h.__u) ? 1 : 0)) for (s = a - 1, n = a + 1; s >= 0 || n < e.length; ) {
+    if (s >= 0) {
+      if ((h = e[s]) && !(2 & h.__u) && o == h.key && u === h.type) return s;
+      s--;
     }
     if (n < e.length) {
-      if ((m = e[n]) && !(2 & m.__u) && s == m.key && u === m.type) return n;
+      if ((h = e[n]) && !(2 & h.__u) && o == h.key && u === h.type) return n;
       n++;
     }
   }
@@ -88,7 +88,7 @@ function zi(t, e, a, r) {
 function kt(t, e, a) {
   e[0] == "-" ? t.setProperty(e, a ?? "") : t[e] = a == null ? "" : typeof a != "number" || ki.test(e) ? a : a + "px";
 }
-function De(t, e, a, r, o) {
+function De(t, e, a, r, s) {
   var n;
   e: if (e == "style") if (typeof a == "string") t.style.cssText = a;
   else {
@@ -97,7 +97,7 @@ function De(t, e, a, r, o) {
   }
   else if (e[0] == "o" && e[1] == "n") n = e != (e = e.replace(qt, "$1")), e = e.toLowerCase() in t || e == "onFocusOut" || e == "onFocusIn" ? e.toLowerCase().slice(2) : e.slice(2), t.l || (t.l = {}), t.l[e + n] = a, a ? r ? a.t = r.t : (a.t = rt, t.addEventListener(e, n ? Xe : Je, n)) : t.removeEventListener(e, n ? Xe : Je, n);
   else {
-    if (o == "http://www.w3.org/2000/svg") e = e.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+    if (s == "http://www.w3.org/2000/svg") e = e.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
     else if (e != "width" && e != "height" && e != "href" && e != "list" && e != "form" && e != "tabIndex" && e != "download" && e != "rowSpan" && e != "colSpan" && e != "role" && e != "popover" && e in t) try {
       t[e] = a ?? "";
       break e;
@@ -116,83 +116,83 @@ function _t(t) {
     }
   };
 }
-function ot(t, e, a, r, o, n, s, u, m, p) {
-  var h, c, g, d, f, j, I, k, z, _, N, l, C, M, L, V, H, U = e.type;
+function ot(t, e, a, r, s, n, o, u, h, p) {
+  var m, c, g, d, f, k, N, _, z, I, j, l, C, M, L, V, H, U = e.type;
   if (e.constructor !== void 0) return null;
-  128 & a.__u && (m = !!(32 & a.__u), n = [u = e.__e = a.__e]), (h = X.__b) && h(e);
+  128 & a.__u && (h = !!(32 & a.__u), n = [u = e.__e = a.__e]), (m = X.__b) && m(e);
   e: if (typeof U == "function") try {
-    if (k = e.props, z = "prototype" in U && U.prototype.render, _ = (h = U.contextType) && r[h.__c], N = h ? _ ? _.props.value : h.__ : r, a.__c ? I = (c = e.__c = a.__c).__ = c.__E : (z ? e.__c = c = new U(k, N) : (e.__c = c = new Oe(k, N), c.constructor = U, c.render = Si), _ && _.sub(c), c.props = k, c.state || (c.state = {}), c.context = N, c.__n = r, g = c.__d = !0, c.__h = [], c._sb = []), z && c.__s == null && (c.__s = c.state), z && U.getDerivedStateFromProps != null && (c.__s == c.state && (c.__s = be({}, c.__s)), be(c.__s, U.getDerivedStateFromProps(k, c.__s))), d = c.props, f = c.state, c.__v = e, g) z && U.getDerivedStateFromProps == null && c.componentWillMount != null && c.componentWillMount(), z && c.componentDidMount != null && c.__h.push(c.componentDidMount);
+    if (_ = e.props, z = "prototype" in U && U.prototype.render, I = (m = U.contextType) && r[m.__c], j = m ? I ? I.props.value : m.__ : r, a.__c ? N = (c = e.__c = a.__c).__ = c.__E : (z ? e.__c = c = new U(_, j) : (e.__c = c = new Oe(_, j), c.constructor = U, c.render = Si), I && I.sub(c), c.props = _, c.state || (c.state = {}), c.context = j, c.__n = r, g = c.__d = !0, c.__h = [], c._sb = []), z && c.__s == null && (c.__s = c.state), z && U.getDerivedStateFromProps != null && (c.__s == c.state && (c.__s = be({}, c.__s)), be(c.__s, U.getDerivedStateFromProps(_, c.__s))), d = c.props, f = c.state, c.__v = e, g) z && U.getDerivedStateFromProps == null && c.componentWillMount != null && c.componentWillMount(), z && c.componentDidMount != null && c.__h.push(c.componentDidMount);
     else {
-      if (z && U.getDerivedStateFromProps == null && k !== d && c.componentWillReceiveProps != null && c.componentWillReceiveProps(k, N), !c.__e && (c.shouldComponentUpdate != null && c.shouldComponentUpdate(k, c.__s, N) === !1 || e.__v == a.__v)) {
-        for (e.__v != a.__v && (c.props = k, c.state = c.__s, c.__d = !1), e.__e = a.__e, e.__k = a.__k, e.__k.some(function(P) {
+      if (z && U.getDerivedStateFromProps == null && _ !== d && c.componentWillReceiveProps != null && c.componentWillReceiveProps(_, j), !c.__e && (c.shouldComponentUpdate != null && c.shouldComponentUpdate(_, c.__s, j) === !1 || e.__v == a.__v)) {
+        for (e.__v != a.__v && (c.props = _, c.state = c.__s, c.__d = !1), e.__e = a.__e, e.__k = a.__k, e.__k.some(function(P) {
           P && (P.__ = e);
         }), l = 0; l < c._sb.length; l++) c.__h.push(c._sb[l]);
-        c._sb = [], c.__h.length && s.push(c);
+        c._sb = [], c.__h.length && o.push(c);
         break e;
       }
-      c.componentWillUpdate != null && c.componentWillUpdate(k, c.__s, N), z && c.componentDidUpdate != null && c.__h.push(function() {
-        c.componentDidUpdate(d, f, j);
+      c.componentWillUpdate != null && c.componentWillUpdate(_, c.__s, j), z && c.componentDidUpdate != null && c.__h.push(function() {
+        c.componentDidUpdate(d, f, k);
       });
     }
-    if (c.context = N, c.props = k, c.__P = t, c.__e = !1, C = X.__r, M = 0, z) {
-      for (c.state = c.__s, c.__d = !1, C && C(e), h = c.render(c.props, c.state, c.context), L = 0; L < c._sb.length; L++) c.__h.push(c._sb[L]);
+    if (c.context = j, c.props = _, c.__P = t, c.__e = !1, C = X.__r, M = 0, z) {
+      for (c.state = c.__s, c.__d = !1, C && C(e), m = c.render(c.props, c.state, c.context), L = 0; L < c._sb.length; L++) c.__h.push(c._sb[L]);
       c._sb = [];
     } else do
-      c.__d = !1, C && C(e), h = c.render(c.props, c.state, c.context), c.state = c.__s;
+      c.__d = !1, C && C(e), m = c.render(c.props, c.state, c.context), c.state = c.__s;
     while (c.__d && ++M < 25);
-    c.state = c.__s, c.getChildContext != null && (r = be(be({}, r), c.getChildContext())), z && !g && c.getSnapshotBeforeUpdate != null && (j = c.getSnapshotBeforeUpdate(d, f)), V = h, h != null && h.type === ue && h.key == null && (V = Qt(h.props.children)), u = Zt(t, We(V) ? V : [V], e, a, r, o, n, s, u, m, p), c.base = e.__e, e.__u &= -161, c.__h.length && s.push(c), I && (c.__E = c.__ = null);
+    c.state = c.__s, c.getChildContext != null && (r = be(be({}, r), c.getChildContext())), z && !g && c.getSnapshotBeforeUpdate != null && (k = c.getSnapshotBeforeUpdate(d, f)), V = m, m != null && m.type === ue && m.key == null && (V = Qt(m.props.children)), u = Zt(t, We(V) ? V : [V], e, a, r, s, n, o, u, h, p), c.base = e.__e, e.__u &= -161, c.__h.length && o.push(c), N && (c.__E = c.__ = null);
   } catch (P) {
-    if (e.__v = null, m || n != null) if (P.then) {
-      for (e.__u |= m ? 160 : 128; u && u.nodeType == 8 && u.nextSibling; ) u = u.nextSibling;
+    if (e.__v = null, h || n != null) if (P.then) {
+      for (e.__u |= h ? 160 : 128; u && u.nodeType == 8 && u.nextSibling; ) u = u.nextSibling;
       n[n.indexOf(u)] = null, e.__e = u;
     } else for (H = n.length; H--; ) nt(n[H]);
     else e.__e = a.__e, e.__k = a.__k;
     X.__e(P, e, a);
   }
-  else n == null && e.__v == a.__v ? (e.__k = a.__k, e.__e = a.__e) : u = e.__e = Mi(a.__e, e, a, r, o, n, s, m, p);
-  return (h = X.diffed) && h(e), 128 & e.__u ? void 0 : u;
+  else n == null && e.__v == a.__v ? (e.__k = a.__k, e.__e = a.__e) : u = e.__e = Mi(a.__e, e, a, r, s, n, o, h, p);
+  return (m = X.diffed) && m(e), 128 & e.__u ? void 0 : u;
 }
 function Yt(t, e, a) {
   for (var r = 0; r < a.length; r++) st(a[r], a[++r], a[++r]);
-  X.__c && X.__c(e, t), t.some(function(o) {
+  X.__c && X.__c(e, t), t.some(function(s) {
     try {
-      t = o.__h, o.__h = [], t.some(function(n) {
-        n.call(o);
+      t = s.__h, s.__h = [], t.some(function(n) {
+        n.call(s);
       });
     } catch (n) {
-      X.__e(n, o.__v);
+      X.__e(n, s.__v);
     }
   });
 }
 function Qt(t) {
   return typeof t != "object" || t == null ? t : We(t) ? t.map(Qt) : be({}, t);
 }
-function Mi(t, e, a, r, o, n, s, u, m) {
-  var p, h, c, g, d, f, j, I = a.props, k = e.props, z = e.type;
-  if (z == "svg" ? o = "http://www.w3.org/2000/svg" : z == "math" ? o = "http://www.w3.org/1998/Math/MathML" : o || (o = "http://www.w3.org/1999/xhtml"), n != null) {
+function Mi(t, e, a, r, s, n, o, u, h) {
+  var p, m, c, g, d, f, k, N = a.props, _ = e.props, z = e.type;
+  if (z == "svg" ? s = "http://www.w3.org/2000/svg" : z == "math" ? s = "http://www.w3.org/1998/Math/MathML" : s || (s = "http://www.w3.org/1999/xhtml"), n != null) {
     for (p = 0; p < n.length; p++) if ((d = n[p]) && "setAttribute" in d == !!z && (z ? d.localName == z : d.nodeType == 3)) {
       t = d, n[p] = null;
       break;
     }
   }
   if (t == null) {
-    if (z == null) return document.createTextNode(k);
-    t = document.createElementNS(o, z, k.is && k), u && (X.__m && X.__m(e, n), u = !1), n = null;
+    if (z == null) return document.createTextNode(_);
+    t = document.createElementNS(s, z, _.is && _), u && (X.__m && X.__m(e, n), u = !1), n = null;
   }
-  if (z === null) I === k || u && t.data === k || (t.data = k);
+  if (z === null) N === _ || u && t.data === _ || (t.data = _);
   else {
-    if (n = n && Ke.call(t.childNodes), I = a.props || Le, !u && n != null) for (I = {}, p = 0; p < t.attributes.length; p++) I[(d = t.attributes[p]).name] = d.value;
-    for (p in I) if (d = I[p], p != "children") {
+    if (n = n && Ke.call(t.childNodes), N = a.props || Le, !u && n != null) for (N = {}, p = 0; p < t.attributes.length; p++) N[(d = t.attributes[p]).name] = d.value;
+    for (p in N) if (d = N[p], p != "children") {
       if (p == "dangerouslySetInnerHTML") c = d;
-      else if (!(p in k)) {
-        if (p == "value" && "defaultValue" in k || p == "checked" && "defaultChecked" in k) continue;
-        De(t, p, null, d, o);
+      else if (!(p in _)) {
+        if (p == "value" && "defaultValue" in _ || p == "checked" && "defaultChecked" in _) continue;
+        De(t, p, null, d, s);
       }
     }
-    for (p in k) d = k[p], p == "children" ? g = d : p == "dangerouslySetInnerHTML" ? h = d : p == "value" ? f = d : p == "checked" ? j = d : u && typeof d != "function" || I[p] === d || De(t, p, d, I[p], o);
-    if (h) u || c && (h.__html === c.__html || h.__html === t.innerHTML) || (t.innerHTML = h.__html), e.__k = [];
-    else if (c && (t.innerHTML = ""), Zt(e.type === "template" ? t.content : t, We(g) ? g : [g], e, a, r, z == "foreignObject" ? "http://www.w3.org/1999/xhtml" : o, n, s, n ? n[0] : a.__k && ze(a, 0), u, m), n != null) for (p = n.length; p--; ) nt(n[p]);
-    u || (p = "value", z == "progress" && f == null ? t.removeAttribute("value") : f !== void 0 && (f !== t[p] || z == "progress" && !f || z == "option" && f !== I[p]) && De(t, p, f, I[p], o), p = "checked", j !== void 0 && j !== t[p] && De(t, p, j, I[p], o));
+    for (p in _) d = _[p], p == "children" ? g = d : p == "dangerouslySetInnerHTML" ? m = d : p == "value" ? f = d : p == "checked" ? k = d : u && typeof d != "function" || N[p] === d || De(t, p, d, N[p], s);
+    if (m) u || c && (m.__html === c.__html || m.__html === t.innerHTML) || (t.innerHTML = m.__html), e.__k = [];
+    else if (c && (t.innerHTML = ""), Zt(e.type === "template" ? t.content : t, We(g) ? g : [g], e, a, r, z == "foreignObject" ? "http://www.w3.org/1999/xhtml" : s, n, o, n ? n[0] : a.__k && ze(a, 0), u, h), n != null) for (p = n.length; p--; ) nt(n[p]);
+    u || (p = "value", z == "progress" && f == null ? t.removeAttribute("value") : f !== void 0 && (f !== t[p] || z == "progress" && !f || z == "option" && f !== N[p]) && De(t, p, f, N[p], s), p = "checked", k !== void 0 && k !== t[p] && De(t, p, k, N[p], s));
   }
   return t;
 }
@@ -202,12 +202,12 @@ function st(t, e, a) {
       var r = typeof t.__u == "function";
       r && t.__u(), r && e == null || (t.__u = t(e));
     } else t.current = e;
-  } catch (o) {
-    X.__e(o, a);
+  } catch (s) {
+    X.__e(s, a);
   }
 }
 function Jt(t, e, a) {
-  var r, o;
+  var r, s;
   if (X.unmount && X.unmount(t), (r = t.ref) && (r.current && r.current !== t.__e || st(r, null, e)), (r = t.__c) != null) {
     if (r.componentWillUnmount) try {
       r.componentWillUnmount();
@@ -216,19 +216,19 @@ function Jt(t, e, a) {
     }
     r.base = r.__P = null;
   }
-  if (r = t.__k) for (o = 0; o < r.length; o++) r[o] && Jt(r[o], e, a || typeof t.type != "function");
+  if (r = t.__k) for (s = 0; s < r.length; s++) r[s] && Jt(r[s], e, a || typeof t.type != "function");
   a || nt(t.__e), t.__c = t.__ = t.__e = void 0;
 }
 function Si(t, e, a) {
   return this.constructor(t, a);
 }
 function Nt(t, e, a) {
-  var r, o, n, s;
-  e == document && (e = document.documentElement), X.__ && X.__(t, e), o = (r = !1) ? null : e.__k, n = [], s = [], ot(e, t = e.__k = _i(ue, null, [t]), o || Le, Le, e.namespaceURI, o ? null : e.firstChild ? Ke.call(e.childNodes) : null, n, o ? o.__e : e.firstChild, r, s), Yt(n, t, s);
+  var r, s, n, o;
+  e == document && (e = document.documentElement), X.__ && X.__(t, e), s = (r = !1) ? null : e.__k, n = [], o = [], ot(e, t = e.__k = _i(ue, null, [t]), s || Le, Le, e.namespaceURI, s ? null : e.firstChild ? Ke.call(e.childNodes) : null, n, s ? s.__e : e.firstChild, r, o), Yt(n, t, o);
 }
 Ke = Kt.slice, X = { __e: function(t, e, a, r) {
-  for (var o, n, s; e = e.__; ) if ((o = e.__c) && !o.__) try {
-    if ((n = o.constructor) && n.getDerivedStateFromError != null && (o.setState(n.getDerivedStateFromError(t)), s = o.__d), o.componentDidCatch != null && (o.componentDidCatch(t, r || {}), s = o.__d), s) return o.__E = o;
+  for (var s, n, o; e = e.__; ) if ((s = e.__c) && !s.__) try {
+    if ((n = s.constructor) && n.getDerivedStateFromError != null && (s.setState(n.getDerivedStateFromError(t)), o = s.__d), s.componentDidCatch != null && (s.componentDidCatch(t, r || {}), o = s.__d), o) return s.__E = s;
   } catch (u) {
     t = u;
   }
@@ -242,12 +242,12 @@ Ke = Kt.slice, X = { __e: function(t, e, a, r) {
   return t.__v.__b - e.__v.__b;
 }, qe.__r = 0, qt = /(PointerCapture)$|Capture$/i, rt = 0, Je = _t(!1), Xe = _t(!0);
 var $i = 0;
-function i(t, e, a, r, o, n) {
+function i(t, e, a, r, s, n) {
   e || (e = {});
-  var s, u, m = e;
-  if ("ref" in m) for (u in m = {}, e) u == "ref" ? s = e[u] : m[u] = e[u];
-  var p = { type: t, props: m, key: a, ref: s, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --$i, __i: -1, __u: 0, __source: o, __self: n };
-  if (typeof t == "function" && (s = t.defaultProps)) for (u in s) m[u] === void 0 && (m[u] = s[u]);
+  var o, u, h = e;
+  if ("ref" in h) for (u in h = {}, e) u == "ref" ? o = e[u] : h[u] = e[u];
+  var p = { type: t, props: h, key: a, ref: o, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --$i, __i: -1, __u: 0, __source: s, __self: n };
+  if (typeof t == "function" && (o = t.defaultProps)) for (u in o) h[u] === void 0 && (h[u] = o[u]);
   return X.vnode && X.vnode(p), p;
 }
 var Te, se, Ge, zt, Ee = 0, Xt = [], le = X, Mt = le.__b, St = le.__r, $t = le.diffed, It = le.__c, Ct = le.unmount, At = le.__;
@@ -262,34 +262,34 @@ function T(t) {
 function Ii(t, e, a) {
   var r = lt(Te++, 2);
   if (r.t = t, !r.__c && (r.__ = [ti(void 0, e), function(u) {
-    var m = r.__N ? r.__N[0] : r.__[0], p = r.t(m, u);
-    m !== p && (r.__N = [p, r.__[1]], r.__c.setState({}));
+    var h = r.__N ? r.__N[0] : r.__[0], p = r.t(h, u);
+    h !== p && (r.__N = [p, r.__[1]], r.__c.setState({}));
   }], r.__c = se, !se.__f)) {
-    var o = function(u, m, p) {
+    var s = function(u, h, p) {
       if (!r.__c.__H) return !0;
-      var h = r.__c.__H.__.filter(function(g) {
+      var m = r.__c.__H.__.filter(function(g) {
         return !!g.__c;
       });
-      if (h.every(function(g) {
+      if (m.every(function(g) {
         return !g.__N;
-      })) return !n || n.call(this, u, m, p);
+      })) return !n || n.call(this, u, h, p);
       var c = r.__c.props !== u;
-      return h.forEach(function(g) {
+      return m.forEach(function(g) {
         if (g.__N) {
           var d = g.__[0];
           g.__ = g.__N, g.__N = void 0, d !== g.__[0] && (c = !0);
         }
-      }), n && n.call(this, u, m, p) || c;
+      }), n && n.call(this, u, h, p) || c;
     };
     se.__f = !0;
-    var n = se.shouldComponentUpdate, s = se.componentWillUpdate;
-    se.componentWillUpdate = function(u, m, p) {
+    var n = se.shouldComponentUpdate, o = se.componentWillUpdate;
+    se.componentWillUpdate = function(u, h, p) {
       if (this.__e) {
-        var h = n;
-        n = void 0, o(u, m, p), n = h;
+        var m = n;
+        n = void 0, s(u, h, p), n = m;
       }
-      s && s.call(this, u, m, p);
-    }, se.shouldComponentUpdate = o;
+      o && o.call(this, u, h, p);
+    }, se.shouldComponentUpdate = s;
   }
   return r.__N || r.__;
 }
@@ -341,8 +341,8 @@ le.__b = function(t) {
         return !r.__ || et(r);
       });
     } catch (r) {
-      e.some(function(o) {
-        o.__h && (o.__h = []);
+      e.some(function(s) {
+        s.__h && (s.__h = []);
       }), e = [], le.__e(r, a.__v);
     }
   }), It && It(t, e);
@@ -352,8 +352,8 @@ le.__b = function(t) {
   a && a.__H && (a.__H.__.forEach(function(r) {
     try {
       Ve(r);
-    } catch (o) {
-      e = o;
+    } catch (s) {
+      e = s;
     }
   }), a.__H = void 0, e && le.__e(e, a.__v));
 };
@@ -384,20 +384,20 @@ async function Li(t, e) {
   const a = t.body;
   if (!a)
     throw new Error("Response body is null");
-  const r = a.getReader(), o = new TextDecoder("utf-8");
+  const r = a.getReader(), s = new TextDecoder("utf-8");
   let n = "";
   try {
     for (; ; ) {
-      const { done: s, value: u } = await r.read();
-      if (s)
+      const { done: o, value: u } = await r.read();
+      if (o)
         break;
-      n += o.decode(u, { stream: !0 });
-      const m = n.split(/\r?\n/);
-      n = m.pop() || "";
-      for (const p of m) {
-        const h = p.trim();
-        if (!(!h || h.startsWith(":")) && h.startsWith("data:")) {
-          const c = h.slice(5).trim();
+      n += s.decode(u, { stream: !0 });
+      const h = n.split(/\r?\n/);
+      n = h.pop() || "";
+      for (const p of h) {
+        const m = p.trim();
+        if (!(!m || m.startsWith(":")) && m.startsWith("data:")) {
+          const c = m.slice(5).trim();
           if (c === "[DONE]") {
             e.onDone && e.onDone();
             return;
@@ -422,28 +422,28 @@ async function Li(t, e) {
       }
     }
     e.onDone && e.onDone();
-  } catch (s) {
+  } catch (o) {
     if (e.onError)
-      e.onError(s);
+      e.onError(o);
     else
-      throw s;
+      throw o;
   }
 }
 class ii extends Error {
-  constructor(a, r = 60, o) {
+  constructor(a, r = 60, s) {
     super(a);
     ye(this, "retryAfterSeconds");
     ye(this, "code");
-    this.name = "RateLimitError", this.retryAfterSeconds = r, this.code = o;
+    this.name = "RateLimitError", this.retryAfterSeconds = r, this.code = s;
   }
 }
 class ai extends Error {
-  constructor(a, r, o, n) {
+  constructor(a, r, s, n) {
     super(a);
     ye(this, "status");
     ye(this, "code");
     ye(this, "retryAfterSeconds");
-    this.name = "WidgetApiError", this.status = r, this.code = o, this.retryAfterSeconds = n;
+    this.name = "WidgetApiError", this.status = r, this.code = s, this.retryAfterSeconds = n;
   }
 }
 function Ti(t, e) {
@@ -455,8 +455,8 @@ async function Ei(t, e) {
   ri(t.status, a, e, t.headers.get("Retry-After"));
 }
 function ri(t, e, a, r) {
-  const o = typeof (e == null ? void 0 : e.code) == "string" ? e.code : void 0, n = (e == null ? void 0 : e.error) || (e == null ? void 0 : e.message) || a, s = Ti((e == null ? void 0 : e.retry_after) ?? r, 60);
-  throw t === 429 || o === "RATE_LIMIT_EXCEEDED" ? new ii(n, s, o) : new ai(n, t, o, s);
+  const s = typeof (e == null ? void 0 : e.code) == "string" ? e.code : void 0, n = (e == null ? void 0 : e.error) || (e == null ? void 0 : e.message) || a, o = Ti((e == null ? void 0 : e.retry_after) ?? r, 60);
+  throw t === 429 || s === "RATE_LIMIT_EXCEEDED" ? new ii(n, o, s) : new ai(n, t, s, o);
 }
 function ni(t) {
   if (typeof t != "string") return null;
@@ -552,58 +552,58 @@ Widget automatski izolira svoje stilove koristeći **Shadow DOM**, tako da neće
 ];
 async function Ui(t, e) {
   const a = t.toLowerCase(), r = Di.find(
-    (m) => m.keywords.some((p) => a.includes(p))
-  ), o = r ? r.reply : `${Tt[Math.floor(Math.random() * Tt.length)]}
+    (h) => h.keywords.some((p) => a.includes(p))
+  ), s = r ? r.reply : `${Tt[Math.floor(Math.random() * Tt.length)]}
 
-Vaše pitanje: *"${t}"* je zabilježeno. Ukoliko trebate dodatnu asistenciju, tu sam 24/7!`, n = r ? r.sources : [], s = r ? r.suggestions : ["Kako funkcionira AI model?", "Mogu li dobiti kontakt podrške?"], u = o.split(" ");
-  for (let m = 0; m < u.length; m++) {
-    const p = u[m] + (m < u.length - 1 ? " " : "");
-    e.onChunk(p), await new Promise((h) => setTimeout(h, 20 + Math.random() * 20));
+Vaše pitanje: *"${t}"* je zabilježeno. Ukoliko trebate dodatnu asistenciju, tu sam 24/7!`, n = r ? r.sources : [], o = r ? r.suggestions : ["Kako funkcionira AI model?", "Mogu li dobiti kontakt podrške?"], u = s.split(" ");
+  for (let h = 0; h < u.length; h++) {
+    const p = u[h] + (h < u.length - 1 ? " " : "");
+    e.onChunk(p), await new Promise((m) => setTimeout(m, 20 + Math.random() * 20));
   }
-  e.onSources && n.length > 0 && e.onSources(n), e.onSuggestedQuestions && s.length > 0 && e.onSuggestedQuestions(s), e.onDone && e.onDone();
+  e.onSources && n.length > 0 && e.onSources(n), e.onSuggestedQuestions && o.length > 0 && e.onSuggestedQuestions(o), e.onDone && e.onDone();
 }
 async function Fi(t) {
   const {
     companyId: e,
     conversationId: a,
     visitorId: r,
-    message: o,
+    message: s,
     forceNewConversation: n,
-    apiUrl: s,
+    apiUrl: o,
     mockMode: u,
-    visitorName: m,
+    visitorName: h,
     visitorEmail: p,
-    visitorPhone: h,
+    visitorPhone: m,
     visitorCountryCode: c,
     visitorCountryName: g,
     callbacks: d
   } = t;
   if (u || !e || e === "default") {
-    await Ui(o, d);
+    await Ui(s, d);
     return;
   }
-  const f = (s || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), j = Bi(), I = ni(c) ?? j.code ?? void 0, k = ct(g) ?? j.name ?? void 0, z = `${f}/api/widget/${e}/chat`, _ = a && !a.startsWith("conv-") ? parseInt(a, 10) : null, N = await fetch(z, {
+  const f = (o || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), k = Bi(), N = ni(c) ?? k.code ?? void 0, _ = ct(g) ?? k.name ?? void 0, z = `${f}/api/widget/${e}/chat`, I = a && !a.startsWith("conv-") ? parseInt(a, 10) : null, j = await fetch(z, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "text/event-stream, application/json"
     },
     body: JSON.stringify({
-      message: o,
-      conversation_id: _,
+      message: s,
+      conversation_id: I,
       force_new_conversation: n === !0,
       visitor_id: r,
-      visitor_name: m || void 0,
+      visitor_name: h || void 0,
       visitor_email: p || void 0,
-      visitor_phone: h || void 0,
-      visitor_country_code: I,
-      visitor_country_name: k
+      visitor_phone: m || void 0,
+      visitor_country_code: N,
+      visitor_country_name: _
     })
   });
-  if (N.ok || await Ei(N, `API greška (${N.status})`), (N.headers.get("Content-Type") || "").includes("text/event-stream"))
-    await Li(N, d);
+  if (j.ok || await Ei(j, `API greška (${j.status})`), (j.headers.get("Content-Type") || "").includes("text/event-stream"))
+    await Li(j, d);
   else {
-    const C = await N.json(), M = C.answer || C.message || "";
+    const C = await j.json(), M = C.answer || C.message || "";
     C.conversation_id !== void 0 && d.onConversationId && d.onConversationId(C.conversation_id);
     const L = C.ticket_number ?? C.ticketNumber;
     if (L != null && String(L).trim() !== "" && String(L).trim() !== "undefined" && String(L).trim() !== "null" && d.onTicketNumber && d.onTicketNumber(String(L).trim()), C.triggered_action && d.onActionTrigger && d.onActionTrigger(C.triggered_action), M && M.trim()) {
@@ -617,28 +617,28 @@ async function Fi(t) {
   }
 }
 async function tt(t) {
-  const { widgetId: e, visitorId: a, apiUrl: r, status: o, page: n = 1, perPage: s = 15 } = t, u = (r || "").replace(/\/$/, ""), m = new URLSearchParams({
+  const { widgetId: e, visitorId: a, apiUrl: r, status: s, page: n = 1, perPage: o = 15 } = t, u = (r || "").replace(/\/$/, ""), h = new URLSearchParams({
     visitor_id: a,
     page: String(n),
-    per_page: String(s)
+    per_page: String(o)
   });
-  o && m.set("status", o);
-  const p = await fetch(`${u}/api/widget/${encodeURIComponent(e)}/tickets?${m}`), h = await p.json().catch(() => null);
-  if (!p.ok) throw new Error(h && "error" in h ? h.error : "Tikete nije moguće učitati.");
-  const c = (h == null ? void 0 : h.data) || [], g = c.map((j) => ({
-    id: j.id,
-    ticketNumber: j.ticket_number,
-    conversationId: j.conversation_id,
-    isResolved: !!j.is_resolved,
-    updatedAt: j.updated_at,
-    messages: (j.messages || []).map((I) => ({
-      id: String(I.id),
-      content: I.content,
-      sender: I.role === "user" ? "user" : "ai",
-      timestamp: I.created_at,
+  s && h.set("status", s);
+  const p = await fetch(`${u}/api/widget/${encodeURIComponent(e)}/tickets?${h}`), m = await p.json().catch(() => null);
+  if (!p.ok) throw new Error(m && "error" in m ? m.error : "Tikete nije moguće učitati.");
+  const c = (m == null ? void 0 : m.data) || [], g = c.map((k) => ({
+    id: k.id,
+    ticketNumber: k.ticket_number,
+    conversationId: k.conversation_id,
+    isResolved: !!k.is_resolved,
+    updatedAt: k.updated_at,
+    messages: (k.messages || []).map((N) => ({
+      id: String(N.id),
+      content: N.content,
+      sender: N.role === "user" ? "user" : "ai",
+      timestamp: N.created_at,
       status: "sent"
     }))
-  })), d = h == null ? void 0 : h.meta, f = (d == null ? void 0 : d.has_more) !== void 0 ? !!d.has_more : c.length >= s;
+  })), d = m == null ? void 0 : m.meta, f = (d == null ? void 0 : d.has_more) !== void 0 ? !!d.has_more : c.length >= o;
   return {
     tickets: g,
     hasMore: f,
@@ -649,18 +649,18 @@ async function tt(t) {
 async function Ri(t, e, a) {
   return (await tt({ widgetId: t, visitorId: e, apiUrl: a, page: 1, perPage: 50 })).tickets;
 }
-async function Hi(t, e, a, r, o) {
+async function Hi(t, e, a, r, s) {
   const n = !!e && !e.startsWith("conv-");
-  if (!t || t === "default" || o || !n)
-    return await new Promise((m) => setTimeout(m, 100)), { message: "Satisfaction rating recorded (mock).", satisfaction: a };
-  const s = (r || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), u = await fetch(`${s}/api/widget/${t}/conversations/${e}/rating`, {
+  if (!t || t === "default" || s || !n)
+    return await new Promise((h) => setTimeout(h, 100)), { message: "Satisfaction rating recorded (mock).", satisfaction: a };
+  const o = (r || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), u = await fetch(`${o}/api/widget/${t}/conversations/${e}/rating`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ satisfaction: a })
   });
   if (!u.ok) {
-    const p = (await u.json().catch(() => ({}))).error || (u.status === 404 ? "Razgovor ili tiket nije pronađen." : "Nismo uspjeli sačuvati vašu ocjenu. Molimo pokušajte ponovo."), h = new Error(p);
-    throw h.status = u.status, h;
+    const p = (await u.json().catch(() => ({}))).error || (u.status === 404 ? "Razgovor ili tiket nije pronađen." : "Nismo uspjeli sačuvati vašu ocjenu. Molimo pokušajte ponovo."), m = new Error(p);
+    throw m.status = u.status, m;
   }
   return await u.json();
 }
@@ -710,15 +710,15 @@ function Qi(t, e) {
   }
 }
 function Ji(t, e) {
-  const [a, r] = T(t), [o, n] = T((e == null ? void 0 : e.startOpen) ?? !1), [s, u] = T((e == null ? void 0 : e.initialScreen) ?? "new-conversation"), [m, p] = T(
+  const [a, r] = T(t), [s, n] = T((e == null ? void 0 : e.startOpen) ?? !1), [o, u] = T((e == null ? void 0 : e.initialScreen) ?? "new-conversation"), [h, p] = T(
     () => Pt(t.companyId)
-  ), [h, c] = T(() => {
+  ), [m, c] = T(() => {
     if ((e == null ? void 0 : e.initialScreen) === "conversation") {
       const b = Pt(t.companyId);
       return b.length > 0 ? b[0].id : null;
     }
     return null;
-  }), [g, d] = T(!1), [f, j] = T(null), [I, k] = T(null), z = te(Wi()), [_, N] = T(() => {
+  }), [g, d] = T(!1), [f, k] = T(null), [N, _] = T(null), z = te(Wi()), [I, j] = T(() => {
     try {
       const b = localStorage.getItem(Vi) || localStorage.getItem(qi);
       if (b) {
@@ -735,18 +735,18 @@ function Ji(t, e) {
   C.current = e == null ? void 0 : e.onActionTrigger;
   const M = Q((b, y) => {
     const S = Number.isFinite(b) ? Math.max(1, Math.floor(b)) : 60;
-    j((F) => F === null ? S : Math.max(F, S)), k(y || `Previše zahtjeva. Molimo sačekajte ${S}s.`);
+    k((F) => F === null ? S : Math.max(F, S)), _(y || `Previše zahtjeva. Molimo sačekajte ${S}s.`);
   }, []), L = Q((b) => {
     if (b) {
       if (b === "WIDGET_CHAT_DISABLED") {
-        r((y) => ({ ...y, chatAvailable: !1 })), k("Chat je trenutno privremeno nedostupan.");
+        r((y) => ({ ...y, chatAvailable: !1 })), _("Chat je trenutno privremeno nedostupan.");
         return;
       }
       if (b === "WIDGET_TRANSCRIBE_DISABLED") {
-        r((y) => ({ ...y, transcribeAvailable: !1 })), k("Diktiranje je trenutno privremeno nedostupno.");
+        r((y) => ({ ...y, transcribeAvailable: !1 })), _("Diktiranje je trenutno privremeno nedostupno.");
         return;
       }
-      b === "WIDGET_FORMS_DISABLED" && (r((y) => ({ ...y, formsAvailable: !1, formsEnabled: !1 })), k("Forme su trenutno privremeno nedostupne."));
+      b === "WIDGET_FORMS_DISABLED" && (r((y) => ({ ...y, formsAvailable: !1, formsEnabled: !1 })), _("Forme su trenutno privremeno nedostupne."));
     }
   }, []), V = Q((b, y = "Došlo je do greške pri obradi zahtjeva.") => {
     var F, E, A, W;
@@ -756,21 +756,21 @@ function Ji(t, e) {
     }
     if (b instanceof ai) {
       if (b.code === "COUNTRY_BLOCKED") {
-        r((R) => ({ ...R, chatAvailable: !1 })), k(b.message || "Pristup nije dozvoljen u vašoj regiji."), (E = l.current) == null || E.call(l, "error_occurred", { status: b.status, code: "COUNTRY_BLOCKED" });
+        r((R) => ({ ...R, chatAvailable: !1 })), _(b.message || "Pristup nije dozvoljen u vašoj regiji."), (E = l.current) == null || E.call(l, "error_occurred", { status: b.status, code: "COUNTRY_BLOCKED" });
         return;
       }
-      L(b.code), k(b.message || y), (A = l.current) == null || A.call(l, "error_occurred", { status: b.status, code: b.code || "UNKNOWN_WIDGET_ERROR" });
+      L(b.code), _(b.message || y), (A = l.current) == null || A.call(l, "error_occurred", { status: b.status, code: b.code || "UNKNOWN_WIDGET_ERROR" });
       return;
     }
     let S = b instanceof Error ? b.message : y;
-    !S || S === "Failed to fetch" || S.includes("NetworkError") ? S = "Problem sa povezivanjem na mrežu. Molimo provjerite internet vezu." : S.includes("404") ? S = "Traženi razgovor ili podaci nisu pronađeni." : (S.includes("500") || S.includes("502") || S.includes("503")) && (S = "Chat servis je privremeno nedostupan. Molimo pokušajte za trenutak."), k(S || y), (W = l.current) == null || W.call(l, "error_occurred", { code: "UNKNOWN_WIDGET_ERROR" });
+    !S || S === "Failed to fetch" || S.includes("NetworkError") ? S = "Problem sa povezivanjem na mrežu. Molimo provjerite internet vezu." : S.includes("404") ? S = "Traženi razgovor ili podaci nisu pronađeni." : (S.includes("500") || S.includes("502") || S.includes("503")) && (S = "Chat servis je privremeno nedostupan. Molimo pokušajte za trenutak."), _(S || y), (W = l.current) == null || W.call(l, "error_occurred", { code: "UNKNOWN_WIDGET_ERROR" });
   }, [M, L]);
   Y(() => {
-    Qi(a.companyId, m);
-  }, [m, a.companyId]), Y(() => {
+    Qi(a.companyId, h);
+  }, [h, a.companyId]), Y(() => {
     if (f === null || f <= 0) return;
     const b = setInterval(() => {
-      j((y) => y && y > 1 ? y - 1 : null);
+      k((y) => y && y > 1 ? y - 1 : null);
     }, 1e3);
     return () => clearInterval(b);
   }, [f]), Y(() => {
@@ -790,7 +790,7 @@ function Ji(t, e) {
       b = !1;
     };
   }, [a.companyId, a.apiUrl, a.mockMode]);
-  const H = m.find((b) => b.id === h) || null, U = m.reduce((b, y) => b + (y.unread || 0), 0), P = Q((b) => {
+  const H = h.find((b) => b.id === m) || null, U = h.reduce((b, y) => b + (y.unread || 0), 0), P = Q((b) => {
     n((y) => {
       var S;
       return y === b ? y : ((S = l.current) == null || S.call(l, b ? "widget_opened" : "widget_closed"), b);
@@ -806,18 +806,18 @@ function Ji(t, e) {
   }, []), ce = Q(() => {
     var b;
     p(
-      (y) => y.map((S) => S.id === h ? { ...S, status: "ended" } : S)
-    ), c(null), u("new-conversation"), (b = l.current) == null || b.call(l, "conversation_ended", { conversationId: h });
-  }, [h]), J = Q((b) => {
-    p((y) => y.filter((S) => S.id !== b)), c((y) => y === b ? null : y), h === b && u("new-conversation");
-  }, [h]), ee = Q((b) => {
+      (y) => y.map((S) => S.id === m ? { ...S, status: "ended" } : S)
+    ), c(null), u("new-conversation"), (b = l.current) == null || b.call(l, "conversation_ended", { conversationId: m });
+  }, [m]), J = Q((b) => {
+    p((y) => y.filter((S) => S.id !== b)), c((y) => y === b ? null : y), m === b && u("new-conversation");
+  }, [m]), ee = Q((b) => {
     var A;
     if (a.chatAvailable === !1) {
-      k("Chat je trenutno privremeno nedostupan.");
+      _("Chat je trenutno privremeno nedostupan.");
       return;
     }
     if (f !== null) {
-      k(`Previše zahtjeva. Molimo sačekajte ${f}s.`);
+      _(`Previše zahtjeva. Molimo sačekajte ${f}s.`);
       return;
     }
     const y = "conv-" + Date.now(), S = (/* @__PURE__ */ new Date()).toISOString(), F = b ? b.length > 40 ? b.slice(0, 40) + "…" : b : "Novo ćaskanje", E = {
@@ -837,9 +837,9 @@ function Ji(t, e) {
       ] : []
     };
     p((W) => [E, ...W]), c(y), u("conversation"), (A = l.current) == null || A.call(l, "conversation_started", { conversationId: y, initialMessage: b }), b && $(y, b, [E.messages[0]], !0);
-  }, [a.apiUrl, a.chatAvailable, a.companyId, a.mockMode, f, _]), $ = async (b, y, S, F = !1) => {
+  }, [a.apiUrl, a.chatAvailable, a.companyId, a.mockMode, f, I]), $ = async (b, y, S, F = !1) => {
     var W;
-    d(!0), k(null);
+    d(!0), _(null);
     const E = "ai-msg-" + Date.now(), A = {
       id: E,
       content: "",
@@ -864,9 +864,9 @@ function Ji(t, e) {
         forceNewConversation: F || b.startsWith("conv-"),
         apiUrl: a.apiUrl,
         mockMode: a.mockMode,
-        visitorName: _.name,
-        visitorEmail: _.email,
-        visitorPhone: _.phone,
+        visitorName: I.name,
+        visitorEmail: I.email,
+        visitorPhone: I.phone,
         callbacks: {
           onConversationId: (R) => {
             const G = b, B = String(R);
@@ -884,10 +884,10 @@ function Ji(t, e) {
             var B;
             const G = R.widget || R.triggered_widget || (R.widget_id && a.widgets ? a.widgets.find((de) => de.id === R.widget_id) : null) || null;
             G && p(
-              (de) => de.map((K) => K.id === b || K.messages.some((he) => he.id === E) ? {
+              (de) => de.map((K) => K.id === b || K.messages.some((me) => me.id === E) ? {
                 ...K,
                 messages: K.messages.map(
-                  (he) => he.id === E ? { ...he, widget: G } : he
+                  (me) => me.id === E ? { ...me, widget: G } : me
                 )
               } : K)
             ), (B = C.current) == null || B.call(C, R);
@@ -927,20 +927,20 @@ function Ji(t, e) {
             p(
               (G) => G.map((B) => {
                 var Me, Se;
-                if (!(B.id === b || B.messages.some((me) => me.id === E))) return B;
-                const K = B.messages.find((me) => me.id === E), ge = (Me = K == null ? void 0 : K.widget) == null ? void 0 : Me.name, he = (Se = K == null ? void 0 : K.content) == null ? void 0 : Se.trim(), Pe = he ? he.slice(0, 70) : ge ? `[${ge}]` : B.preview;
+                if (!(B.id === b || B.messages.some((he) => he.id === E))) return B;
+                const K = B.messages.find((he) => he.id === E), ge = (Me = K == null ? void 0 : K.widget) == null ? void 0 : Me.name, me = (Se = K == null ? void 0 : K.content) == null ? void 0 : Se.trim(), Pe = me ? me.slice(0, 70) : ge ? `[${ge}]` : B.preview;
                 return {
                   ...B,
                   preview: Pe,
                   messages: B.messages.map(
-                    (me) => me.id === E ? { ...me, isStreaming: !1 } : me
+                    (he) => he.id === E ? { ...he, isStreaming: !1 } : he
                   )
                 };
               })
             ), d(!1), (R = l.current) == null || R.call(l, "stream_completed", { conversationId: b });
           },
           onError: (R) => {
-            console.error("[Pitaj.io] Stream error:", R), k(R.message || "Došlo je do greške u komunikaciji."), d(!1);
+            console.error("[Pitaj.io] Stream error:", R), _(R.message || "Došlo je do greške u komunikaciji."), d(!1);
           }
         }
       });
@@ -951,7 +951,7 @@ function Ji(t, e) {
     var E;
     const y = b.trim();
     if (!y || g || a.chatAvailable === !1 || f !== null) return;
-    if (!h) {
+    if (!m) {
       ee(y);
       return;
     }
@@ -963,14 +963,14 @@ function Ji(t, e) {
       status: "sent"
     };
     p(
-      (A) => A.map((W) => W.id !== h ? W : {
+      (A) => A.map((W) => W.id !== m ? W : {
         ...W,
         preview: y,
         timestamp: (/* @__PURE__ */ new Date()).toISOString(),
         messages: [...W.messages, F]
       })
-    ), (E = l.current) == null || E.call(l, "message_sent", { conversationId: h, content: y }), $(h, y, H ? H.messages : []);
-  }, [h, g, ee, H, a.chatAvailable, a.companyId, a.apiUrl, a.mockMode, f]), Z = Q(
+    ), (E = l.current) == null || E.call(l, "message_sent", { conversationId: m, content: y }), $(m, y, H ? H.messages : []);
+  }, [m, g, ee, H, a.chatAvailable, a.companyId, a.apiUrl, a.mockMode, f]), Z = Q(
     async (b, y, S) => {
       var F;
       if (!a.mockMode)
@@ -1037,21 +1037,21 @@ function Ji(t, e) {
   return {
     config: a,
     setConfig: r,
-    isOpen: o,
+    isOpen: s,
     setIsOpen: P,
-    screen: s,
+    screen: o,
     setScreen: ie,
-    conversations: m,
+    conversations: h,
     activeConversation: H,
-    activeConversationId: h,
-    visitorContact: _,
+    activeConversationId: m,
+    visitorContact: I,
     visitorId: z.current,
     activeConversationHasReply: H ? v(H) : !1,
     totalUnread: U,
     isStreaming: g,
     rateLimitTimer: f,
-    errorBanner: I,
-    setErrorBanner: k,
+    errorBanner: N,
+    setErrorBanner: _,
     selectConversation: re,
     startNewConversation: ee,
     endConversation: ce,
@@ -1071,24 +1071,24 @@ function ve() {
 }
 function li(t, e) {
   let a = null;
-  const r = () => a || (a = t().then((o) => {
-    const n = e ? e(o) : o.default;
+  const r = () => a || (a = t().then((s) => {
+    const n = e ? e(s) : s.default;
     if (!n)
       throw new Error("Lazy component not found");
     return n;
   }));
   return function(n) {
-    const [s, u] = T(null);
+    const [o, u] = T(null);
     return Y(() => {
-      let m = !0;
+      let h = !0;
       return r().then((p) => {
-        m && u(() => p);
+        h && u(() => p);
       }).catch((p) => {
         console.error("[Pitaj.io] Failed to load lazy screen:", p);
       }), () => {
-        m = !1;
+        h = !1;
       };
-    }, []), s ? /* @__PURE__ */ i(s, { ...n }) : /* @__PURE__ */ i("div", { className: "pitaj-lazy-loading", children: [
+    }, []), o ? /* @__PURE__ */ i(o, { ...n }) : /* @__PURE__ */ i("div", { className: "pitaj-lazy-loading", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-typing-dot" }),
       /* @__PURE__ */ i("span", { className: "pitaj-typing-dot" }),
       /* @__PURE__ */ i("span", { className: "pitaj-typing-dot" })
@@ -1217,7 +1217,7 @@ function da({ size: t = 16, className: e = "" }) {
     /* @__PURE__ */ i("path", { d: "M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0 1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" })
   ] });
 }
-function hi({ size: t = 16, className: e = "" }) {
+function mi({ size: t = 16, className: e = "" }) {
   return /* @__PURE__ */ i("svg", { width: t, height: t, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.9", strokeLinecap: "round", strokeLinejoin: "round", className: e, children: /* @__PURE__ */ i("path", { d: "m21.44 11.05-8.49 8.49a5.5 5.5 0 0 1-7.78-7.78l9.2-9.19a3.5 3.5 0 0 1 4.95 4.95l-9.2 9.2a1.5 1.5 0 0 1-2.12-2.13l8.49-8.48" }) });
 }
 function ua({ size: t = 16, className: e = "" }) {
@@ -1247,7 +1247,7 @@ function Ir({ size: t = 16, className: e = "" }) {
 function Cr({ size: t = 16, className: e = "" }) {
   return /* @__PURE__ */ i("svg", { width: t, height: t, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.2", strokeLinecap: "round", strokeLinejoin: "round", className: e, children: /* @__PURE__ */ i("path", { d: "M5 12h14" }) });
 }
-function ha({ size: t = 16, className: e = "" }) {
+function ma({ size: t = 16, className: e = "" }) {
   return /* @__PURE__ */ i("svg", { width: t, height: t, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.9", strokeLinecap: "round", strokeLinejoin: "round", className: e, children: [
     /* @__PURE__ */ i("path", { d: "M3 6h18" }),
     /* @__PURE__ */ i("path", { d: "M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2" }),
@@ -1256,7 +1256,7 @@ function ha({ size: t = 16, className: e = "" }) {
     /* @__PURE__ */ i("path", { d: "M14 11v6" })
   ] });
 }
-function ma({ size: t = 14, className: e = "" }) {
+function ha({ size: t = 14, className: e = "" }) {
   return /* @__PURE__ */ i("svg", { width: t, height: t, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: e, children: [
     /* @__PURE__ */ i("path", { d: "M12 20h.01" }),
     /* @__PURE__ */ i("path", { d: "M2 8.82a15 15 0 0 1 20 0" }),
@@ -1444,36 +1444,36 @@ function Ca({
   activeConversation: e,
   config: a,
   onBack: r,
-  onClose: o,
+  onClose: s,
   onNewConversation: n,
-  onEndConversation: s,
+  onEndConversation: o,
   onDeleteConversation: u,
-  onViewHistory: m,
+  onViewHistory: h,
   onViewTickets: p
 }) {
-  var _;
-  const [h, c] = T(!1), g = te(null), d = t === "conversation" && e, I = d || t === "history" || t === "tickets", k = a.title || a.name || "Pitaj.io AI Agent";
+  var I;
+  const [m, c] = T(!1), g = te(null), d = t === "conversation" && e, N = d || t === "history" || t === "tickets", _ = a.title || a.name || "Pitaj.io AI Agent";
   Y(() => {
     var C;
-    const N = (M) => {
+    const j = (M) => {
       var V, H;
       const L = ((H = (V = M.composedPath) == null ? void 0 : V.call(M)) == null ? void 0 : H[0]) || M.target;
       g.current && L && !g.current.contains(L) && c(!1);
     };
-    document.addEventListener("mousedown", N);
+    document.addEventListener("mousedown", j);
     const l = (C = g.current) == null ? void 0 : C.getRootNode();
-    return l instanceof ShadowRoot && l.addEventListener("mousedown", N), () => {
-      document.removeEventListener("mousedown", N), l instanceof ShadowRoot && l.removeEventListener("mousedown", N);
+    return l instanceof ShadowRoot && l.addEventListener("mousedown", j), () => {
+      document.removeEventListener("mousedown", j), l instanceof ShadowRoot && l.removeEventListener("mousedown", j);
     };
   }, []), Y(() => {
     c(!1);
   }, [t]);
-  const z = (N) => {
-    c(!1), N == null || N();
+  const z = (j) => {
+    c(!1), j == null || j();
   };
   return /* @__PURE__ */ i("header", { className: "pitaj-header", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-header-info", children: [
-      I && /* @__PURE__ */ i(
+      N && /* @__PURE__ */ i(
         "button",
         {
           onClick: r,
@@ -1483,9 +1483,9 @@ function Ca({
           children: /* @__PURE__ */ i(ea, { size: 18 })
         }
       ),
-      /* @__PURE__ */ i("div", { className: `pitaj-avatar ${((_ = a.content) == null ? void 0 : _.avatarBorder) === !1 ? "no-border" : "with-border"}`, children: a.logo || a.avatar ? /* @__PURE__ */ i("img", { src: a.logo || a.avatar, alt: a.name || "AI" }) : /* @__PURE__ */ i(Ze, { size: 18 }) }),
+      /* @__PURE__ */ i("div", { className: `pitaj-avatar ${((I = a.content) == null ? void 0 : I.avatarBorder) === !1 ? "no-border" : "with-border"}`, children: a.logo || a.avatar ? /* @__PURE__ */ i("img", { src: a.logo || a.avatar, alt: a.name || "AI" }) : /* @__PURE__ */ i(Ze, { size: 18 }) }),
       /* @__PURE__ */ i("div", { className: "pitaj-header-text", children: [
-        /* @__PURE__ */ i("div", { className: "pitaj-header-title", children: k }),
+        /* @__PURE__ */ i("div", { className: "pitaj-header-title", children: _ }),
         d && !!(e != null && e.ticketNumber) && (e == null ? void 0 : e.ticketNumber) !== "undefined" && (e == null ? void 0 : e.ticketNumber) !== "null" && /* @__PURE__ */ i("div", { className: "pitaj-header-ticket", children: /* @__PURE__ */ i("span", { className: "pitaj-header-ticket-badge", children: e == null ? void 0 : e.ticketNumber }) })
       ] })
     ] }),
@@ -1494,15 +1494,15 @@ function Ca({
         /* @__PURE__ */ i(
           "button",
           {
-            onClick: () => c((N) => !N),
-            className: `pitaj-icon-btn ${h ? "is-active" : ""}`,
+            onClick: () => c((j) => !j),
+            className: `pitaj-icon-btn ${m ? "is-active" : ""}`,
             "aria-label": "Meni",
-            "aria-expanded": h,
+            "aria-expanded": m,
             title: "Meni",
             children: /* @__PURE__ */ i(ia, { size: 18 })
           }
         ),
-        h && /* @__PURE__ */ i("div", { className: "pitaj-menu-dropdown", role: "menu", children: [
+        m && /* @__PURE__ */ i("div", { className: "pitaj-menu-dropdown", role: "menu", children: [
           /* @__PURE__ */ i(
             "button",
             {
@@ -1521,7 +1521,7 @@ function Ca({
               role: "menuitem",
               className: "pitaj-menu-item",
               disabled: !d,
-              onClick: () => z(s),
+              onClick: () => z(o),
               children: [
                 /* @__PURE__ */ i(na, { size: 15, className: "pitaj-menu-item-icon" }),
                 "Završi konverzaciju"
@@ -1536,7 +1536,7 @@ function Ca({
               disabled: !d,
               onClick: () => z(u),
               children: [
-                /* @__PURE__ */ i(ha, { size: 15, className: "pitaj-menu-item-icon" }),
+                /* @__PURE__ */ i(ma, { size: 15, className: "pitaj-menu-item-icon" }),
                 "Obriši konverzaciju"
               ]
             }
@@ -1546,7 +1546,7 @@ function Ca({
             {
               role: "menuitem",
               className: "pitaj-menu-item",
-              onClick: () => z(m),
+              onClick: () => z(h),
               children: [
                 /* @__PURE__ */ i(oa, { size: 15, className: "pitaj-menu-item-icon" }),
                 "Pogledaj prethodne"
@@ -1562,7 +1562,7 @@ function Ca({
       /* @__PURE__ */ i(
         "button",
         {
-          onClick: o,
+          onClick: s,
           className: "pitaj-icon-btn",
           "aria-label": "Zatvori prozor",
           title: "Zatvori",
@@ -1577,42 +1577,42 @@ function Aa({ content: t }) {
     return /* @__PURE__ */ i("span", {});
   const e = t.split(`
 `), a = [];
-  let r = !1, o = [];
+  let r = !1, s = [];
   for (let n = 0; n < e.length; n++) {
-    const s = e[n];
-    if (s.startsWith("```")) {
+    const o = e[n];
+    if (o.startsWith("```")) {
       r ? (a.push(
-        /* @__PURE__ */ i("pre", { children: /* @__PURE__ */ i("code", { children: o.join(`
+        /* @__PURE__ */ i("pre", { children: /* @__PURE__ */ i("code", { children: s.join(`
 `) }) }, `code-${n}`)
-      ), o = [], r = !1) : r = !0;
+      ), s = [], r = !1) : r = !0;
       continue;
     }
     if (r) {
-      o.push(s);
+      s.push(o);
       continue;
     }
-    if (s.trim().startsWith("- ") || s.trim().startsWith("* ")) {
-      const m = s.trim().slice(2);
+    if (o.trim().startsWith("- ") || o.trim().startsWith("* ")) {
+      const h = o.trim().slice(2);
       a.push(
-        /* @__PURE__ */ i("ul", { children: /* @__PURE__ */ i("li", { children: Qe(m) }) }, `ul-${n}`)
+        /* @__PURE__ */ i("ul", { children: /* @__PURE__ */ i("li", { children: Qe(h) }) }, `ul-${n}`)
       );
       continue;
     }
-    const u = s.trim().match(/^(\d+)\.\s+(.*)/);
+    const u = o.trim().match(/^(\d+)\.\s+(.*)/);
     if (u) {
       a.push(
         /* @__PURE__ */ i("ol", { start: parseInt(u[1], 10), children: /* @__PURE__ */ i("li", { children: Qe(u[2]) }) }, `ol-${n}`)
       );
       continue;
     }
-    if (!s.trim()) {
+    if (!o.trim()) {
       a.push(/* @__PURE__ */ i("div", { style: { height: "6px" } }, `sp-${n}`));
       continue;
     }
-    a.push(/* @__PURE__ */ i("p", { children: Qe(s) }, `p-${n}`));
+    a.push(/* @__PURE__ */ i("p", { children: Qe(o) }, `p-${n}`));
   }
-  return r && o.length > 0 && a.push(
-    /* @__PURE__ */ i("pre", { children: /* @__PURE__ */ i("code", { children: o.join(`
+  return r && s.length > 0 && a.push(
+    /* @__PURE__ */ i("pre", { children: /* @__PURE__ */ i("code", { children: s.join(`
 `) }) }, "code-final")
   ), /* @__PURE__ */ i("div", { className: "pitaj-markdown", children: a });
 }
@@ -1620,29 +1620,29 @@ function Qe(t) {
   const e = [];
   let a = 0;
   const r = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g;
-  let o;
-  for (; (o = r.exec(t)) !== null; ) {
-    o.index > a && e.push(...Dt(t.slice(a, o.index)));
-    const n = o[0];
+  let s;
+  for (; (s = r.exec(t)) !== null; ) {
+    s.index > a && e.push(...Dt(t.slice(a, s.index)));
+    const n = s[0];
     if (n.startsWith("`") && n.endsWith("`"))
       e.push(
-        /* @__PURE__ */ i("code", { children: n.slice(1, -1) }, `c-${o.index}`)
+        /* @__PURE__ */ i("code", { children: n.slice(1, -1) }, `c-${s.index}`)
       );
     else if (n.startsWith("**") && n.endsWith("**"))
       e.push(
-        /* @__PURE__ */ i("strong", { children: n.slice(2, -2) }, `b-${o.index}`)
+        /* @__PURE__ */ i("strong", { children: n.slice(2, -2) }, `b-${s.index}`)
       );
     else if (n.startsWith("*") && n.endsWith("*"))
       e.push(
-        /* @__PURE__ */ i("em", { children: n.slice(1, -1) }, `i-${o.index}`)
+        /* @__PURE__ */ i("em", { children: n.slice(1, -1) }, `i-${s.index}`)
       );
     else if (n.startsWith("[") && n.includes("](")) {
-      const s = n.slice(1, n.indexOf("](")), u = n.slice(n.indexOf("](") + 2, -1);
+      const o = n.slice(1, n.indexOf("](")), u = n.slice(n.indexOf("](") + 2, -1);
       e.push(
-        /* @__PURE__ */ i("a", { href: u, target: "_blank", rel: "noopener noreferrer", children: s }, `a-${o.index}`)
+        /* @__PURE__ */ i("a", { href: u, target: "_blank", rel: "noopener noreferrer", children: o }, `a-${s.index}`)
       );
     }
-    a = o.index + n.length;
+    a = s.index + n.length;
   }
   return a < t.length && e.push(...Dt(t.slice(a))), e;
 }
@@ -1675,11 +1675,11 @@ function Dt(t) {
       external: !1
     });
   }
-  e.sort((n, s) => n.start - s.start);
+  e.sort((n, o) => n.start - o.start);
   const r = [];
-  let o = 0;
+  let s = 0;
   for (const n of e)
-    n.start < o || (n.start > o && r.push(t.slice(o, n.start)), r.push(
+    n.start < s || (n.start > s && r.push(t.slice(s, n.start)), r.push(
       /* @__PURE__ */ i(
         "a",
         {
@@ -1689,15 +1689,15 @@ function Dt(t) {
         },
         `l-${n.start}`
       )
-    ), o = n.end);
-  return o < t.length && r.push(t.slice(o)), r;
+    ), s = n.end);
+  return s < t.length && r.push(t.slice(s)), r;
 }
 function it(t) {
   return (t || "").replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]/gu, "").trim();
 }
 function Ba(t) {
   const e = it(t).toLowerCase();
-  return e.includes("wi-fi") || e.includes("wifi") || e.includes("internet") ? ma : e.includes("doručak") || e.includes("dorucak") || e.includes("kafa") || e.includes("coffee") ? fa : e.includes("restoran") || e.includes("hrana") || e.includes("dining") ? ga : e.includes("parking") || e.includes("garaža") || e.includes("garaza") || e.includes("auto") ? ba : e.includes("spa") || e.includes("bazen") || e.includes("wellness") ? xa : e.includes("klima") || e.includes("hlađenje") || e.includes("hladjenje") ? ja : e.includes("teretana") || e.includes("fitness") || e.includes("gym") ? va : wa;
+  return e.includes("wi-fi") || e.includes("wifi") || e.includes("internet") ? ha : e.includes("doručak") || e.includes("dorucak") || e.includes("kafa") || e.includes("coffee") ? fa : e.includes("restoran") || e.includes("hrana") || e.includes("dining") ? ga : e.includes("parking") || e.includes("garaža") || e.includes("garaza") || e.includes("auto") ? ba : e.includes("spa") || e.includes("bazen") || e.includes("wellness") ? xa : e.includes("klima") || e.includes("hlađenje") || e.includes("hladjenje") ? ja : e.includes("teretana") || e.includes("fitness") || e.includes("gym") ? va : wa;
 }
 function Da({ widget: t, onAction: e }) {
   const a = t.type || "custom_html", r = t.config || {};
@@ -1732,8 +1732,8 @@ function pt({
   values: e,
   onChange: a
 }) {
-  return /* @__PURE__ */ i(ue, { children: t.map((r, o) => {
-    const n = e[r.key] ?? (r.type === "checkbox" ? !1 : ""), s = r.key || `field_${o}`;
+  return /* @__PURE__ */ i(ue, { children: t.map((r, s) => {
+    const n = e[r.key] ?? (r.type === "checkbox" ? !1 : ""), o = r.key || `field_${s}`;
     if (r.type === "textarea")
       return /* @__PURE__ */ i("div", { className: "pitaj-widget-field", children: [
         /* @__PURE__ */ i("label", { children: [
@@ -1748,28 +1748,28 @@ function pt({
             rows: 3,
             placeholder: r.placeholder || "",
             value: n,
-            onInput: (p) => a(s, p.target.value)
+            onInput: (p) => a(o, p.target.value)
           }
         )
-      ] }, s);
+      ] }, o);
     if (r.type === "checkbox")
       return /* @__PURE__ */ i("div", { className: "pitaj-widget-checkbox-row", children: [
         /* @__PURE__ */ i(
           "input",
           {
-            id: `widget-chk-${s}-${o}`,
+            id: `widget-chk-${o}-${s}`,
             type: "checkbox",
             required: r.required,
             checked: !!n,
-            onChange: (p) => a(s, p.target.checked)
+            onChange: (p) => a(o, p.target.checked)
           }
         ),
-        /* @__PURE__ */ i("label", { htmlFor: `widget-chk-${s}-${o}`, children: [
+        /* @__PURE__ */ i("label", { htmlFor: `widget-chk-${o}-${s}`, children: [
           r.label,
           " ",
           r.required && /* @__PURE__ */ i("span", { style: { color: "#ef4444" }, children: "*" })
         ] })
-      ] }, s);
+      ] }, o);
     if (r.type === "select")
       return /* @__PURE__ */ i("div", { className: "pitaj-widget-field", children: [
         /* @__PURE__ */ i("label", { children: [
@@ -1782,21 +1782,21 @@ function pt({
           {
             required: r.required,
             value: n,
-            onChange: (p) => a(s, p.target.value),
+            onChange: (p) => a(o, p.target.value),
             children: [
               /* @__PURE__ */ i("option", { value: "", children: r.placeholder || "Odaberite..." }),
-              (r.options || []).map((p, h) => /* @__PURE__ */ i("option", { value: p, children: p }, h))
+              (r.options || []).map((p, m) => /* @__PURE__ */ i("option", { value: p, children: p }, m))
             ]
           }
         )
-      ] }, s);
+      ] }, o);
     const u = r.type === "phone" ? "tel" : r.type === "email" ? "email" : r.type === "date" ? "date" : r.type === "number" ? "number" : "text";
-    let m;
+    let h;
     if (r.type === "date") {
-      const p = s.toLowerCase();
+      const p = o.toLowerCase();
       if (p.includes("out") || p.includes("odjav") || p.includes("end") || p.includes("do")) {
-        const h = e.check_in || e.start || e.od;
-        h && typeof h == "string" && (m = h);
+        const m = e.check_in || e.start || e.od;
+        m && typeof m == "string" && (h = m);
       }
     }
     return /* @__PURE__ */ i("div", { className: "pitaj-widget-field", children: [
@@ -1811,12 +1811,12 @@ function pt({
           type: u,
           required: r.required,
           placeholder: r.placeholder || "",
-          min: m,
+          min: h,
           value: n,
-          onInput: (p) => a(s, p.target.value)
+          onInput: (p) => a(o, p.target.value)
         }
       )
-    ] }, s);
+    ] }, o);
   }) });
 }
 function Ua({ config: t, onAction: e }) {
@@ -1824,23 +1824,23 @@ function Ua({ config: t, onAction: e }) {
     { key: "name", type: "text", label: "Ime i prezime", placeholder: "Petar Petrović", required: !0 },
     { key: "phone", type: "phone", label: "Broj telefona", placeholder: "+387 61 123 456", required: !1 },
     { key: "email", type: "email", label: "Poslovni email", placeholder: "petar@kompanija.ba", required: !0 }
-  ], r = Array.isArray(t.fields) && t.fields.length > 0 ? t.fields : a, [o, n] = T({}), [s, u] = T(!1), m = t.title || "Razgovarajte sa prodajom", p = t.subtitle || "Recite nam više o svojoj kompaniji i stupićemo u kontakt.", h = (g, d) => {
+  ], r = Array.isArray(t.fields) && t.fields.length > 0 ? t.fields : a, [s, n] = T({}), [o, u] = T(!1), h = t.title || "Razgovarajte sa prodajom", p = t.subtitle || "Recite nam više o svojoj kompaniji i stupićemo u kontakt.", m = (g, d) => {
     n((f) => ({ ...f, [g]: d }));
   }, c = (g) => {
     g.preventDefault();
     for (const f of r)
       if (f.required) {
-        const j = o[f.key];
-        if (f.type === "checkbox" && !j || f.type !== "checkbox" && (!j || !String(j).trim())) return;
+        const k = s[f.key];
+        if (f.type === "checkbox" && !k || f.type !== "checkbox" && (!k || !String(k).trim())) return;
       }
     u(!0);
-    const d = r.filter((f) => o[f.key] !== void 0 && o[f.key] !== "").map((f) => `- ${f.label}: ${f.type === "checkbox" ? "Da" : o[f.key]}`);
-    e == null || e(`Forma: ${m}
+    const d = r.filter((f) => s[f.key] !== void 0 && s[f.key] !== "").map((f) => `- ${f.label}: ${f.type === "checkbox" ? "Da" : s[f.key]}`);
+    e == null || e(`Forma: ${h}
 ${d.join(`
 `)}`);
   };
-  if (s) {
-    const g = o.email ? ` na ${o.email}` : "";
+  if (o) {
+    const g = s.email ? ` na ${s.email}` : "";
     return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
       /* @__PURE__ */ i("div", { className: "pitaj-widget-success-icon", children: /* @__PURE__ */ i(je, { size: 20 }) }),
       /* @__PURE__ */ i("div", { className: "pitaj-widget-success-title", children: "Zahtjev za demo je poslan!" }),
@@ -1853,17 +1853,17 @@ ${d.join(`
   }
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-header", children: [
-      /* @__PURE__ */ i("div", { className: "pitaj-widget-title", children: m }),
+      /* @__PURE__ */ i("div", { className: "pitaj-widget-title", children: h }),
       /* @__PURE__ */ i("div", { className: "pitaj-widget-subtitle", children: p })
     ] }),
     /* @__PURE__ */ i("form", { onSubmit: c, className: "pitaj-widget-form", children: [
-      /* @__PURE__ */ i(pt, { fields: r, values: o, onChange: h }),
+      /* @__PURE__ */ i(pt, { fields: r, values: s, onChange: m }),
       /* @__PURE__ */ i("button", { type: "submit", className: "pitaj-widget-btn-primary", children: t.submit_label || "Zakaži razgovor" })
     ] })
   ] });
 }
 function Fa({ config: t, onAction: e }) {
-  const [a, r] = T(0), o = [
+  const [a, r] = T(0), s = [
     {
       id: 1,
       name: "XY Metcon 64",
@@ -1885,12 +1885,12 @@ function Fa({ config: t, onAction: e }) {
       price: "24.00 KM",
       image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=400&auto=format&fit=crop&q=80"
     }
-  ], n = Array.isArray(t.products) && t.products.length > 0 ? t.products : o, s = n[a] || n[0], u = () => {
-    r((h) => (h + 1) % n.length);
-  }, m = () => {
-    r((h) => (h - 1 + n.length) % n.length);
+  ], n = Array.isArray(t.products) && t.products.length > 0 ? t.products : s, o = n[a] || n[0], u = () => {
+    r((m) => (m + 1) % n.length);
+  }, h = () => {
+    r((m) => (m - 1 + n.length) % n.length);
   }, p = () => {
-    e == null || e(`Zanima me proizvod: ${s.name} (${s.price})`);
+    e == null || e(`Zanima me proizvod: ${o.name} (${o.price})`);
   };
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card products-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-bar", children: [
@@ -1904,23 +1904,23 @@ function Fa({ config: t, onAction: e }) {
     ] }),
     /* @__PURE__ */ i("div", { className: "pitaj-product-card", children: [
       /* @__PURE__ */ i("div", { className: "pitaj-product-image-wrap", children: [
-        /* @__PURE__ */ i("img", { src: s.image, alt: s.name, className: "pitaj-product-img" }),
+        /* @__PURE__ */ i("img", { src: o.image, alt: o.name, className: "pitaj-product-img" }),
         n.length > 1 && /* @__PURE__ */ i("div", { className: "pitaj-carousel-controls", children: [
-          /* @__PURE__ */ i("button", { type: "button", onClick: m, "aria-label": "Prethodni", className: "pitaj-carousel-btn", children: "‹" }),
+          /* @__PURE__ */ i("button", { type: "button", onClick: h, "aria-label": "Prethodni", className: "pitaj-carousel-btn", children: "‹" }),
           /* @__PURE__ */ i("button", { type: "button", onClick: u, "aria-label": "Sljedeći", className: "pitaj-carousel-btn", children: "›" })
         ] })
       ] }),
       /* @__PURE__ */ i("div", { className: "pitaj-product-info", children: [
-        /* @__PURE__ */ i("div", { className: "pitaj-product-name", children: s.name }),
-        /* @__PURE__ */ i("div", { className: "pitaj-product-sub", children: s.subtitle }),
-        /* @__PURE__ */ i("div", { className: "pitaj-product-price", children: s.price }),
+        /* @__PURE__ */ i("div", { className: "pitaj-product-name", children: o.name }),
+        /* @__PURE__ */ i("div", { className: "pitaj-product-sub", children: o.subtitle }),
+        /* @__PURE__ */ i("div", { className: "pitaj-product-price", children: o.price }),
         /* @__PURE__ */ i("button", { type: "button", onClick: p, className: "pitaj-widget-btn-primary pitaj-btn-select", children: "Odaberi opcije" })
       ] })
     ] })
   ] });
 }
 function Ra({ config: t, onAction: e }) {
-  const [a, r] = T(!1), o = [
+  const [a, r] = T(!1), s = [
     {
       id: 1,
       name: "XY Metcon 64",
@@ -1935,15 +1935,15 @@ function Ra({ config: t, onAction: e }) {
       price: "24.90 KM",
       image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=120&auto=format&fit=crop&q=80"
     }
-  ], n = Array.isArray(t.items) && t.items.length > 0 ? t.items : o, s = t.total || "40.90 KM", u = () => {
-    r(!0), e == null || e(`Želim dovršiti narudžbu iz korpe (Ukupno: ${s})`);
+  ], n = Array.isArray(t.items) && t.items.length > 0 ? t.items : s, o = t.total || "40.90 KM", u = () => {
+    r(!0), e == null || e(`Želim dovršiti narudžbu iz korpe (Ukupno: ${o})`);
   };
   return a ? /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-icon", children: /* @__PURE__ */ i(je, { size: 20 }) }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-title", children: "Narudžba je potvrđena!" }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-desc", children: [
       "Iznos od ",
-      s,
+      o,
       " je uspješno obrađen. Detalji su poslani."
     ] })
   ] }) : /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card cart-widget", children: [
@@ -1954,18 +1954,18 @@ function Ra({ config: t, onAction: e }) {
         " stavke u korpi"
       ] })
     ] }),
-    /* @__PURE__ */ i("div", { className: "pitaj-cart-items-list", children: n.map((m) => /* @__PURE__ */ i("div", { className: "pitaj-cart-item-row", children: [
-      /* @__PURE__ */ i("img", { src: m.image, alt: m.name, className: "pitaj-cart-thumb" }),
+    /* @__PURE__ */ i("div", { className: "pitaj-cart-items-list", children: n.map((h) => /* @__PURE__ */ i("div", { className: "pitaj-cart-item-row", children: [
+      /* @__PURE__ */ i("img", { src: h.image, alt: h.name, className: "pitaj-cart-thumb" }),
       /* @__PURE__ */ i("div", { className: "pitaj-cart-details", children: [
-        /* @__PURE__ */ i("div", { className: "pitaj-cart-item-name", children: m.name }),
-        /* @__PURE__ */ i("div", { className: "pitaj-cart-item-sub", children: m.subtitle })
+        /* @__PURE__ */ i("div", { className: "pitaj-cart-item-name", children: h.name }),
+        /* @__PURE__ */ i("div", { className: "pitaj-cart-item-sub", children: h.subtitle })
       ] }),
-      /* @__PURE__ */ i("div", { className: "pitaj-cart-item-price", children: m.price })
-    ] }, m.id)) }),
+      /* @__PURE__ */ i("div", { className: "pitaj-cart-item-price", children: h.price })
+    ] }, h.id)) }),
     /* @__PURE__ */ i("div", { className: "pitaj-cart-divider" }),
     /* @__PURE__ */ i("div", { className: "pitaj-cart-summary", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-cart-total-label", children: "Ukupno za plaćanje:" }),
-      /* @__PURE__ */ i("span", { className: "pitaj-cart-total-val", children: s })
+      /* @__PURE__ */ i("span", { className: "pitaj-cart-total-val", children: o })
     ] }),
     /* @__PURE__ */ i("div", { className: "pitaj-cart-payment", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-cart-pay-label", children: "Plaćanje karticom" }),
@@ -1986,7 +1986,7 @@ function Ha({ config: t }) {
     { day: "Č", val: 25 },
     { day: "P", val: 70 },
     { day: "S", val: 95 }
-  ], o = Array.isArray(t.chart_data) && t.chart_data.length > 0 ? t.chart_data : r;
+  ], s = Array.isArray(t.chart_data) && t.chart_data.length > 0 ? t.chart_data : r;
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card chart-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-bar", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-widget-badge-icon", children: /* @__PURE__ */ i(_a, { size: 14 }) }),
@@ -1995,7 +1995,7 @@ function Ha({ config: t }) {
     /* @__PURE__ */ i("div", { className: "pitaj-chart-body", children: [
       /* @__PURE__ */ i("div", { className: "pitaj-chart-label", children: e }),
       /* @__PURE__ */ i("div", { className: "pitaj-chart-big-number", children: a }),
-      /* @__PURE__ */ i("div", { className: "pitaj-bar-chart-container", children: o.map((n, s) => /* @__PURE__ */ i("div", { className: "pitaj-bar-col", children: [
+      /* @__PURE__ */ i("div", { className: "pitaj-bar-chart-container", children: s.map((n, o) => /* @__PURE__ */ i("div", { className: "pitaj-bar-col", children: [
         /* @__PURE__ */ i("div", { className: "pitaj-bar-track", children: /* @__PURE__ */ i(
           "div",
           {
@@ -2005,12 +2005,12 @@ function Ha({ config: t }) {
           }
         ) }),
         /* @__PURE__ */ i("span", { className: "pitaj-bar-day", children: n.day })
-      ] }, s)) })
+      ] }, o)) })
     ] })
   ] });
 }
 function Oa({ config: t, onAction: e }) {
-  const [a, r] = T([]), o = [
+  const [a, r] = T([]), s = [
     {
       id: 1,
       title: "Zumba trening",
@@ -2029,17 +2029,17 @@ function Oa({ config: t, onAction: e }) {
       instructor: "Trener Emir • 60 min",
       image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=160&auto=format&fit=crop&q=80"
     }
-  ], n = Array.isArray(t.classes) && t.classes.length > 0 ? t.classes : o, s = (u, m) => {
-    const p = u.id ?? m;
-    a.includes(p) || (r((h) => [...h, p]), e == null || e(`Želim rezervisati termin za: ${u.title} (${u.time})`));
+  ], n = Array.isArray(t.classes) && t.classes.length > 0 ? t.classes : s, o = (u, h) => {
+    const p = u.id ?? h;
+    a.includes(p) || (r((m) => [...m, p]), e == null || e(`Želim rezervisati termin za: ${u.title} (${u.time})`));
   };
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card classes-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-bar", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-widget-badge-icon", children: /* @__PURE__ */ i(ua, { size: 14 }) }),
       /* @__PURE__ */ i("span", { className: "pitaj-widget-bar-title", children: t.title || "Nadolazeći termini" })
     ] }),
-    /* @__PURE__ */ i("div", { className: "pitaj-classes-list", children: n.map((u, m) => {
-      const p = u.id ?? m, h = a.includes(p);
+    /* @__PURE__ */ i("div", { className: "pitaj-classes-list", children: n.map((u, h) => {
+      const p = u.id ?? h, m = a.includes(p);
       return /* @__PURE__ */ i("div", { className: "pitaj-class-item", children: [
         /* @__PURE__ */ i("img", { src: u.image, alt: u.title, className: "pitaj-class-thumb" }),
         /* @__PURE__ */ i("div", { className: "pitaj-class-info", children: [
@@ -2054,9 +2054,9 @@ function Oa({ config: t, onAction: e }) {
           "button",
           {
             type: "button",
-            onClick: () => s(u, m),
-            className: `pitaj-book-btn ${h ? "is-booked" : ""}`,
-            children: h ? "Rezervisano" : "Rezerviši"
+            onClick: () => o(u, h),
+            className: `pitaj-book-btn ${m ? "is-booked" : ""}`,
+            children: m ? "Rezervisano" : "Rezerviši"
           }
         )
       ] }, p);
@@ -2064,76 +2064,76 @@ function Oa({ config: t, onAction: e }) {
   ] });
 }
 function Va({ config: t, onAction: e }) {
-  const [a, r] = T({}), [o, n] = T(!1), s = t.name || "Hotel Dark Moon", u = t.price || "220 KM / noć", m = t.location || "Sarajevo, Bosna i Hercegovina", p = t.rating || "4.8 (124 recenzije)", h = t.image || "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&auto=format&fit=crop&q=80", c = ["Wi-Fi", "Doručak", "Restoran", "Parking", "Spa & Bazen"], d = (Array.isArray(t.amenities) && t.amenities.length > 0 ? t.amenities : c).map(it), f = [
+  const [a, r] = T({}), [s, n] = T(!1), o = t.name || "Hotel Dark Moon", u = t.price || "220 KM / noć", h = t.location || "Sarajevo, Bosna i Hercegovina", p = t.rating || "4.8 (124 recenzije)", m = t.image || "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&auto=format&fit=crop&q=80", c = ["Wi-Fi", "Doručak", "Restoran", "Parking", "Spa & Bazen"], d = (Array.isArray(t.amenities) && t.amenities.length > 0 ? t.amenities : c).map(it), f = [
     { key: "check_in", type: "date", label: "Datum dolaska (Check-in)", required: !0 },
     { key: "check_out", type: "date", label: "Datum odjave (Check-out)", required: !0 },
     { key: "guests", type: "select", label: "Broj gostiju", options: ["1 odrasla osoba", "2 odrasle osobe", "3 odrasle osobe", "Porodica (4+)"], required: !0 },
     { key: "name", type: "text", label: "Ime i prezime", placeholder: "Vaše ime", required: !0 },
     { key: "phone", type: "phone", label: "Broj telefona", placeholder: "+387 61 123 456", required: !1 }
-  ], j = Array.isArray(t.fields) ? t.fields : f, I = (z, _) => {
-    r((N) => ({ ...N, [z]: _ }));
-  }, k = (z) => {
-    if (z.preventDefault(), j.length > 0) {
-      for (const N of j)
-        if (N.required) {
-          const l = a[N.key];
-          if (N.type === "checkbox" && !l || N.type !== "checkbox" && (!l || !String(l).trim())) return;
+  ], k = Array.isArray(t.fields) ? t.fields : f, N = (z, I) => {
+    r((j) => ({ ...j, [z]: I }));
+  }, _ = (z) => {
+    if (z.preventDefault(), k.length > 0) {
+      for (const j of k)
+        if (j.required) {
+          const l = a[j.key];
+          if (j.type === "checkbox" && !l || j.type !== "checkbox" && (!l || !String(l).trim())) return;
         }
     }
     n(!0);
-    const _ = { ...a };
-    if (_.check_in && _.check_out && _.check_out < _.check_in) {
-      const N = _.check_in;
-      _.check_in = _.check_out, _.check_out = N;
+    const I = { ...a };
+    if (I.check_in && I.check_out && I.check_out < I.check_in) {
+      const j = I.check_in;
+      I.check_in = I.check_out, I.check_out = j;
     }
-    if (j.length > 0) {
-      const N = j.filter((l) => _[l.key] !== void 0 && _[l.key] !== "").map((l) => `- ${l.label}: ${l.type === "checkbox" ? "Da" : _[l.key]}`);
-      e == null || e(`Forma: Rezervacija smještaja - ${s}
-${N.join(`
+    if (k.length > 0) {
+      const j = k.filter((l) => I[l.key] !== void 0 && I[l.key] !== "").map((l) => `- ${l.label}: ${l.type === "checkbox" ? "Da" : I[l.key]}`);
+      e == null || e(`Forma: Rezervacija smještaja - ${o}
+${j.join(`
 `)}`);
     } else
-      e == null || e(`Forma: Rezervacija smještaja - ${s}
+      e == null || e(`Forma: Rezervacija smještaja - ${o}
 - Cijena: ${u}
-- Lokacija: ${m}`);
+- Lokacija: ${h}`);
   };
-  return o ? /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
+  return s ? /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-icon", children: /* @__PURE__ */ i(je, { size: 20 }) }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-title", children: "Zahtjev za rezervaciju je poslan!" }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-desc", children: [
       "Uspješno ste poslali upit za ",
-      s,
+      o,
       ". Naše osoblje će vam se javiti za potvrdu termina."
     ] })
   ] }) : /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card hotel-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-hotel-image-wrap", children: [
-      /* @__PURE__ */ i("img", { src: h, alt: s, className: "pitaj-hotel-img" }),
+      /* @__PURE__ */ i("img", { src: m, alt: o, className: "pitaj-hotel-img" }),
       /* @__PURE__ */ i("div", { className: "pitaj-hotel-badge-price", children: u })
     ] }),
     /* @__PURE__ */ i("div", { className: "pitaj-hotel-content", children: [
-      /* @__PURE__ */ i("div", { className: "pitaj-hotel-title-row", children: /* @__PURE__ */ i("div", { className: "pitaj-hotel-name", children: s }) }),
+      /* @__PURE__ */ i("div", { className: "pitaj-hotel-title-row", children: /* @__PURE__ */ i("div", { className: "pitaj-hotel-name", children: o }) }),
       /* @__PURE__ */ i("div", { className: "pitaj-hotel-meta", children: [
         /* @__PURE__ */ i("span", { className: "pitaj-meta-item", children: [
           /* @__PURE__ */ i(Ma, { size: 12, className: "pitaj-meta-icon" }),
-          /* @__PURE__ */ i("span", { children: m })
+          /* @__PURE__ */ i("span", { children: h })
         ] }),
         /* @__PURE__ */ i("span", { className: "pitaj-meta-item pitaj-rating", children: [
           /* @__PURE__ */ i(Sa, { size: 11, className: "pitaj-star-icon" }),
           /* @__PURE__ */ i("span", { children: p })
         ] })
       ] }),
-      d.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-amenities-row", children: d.map((z, _) => {
-        const N = it(z), l = Ba(N);
+      d.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-amenities-row", children: d.map((z, I) => {
+        const j = it(z), l = Ba(j);
         return /* @__PURE__ */ i("span", { className: "pitaj-amenity-chip", children: [
           /* @__PURE__ */ i(l, { size: 12, className: "pitaj-amenity-icon" }),
-          /* @__PURE__ */ i("span", { children: N })
-        ] }, _);
+          /* @__PURE__ */ i("span", { children: j })
+        ] }, I);
       }) }),
-      /* @__PURE__ */ i("form", { onSubmit: k, className: "pitaj-widget-form", children: [
-        j.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-hotel-booking-section", children: [
+      /* @__PURE__ */ i("form", { onSubmit: _, className: "pitaj-widget-form", children: [
+        k.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-hotel-booking-section", children: [
           /* @__PURE__ */ i("div", { className: "pitaj-hotel-booking-title", children: "Rezerviši smještaj" }),
-          /* @__PURE__ */ i(pt, { fields: j, values: a, onChange: I })
+          /* @__PURE__ */ i(pt, { fields: k, values: a, onChange: N })
         ] }),
-        /* @__PURE__ */ i("button", { type: "submit", className: "pitaj-widget-btn-primary", children: t.submit_label || (j.length > 0 ? "Pošalji upit za rezervaciju" : "Rezerviši sobu") })
+        /* @__PURE__ */ i("button", { type: "submit", className: "pitaj-widget-btn-primary", children: t.submit_label || (k.length > 0 ? "Pošalji upit za rezervaciju" : "Rezerviši sobu") })
       ] })
     ] })
   ] });
@@ -2143,38 +2143,38 @@ function qa({ config: t, onAction: e }) {
     { key: "name", type: "text", label: "Ime i prezime", placeholder: "Vaše ime", required: !0 },
     { key: "email", type: "email", label: "Email adresa", placeholder: "vas.email@example.com", required: !0 },
     { key: "message", type: "textarea", label: "Poruka", placeholder: "Kako vam možemo pomoći?", required: !0 }
-  ], r = Array.isArray(t.fields) && t.fields.length > 0 ? t.fields : a, [o, n] = T({}), [s, u] = T(!1), m = t.title || "Kontaktirajte nas", p = t.subtitle || "Rado ćemo odgovoriti na vaša pitanja", h = (g, d) => {
+  ], r = Array.isArray(t.fields) && t.fields.length > 0 ? t.fields : a, [s, n] = T({}), [o, u] = T(!1), h = t.title || "Kontaktirajte nas", p = t.subtitle || "Rado ćemo odgovoriti na vaša pitanja", m = (g, d) => {
     n((f) => ({ ...f, [g]: d }));
   }, c = (g) => {
     g.preventDefault();
     for (const f of r)
       if (f.required) {
-        const j = o[f.key];
-        if (f.type === "checkbox" && !j || f.type !== "checkbox" && (!j || !String(j).trim())) return;
+        const k = s[f.key];
+        if (f.type === "checkbox" && !k || f.type !== "checkbox" && (!k || !String(k).trim())) return;
       }
     u(!0);
-    const d = r.filter((f) => o[f.key] !== void 0 && o[f.key] !== "").map((f) => `- ${f.label}: ${f.type === "checkbox" ? "Da" : o[f.key]}`);
-    e == null || e(`Forma: ${m}
+    const d = r.filter((f) => s[f.key] !== void 0 && s[f.key] !== "").map((f) => `- ${f.label}: ${f.type === "checkbox" ? "Da" : s[f.key]}`);
+    e == null || e(`Forma: ${h}
 ${d.join(`
 `)}`);
   };
-  return s ? /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
+  return o ? /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card is-success", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-icon", children: /* @__PURE__ */ i(je, { size: 20 }) }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-title", children: "Poruka je poslana!" }),
     /* @__PURE__ */ i("div", { className: "pitaj-widget-success-desc", children: "Hvala vam na javljanju. Odgovorit ćemo vam uskoro." })
   ] }) : /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card contact-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-header", children: [
-      /* @__PURE__ */ i("div", { className: "pitaj-widget-title", children: m }),
+      /* @__PURE__ */ i("div", { className: "pitaj-widget-title", children: h }),
       /* @__PURE__ */ i("div", { className: "pitaj-widget-subtitle", children: p })
     ] }),
     /* @__PURE__ */ i("form", { onSubmit: c, className: "pitaj-widget-form", children: [
-      /* @__PURE__ */ i(pt, { fields: r, values: o, onChange: h }),
+      /* @__PURE__ */ i(pt, { fields: r, values: s, onChange: m }),
       /* @__PURE__ */ i("button", { type: "submit", className: "pitaj-widget-btn-primary", children: t.submit_label || "Pošalji poruku" })
     ] })
   ] });
 }
 function Ka({ config: t }) {
-  const e = t.city || "Sarajevo", a = t.temp || "22°C", r = t.condition || "Sunčano i toplo", o = t.description || "Pretežno sunčano vrijeme uz blagi povjetarac tokom popodneva.";
+  const e = t.city || "Sarajevo", a = t.temp || "22°C", r = t.condition || "Sunčano i toplo", s = t.description || "Pretežno sunčano vrijeme uz blagi povjetarac tokom popodneva.";
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card weather-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-weather-top", children: [
       /* @__PURE__ */ i(Na, { size: 32, className: "pitaj-weather-svg" }),
@@ -2182,11 +2182,11 @@ function Ka({ config: t }) {
     ] }),
     /* @__PURE__ */ i("div", { className: "pitaj-weather-city", children: e }),
     /* @__PURE__ */ i("div", { className: "pitaj-weather-cond", children: r }),
-    /* @__PURE__ */ i("div", { className: "pitaj-weather-desc", children: o })
+    /* @__PURE__ */ i("div", { className: "pitaj-weather-desc", children: s })
   ] });
 }
 function Wa({ config: t, title: e }) {
-  const [a, r] = T(!0), o = t.url || "https://calendly.com", n = t.height || 380;
+  const [a, r] = T(!0), s = t.url || "https://calendly.com", n = t.height || 380;
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card iframe-widget", children: [
     /* @__PURE__ */ i("div", { className: "pitaj-widget-bar", children: [
       /* @__PURE__ */ i("span", { className: "pitaj-widget-badge-icon", children: /* @__PURE__ */ i($a, { size: 14 }) }),
@@ -2194,7 +2194,7 @@ function Wa({ config: t, title: e }) {
       /* @__PURE__ */ i(
         "a",
         {
-          href: o,
+          href: s,
           target: "_blank",
           rel: "noopener noreferrer",
           className: "pitaj-iframe-open-btn",
@@ -2212,7 +2212,7 @@ function Wa({ config: t, title: e }) {
       /* @__PURE__ */ i(
         "iframe",
         {
-          src: o,
+          src: s,
           title: e,
           className: "pitaj-iframe-frame",
           onLoad: () => r(!1),
@@ -2226,10 +2226,10 @@ function Za({ config: t, onAction: e }) {
   const a = t.html || '<div style="padding: 16px; text-align: center;">Prilagođeni HTML widget</div>', r = t.css || "";
   return /* @__PURE__ */ i("div", { className: "pitaj-inline-widget-card custom-html-widget", onClick: (n) => {
     var u;
-    const s = (u = n.target) == null ? void 0 : u.closest("[data-chat-action]");
-    if (s) {
-      const m = s.getAttribute("data-chat-action");
-      m && (n.preventDefault(), e == null || e(m));
+    const o = (u = n.target) == null ? void 0 : u.closest("[data-chat-action]");
+    if (o) {
+      const h = o.getAttribute("data-chat-action");
+      h && (n.preventDefault(), e == null || e(h));
     }
   }, children: [
     r && /* @__PURE__ */ i("style", { children: r }),
@@ -2237,41 +2237,41 @@ function Za({ config: t, onAction: e }) {
   ] });
 }
 function Ga({ config: t, onAction: e }) {
-  const a = t.jsx_template || "", r = t.default_data || t.data || {}, o = we(() => {
+  const a = t.jsx_template || "", r = t.default_data || t.data || {}, s = we(() => {
     if (!a) return "";
     try {
       let u = a;
-      const m = /\{(\w+)\.map\(\((\w+)\)\s*=>\s*\(([\s\S]*?)\)\)\}/g;
-      u = u.replace(m, (h, c, g, d) => {
+      const h = /\{(\w+)\.map\(\((\w+)\)\s*=>\s*\(([\s\S]*?)\)\)\}/g;
+      u = u.replace(h, (m, c, g, d) => {
         const f = r[c];
-        return Array.isArray(f) ? f.map((j) => {
-          let I = d;
-          return Object.keys(j).forEach((k) => {
-            const z = j[k], _ = new RegExp(
-              `${g}\\.${k}\\s*\\?\\s*["']([^"']*)["']\\s*:\\s*["']([^"']*)["']`,
+        return Array.isArray(f) ? f.map((k) => {
+          let N = d;
+          return Object.keys(k).forEach((_) => {
+            const z = k[_], I = new RegExp(
+              `${g}\\.${_}\\s*\\?\\s*["']([^"']*)["']\\s*:\\s*["']([^"']*)["']`,
               "g"
             );
-            I = I.replace(_, z ? "$1" : "$2");
-            const N = new RegExp(`\\{?${g}\\.${k}\\}?`, "g");
-            I = I.replace(N, String(z ?? ""));
-          }), I;
+            N = N.replace(I, z ? "$1" : "$2");
+            const j = new RegExp(`\\{?${g}\\.${_}\\}?`, "g");
+            N = N.replace(j, String(z ?? ""));
+          }), N;
         }).join("") : "";
-      }), Object.keys(r).forEach((h) => {
-        const c = r[h];
+      }), Object.keys(r).forEach((m) => {
+        const c = r[m];
         if (typeof c == "string" || typeof c == "number") {
-          const g = new RegExp(`\\{${h}\\}`, "g");
+          const g = new RegExp(`\\{${m}\\}`, "g");
           u = u.replace(g, String(c));
         }
       });
-      const p = (h, c) => {
-        const g = h.match(new RegExp(`${c}=(?:["']([^"']*)["']|\\{([^}]+)\\})`, "i"));
+      const p = (m, c) => {
+        const g = m.match(new RegExp(`${c}=(?:["']([^"']*)["']|\\{([^}]+)\\})`, "i"));
         return (g ? g[1] ?? g[2] ?? "" : "").trim();
       };
       return u = u.replace(
         /<Card([^>]*)status=\{\{\s*text:\s*([^,\}]+),\s*icon:\s*["']([^"']+)["']\s*\}\}([^>]*)>/gi,
-        (h, c, g, d, f) => {
-          const j = p(h, "background"), I = j ? `background: ${j};` : "", k = (g || "").replace(/^["']|["']$/g, "").trim(), z = k && k.toLowerCase() !== "prompt" && k !== "{prompt}";
-          let _ = "";
+        (m, c, g, d, f) => {
+          const k = p(m, "background"), N = k ? `background: ${k};` : "", _ = (g || "").replace(/^["']|["']$/g, "").trim(), z = _ && _.toLowerCase() !== "prompt" && _ !== "{prompt}";
+          let I = "";
           if (z) {
             const l = {
               package: "📦",
@@ -2295,33 +2295,33 @@ function Ga({ config: t, onAction: e }) {
               "credit-card": "💳",
               sparkles: "✨"
             }[d] || "";
-            _ = `<div style="font-size: 11px; color: #64748b; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">${l ? `<span>${l}</span>` : ""} ${k}</div>`;
+            I = `<div style="font-size: 11px; color: #64748b; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">${l ? `<span>${l}</span>` : ""} ${_}</div>`;
           }
-          return `<div class="pitaj-inline-widget-card" style="padding: 14px; border-radius: 16px; ${I}">${_}`;
+          return `<div class="pitaj-inline-widget-card" style="padding: 14px; border-radius: 16px; ${N}">${I}`;
         }
-      ).replace(/<Card([^>]*)>/gi, (h) => {
-        const c = p(h, "background");
+      ).replace(/<Card([^>]*)>/gi, (m) => {
+        const c = p(m, "background");
         return `<div class="pitaj-inline-widget-card" style="padding: 14px; border-radius: 16px; ${c ? `background: ${c};` : ""}">`;
       }).replace(/<\/Card>/gi, "</div>").replace(
         /<Row[^>]*justify=["']between["'][^>]*align=["']start["'][^>]*>/gi,
         '<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">'
-      ).replace(/<Row[^>]*gap=\{?(\d+)\}?[^>]*align=["']start["'][^>]*>/gi, '<div style="display: flex; gap: $1px; align-items: flex-start;">').replace(/<Row[^>]*gap=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; gap: $1px; align-items: center;">').replace(/<Row[^>]*>/gi, '<div style="display: flex; gap: 8px; align-items: center;">').replace(/<\/Row>/gi, "</div>").replace(/<Col[^>]*flex=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; flex-direction: column; flex: $1;">').replace(/<Col[^>]*gap=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; flex-direction: column; gap: $1px;">').replace(/<Col[^>]*>/gi, '<div style="display: flex; flex-direction: column; gap: 4px;">').replace(/<\/Col>/gi, "</div>").replace(/<Title[^>]*value=\{?([^}>\s]+)\}?[^>]*weight=["']bold["'][^>]*\/>/gi, '<h4 style="font-size: 15px; font-weight: 700; margin: 0; line-height: 1.2;">$1</h4>').replace(/<Title[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<h4 style="font-size: 14px; font-weight: 600; margin: 0;">$1</h4>').replace(/<Caption[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<span style="font-size: 11px; color: #64748b; margin-top: 2px;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["']success["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #dcfce7; color: #166534;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:warning|amber)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #fef3c7; color: #92400e;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:error|danger|destructive|red)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #fee2e2; color: #991b1b;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:purple|brand)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #f3e8ff; color: #6b21a8;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:info|blue)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #dbeafe; color: #1e40af;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #f1f5f9; color: #475569;">$1</span>').replace(/<Divider[^>]*flush[^>]*\/>/gi, '<hr style="border: 0; border-bottom: 1px solid rgba(0,0,0,0.08); margin: 10px -14px;" />').replace(/<Divider[^>]*\/>/gi, '<hr style="border: 0; border-bottom: 1px solid rgba(0,0,0,0.08); margin: 10px 0;" />').replace(/<Image([^>]*)\/>/gi, (h) => {
-        const c = p(h, "src"), g = p(h, "alt"), d = p(h, "height") || "120px", f = p(h, "radius") === "sm" ? "6px" : "10px";
+      ).replace(/<Row[^>]*gap=\{?(\d+)\}?[^>]*align=["']start["'][^>]*>/gi, '<div style="display: flex; gap: $1px; align-items: flex-start;">').replace(/<Row[^>]*gap=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; gap: $1px; align-items: center;">').replace(/<Row[^>]*>/gi, '<div style="display: flex; gap: 8px; align-items: center;">').replace(/<\/Row>/gi, "</div>").replace(/<Col[^>]*flex=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; flex-direction: column; flex: $1;">').replace(/<Col[^>]*gap=\{?(\d+)\}?[^>]*>/gi, '<div style="display: flex; flex-direction: column; gap: $1px;">').replace(/<Col[^>]*>/gi, '<div style="display: flex; flex-direction: column; gap: 4px;">').replace(/<\/Col>/gi, "</div>").replace(/<Title[^>]*value=\{?([^}>\s]+)\}?[^>]*weight=["']bold["'][^>]*\/>/gi, '<h4 style="font-size: 15px; font-weight: 700; margin: 0; line-height: 1.2;">$1</h4>').replace(/<Title[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<h4 style="font-size: 14px; font-weight: 600; margin: 0;">$1</h4>').replace(/<Caption[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<span style="font-size: 11px; color: #64748b; margin-top: 2px;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["']success["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #dcfce7; color: #166534;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:warning|amber)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #fef3c7; color: #92400e;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:error|danger|destructive|red)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #fee2e2; color: #991b1b;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:purple|brand)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #f3e8ff; color: #6b21a8;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*color=["'](?:info|blue)["'][^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #dbeafe; color: #1e40af;">$1</span>').replace(/<Badge[^>]*label=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<span style="display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; background: #f1f5f9; color: #475569;">$1</span>').replace(/<Divider[^>]*flush[^>]*\/>/gi, '<hr style="border: 0; border-bottom: 1px solid rgba(0,0,0,0.08); margin: 10px -14px;" />').replace(/<Divider[^>]*\/>/gi, '<hr style="border: 0; border-bottom: 1px solid rgba(0,0,0,0.08); margin: 10px 0;" />').replace(/<Image([^>]*)\/>/gi, (m) => {
+        const c = p(m, "src"), g = p(m, "alt"), d = p(m, "height") || "120px", f = p(m, "radius") === "sm" ? "6px" : "10px";
         return `<img src="${c}" alt="${g}" style="width: 100%; height: ${d === "100%" ? "120px" : d}; object-fit: cover; border-radius: ${f}; margin: 4px 0;" />`;
-      }).replace(/<Avatar([^>]*)\/>/gi, (h) => {
-        const c = p(h, "src"), g = p(h, "name"), d = p(h, "size") === "lg" ? "40px" : "32px";
+      }).replace(/<Avatar([^>]*)\/>/gi, (m) => {
+        const c = p(m, "src"), g = p(m, "name"), d = p(m, "size") === "lg" ? "40px" : "32px";
         if (c)
           return `<img src="${c}" alt="${g}" style="width: ${d}; height: ${d}; border-radius: var(--pitaj-radius-avatar, 9999px); object-fit: cover; flex-shrink: 0;" />`;
         const f = g ? g.charAt(0).toUpperCase() : "U";
         return `<div style="width: ${d}; height: ${d}; border-radius: var(--pitaj-radius-avatar, 9999px); background: #e2e8f0; color: #334155; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0;">${f}</div>`;
-      }).replace(/<Input([^>]*)\/>/gi, (h) => {
-        const c = p(h, "label"), g = p(h, "placeholder"), d = p(h, "value"), f = p(h, "type") || "text";
+      }).replace(/<Input([^>]*)\/>/gi, (m) => {
+        const c = p(m, "label"), g = p(m, "placeholder"), d = p(m, "value"), f = p(m, "type") || "text";
         return f === "textarea" ? `<div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;"><label style="font-size: 11px; font-weight: 600; color: #64748b;">${c}</label><textarea placeholder="${g}" rows="2" style="border: 1px solid #cbd5e1; border-radius: var(--pitaj-radius-input, 8px); padding: 6px 10px; font-size: 12px; width: 100%; box-sizing: border-box; resize: vertical;">${d}</textarea></div>` : `<div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;"><label style="font-size: 11px; font-weight: 600; color: #64748b;">${c}</label><input type="${f}" placeholder="${g}" value="${d}" style="border: 1px solid #cbd5e1; border-radius: var(--pitaj-radius-input, 8px); padding: 6px 10px; font-size: 12px; width: 100%; box-sizing: border-box;" /></div>`;
       }).replace(/<BarChart[^>]*\/>/gi, () => {
-        const h = Array.isArray(r.bars) ? r.bars : [];
-        if (h.length > 0) {
-          const c = Math.max(...h.map((d) => Number(d.value || 0)), 1);
-          return `<div style="display: flex; gap: 6px; width: 100%; padding: 8px 0; align-items: flex-end;">${h.map(
+        const m = Array.isArray(r.bars) ? r.bars : [];
+        if (m.length > 0) {
+          const c = Math.max(...m.map((d) => Number(d.value || 0)), 1);
+          return `<div style="display: flex; gap: 6px; width: 100%; padding: 8px 0; align-items: flex-end;">${m.map(
             (d) => `<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;"><div style="width: 100%; background: #e2e8f0; height: 70px; border-radius: 4px; display: flex; align-items: flex-end; overflow: hidden;"><div style="width: 100%; height: ${Math.round(
               Number(d.value || 0) / c * 100
             )}%; background: var(--pitaj-accent, #2563eb); border-radius: 4px 4px 0 0;"></div></div><span style="font-size: 10px; color: #64748b;">${d.label || ""}</span></div>`
@@ -2329,10 +2329,10 @@ function Ga({ config: t, onAction: e }) {
         }
         return '<div style="padding: 12px; text-align: center; color: #94a3b8; font-size: 11px;">Grafikon</div>';
       }).replace(/<Timeline[^>]*\/>/gi, () => {
-        const h = Array.isArray(r.timeline) ? r.timeline : Array.isArray(r.items) ? r.items : [];
-        return !h || h.length === 0 ? "" : '<div style="display: flex; flex-direction: column; width: 100%; padding: 4px 0;">' + h.map((c, g) => {
-          const d = g === h.length - 1, f = !!(c.complete || c.completed), j = !!c.current;
-          return `<div style="display: flex; align-items: flex-start; gap: 10px; position: relative;"><div style="display: flex; flex-direction: column; align-items: center; align-self: stretch;"><div style="width: 22px; height: 22px; border-radius: 9999px; background: ${f ? "#dcfce7" : j ? "#e0f2fe" : "#f1f5f9"}; color: ${f ? "#166534" : j ? "#0369a1" : "#94a3b8"}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; flex-shrink: 0;">${f ? "✓" : j ? "●" : "○"}</div>${d ? "" : `<div style="width: 2px; flex: 1; background: ${f ? "#86efac" : "#e2e8f0"}; margin: 2px 0; min-height: 18px;"></div>`}</div><div style="display: flex; flex-direction: column; flex: 1; min-width: 0; padding-bottom: ${d ? "2px" : "12px"};"><span style="font-size: 12px; font-weight: ${j ? "600" : "500"}; color: #0f172a;">${c.label || ""}</span>${c.detail ? `<span style="font-size: 11px; color: #64748b; margin-top: 2px;">${c.detail}</span>` : ""}</div></div>`;
+        const m = Array.isArray(r.timeline) ? r.timeline : Array.isArray(r.items) ? r.items : [];
+        return !m || m.length === 0 ? "" : '<div style="display: flex; flex-direction: column; width: 100%; padding: 4px 0;">' + m.map((c, g) => {
+          const d = g === m.length - 1, f = !!(c.complete || c.completed), k = !!c.current;
+          return `<div style="display: flex; align-items: flex-start; gap: 10px; position: relative;"><div style="display: flex; flex-direction: column; align-items: center; align-self: stretch;"><div style="width: 22px; height: 22px; border-radius: 9999px; background: ${f ? "#dcfce7" : k ? "#e0f2fe" : "#f1f5f9"}; color: ${f ? "#166534" : k ? "#0369a1" : "#94a3b8"}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; flex-shrink: 0;">${f ? "✓" : k ? "●" : "○"}</div>${d ? "" : `<div style="width: 2px; flex: 1; background: ${f ? "#86efac" : "#e2e8f0"}; margin: 2px 0; min-height: 18px;"></div>`}</div><div style="display: flex; flex-direction: column; flex: 1; min-width: 0; padding-bottom: ${d ? "2px" : "12px"};"><span style="font-size: 12px; font-weight: ${k ? "600" : "500"}; color: #0f172a;">${c.label || ""}</span>${c.detail ? `<span style="font-size: 11px; color: #64748b; margin-top: 2px;">${c.detail}</span>` : ""}</div></div>`;
         }).join("") + "</div>";
       }).replace(
         /<Box[^>]*background=["']green-100["'][^>]*radius=["']full["'][^>]*padding=\{?(\d+)\}?[^>]*>/gi,
@@ -2340,11 +2340,11 @@ function Ga({ config: t, onAction: e }) {
       ).replace(
         /<Box[^>]*background=["']surface-secondary["'][^>]*radius=["']full["'][^>]*padding=\{?(\d+)\}?[^>]*>/gi,
         '<div style="background: #f1f5f9; color: #94a3b8; border-radius: 9999px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">'
-      ).replace(/<Box([^>]*)>/gi, (h) => {
-        const c = p(h, "background"), g = p(h, "radius"), d = p(h, "padding"), f = [];
+      ).replace(/<Box([^>]*)>/gi, (m) => {
+        const c = p(m, "background"), g = p(m, "radius"), d = p(m, "padding"), f = [];
         return c === "surface-secondary" || c === "muted" ? f.push("background: #f1f5f9") : c && f.push(`background: ${c}`), g === "full" ? f.push("border-radius: 9999px") : g && f.push(`border-radius: ${g === "md" ? "8px" : "4px"}`), d && f.push(`padding: ${d}px`), `<div style="${f.join("; ")}; display: flex; align-items: center; justify-content: center;">`;
-      }).replace(/<\/Box>/gi, "</div>").replace(/<Icon[^>]*name=["'](?:check|check-circle)["'][^>]*\/>/gi, "✓").replace(/<Icon[^>]*name=["'](?:clock|time)["'][^>]*\/>/gi, "⏱").replace(/<Icon[^>]*name=["'](?:package|box)["'][^>]*\/>/gi, "📦").replace(/<Icon[^>]*name=["']star["'][^>]*\/>/gi, "⭐").replace(/<Icon[^>]*name=["'](?:map-pin|location)["'][^>]*\/>/gi, "📍").replace(/<Icon[^>]*name=["']calendar["'][^>]*\/>/gi, "📅").replace(/<Icon[^>]*name=["'](?:shopping-bag|shopping-cart|cart)["'][^>]*\/>/gi, "🛍️").replace(/<Icon[^>]*name=["']user["'][^>]*\/>/gi, "👤").replace(/<Icon[^>]*name=["']mail["'][^>]*\/>/gi, "✉️").replace(/<Icon[^>]*name=["']phone["'][^>]*\/>/gi, "📞").replace(/<Icon[^>]*name=["'](?:truck|delivery)["'][^>]*\/>/gi, "🚚").replace(/<Icon[^>]*name=["']credit-card["'][^>]*\/>/gi, "💳").replace(/<Icon[^>]*name=["']sun["'][^>]*\/>/gi, "☀️").replace(/<Icon[^>]*name=["']bell["'][^>]*\/>/gi, "🔔").replace(/<Icon[^>]*name=["'](?:bed|hotel)["'][^>]*\/>/gi, "🏨").replace(/<Icon[^>]*name=["'](?:utensils|dining)["'][^>]*\/>/gi, "🍽️").replace(/<Icon[^>]*name=["']coffee["'][^>]*\/>/gi, "☕").replace(/<Icon[^>]*name=["']wifi["'][^>]*\/>/gi, "📶").replace(/<Icon[^>]*name=["']sparkles["'][^>]*\/>/gi, "✨").replace(/<Icon[^>]*\/>/gi, "•").replace(/<Text[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<p style="font-size: 12px; margin: 0; line-height: 1.3;">$1</p>').replace(/<Button([^>]*)\/>/gi, (h) => {
-        const c = p(h, "label") || "Akcija", g = p(h, "action") || c, d = p(h, "variant");
+      }).replace(/<\/Box>/gi, "</div>").replace(/<Icon[^>]*name=["'](?:check|check-circle)["'][^>]*\/>/gi, "✓").replace(/<Icon[^>]*name=["'](?:clock|time)["'][^>]*\/>/gi, "⏱").replace(/<Icon[^>]*name=["'](?:package|box)["'][^>]*\/>/gi, "📦").replace(/<Icon[^>]*name=["']star["'][^>]*\/>/gi, "⭐").replace(/<Icon[^>]*name=["'](?:map-pin|location)["'][^>]*\/>/gi, "📍").replace(/<Icon[^>]*name=["']calendar["'][^>]*\/>/gi, "📅").replace(/<Icon[^>]*name=["'](?:shopping-bag|shopping-cart|cart)["'][^>]*\/>/gi, "🛍️").replace(/<Icon[^>]*name=["']user["'][^>]*\/>/gi, "👤").replace(/<Icon[^>]*name=["']mail["'][^>]*\/>/gi, "✉️").replace(/<Icon[^>]*name=["']phone["'][^>]*\/>/gi, "📞").replace(/<Icon[^>]*name=["'](?:truck|delivery)["'][^>]*\/>/gi, "🚚").replace(/<Icon[^>]*name=["']credit-card["'][^>]*\/>/gi, "💳").replace(/<Icon[^>]*name=["']sun["'][^>]*\/>/gi, "☀️").replace(/<Icon[^>]*name=["']bell["'][^>]*\/>/gi, "🔔").replace(/<Icon[^>]*name=["'](?:bed|hotel)["'][^>]*\/>/gi, "🏨").replace(/<Icon[^>]*name=["'](?:utensils|dining)["'][^>]*\/>/gi, "🍽️").replace(/<Icon[^>]*name=["']coffee["'][^>]*\/>/gi, "☕").replace(/<Icon[^>]*name=["']wifi["'][^>]*\/>/gi, "📶").replace(/<Icon[^>]*name=["']sparkles["'][^>]*\/>/gi, "✨").replace(/<Icon[^>]*\/>/gi, "•").replace(/<Text[^>]*value=\{?([^}>\s]+)\}?[^>]*\/>/gi, '<p style="font-size: 12px; margin: 0; line-height: 1.3;">$1</p>').replace(/<Button([^>]*)\/>/gi, (m) => {
+        const c = p(m, "label") || "Akcija", g = p(m, "action") || c, d = p(m, "variant");
         let f = "background: var(--pitaj-accent, #2563eb); color: white; border: none; border-radius: var(--pitaj-radius-btn, 8px); padding: 7px 14px; font-size: 12px; font-weight: 500; cursor: pointer; margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;";
         return d === "outline" ? f = "background: transparent; color: #0f172a; border: 1px solid #cbd5e1; border-radius: var(--pitaj-radius-btn, 8px); padding: 7px 14px; font-size: 12px; font-weight: 500; cursor: pointer; margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;" : d === "secondary" && (f = "background: #f1f5f9; color: #0f172a; border: none; border-radius: var(--pitaj-radius-btn, 8px); padding: 7px 14px; font-size: 12px; font-weight: 500; cursor: pointer; margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;"), `<button type="button" data-chat-action="${g}" style="${f}">${c}</button>`;
       }), u;
@@ -2353,31 +2353,31 @@ function Ga({ config: t, onAction: e }) {
     }
   }, [a, r]), n = (u) => {
     var p;
-    const m = (p = u.target) == null ? void 0 : p.closest("[data-chat-action]");
-    if (m) {
-      const h = m.getAttribute("data-chat-action");
-      h && (u.preventDefault(), e == null || e(h));
+    const h = (p = u.target) == null ? void 0 : p.closest("[data-chat-action]");
+    if (h) {
+      const m = h.getAttribute("data-chat-action");
+      m && (u.preventDefault(), e == null || e(m));
     }
-  }, s = /<Card/i.test(a || "");
-  return /* @__PURE__ */ i("div", { className: `dynamic-jsx-widget ${s ? "" : "pitaj-inline-widget-card"}`, onClick: n, children: /* @__PURE__ */ i("div", { dangerouslySetInnerHTML: { __html: o } }) });
+  }, o = /<Card/i.test(a || "");
+  return /* @__PURE__ */ i("div", { className: `dynamic-jsx-widget ${o ? "" : "pitaj-inline-widget-card"}`, onClick: n, children: /* @__PURE__ */ i("div", { dangerouslySetInnerHTML: { __html: s } }) });
 }
-function mi({
+function hi({
   rows: t,
   fallbackQuestions: e,
   onSelect: a,
   buttonClassName: r,
-  containerClassName: o,
+  containerClassName: s,
   revealDelayMs: n = 0,
-  staggerMs: s = 140
+  staggerMs: o = 140
 }) {
   const u = we(() => Array.isArray(t) && t.length > 0 ? t.map((d) => ({
     text: d.text.trim(),
     children: (d.children ?? []).map((f) => f.trim()).filter(Boolean)
-  })).filter((d) => d.text !== "") : (e ?? []).map((d) => d.trim()).filter(Boolean).map((d) => ({ text: d, children: [] })), [e, t]), [m, p] = T(null), [h, c] = T(u.length);
+  })).filter((d) => d.text !== "") : (e ?? []).map((d) => d.trim()).filter(Boolean).map((d) => ({ text: d, children: [] })), [e, t]), [h, p] = T(null), [m, c] = T(u.length);
   if (Y(() => {
     p(null);
   }, [u]), Y(() => {
-    if (m) {
+    if (h) {
       c(u.length);
       return;
     }
@@ -2389,16 +2389,16 @@ function mi({
     const d = window.setTimeout(() => {
       c(1);
       const f = window.setInterval(() => {
-        c((j) => j >= u.length ? (window.clearInterval(f), j) : j + 1);
-      }, Math.max(60, s));
+        c((k) => k >= u.length ? (window.clearInterval(f), k) : k + 1);
+      }, Math.max(60, o));
     }, n);
     return () => {
       window.clearTimeout(d);
     };
-  }, [m, u.length, n, s]), u.length === 0)
+  }, [h, u.length, n, o]), u.length === 0)
     return null;
-  const g = u.find((d) => d.text === m && d.children.length > 0) ?? null;
-  return g ? /* @__PURE__ */ i("div", { className: o, children: [
+  const g = u.find((d) => d.text === h && d.children.length > 0) ?? null;
+  return g ? /* @__PURE__ */ i("div", { className: s, children: [
     /* @__PURE__ */ i(
       "button",
       {
@@ -2418,7 +2418,7 @@ function mi({
       },
       `${g.text}-${f}`
     ))
-  ] }) : /* @__PURE__ */ i("div", { className: o, children: u.slice(0, h).map((d, f) => /* @__PURE__ */ i(
+  ] }) : /* @__PURE__ */ i("div", { className: s, children: u.slice(0, m).map((d, f) => /* @__PURE__ */ i(
     "button",
     {
       type: "button",
@@ -2449,19 +2449,19 @@ async function fi(t) {
   return Promise.all(
     e.map(async (a) => {
       const r = a.type.startsWith("image/") || /\.(png|jpe?g|webp|gif|svg)$/i.test(a.name);
-      let o = null;
+      let s = null;
       if (r && typeof URL < "u")
         try {
-          o = URL.createObjectURL(a);
+          s = URL.createObjectURL(a);
         } catch {
-          o = null;
+          s = null;
         }
       const n = Ja(a) ? (await a.text()).slice(0, 4e3) : null;
       return {
         id: `${a.name}-${a.lastModified}-${a.size}`,
         name: a.name,
         textContent: n,
-        previewUrl: o,
+        previewUrl: s,
         isImage: r
       };
     })
@@ -2476,18 +2476,18 @@ ${a.textContent.trim()}` : `[Prilog: ${a.name}]`).join(`
 `)}`;
 }
 async function Xa(t) {
-  const { widgetId: e, audio: a, apiUrl: r } = t, o = (r || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), n = new FormData();
+  const { widgetId: e, audio: a, apiUrl: r } = t, s = (r || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, ""), n = new FormData();
   n.append("audio", a, "dictation.webm");
-  const s = await fetch(`${o}/api/widget/${e}/transcribe`, {
+  const o = await fetch(`${s}/api/widget/${e}/transcribe`, {
     method: "POST",
     body: n,
     headers: {
       Accept: "application/json"
     }
   });
-  if (!s.ok) {
-    const p = await s.json().catch(() => null), c = (() => {
-      if (s.status !== 422 || !(p != null && p.errors) || typeof p.errors != "object")
+  if (!o.ok) {
+    const p = await o.json().catch(() => null), c = (() => {
+      if (o.status !== 422 || !(p != null && p.errors) || typeof p.errors != "object")
         return null;
       for (const g of Object.values(p.errors))
         if (Array.isArray(g)) {
@@ -2498,31 +2498,31 @@ async function Xa(t) {
       return null;
     })();
     ri(
-      s.status,
+      o.status,
       p,
-      typeof c == "string" && c || `Transkripcija nije uspjela (${s.status})`,
-      s.headers.get("Retry-After")
+      typeof c == "string" && c || `Transkripcija nije uspjela (${o.status})`,
+      o.headers.get("Retry-After")
     );
   }
-  const u = await s.json(), m = typeof (u == null ? void 0 : u.text) == "string" ? u.text.trim() : "";
-  if (!m)
+  const u = await o.json(), h = typeof (u == null ? void 0 : u.text) == "string" ? u.text.trim() : "";
+  if (!h)
     throw new Error("Transkripcija nije vratila tekst.");
-  return m;
+  return h;
 }
 function bi({ widgetId: t, apiUrl: e, onTranscript: a, onError: r }) {
-  const n = te(null), s = te(null), u = te([]), m = te(!0), p = te(null), h = te(null), c = te(null), g = te(null), d = te(Array.from({ length: 42 }, () => 0.06)), [f, j] = T(!1), [I, k] = T(!1), [z, _] = T(
+  const n = te(null), o = te(null), u = te([]), h = te(!0), p = te(null), m = te(null), c = te(null), g = te(null), d = te(Array.from({ length: 42 }, () => 0.06)), [f, k] = T(!1), [N, _] = T(!1), [z, I] = T(
     () => Array.from({ length: 42 }, () => 0.06)
-  ), N = we(() => {
+  ), j = we(() => {
     var P;
     return typeof window > "u" || !t || t === "default" ? !1 : typeof window.MediaRecorder < "u" && !!((P = navigator.mediaDevices) != null && P.getUserMedia);
   }, [t]), l = Q(() => {
-    s.current && (s.current.getTracks().forEach((P) => P.stop()), s.current = null);
+    o.current && (o.current.getTracks().forEach((P) => P.stop()), o.current = null);
   }, []), C = Q(() => {
     var P;
-    p.current !== null && (window.cancelAnimationFrame(p.current), p.current = null), (P = g.current) == null || P.disconnect(), g.current = null, c.current = null, h.current && (h.current.close(), h.current = null);
+    p.current !== null && (window.cancelAnimationFrame(p.current), p.current = null), (P = g.current) == null || P.disconnect(), g.current = null, c.current = null, m.current && (m.current.close(), m.current = null);
   }, []), M = Q(() => {
     const P = Array.from({ length: 42 }, () => 0.06);
-    d.current = P, _(P);
+    d.current = P, I(P);
   }, []), L = Q((P) => {
     const ie = window.AudioContext || (window.webkitAudioContext ?? null);
     if (!ie)
@@ -2530,7 +2530,7 @@ function bi({ widgetId: t, apiUrl: e, onTranscript: a, onError: r }) {
     const re = new ie(), ce = re.createAnalyser();
     ce.fftSize = 2048, ce.smoothingTimeConstant = 0.78;
     const J = re.createMediaStreamSource(P);
-    J.connect(ce), h.current = re, c.current = ce, g.current = J;
+    J.connect(ce), m.current = re, c.current = ce, g.current = J;
     const ee = new Uint8Array(ce.fftSize), $ = () => {
       const q = c.current;
       if (!q) return;
@@ -2541,27 +2541,27 @@ function bi({ widgetId: t, apiUrl: e, onTranscript: a, onError: r }) {
         Z += S * S;
       }
       const O = Math.sqrt(Z / ee.length), v = Math.max(0.04, Math.min(1, O * 5.2)), b = d.current.slice(1);
-      b.push(v), d.current = b, _(b), p.current = window.requestAnimationFrame($);
+      b.push(v), d.current = b, I(b), p.current = window.requestAnimationFrame($);
     };
     p.current = window.requestAnimationFrame($);
   }, []), V = Q(async () => {
-    if (!(!N || I || n.current || f))
+    if (!(!j || N || n.current || f))
       try {
         const ie = await navigator.mediaDevices.getUserMedia({ audio: !0 }), re = ["audio/webm;codecs=opus", "audio/webm", "audio/ogg", "audio/mp4"], J = typeof MediaRecorder.isTypeSupported == "function" ? re.find(($) => MediaRecorder.isTypeSupported($)) : void 0, ee = J ? new MediaRecorder(ie, { mimeType: J }) : new MediaRecorder(ie);
-        u.current = [], m.current = !0, s.current = ie, n.current = ee, M(), L(ie), ee.ondataavailable = ($) => {
+        u.current = [], h.current = !0, o.current = ie, n.current = ee, M(), L(ie), ee.ondataavailable = ($) => {
           $.data.size > 0 && u.current.push($.data);
         }, ee.onstop = async () => {
-          j(!1);
+          k(!1);
           const $ = new Blob(u.current, { type: ee.mimeType || "audio/webm" });
           if (u.current = [], n.current = null, l(), C(), $.size === 0) {
             M();
             return;
           }
-          if (!m.current) {
+          if (!h.current) {
             M();
             return;
           }
-          k(!0);
+          _(!0);
           try {
             const q = await Xa({
               widgetId: t,
@@ -2572,28 +2572,28 @@ function bi({ widgetId: t, apiUrl: e, onTranscript: a, onError: r }) {
           } catch (q) {
             console.error("[Pitaj.io] Dictation transcription failed", q), r == null || r(q);
           } finally {
-            k(!1), M();
+            _(!1), M();
           }
         }, ee.onerror = () => {
-          j(!1), n.current = null, l(), C(), M();
-        }, ee.start(), j(!0);
+          k(!1), n.current = null, l(), C(), M();
+        }, ee.start(), k(!0);
       } catch (ie) {
-        j(!1), l(), C(), M(), console.error("[Pitaj.io] Dictation microphone access failed", ie);
+        k(!1), l(), C(), M(), console.error("[Pitaj.io] Dictation microphone access failed", ie);
       }
-  }, [e, f, I, N, r, a, M, L, l, C, t]), H = Q(() => {
+  }, [e, f, N, j, r, a, M, L, l, C, t]), H = Q(() => {
     const P = n.current;
-    !P || !f || I || (m.current = !0, P.stop(), j(!1));
-  }, [f, I]), U = Q(() => {
+    !P || !f || N || (h.current = !0, P.stop(), k(!1));
+  }, [f, N]), U = Q(() => {
     const P = n.current;
-    !P || !f || (m.current = !1, P.stop(), j(!1));
+    !P || !f || (h.current = !1, P.stop(), k(!1));
   }, [f]);
   return Y(() => () => {
     const P = n.current;
     P && P.state !== "inactive" && P.stop(), l(), C();
   }, [l, C]), {
-    isSupported: N,
+    isSupported: j,
     isListening: f,
-    isProcessing: I,
+    isProcessing: N,
     waveformLevels: z,
     start: V,
     stopAndTranscribe: H,
@@ -2612,54 +2612,104 @@ function xi({
   title: e = "Kako biste ocijenili vaše iskustvo?",
   subtitle: a,
   onSubmit: r,
-  compact: o = !1
+  onDismiss: s,
+  compact: n = !1
 }) {
-  const [n, s] = T(t), [u, m] = T(!1), [p, h] = T(!1), [c, g] = T(null), [d, f] = T(!1), j = Ue.find((_) => _.score === n) || Ue[Ue.length - 1], I = Q((_) => {
-    s(_), g(null), f(!0), setTimeout(() => f(!1), 300);
-  }, []), k = Q(async (_) => {
-    if (_ && (_.stopPropagation(), _.preventDefault()), !(u || p)) {
-      m(!0), g(null);
+  const [o, u] = T(t), [h, p] = T(!1), [m, c] = T(!1), [g, d] = T(null), [f, k] = T(!1), N = Ue.find((j) => j.score === o) || Ue[Ue.length - 1], _ = Q((j) => {
+    u(j), d(null), k(!0), setTimeout(() => k(!1), 300);
+  }, []), z = Q(async (j) => {
+    if (j && (j.stopPropagation(), j.preventDefault()), !(h || m)) {
+      p(!0), d(null);
       try {
-        await r(j.satisfaction, n), h(!0);
-      } catch (N) {
-        m(!1), g(
-          (N == null ? void 0 : N.message) || "Nismo uspjeli sačuvati ocjenu. Molimo pokušajte ponovo."
+        await r(N.satisfaction, o), c(!0);
+      } catch (l) {
+        p(!1), d(
+          (l == null ? void 0 : l.message) || "Nismo uspjeli sačuvati ocjenu. Molimo pokušajte ponovo."
         );
       }
     }
-  }, [j, n, r, u, p]), z = (n - 1) / 4 * 100;
-  return p ? /* @__PURE__ */ i("div", { className: `pitaj-satisfaction-success ${o ? "is-compact" : ""}`, children: [
-    /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-success-icon", style: { backgroundColor: `${j.color}20`, color: j.color }, children: /* @__PURE__ */ i(je, { size: 20 }) }),
+  }, [N, o, r, h, m]), I = (o - 1) / 4 * 100;
+  return m ? /* @__PURE__ */ i("div", { className: `pitaj-satisfaction-success ${n ? "is-compact" : ""}`, children: [
+    /* @__PURE__ */ i(
+      "div",
+      {
+        className: "pitaj-satisfaction-success-icon",
+        style: { backgroundColor: `${N.color}20`, color: N.color },
+        children: /* @__PURE__ */ i(je, { size: 20 })
+      }
+    ),
     /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-success-title", children: "Hvala na ocjeni!" }),
     /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-success-desc", children: [
       "Zabilježeno: ",
-      j.emoji,
+      N.emoji,
       " ",
-      j.label
+      N.label,
+      " (",
+      o,
+      "/5)"
     ] })
   ] }) : /* @__PURE__ */ i(
     "div",
     {
-      className: `pitaj-satisfaction-card ${o ? "is-compact" : ""}`,
-      onClick: (_) => _.stopPropagation(),
+      className: `pitaj-satisfaction-card ${n ? "is-compact" : ""}`,
+      onClick: (j) => j.stopPropagation(),
       children: [
         /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-header", children: [
           /* @__PURE__ */ i("span", { className: "pitaj-satisfaction-prompt", children: e }),
           a && /* @__PURE__ */ i("span", { className: "pitaj-satisfaction-subtitle", children: a })
         ] }),
-        /* @__PURE__ */ i("div", { className: "pitaj-mood-display", children: [
-          /* @__PURE__ */ i(
-            "span",
+        /* @__PURE__ */ i("div", { className: "pitaj-mood-pill-wrap", children: /* @__PURE__ */ i(
+          "div",
+          {
+            className: "pitaj-mood-pill",
+            style: {
+              backgroundColor: `${N.color}15`,
+              color: N.color,
+              borderColor: `${N.color}35`
+            },
+            children: [
+              /* @__PURE__ */ i("span", { className: `pitaj-mood-pill-emoji ${f ? "is-bouncing" : ""}`, "aria-hidden": "true", children: N.emoji }),
+              /* @__PURE__ */ i("span", { className: "pitaj-mood-pill-label", children: N.label }),
+              /* @__PURE__ */ i("span", { className: "pitaj-mood-pill-score", children: [
+                o,
+                " / 5"
+              ] })
+            ]
+          }
+        ) }),
+        /* @__PURE__ */ i("div", { className: "pitaj-mood-row", role: "radiogroup", "aria-label": "Ocjena zadovoljstva", children: Ue.map((j) => {
+          const l = o === j.score;
+          return /* @__PURE__ */ i(
+            "button",
             {
-              className: `pitaj-mood-emoji ${d ? "is-bouncing" : ""}`,
-              style: { textShadow: `0 4px 14px ${j.color}40` },
-              "aria-hidden": "true",
-              children: j.emoji
-            }
-          ),
-          /* @__PURE__ */ i("span", { className: "pitaj-mood-label", style: { color: j.color }, children: j.label })
-        ] }),
-        /* @__PURE__ */ i("div", { className: "pitaj-slider-container", children: [
+              type: "button",
+              role: "radio",
+              "aria-checked": l,
+              "aria-label": `${j.score} od 5 - ${j.label}`,
+              className: `pitaj-mood-btn ${l ? "is-active" : ""}`,
+              style: l ? {
+                backgroundColor: `${j.color}18`,
+                borderColor: j.color,
+                boxShadow: `0 4px 14px ${j.color}30`,
+                color: j.color
+              } : void 0,
+              onClick: () => _(j.score),
+              children: [
+                /* @__PURE__ */ i("span", { className: "pitaj-mood-btn-emoji", children: j.emoji }),
+                /* @__PURE__ */ i(
+                  "span",
+                  {
+                    className: "pitaj-mood-btn-num",
+                    style: l ? { color: j.color, fontWeight: 700 } : void 0,
+                    children: j.score
+                  }
+                )
+              ]
+            },
+            `mood-${j.score}`
+          );
+        }) }),
+        /* @__PURE__ */ i("div", { className: "pitaj-slider-track-wrap", children: [
           /* @__PURE__ */ i(
             "input",
             {
@@ -2667,34 +2717,23 @@ function xi({
               min: "1",
               max: "5",
               step: "1",
-              value: n,
-              onInput: (_) => I(Number(_.target.value)),
+              value: o,
+              onInput: (j) => _(Number(j.target.value)),
               className: "pitaj-range-slider",
-              "aria-label": `Ocjena: ${n} od 5 (${j.label})`,
+              "aria-label": `Klizač ocjene: ${o} od 5 (${N.label})`,
               style: {
-                background: `linear-gradient(to right, ${j.color} 0%, ${j.color} ${z}%, var(--pitaj-border) ${z}%, var(--pitaj-border) 100%)`
+                color: N.color,
+                background: `linear-gradient(to right, ${N.color} 0%, ${N.color} ${I}%, var(--pitaj-border) ${I}%, var(--pitaj-border) 100%)`
               }
             }
           ),
-          /* @__PURE__ */ i("div", { className: "pitaj-slider-ticks", "aria-hidden": "true", children: Ue.map((_) => /* @__PURE__ */ i(
-            "button",
-            {
-              type: "button",
-              className: `pitaj-slider-tick ${n === _.score ? "is-active" : ""} ${_.score <= n ? "is-filled" : ""}`,
-              style: n === _.score ? { borderColor: j.color } : void 0,
-              onClick: () => I(_.score),
-              title: `${_.score} - ${_.label}`,
-              children: /* @__PURE__ */ i("span", { className: "pitaj-slider-tick-dot", style: _.score <= n ? { backgroundColor: j.color } : void 0 })
-            },
-            `tick-${_.score}`
-          )) })
-        ] }),
-        /* @__PURE__ */ i("div", { className: "pitaj-slider-scale-labels", "aria-hidden": "true", children: [
-          /* @__PURE__ */ i("span", { children: "1" }),
-          /* @__PURE__ */ i("span", { children: "2" }),
-          /* @__PURE__ */ i("span", { children: "3" }),
-          /* @__PURE__ */ i("span", { children: "4" }),
-          /* @__PURE__ */ i("span", { children: "5" })
+          /* @__PURE__ */ i("div", { className: "pitaj-slider-segments", "aria-hidden": "true", children: [
+            /* @__PURE__ */ i("span", { children: "1" }),
+            /* @__PURE__ */ i("span", { children: "2" }),
+            /* @__PURE__ */ i("span", { children: "3" }),
+            /* @__PURE__ */ i("span", { children: "4" }),
+            /* @__PURE__ */ i("span", { children: "5" })
+          ] })
         ] }),
         /* @__PURE__ */ i(
           "button",
@@ -2702,15 +2741,26 @@ function xi({
             type: "button",
             className: "pitaj-mood-submit-btn",
             style: {
-              backgroundColor: j.color,
-              boxShadow: `0 3px 12px ${j.color}45`
+              backgroundColor: N.color,
+              boxShadow: `0 4px 14px ${N.color}40`
             },
-            disabled: u,
-            onClick: k,
-            children: u ? "Slanje..." : "Pošalji ocjenu"
+            disabled: h,
+            onClick: z,
+            children: h ? "Slanje..." : "Pošalji ocjenu"
           }
         ),
-        c && /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-error", role: "alert", children: /* @__PURE__ */ i("span", { children: c }) })
+        s && /* @__PURE__ */ i(
+          "button",
+          {
+            type: "button",
+            className: "pitaj-satisfaction-dismiss",
+            onClick: (j) => {
+              j.stopPropagation(), s();
+            },
+            children: "Možda kasnije"
+          }
+        ),
+        g && /* @__PURE__ */ i("div", { className: "pitaj-satisfaction-error", role: "alert", children: /* @__PURE__ */ i("span", { children: g }) })
       ]
     }
   );
@@ -2754,48 +2804,48 @@ function ir(t) {
     a = "Prijava za demo";
   else
     return null;
-  const o = e.slice(1).map((n) => {
+  const s = e.slice(1).map((n) => {
     if (!n.startsWith("- ") && !n.startsWith("* ")) return null;
-    const s = n.slice(2), u = s.indexOf(":");
+    const o = n.slice(2), u = o.indexOf(":");
     if (u < 1) return null;
-    const m = s.slice(0, u).trim(), p = s.slice(u + 1).trim();
-    return !m || !p ? null : { label: m, value: p };
+    const h = o.slice(0, u).trim(), p = o.slice(u + 1).trim();
+    return !h || !p ? null : { label: h, value: p };
   }).filter((n) => !!n);
-  return o.length < 1 ? null : { title: a, entries: o };
+  return s.length < 1 ? null : { title: a, entries: s };
 }
 function ar({
   conversation: t,
   config: e,
   isStreaming: a,
   rateLimitCountdown: r,
-  errorBanner: o,
+  errorBanner: s,
   onSendMessage: n,
-  onApiError: s,
+  onApiError: o,
   onSubmitSatisfaction: u,
-  isRatingPromptActive: m
+  isRatingPromptActive: h
 }) {
   var q, Z, O;
-  const [p, h] = T(""), [c, g] = T(!1), [d, f] = T(null), [j, I] = T([]), k = te(null), z = te(null), _ = te(null), N = e.content || {}, l = e.chatAvailable === !1, C = e.transcribeAvailable === !1, M = a || r !== null || l, L = bi({
+  const [p, m] = T(""), [c, g] = T(!1), [d, f] = T(null), [k, N] = T([]), _ = te(null), z = te(null), I = te(null), j = e.content || {}, l = e.chatAvailable === !1, C = e.transcribeAvailable === !1, M = a || r !== null || l, L = bi({
     widgetId: e.companyId,
     apiUrl: e.apiUrl,
     onTranscript: Q((v) => {
-      h((b) => b ? `${b} ${v}` : v);
+      m((b) => b ? `${b} ${v}` : v);
     }, []),
     onError: Q((v) => {
-      s == null || s(v, "Greška pri transkripciji.");
-    }, [s])
+      o == null || o(v, "Greška pri transkripciji.");
+    }, [o])
   });
   Y(() => {
-    const v = k.current;
+    const v = _.current;
     v && (v.scrollTop = v.scrollHeight);
   }, [t.messages, a]), Y(() => {
     const v = z.current;
     v && (v.style.height = "auto", v.style.height = `${Math.min(v.scrollHeight, 96)}px`);
   }, [p]), Y(() => {
     g(!1);
-  }, [N.dismissibleNotice]);
+  }, [j.dismissibleNotice]);
   const V = (v) => {
-    I((b) => {
+    N((b) => {
       const y = b.find((S) => S.id === v);
       if (y != null && y.previewUrl && typeof URL < "u")
         try {
@@ -2806,24 +2856,24 @@ function ar({
     });
   }, H = (v) => {
     const b = (v ?? p).trim();
-    if (!b && j.length === 0 || M) return;
-    const y = `${b}${gi(j)}`.trim();
-    n(y), j.forEach((S) => {
+    if (!b && k.length === 0 || M) return;
+    const y = `${b}${gi(k)}`.trim();
+    n(y), k.forEach((S) => {
       if (S.previewUrl && typeof URL < "u")
         try {
           URL.revokeObjectURL(S.previewUrl);
         } catch {
         }
-    }), I([]), v || (h(""), z.current && (z.current.style.height = "auto"));
+    }), N([]), v || (m(""), z.current && (z.current.style.height = "auto"));
   }, U = (v) => {
     v.key === "Enter" && !v.shiftKey && (v.preventDefault(), H());
-  }, P = N.messagePlaceholder || e.placeholder || "Pitajte bilo šta...", ie = ((q = N.dismissibleNotice) == null ? void 0 : q.trim()) || "", re = ((Z = N.footerText) == null ? void 0 : Z.trim()) || "", ce = N.showSuggestedMessages === !1 || N.keepShowingSuggestedMessages !== !0 ? [] : N.suggestedMessageRows || [], J = ((O = [...t.messages].reverse().find((v) => v.sender === "ai")) == null ? void 0 : O.id) ?? null, ee = L.isListening, $ = async (v, b) => {
+  }, P = j.messagePlaceholder || e.placeholder || "Pitajte bilo šta...", ie = ((q = j.dismissibleNotice) == null ? void 0 : q.trim()) || "", re = ((Z = j.footerText) == null ? void 0 : Z.trim()) || "", ce = j.showSuggestedMessages === !1 || j.keepShowingSuggestedMessages !== !0 ? [] : j.suggestedMessageRows || [], J = ((O = [...t.messages].reverse().find((v) => v.sender === "ai")) == null ? void 0 : O.id) ?? null, ee = L.isListening, $ = async (v, b) => {
     navigator.clipboard && (await navigator.clipboard.writeText(b), f(v), window.setTimeout(() => {
       f((y) => y === v ? null : y);
     }, 1600));
   };
   return /* @__PURE__ */ i("div", { className: "pitaj-chat-screen", children: [
-    /* @__PURE__ */ i("div", { ref: k, className: "pitaj-messages-container", children: [
+    /* @__PURE__ */ i("div", { ref: _, className: "pitaj-messages-container", children: [
       t.ticketNumber && t.ticketNumber !== "undefined" && t.ticketNumber !== "null" && /* @__PURE__ */ i("div", { className: "pitaj-conversation-ticket-chip-wrap", children: /* @__PURE__ */ i("div", { className: "pitaj-conversation-ticket-chip", children: [
         /* @__PURE__ */ i("span", { className: "pitaj-conversation-ticket-label", children: "Broj tiketa:" }),
         /* @__PURE__ */ i("strong", { className: "pitaj-conversation-ticket-val", children: t.ticketNumber })
@@ -2884,7 +2934,7 @@ function ar({
               (!v.isStreaming || !!v.content || !!v.widget) && /* @__PURE__ */ i("div", { className: "pitaj-msg-meta", children: [
                 /* @__PURE__ */ i("span", { children: tr(v.timestamp) }),
                 !b && /* @__PURE__ */ i("div", { className: "pitaj-msg-actions", children: [
-                  v.id === J && !a && /* @__PURE__ */ i(ue, { children: N.collectUserFeedbackEnabled !== !1 && /* @__PURE__ */ i(ue, { children: [
+                  v.id === J && !a && /* @__PURE__ */ i(ue, { children: j.collectUserFeedbackEnabled !== !1 && /* @__PURE__ */ i(ue, { children: [
                     /* @__PURE__ */ i(
                       "button",
                       {
@@ -2908,7 +2958,7 @@ function ar({
                       }
                     )
                   ] }) }),
-                  v.id === J && !a && N.copyMessageEnabled !== !1 && !!v.content && /* @__PURE__ */ i(
+                  v.id === J && !a && j.copyMessageEnabled !== !1 && !!v.content && /* @__PURE__ */ i(
                     "button",
                     {
                       type: "button",
@@ -2934,7 +2984,7 @@ function ar({
         );
       }),
       a && t.messages.length > 0 && t.messages[t.messages.length - 1].sender === "user" && /* @__PURE__ */ i("div", { className: "pitaj-msg-row ai is-thinking-row", children: /* @__PURE__ */ i("div", { className: "pitaj-msg-body", children: /* @__PURE__ */ i("div", { className: "pitaj-thinking-standalone", children: /* @__PURE__ */ i(Ut, {}) }) }) }),
-      (m || t.status === "ended" && !t.satisfaction) && /* @__PURE__ */ i("div", { className: "pitaj-inline-satisfaction", children: /* @__PURE__ */ i(
+      (h || t.status === "ended" && !t.satisfaction) && /* @__PURE__ */ i("div", { className: "pitaj-inline-satisfaction", children: /* @__PURE__ */ i(
         xi,
         {
           title: "Ocijenite razgovor sa agentom",
@@ -2944,19 +2994,19 @@ function ar({
         }
       ) })
     ] }),
-    (o || r) && /* @__PURE__ */ i("div", { style: { padding: "0 14px" }, children: /* @__PURE__ */ i("div", { className: "pitaj-alert-banner", children: /* @__PURE__ */ i("span", { children: r ? `Zahtjevi su privremeno ograničeni. Pokušajte za ${r}s.` : o }) }) }),
+    (s || r) && /* @__PURE__ */ i("div", { style: { padding: "0 14px" }, children: /* @__PURE__ */ i("div", { className: "pitaj-alert-banner", children: /* @__PURE__ */ i("span", { children: r ? `Zahtjevi su privremeno ograničeni. Pokušajte za ${r}s.` : s }) }) }),
     /* @__PURE__ */ i("div", { className: "pitaj-input-area", children: [
       /* @__PURE__ */ i(
-        mi,
+        hi,
         {
           rows: ce,
-          fallbackQuestions: N.keepShowingSuggestedMessages ? e.suggestedQuestions : [],
+          fallbackQuestions: j.keepShowingSuggestedMessages ? e.suggestedQuestions : [],
           onSelect: H,
           containerClassName: "pitaj-suggestion-pills",
           buttonClassName: "pitaj-suggestion-pill"
         }
       ),
-      j.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-attachment-list", children: j.map((v) => /* @__PURE__ */ i("div", { className: "pitaj-attachment-card", children: [
+      k.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-attachment-list", children: k.map((v) => /* @__PURE__ */ i("div", { className: "pitaj-attachment-card", children: [
         /* @__PURE__ */ i("div", { className: "pitaj-attachment-thumb-wrap", children: v.previewUrl ? /* @__PURE__ */ i("img", { src: v.previewUrl, alt: v.name, className: "pitaj-attachment-thumb" }) : /* @__PURE__ */ i("div", { className: "pitaj-attachment-icon-wrap", children: /* @__PURE__ */ i(ui, { size: 14 }) }) }),
         /* @__PURE__ */ i("span", { className: "pitaj-attachment-name", title: v.name, children: v.name }),
         /* @__PURE__ */ i(
@@ -2986,11 +3036,11 @@ function ar({
       ] }),
       L.isProcessing && /* @__PURE__ */ i("div", { className: "pitaj-dictation-processing", children: "Transkribujem glas..." }),
       /* @__PURE__ */ i("div", { className: `pitaj-input-wrapper ${ee ? "is-recording" : ""}`, children: [
-        N.attachmentsEnabled && /* @__PURE__ */ i(ue, { children: [
+        j.attachmentsEnabled && /* @__PURE__ */ i(ue, { children: [
           /* @__PURE__ */ i(
             "input",
             {
-              ref: _,
+              ref: I,
               type: "file",
               multiple: !0,
               className: "pitaj-hidden-input",
@@ -2998,7 +3048,7 @@ function ar({
                 const b = v.currentTarget.files;
                 if (v.currentTarget.value = "", !b || b.length === 0) return;
                 const y = await fi(b);
-                I((S) => [...S, ...y].slice(0, 3));
+                N((S) => [...S, ...y].slice(0, 3));
               }
             }
           ),
@@ -3011,9 +3061,9 @@ function ar({
               title: "Dodaj attachment",
               onClick: () => {
                 var v;
-                return (v = _.current) == null ? void 0 : v.click();
+                return (v = I.current) == null ? void 0 : v.click();
               },
-              children: /* @__PURE__ */ i(hi, { size: 17 })
+              children: /* @__PURE__ */ i(mi, { size: 17 })
             }
           )
         ] }),
@@ -3022,7 +3072,7 @@ function ar({
           {
             ref: z,
             value: p,
-            onInput: (v) => h(v.target.value),
+            onInput: (v) => m(v.target.value),
             onKeyDown: U,
             placeholder: P,
             rows: 1,
@@ -3063,7 +3113,7 @@ function ar({
             }
           )
         ] }) : /* @__PURE__ */ i(ue, { children: [
-          N.voiceToTextEnabled !== !1 && /* @__PURE__ */ i(
+          j.voiceToTextEnabled !== !1 && /* @__PURE__ */ i(
             "button",
             {
               type: "button",
@@ -3079,7 +3129,7 @@ function ar({
             "button",
             {
               onClick: () => H(),
-              disabled: M || !p.trim() && j.length === 0,
+              disabled: M || !p.trim() && k.length === 0,
               className: "pitaj-send-btn",
               "aria-label": "Pošalji poruku",
               children: /* @__PURE__ */ i(ci, { size: 16 })
@@ -3112,7 +3162,7 @@ function rr({
   onApiError: r
 }) {
   var J, ee;
-  const [o, n] = T(""), [s, u] = T(!1), [m, p] = T(!1), [h, c] = T([]), g = te(null), d = te(null), f = t.content || {}, j = t.chatAvailable === !1, I = t.transcribeAvailable === !1, k = bi({
+  const [s, n] = T(""), [o, u] = T(!1), [h, p] = T(!1), [m, c] = T([]), g = te(null), d = te(null), f = t.content || {}, k = t.chatAvailable === !1, N = t.transcribeAvailable === !1, _ = bi({
     widgetId: t.companyId,
     apiUrl: t.apiUrl,
     onTranscript: Q(($) => {
@@ -3132,8 +3182,8 @@ function rr({
   }, []), Y(() => {
     p(!1);
   }, [f.dismissibleNotice]);
-  const _ = (s && f.useDifferentMessageMobile && f.mobileWelcomeMessage ? f.mobileWelcomeMessage : t.welcomeMessage || "👋 Pozdrav! Kako mogu pomoći danas?").split(`
-`).map(($) => $.trim()).filter(($) => $.length > 0), N = f.autoShowInitialMessages !== !1 && !e, l = !s || f.showAutoPopupMobile !== !1, C = s && f.useDifferentDurationMobile && typeof f.mobileAutoShowDurationSeconds == "number" ? f.mobileAutoShowDurationSeconds : f.autoShowDurationSeconds ?? 0, M = N && l ? Math.max(0, C) * 1e3 : 0, L = ($) => {
+  const I = (o && f.useDifferentMessageMobile && f.mobileWelcomeMessage ? f.mobileWelcomeMessage : t.welcomeMessage || "👋 Pozdrav! Kako mogu pomoći danas?").split(`
+`).map(($) => $.trim()).filter(($) => $.length > 0), j = f.autoShowInitialMessages !== !1 && !e, l = !o || f.showAutoPopupMobile !== !1, C = o && f.useDifferentDurationMobile && typeof f.mobileAutoShowDurationSeconds == "number" ? f.mobileAutoShowDurationSeconds : f.autoShowDurationSeconds ?? 0, M = j && l ? Math.max(0, C) * 1e3 : 0, L = ($) => {
     c((q) => {
       const Z = q.find((O) => O.id === $);
       if (Z != null && Z.previewUrl && typeof URL < "u")
@@ -3144,10 +3194,10 @@ function rr({
       return q.filter((O) => O.id !== $);
     });
   }, V = ($) => {
-    const q = ($ ?? o).trim();
-    if (!q && h.length === 0 || j) return;
-    const Z = `${q}${gi(h)}`.trim();
-    a(Z), h.forEach((O) => {
+    const q = ($ ?? s).trim();
+    if (!q && m.length === 0 || k) return;
+    const Z = `${q}${gi(m)}`.trim();
+    a(Z), m.forEach((O) => {
       if (O.previewUrl && typeof URL < "u")
         try {
           URL.revokeObjectURL(O.previewUrl);
@@ -3156,12 +3206,12 @@ function rr({
     }), n(""), c([]);
   }, H = ($) => {
     $.key === "Enter" && !$.shiftKey && ($.preventDefault(), V());
-  }, U = f.showSuggestedMessages === !1 ? [] : f.suggestedMessageRows || [], P = f.messagePlaceholder || t.placeholder || "Upišite svoje pitanje...", ie = ((J = f.dismissibleNotice) == null ? void 0 : J.trim()) || "", re = ((ee = f.footerText) == null ? void 0 : ee.trim()) || "", ce = k.isListening;
+  }, U = f.showSuggestedMessages === !1 ? [] : f.suggestedMessageRows || [], P = f.messagePlaceholder || t.placeholder || "Upišite svoje pitanje...", ie = ((J = f.dismissibleNotice) == null ? void 0 : J.trim()) || "", re = ((ee = f.footerText) == null ? void 0 : ee.trim()) || "", ce = _.isListening;
   return /* @__PURE__ */ i("div", { style: { display: "flex", flexDirection: "column", height: "100%" }, children: [
-    /* @__PURE__ */ i("div", { className: "pitaj-new-screen", children: (_.length > 0 ? _ : ["👋 Pozdrav! Kako mogu pomoći danas?"]).map(($, q) => /* @__PURE__ */ i("div", { className: "pitaj-msg-row ai", children: /* @__PURE__ */ i("div", { className: "pitaj-msg-body", children: /* @__PURE__ */ i("div", { className: "pitaj-msg-bubble", children: $ }) }) }, `welcome-${q}`)) }),
+    /* @__PURE__ */ i("div", { className: "pitaj-new-screen", children: (I.length > 0 ? I : ["👋 Pozdrav! Kako mogu pomoći danas?"]).map(($, q) => /* @__PURE__ */ i("div", { className: "pitaj-msg-row ai", children: /* @__PURE__ */ i("div", { className: "pitaj-msg-body", children: /* @__PURE__ */ i("div", { className: "pitaj-msg-bubble", children: $ }) }) }, `welcome-${q}`)) }),
     /* @__PURE__ */ i("div", { className: "pitaj-input-area", children: [
       /* @__PURE__ */ i(
-        mi,
+        hi,
         {
           rows: U,
           fallbackQuestions: t.suggestedQuestions,
@@ -3172,7 +3222,7 @@ function rr({
           staggerMs: 150
         }
       ),
-      h.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-attachment-list", children: h.map(($) => /* @__PURE__ */ i("div", { className: "pitaj-attachment-card", children: [
+      m.length > 0 && /* @__PURE__ */ i("div", { className: "pitaj-attachment-list", children: m.map(($) => /* @__PURE__ */ i("div", { className: "pitaj-attachment-card", children: [
         /* @__PURE__ */ i("div", { className: "pitaj-attachment-thumb-wrap", children: $.previewUrl ? /* @__PURE__ */ i("img", { src: $.previewUrl, alt: $.name, className: "pitaj-attachment-thumb" }) : /* @__PURE__ */ i("div", { className: "pitaj-attachment-icon-wrap", children: /* @__PURE__ */ i(ui, { size: 14 }) }) }),
         /* @__PURE__ */ i("span", { className: "pitaj-attachment-name", title: $.name, children: $.name }),
         /* @__PURE__ */ i(
@@ -3187,7 +3237,7 @@ function rr({
           }
         )
       ] }, $.id)) }),
-      ie && !m && /* @__PURE__ */ i("div", { className: "pitaj-dismissible-notice", children: [
+      ie && !h && /* @__PURE__ */ i("div", { className: "pitaj-dismissible-notice", children: [
         /* @__PURE__ */ i("span", { className: "pitaj-dismissible-notice-text", children: ie }),
         /* @__PURE__ */ i(
           "button",
@@ -3200,7 +3250,7 @@ function rr({
           }
         )
       ] }),
-      k.isProcessing && /* @__PURE__ */ i("div", { className: "pitaj-dictation-processing", children: "Transkribujem glas..." }),
+      _.isProcessing && /* @__PURE__ */ i("div", { className: "pitaj-dictation-processing", children: "Transkribujem glas..." }),
       /* @__PURE__ */ i("div", { className: `pitaj-input-wrapper ${ce ? "is-recording" : ""}`, children: [
         f.attachmentsEnabled && /* @__PURE__ */ i(ue, { children: [
           /* @__PURE__ */ i(
@@ -3229,7 +3279,7 @@ function rr({
                 var $;
                 return ($ = d.current) == null ? void 0 : $.click();
               },
-              children: /* @__PURE__ */ i(hi, { size: 17 })
+              children: /* @__PURE__ */ i(mi, { size: 17 })
             }
           )
         ] }),
@@ -3237,12 +3287,12 @@ function rr({
           "textarea",
           {
             ref: g,
-            value: o,
+            value: s,
             onInput: ($) => n($.target.value),
             onKeyDown: H,
             placeholder: P,
             rows: 1,
-            disabled: j,
+            disabled: k,
             className: "pitaj-textarea",
             style: ce ? { display: "none" } : void 0
           }
@@ -3255,11 +3305,11 @@ function rr({
               className: "pitaj-recording-btn is-cancel",
               "aria-label": "Otkaži snimanje",
               title: "Otkaži snimanje",
-              onClick: () => k.cancel(),
+              onClick: () => _.cancel(),
               children: /* @__PURE__ */ i(xe, { size: 14 })
             }
           ),
-          /* @__PURE__ */ i("div", { className: "pitaj-wave-track", children: /* @__PURE__ */ i("div", { className: "pitaj-wave", children: k.waveformLevels.map(($, q) => /* @__PURE__ */ i(
+          /* @__PURE__ */ i("div", { className: "pitaj-wave-track", children: /* @__PURE__ */ i("div", { className: "pitaj-wave", children: _.waveformLevels.map(($, q) => /* @__PURE__ */ i(
             "span",
             {
               style: { height: `${Math.max(3, Math.round(3 + $ * 15))}px` }
@@ -3273,8 +3323,8 @@ function rr({
               className: "pitaj-recording-btn is-confirm",
               "aria-label": "Pošalji snimak",
               title: "Pošalji snimak",
-              onClick: () => k.stopAndTranscribe(),
-              disabled: j || k.isProcessing,
+              onClick: () => _.stopAndTranscribe(),
+              disabled: k || _.isProcessing,
               children: /* @__PURE__ */ i(je, { size: 15 })
             }
           )
@@ -3283,11 +3333,11 @@ function rr({
             "button",
             {
               type: "button",
-              className: `pitaj-composer-btn pitaj-mic-btn ${k.isProcessing ? "is-active" : ""}`,
+              className: `pitaj-composer-btn pitaj-mic-btn ${_.isProcessing ? "is-active" : ""}`,
               "aria-label": "Diktiranje",
-              title: k.isProcessing ? "Transkribujem..." : k.isSupported ? "Diktiranje" : "Diktiranje nije podržano",
-              onClick: () => k.start(),
-              disabled: j || I || !k.isSupported || k.isProcessing,
+              title: _.isProcessing ? "Transkribujem..." : _.isSupported ? "Diktiranje" : "Diktiranje nije podržano",
+              onClick: () => _.start(),
+              disabled: k || N || !_.isSupported || _.isProcessing,
               children: /* @__PURE__ */ i(di, { size: 17 })
             }
           ),
@@ -3295,7 +3345,7 @@ function rr({
             "button",
             {
               onClick: () => V(),
-              disabled: j || !o.trim() && h.length === 0,
+              disabled: k || !s.trim() && m.length === 0,
               className: "pitaj-send-btn",
               "aria-label": "Pošalji pitanje",
               children: /* @__PURE__ */ i(ci, { size: 16 })
@@ -3327,21 +3377,21 @@ function nr({
   unreadCount: a = 0,
   config: r
 }) {
-  var h, c, g, d, f, j;
-  const o = ((h = r.content) == null ? void 0 : h.launcherIconStyle) || "message-circle", n = typeof ((c = r.content) == null ? void 0 : c.launcherIconUrl) == "string" ? r.content.launcherIconUrl.trim() : "", s = ((g = r.content) == null ? void 0 : g.launcherShowText) === !0, u = ((d = r.content) == null ? void 0 : d.launcherTextSide) === "left" ? "left" : "right", m = s ? ((j = (f = r.content) == null ? void 0 : f.launcherText) == null ? void 0 : j.trim()) || r.title || r.name || "Otvori chat" : null;
+  var m, c, g, d, f, k;
+  const s = ((m = r.content) == null ? void 0 : m.launcherIconStyle) || "message-circle", n = typeof ((c = r.content) == null ? void 0 : c.launcherIconUrl) == "string" ? r.content.launcherIconUrl.trim() : "", o = ((g = r.content) == null ? void 0 : g.launcherShowText) === !0, u = ((d = r.content) == null ? void 0 : d.launcherTextSide) === "left" ? "left" : "right", h = o ? ((k = (f = r.content) == null ? void 0 : f.launcherText) == null ? void 0 : k.trim()) || r.title || r.name || "Otvori chat" : null;
   return /* @__PURE__ */ i(
     "button",
     {
       onClick: e,
-      className: `pitaj-launcher-btn ${t ? "is-open" : ""} ${s ? "has-label" : ""} ${s && u === "left" ? "label-left" : ""}`,
+      className: `pitaj-launcher-btn ${t ? "is-open" : ""} ${o ? "has-label" : ""} ${o && u === "left" ? "label-left" : ""}`,
       "aria-label": t ? "Zatvori chat" : "Otvori chat",
       "aria-expanded": t,
       children: [
         /* @__PURE__ */ i("div", { className: "pitaj-launcher-icon-wrap", children: [
-          /* @__PURE__ */ i("span", { className: "pitaj-launcher-icon open-icon", children: o === "custom" && n !== "" ? /* @__PURE__ */ i("img", { src: n, alt: "", className: "pitaj-launcher-custom-icon", "aria-hidden": "true" }) : /* @__PURE__ */ i(o === "sparkles" ? Xi : o === "message-square" ? pi : o === "contact" ? ra : ta, { size: 24 }) }),
+          /* @__PURE__ */ i("span", { className: "pitaj-launcher-icon open-icon", children: s === "custom" && n !== "" ? /* @__PURE__ */ i("img", { src: n, alt: "", className: "pitaj-launcher-custom-icon", "aria-hidden": "true" }) : /* @__PURE__ */ i(s === "sparkles" ? Xi : s === "message-square" ? pi : s === "contact" ? ra : ta, { size: 24 }) }),
           /* @__PURE__ */ i("span", { className: "pitaj-launcher-icon close-icon", children: /* @__PURE__ */ i(xe, { size: 22 }) })
         ] }),
-        m && !t && /* @__PURE__ */ i("span", { className: "pitaj-launcher-label", children: m }),
+        h && !t && /* @__PURE__ */ i("span", { className: "pitaj-launcher-label", children: h }),
         a > 0 && !t && /* @__PURE__ */ i("span", { className: "pitaj-unread-badge", children: a > 9 ? "9+" : a })
       ]
     }
@@ -3349,7 +3399,7 @@ function nr({
 }
 function or({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
   var M, L, V, H;
-  const [o, n] = T(!1), [s, u] = T(!1), [m, p] = T(!1), [h, c] = T(t), g = te(null);
+  const [s, n] = T(!1), [o, u] = T(!1), [h, p] = T(!1), [m, c] = T(t), g = te(null);
   Y(() => {
     t && (c(!0), p(!1));
   }, [t]), Y(() => {
@@ -3372,24 +3422,24 @@ function or({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
     };
     return U(), window.addEventListener("resize", U), () => window.removeEventListener("resize", U);
   }, []);
-  const d = a.content || {}, f = d.autoShowInitialMessages !== !1, j = d.showAutoPopupMobile !== !1, I = !o || j, k = o && d.useDifferentDurationMobile && typeof d.mobileAutoShowDurationSeconds == "number" ? d.mobileAutoShowDurationSeconds : d.autoShowDurationSeconds ?? 0;
+  const d = a.content || {}, f = d.autoShowInitialMessages !== !1, k = d.showAutoPopupMobile !== !1, N = !s || k, _ = s && d.useDifferentDurationMobile && typeof d.mobileAutoShowDurationSeconds == "number" ? d.mobileAutoShowDurationSeconds : d.autoShowDurationSeconds ?? 0;
   if (Y(() => {
     if (r) return;
-    if (!f || !I || s || t || h) {
+    if (!f || !N || o || t || m) {
       p(!1);
       return;
     }
-    const U = Math.max(0, k) * 1e3, P = setTimeout(() => {
+    const U = Math.max(0, _) * 1e3, P = setTimeout(() => {
       p(!0);
     }, U);
     return () => clearTimeout(P);
-  }, [f, I, s, t, h, k, r]), !m || t)
+  }, [f, N, o, t, m, _, r]), !h || t)
     return null;
   let z = "";
-  o && d.useDifferentMessageMobile && ((M = d.mobileWelcomeMessage) != null && M.trim()) ? z = d.mobileWelcomeMessage.trim() : (L = d.popupMessageText) != null && L.trim() ? z = d.popupMessageText.trim() : (V = a.welcomeMessage) != null && V.trim() ? z = a.welcomeMessage.trim() : (H = a.welcomeHeadline) != null && H.trim() ? z = a.welcomeHeadline.trim() : z = "Zdravo! Kako vam mogu pomoći danas?";
-  const _ = (U) => {
+  s && d.useDifferentMessageMobile && ((M = d.mobileWelcomeMessage) != null && M.trim()) ? z = d.mobileWelcomeMessage.trim() : (L = d.popupMessageText) != null && L.trim() ? z = d.popupMessageText.trim() : (V = a.welcomeMessage) != null && V.trim() ? z = a.welcomeMessage.trim() : (H = a.welcomeHeadline) != null && H.trim() ? z = a.welcomeHeadline.trim() : z = "Zdravo! Kako vam mogu pomoći danas?";
+  const I = (U) => {
     U.stopPropagation(), U.preventDefault(), r ? r.onDismiss() : u(!0), p(!1);
-  }, N = () => {
+  }, j = () => {
     e();
   }, l = a.title || a.name || "AI Asistent", C = a.logo || a.avatar;
   return /* @__PURE__ */ i(
@@ -3397,12 +3447,12 @@ function or({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
     {
       ref: g,
       className: `pitaj-launcher-popup ${r ? "is-rating-popup" : ""}`,
-      onClick: N,
+      onClick: j,
       role: "button",
       tabIndex: 0,
       "aria-label": `${l}: ${r ? "Ocijenite razgovor" : z}`,
       onKeyDown: (U) => {
-        (U.key === "Enter" || U.key === " ") && (U.preventDefault(), N());
+        (U.key === "Enter" || U.key === " ") && (U.preventDefault(), j());
       },
       children: [
         /* @__PURE__ */ i("div", { className: "pitaj-popup-header", children: [
@@ -3416,7 +3466,7 @@ function or({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
             {
               type: "button",
               className: "pitaj-popup-close-btn",
-              onClick: _,
+              onClick: I,
               "aria-label": "Zatvori obavijest",
               title: "Zatvori",
               children: /* @__PURE__ */ i(xe, { size: 14 })
@@ -3442,14 +3492,14 @@ function or({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
 }
 function sr(t) {
   if (!t) return "";
-  const e = typeof t == "string" ? new Date(t) : t, r = (/* @__PURE__ */ new Date()).getTime() - e.getTime(), o = Math.floor(r / (1e3 * 60)), n = Math.floor(r / (1e3 * 60 * 60)), s = Math.floor(r / (1e3 * 60 * 60 * 24));
-  return isNaN(o) || o < 1 ? "sada" : o < 60 ? `prije ${o}m` : n < 24 ? `prije ${n}h` : s < 7 ? `prije ${s}d` : e.toLocaleDateString();
+  const e = typeof t == "string" ? new Date(t) : t, r = (/* @__PURE__ */ new Date()).getTime() - e.getTime(), s = Math.floor(r / (1e3 * 60)), n = Math.floor(r / (1e3 * 60 * 60)), o = Math.floor(r / (1e3 * 60 * 60 * 24));
+  return isNaN(s) || s < 1 ? "sada" : s < 60 ? `prije ${s}m` : n < 24 ? `prije ${n}h` : o < 7 ? `prije ${o}d` : e.toLocaleDateString();
 }
 function lr({ config: t, visitorId: e, onSelectTicket: a }) {
-  const [r, o] = T([]), [n, s] = T("open"), [u, m] = T(1), [p, h] = T(!0), [c, g] = T(!0), [d, f] = T(!1), [j, I] = T(null), k = te(null), z = te(null), _ = te(!1);
+  const [r, s] = T([]), [n, o] = T("open"), [u, h] = T(1), [p, m] = T(!0), [c, g] = T(!0), [d, f] = T(!1), [k, N] = T(null), _ = te(null), z = te(null), I = te(!1);
   Y(() => {
     let C = !0;
-    return g(!0), o([]), m(1), h(!0), I(null), _.current = !1, tt({
+    return g(!0), s([]), h(1), m(!0), N(null), I.current = !1, tt({
       widgetId: t.companyId,
       visitorId: e,
       apiUrl: t.apiUrl,
@@ -3457,18 +3507,18 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
       page: 1,
       perPage: 15
     }).then((M) => {
-      C && (o(M.tickets), h(M.hasMore), m(1));
+      C && (s(M.tickets), m(M.hasMore), h(1));
     }).catch((M) => {
-      C && I(M instanceof Error ? M.message : "Tikete nije moguće učitati.");
+      C && N(M instanceof Error ? M.message : "Tikete nije moguće učitati.");
     }).finally(() => {
       C && g(!1);
     }), () => {
       C = !1;
     };
   }, [t.apiUrl, t.companyId, e, n]);
-  const N = Q(() => {
-    if (c || _.current || !p) return;
-    _.current = !0, f(!0);
+  const j = Q(() => {
+    if (c || I.current || !p) return;
+    I.current = !0, f(!0);
     const C = u + 1;
     tt({
       widgetId: t.companyId,
@@ -3478,35 +3528,35 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
       page: C,
       perPage: 15
     }).then((M) => {
-      o((L) => {
+      s((L) => {
         const V = new Set(L.map((U) => U.id)), H = M.tickets.filter((U) => !V.has(U.id));
         return [...L, ...H];
-      }), h(M.hasMore), m(C);
+      }), m(M.hasMore), h(C);
     }).catch((M) => {
       console.error("[Pitaj.io] Error loading more tickets:", M);
     }).finally(() => {
-      f(!1), _.current = !1;
+      f(!1), I.current = !1;
     });
   }, [t.apiUrl, t.companyId, p, c, u, n, e]);
   return Y(() => {
-    const C = z.current, M = k.current;
+    const C = z.current, M = _.current;
     if (!C || !M || !p || c || d) return;
     const L = new IntersectionObserver(
       (V) => {
         var H;
-        (H = V[0]) != null && H.isIntersecting && N();
+        (H = V[0]) != null && H.isIntersecting && j();
       },
       { root: M, rootMargin: "120px" }
     );
     return L.observe(C), () => L.disconnect();
-  }, [p, c, d, N]), /* @__PURE__ */ i(
+  }, [p, c, d, j]), /* @__PURE__ */ i(
     "div",
     {
-      ref: k,
+      ref: _,
       className: "pitaj-tickets-screen",
       onScroll: (C) => {
         const M = C.currentTarget;
-        !M || !p || c || _.current || M.scrollHeight - M.scrollTop - M.clientHeight < 120 && N();
+        !M || !p || c || I.current || M.scrollHeight - M.scrollTop - M.clientHeight < 120 && j();
       },
       tabIndex: 0,
       role: "region",
@@ -3517,7 +3567,7 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
             "button",
             {
               className: n === "open" ? "is-active" : "",
-              onClick: () => s("open"),
+              onClick: () => o("open"),
               role: "tab",
               "aria-selected": n === "open",
               children: "Otvoreni"
@@ -3527,7 +3577,7 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
             "button",
             {
               className: n === "closed" ? "is-active" : "",
-              onClick: () => s("closed"),
+              onClick: () => o("closed"),
               role: "tab",
               "aria-selected": n === "closed",
               children: "Zatvoreni"
@@ -3537,7 +3587,7 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
         c ? /* @__PURE__ */ i("div", { className: "pitaj-tickets-empty", children: [
           /* @__PURE__ */ i("div", { className: "pitaj-tickets-loading-more-spinner", style: { width: "22px", height: "22px", borderWidth: "2.5px" } }),
           /* @__PURE__ */ i("span", { children: "Učitavanje tiketa…" })
-        ] }) : j ? /* @__PURE__ */ i("div", { className: "pitaj-tickets-empty", children: /* @__PURE__ */ i("span", { children: j }) }) : r.length === 0 ? /* @__PURE__ */ i("div", { className: "pitaj-tickets-empty", children: [
+        ] }) : k ? /* @__PURE__ */ i("div", { className: "pitaj-tickets-empty", children: /* @__PURE__ */ i("span", { children: k }) }) : r.length === 0 ? /* @__PURE__ */ i("div", { className: "pitaj-tickets-empty", children: [
           /* @__PURE__ */ i(pi, { size: 30 }),
           /* @__PURE__ */ i("strong", { children: n === "open" ? "Nema otvorenih tiketa" : "Nema zatvorenih tiketa" }),
           /* @__PURE__ */ i("span", { children: n === "open" ? "Svi vaši tiketi su riješeni." : "Nemate arhiviranih tiketa." })
@@ -3579,12 +3629,12 @@ function lr({ config: t, visitorId: e, onSelectTicket: a }) {
     }
   );
 }
-const cr = li(() => import("./HistoryScreen-BVWBgHPB.js"), (t) => t.HistoryScreen), pr = li(() => import("./FormActionsScreen-DG_m0Mkx.js"), (t) => t.FormActionsScreen);
+const cr = li(() => import("./HistoryScreen-CwHIKaai.js"), (t) => t.HistoryScreen), pr = li(() => import("./FormActionsScreen-DyhudI5N.js"), (t) => t.FormActionsScreen);
 function Ie(t, e) {
   const a = t.trim(), r = /^#[0-9A-Fa-f]{3}$/.test(a) ? `#${a[1]}${a[1]}${a[2]}${a[2]}${a[3]}${a[3]}` : a;
   if (!/^#[0-9A-Fa-f]{6}$/.test(r)) return null;
-  const o = Number.parseInt(r.slice(1, 3), 16), n = Number.parseInt(r.slice(3, 5), 16), s = Number.parseInt(r.slice(5, 7), 16);
-  return `rgba(${o}, ${n}, ${s}, ${e})`;
+  const s = Number.parseInt(r.slice(1, 3), 16), n = Number.parseInt(r.slice(3, 5), 16), o = Number.parseInt(r.slice(5, 7), 16);
+  return `rgba(${s}, ${n}, ${o}, ${e})`;
 }
 function ji(t) {
   const e = t.trim(), a = /^#[0-9A-Fa-f]{3}$/.test(e) ? `#${e[1]}${e[1]}${e[2]}${e[2]}${e[3]}${e[3]}` : e;
@@ -3595,7 +3645,7 @@ function ji(t) {
   } : null;
 }
 function dr(t, e, a) {
-  const r = (o) => Math.max(0, Math.min(255, Math.round(o))).toString(16).padStart(2, "0");
+  const r = (s) => Math.max(0, Math.min(255, Math.round(s))).toString(16).padStart(2, "0");
   return `#${r(t)}${r(e)}${r(a)}`;
 }
 function Ae(t) {
@@ -3605,38 +3655,38 @@ function Ae(t) {
 function ur(t) {
   const e = ji(t);
   if (!e) return t;
-  const a = Ae(t) === "#111827", r = a ? 0.2 : 0.16, o = a ? 0 : 255;
+  const a = Ae(t) === "#111827", r = a ? 0.2 : 0.16, s = a ? 0 : 255;
   return dr(
-    e.r + (o - e.r) * r,
-    e.g + (o - e.g) * r,
-    e.b + (o - e.b) * r
+    e.r + (s - e.r) * r,
+    e.g + (s - e.g) * r,
+    e.b + (s - e.b) * r
   );
 }
-function hr({
+function mr({
   config: t,
   startOpen: e = !1,
   initialScreen: a = "new-conversation",
   onEvent: r,
-  isInline: o = !1,
+  isInline: s = !1,
   isMobile: n
 }) {
-  var Pe, Me, Se, me, dt, ut, ht, mt, ft;
+  var Pe, Me, Se, he, dt, ut, mt, ht, ft;
   const {
-    config: s,
+    config: o,
     setConfig: u,
-    isOpen: m,
+    isOpen: h,
     setIsOpen: p,
-    screen: h,
+    screen: m,
     setScreen: c,
     conversations: g,
     activeConversation: d,
     totalUnread: f,
-    isStreaming: j,
-    rateLimitTimer: I,
-    errorBanner: k,
+    isStreaming: k,
+    rateLimitTimer: N,
+    errorBanner: _,
     selectConversation: z,
-    startNewConversation: _,
-    endConversation: N,
+    startNewConversation: I,
+    endConversation: j,
     deleteConversation: l,
     sendUserMessage: C,
     submitSatisfaction: M,
@@ -3650,14 +3700,14 @@ function hr({
     initialScreen: a,
     emitEvent: r,
     onActionTrigger: (x) => {
-      if (J(!0), p(!0), (h === "history" || h === "new-conversation") && c("conversation"), x.widget_id || x.widget)
+      if (J(!0), p(!0), (m === "history" || m === "new-conversation") && c("conversation"), x.widget_id || x.widget)
         return;
       const D = Number(x.id), w = Number(x.form_id), ae = Number.isInteger(D) && D > 0 ? D : null, ne = Number.isInteger(w) && w > 0 ? -w : null;
       $(ae ?? ne);
     }
   }), ie = te(a), re = te(e), [ce, J] = T(e), [ee, $] = T(null), [q, Z] = T(null), [O, v] = T(null), [b, y] = T(() => /* @__PURE__ */ new Set()), S = Q(() => {
-    h === "conversation" && d && d.messages.length > 0 && !(d.satisfaction && d.satisfaction !== "none") && !b.has(d.id) && v(d.id);
-  }, [h, d, b]), F = Q(async (x, D) => {
+    m === "conversation" && d && d.messages.length > 0 && !(d.satisfaction && d.satisfaction !== "none") && !b.has(d.id) && v(d.id);
+  }, [m, d, b]), F = Q(async (x, D) => {
     O && (await M(O, x, D), v(null));
   }, [O, M]), E = Q(() => {
     O && (y((x) => new Set(x).add(O)), v(null));
@@ -3702,61 +3752,61 @@ function hr({
     return D && (D.addEventListener("resize", x), D.addEventListener("scroll", x)), window.addEventListener("resize", x), window.addEventListener("orientationchange", x), () => {
       D && (D.removeEventListener("resize", x), D.removeEventListener("scroll", x)), window.removeEventListener("resize", x), window.removeEventListener("orientationchange", x);
     };
-  }, [m, W]), Y(() => {
-    if (typeof document > "u" || !m || !W || o) return;
+  }, [h, W]), Y(() => {
+    if (typeof document > "u" || !h || !W || s) return;
     const x = document.body.style.overflow, D = document.body.style.touchAction;
     return document.body.style.overflow = "hidden", document.body.style.touchAction = "none", () => {
       document.body.style.overflow = x, document.body.style.touchAction = D;
     };
-  }, [m, W, o]), Y(() => {
+  }, [h, W, s]), Y(() => {
     var w;
-    if (typeof window > "u" || o) return;
+    if (typeof window > "u" || s) return;
     const x = (w = A.current) == null ? void 0 : w.getRootNode(), D = x instanceof ShadowRoot ? x.host : null;
-    D && (m && W ? (D.style.top = "0", D.style.left = "0", D.style.width = "100%", D.style.height = "100%", D.setAttribute("data-pitaj-mobile-open", "true")) : (D.style.top = "", D.style.left = "", D.style.width = "0", D.style.height = "0", D.removeAttribute("data-pitaj-mobile-open")));
-  }, [m, W, o]);
-  const G = s.formsEnabled === !0 && s.formsAvailable !== !1, B = we(() => {
+    D && (h && W ? (D.style.top = "0", D.style.left = "0", D.style.width = "100%", D.style.height = "100%", D.setAttribute("data-pitaj-mobile-open", "true")) : (D.style.top = "", D.style.left = "", D.style.width = "0", D.style.height = "0", D.removeAttribute("data-pitaj-mobile-open")));
+  }, [h, W, s]);
+  const G = o.formsEnabled === !0 && o.formsAvailable !== !1, B = we(() => {
     var w, ae;
-    const x = s.actions || [];
+    const x = o.actions || [];
     if (x.length > 0 && typeof ((w = x[0]) == null ? void 0 : w.id) == "number")
       return x[0].id;
-    const D = s.forms || [];
+    const D = o.forms || [];
     return D.length > 0 && typeof ((ae = D[0]) == null ? void 0 : ae.id) == "number" ? -D[0].id : null;
-  }, [s.actions, s.forms]), de = we(() => ({
+  }, [o.actions, o.forms]), de = we(() => ({
     open: () => {
       J(!0), p(!0);
     },
     close: () => p(!1),
     toggle: () => {
-      m || J(!0), p(!m);
+      h || J(!0), p(!h);
     },
     startConversation: (x) => {
-      J(!0), p(!0), x && x.trim() ? _(x.trim()) : c("new-conversation");
+      J(!0), p(!0), x && x.trim() ? I(x.trim()) : c("new-conversation");
     },
     setScreen: (x) => c(x),
     setConfig: (x) => {
       u({
-        ...s,
+        ...o,
         ...x,
-        colors: { ...s.colors || {}, ...x.colors || {} },
-        content: { ...s.content || {}, ...x.content || {} },
-        features: { ...s.features || {}, ...x.features || {} }
+        colors: { ...o.colors || {}, ...x.colors || {} },
+        content: { ...o.content || {}, ...x.content || {} },
+        features: { ...o.features || {}, ...x.features || {} }
       });
     }
-  }), [s, m, p, c, _, u]), K = te({});
+  }), [o, h, p, c, I, u]), K = te({});
   Bt(K.current, de), Y(() => () => Bt(K.current, null), []), Y(() => {
     a !== ie.current && (ie.current = a, c(a));
   }, [a, c]), Y(() => {
     e !== re.current && (re.current = e, e && J(!0), p(e));
   }, [e, p]), Y(() => {
-    if (h === "forms") {
+    if (m === "forms") {
       G && B !== null && $(B), c("new-conversation");
       return;
     }
-    h === "contact" && c("new-conversation");
-  }, [B, G, h, c]), Y(() => {
+    m === "contact" && c("new-conversation");
+  }, [B, G, m, c]), Y(() => {
     var ae;
     if (typeof document > "u") return;
-    const x = (ae = s.content) == null ? void 0 : ae.fontFamily;
+    const x = (ae = o.content) == null ? void 0 : ae.fontFamily;
     if (!x) return;
     const D = x.trim().toLowerCase();
     let w = "";
@@ -3767,10 +3817,10 @@ function hr({
         fe.id = ne, fe.rel = "stylesheet", fe.href = `https://fonts.googleapis.com/css2?${w}&display=swap`, document.head.appendChild(fe);
       }
     }
-  }, [(Pe = s.content) == null ? void 0 : Pe.fontFamily]);
+  }, [(Pe = o.content) == null ? void 0 : Pe.fontFamily]);
   const ge = we(() => {
     var Be, gt, bt, xt, jt;
-    const x = s.colors || {}, D = ((Be = s.content) == null ? void 0 : Be.themeMode) === "dark" ? "dark" : "light", w = {};
+    const x = o.colors || {}, D = ((Be = o.content) == null ? void 0 : Be.themeMode) === "dark" ? "dark" : "light", w = {};
     if (x.primaryColor) {
       w["--pitaj-accent"] = x.primaryColor, w["--pitaj-bubble-user"] = x.primaryColor, w["--pitaj-accent-hover"] = ur(x.primaryColor), w["--pitaj-accent-contrast"] = Ae(x.primaryColor), w["--pitaj-bubble-user-fg"] = Ae(x.primaryColor);
       const pe = Ie(x.primaryColor, 0.1), $e = Ie(x.primaryColor, 0.16), vt = Ie(x.primaryColor, 0.35);
@@ -3782,33 +3832,33 @@ function hr({
       pe && (w["--pitaj-header-icon-hover"] = pe);
     }
     w["--pitaj-chrome-border"] = D === "dark" ? "rgba(148, 163, 184, 0.52)" : "#d1d5db", x.surfaceBg && (w["--pitaj-surface"] = x.surfaceBg), x.subtle ? w["--pitaj-surface-subtle"] = x.subtle : x.surfaceBg && (w["--pitaj-surface-subtle"] = Ie(x.surfaceBg, 0.9) || x.surfaceBg), x.bubbleAiBg && (w["--pitaj-bubble-ai"] = x.bubbleAiBg), x.textFg && (w["--pitaj-bubble-ai-fg"] = x.textFg), x.textFg && (w["--pitaj-fg"] = x.textFg), x.mutedFg && (w["--pitaj-muted"] = x.mutedFg), x.border && (w["--pitaj-border"] = x.border), x.hover && (w["--pitaj-hover"] = x.hover), x.sendAccent && (w["--pitaj-send-accent"] = x.sendAccent, w["--pitaj-send-accent-contrast"] = Ae(x.sendAccent));
-    const ae = (gt = s.content) == null ? void 0 : gt.launcherButtonColor;
+    const ae = (gt = o.content) == null ? void 0 : gt.launcherButtonColor;
     ae && (w["--pitaj-launcher-bg"] = ae, w["--pitaj-launcher-fg"] = Ae(ae));
-    const ne = (bt = s.content) == null ? void 0 : bt.cornerRadius;
+    const ne = (bt = o.content) == null ? void 0 : bt.cornerRadius;
     if (ne) {
       const pe = ne === "sharp" || ne === "0px" ? "0px" : ne === "small" || ne === "8px" ? "8px" : ne === "medium" || ne === "12px" ? "12px" : ne === "large" || ne === "16px" ? "16px" : ne;
       w["--pitaj-radius"] = pe, pe === "0px" ? (w["--pitaj-radius-bubble"] = "0px", w["--pitaj-radius-input"] = "0px", w["--pitaj-radius-btn"] = "0px", w["--pitaj-radius-avatar"] = "0px", w["--pitaj-radius-full"] = "0px", w["--pitaj-radius-corner-sm"] = "0px", w["--pitaj-launcher-radius"] = "0px", w["--pitaj-launcher-pill-radius"] = "0px", w["--pitaj-badge-radius"] = "0px") : pe === "8px" ? (w["--pitaj-radius-bubble"] = "8px", w["--pitaj-radius-input"] = "8px", w["--pitaj-radius-btn"] = "6px", w["--pitaj-radius-avatar"] = "6px", w["--pitaj-radius-full"] = "8px", w["--pitaj-radius-corner-sm"] = "2px", w["--pitaj-launcher-radius"] = "8px", w["--pitaj-launcher-pill-radius"] = "8px", w["--pitaj-badge-radius"] = "4px") : pe === "12px" ? (w["--pitaj-radius-bubble"] = "12px", w["--pitaj-radius-input"] = "12px", w["--pitaj-radius-btn"] = "8px", w["--pitaj-radius-avatar"] = "10px", w["--pitaj-radius-full"] = "12px", w["--pitaj-radius-corner-sm"] = "4px", w["--pitaj-launcher-radius"] = "12px", w["--pitaj-launcher-pill-radius"] = "12px", w["--pitaj-badge-radius"] = "6px") : (w["--pitaj-radius-bubble"] = "18px", w["--pitaj-radius-input"] = "14px", w["--pitaj-radius-btn"] = "10px", w["--pitaj-radius-avatar"] = "50%", w["--pitaj-radius-full"] = "999px", w["--pitaj-radius-corner-sm"] = "4px", w["--pitaj-launcher-radius"] = "50%", w["--pitaj-launcher-pill-radius"] = "999px", w["--pitaj-badge-radius"] = "999px");
     }
-    const fe = (xt = s.content) == null ? void 0 : xt.fontFamily;
+    const fe = (xt = o.content) == null ? void 0 : xt.fontFamily;
     if (fe) {
       const pe = fe.toLowerCase(), $e = pe === "system" ? "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" : pe === "arial" ? "Arial, Helvetica, sans-serif" : pe === "helvetica" ? "'Helvetica Neue', Helvetica, Arial, sans-serif" : pe === "georgia" ? "Georgia, serif" : pe === "geist" ? "'Geist', system-ui, -apple-system, sans-serif" : pe === "inter" ? "'Inter', system-ui, -apple-system, sans-serif" : `'${fe}', 'Inter', system-ui, sans-serif`;
       w["--pitaj-font"] = $e, w.fontFamily = $e;
     }
-    const Ne = (jt = s.content) == null ? void 0 : jt.fontSize;
+    const Ne = (jt = o.content) == null ? void 0 : jt.fontSize;
     return Ne && (w["--pitaj-font-size"] = Ne, w.fontSize = Ne), w;
   }, [
-    s.colors,
-    (Me = s.content) == null ? void 0 : Me.themeMode,
-    (Se = s.content) == null ? void 0 : Se.launcherButtonColor,
-    (me = s.content) == null ? void 0 : me.cornerRadius,
-    (dt = s.content) == null ? void 0 : dt.fontFamily,
-    (ut = s.content) == null ? void 0 : ut.fontSize
-  ]), he = `pos-${s.position || "bottom-right"}`;
-  return s.enabled === !1 ? /* @__PURE__ */ i(ue, {}) : /* @__PURE__ */ i(
+    o.colors,
+    (Me = o.content) == null ? void 0 : Me.themeMode,
+    (Se = o.content) == null ? void 0 : Se.launcherButtonColor,
+    (he = o.content) == null ? void 0 : he.cornerRadius,
+    (dt = o.content) == null ? void 0 : dt.fontFamily,
+    (ut = o.content) == null ? void 0 : ut.fontSize
+  ]), me = `pos-${o.position || "bottom-right"}`;
+  return o.enabled === !1 ? /* @__PURE__ */ i(ue, {}) : /* @__PURE__ */ i(
     "div",
     {
       ref: A,
-      className: `pitaj-root ${he} ${m ? "is-widget-open" : "is-widget-closed"} ${o ? "is-inline" : ""} ${W ? "is-mobile" : ""} ${o && ((ht = s.content) != null && ht.showInlineLauncher) ? "show-inline-launcher" : ""}`,
+      className: `pitaj-root ${me} ${h ? "is-widget-open" : "is-widget-closed"} ${s ? "is-inline" : ""} ${W ? "is-mobile" : ""} ${s && ((mt = o.content) != null && mt.showInlineLauncher) ? "show-inline-launcher" : ""}`,
       style: ge,
       role: "region",
       "aria-label": "AI Chat Asistent",
@@ -3816,17 +3866,17 @@ function hr({
         /* @__PURE__ */ i(
           "div",
           {
-            className: `pitaj-window ${m ? "is-open" : "is-closed"}`,
+            className: `pitaj-window ${h ? "is-open" : "is-closed"}`,
             role: "dialog",
             "aria-modal": "true",
-            "aria-hidden": !m,
+            "aria-hidden": !h,
             children: [
               /* @__PURE__ */ i(
                 Ca,
                 {
-                  screen: h,
+                  screen: m,
                   activeConversation: d,
-                  config: s,
+                  config: o,
                   onBack: () => {
                     const x = q || "new-conversation";
                     Z(null), c(x);
@@ -3838,9 +3888,9 @@ function hr({
                     Z(null), c("new-conversation");
                   },
                   onEndConversation: () => {
-                    S(), N(), p(!1);
+                    S(), j(), p(!1);
                   },
-                  onDeleteConversation: ((mt = s.content) == null ? void 0 : mt.deleteConversationsEnabled) !== !1 && d ? () => l(d.id) : void 0,
+                  onDeleteConversation: ((ht = o.content) == null ? void 0 : ht.deleteConversationsEnabled) !== !1 && d ? () => l(d.id) : void 0,
                   onViewHistory: () => {
                     Z(null), c("history");
                   },
@@ -3850,49 +3900,49 @@ function hr({
                 }
               ),
               /* @__PURE__ */ i("div", { className: "pitaj-body", children: [
-                h === "conversation" && d && /* @__PURE__ */ i(
+                m === "conversation" && d && /* @__PURE__ */ i(
                   ar,
                   {
                     conversation: d,
-                    config: s,
-                    isStreaming: j,
-                    rateLimitCountdown: I,
-                    errorBanner: k,
+                    config: o,
+                    isStreaming: k,
+                    rateLimitCountdown: N,
+                    errorBanner: _,
                     onSendMessage: C,
                     onApiError: P,
                     onSubmitSatisfaction: (x, D) => M(d.id, x, D),
                     isRatingPromptActive: O === d.id
                   }
                 ),
-                h === "new-conversation" && /* @__PURE__ */ i(
+                m === "new-conversation" && /* @__PURE__ */ i(
                   rr,
                   {
-                    config: s,
+                    config: o,
                     openedByUser: ce,
                     onStart: (x) => {
-                      _(x);
+                      I(x);
                     },
                     onApiError: P
                   }
                 ),
-                h === "history" && /* @__PURE__ */ i(
+                m === "history" && /* @__PURE__ */ i(
                   cr,
                   {
                     conversations: g,
-                    config: s,
+                    config: o,
                     onSelectConversation: (x) => {
                       Z("history"), z(x);
                     },
                     onNewConversation: () => {
                       Z(null), c("new-conversation");
                     },
-                    onDeleteConversation: ((ft = s.content) == null ? void 0 : ft.deleteConversationsEnabled) !== !1 ? l : void 0
+                    onDeleteConversation: ((ft = o.content) == null ? void 0 : ft.deleteConversationsEnabled) !== !1 ? l : void 0
                   }
                 ),
-                h === "tickets" && /* @__PURE__ */ i(
+                m === "tickets" && /* @__PURE__ */ i(
                   lr,
                   {
-                    config: s,
+                    config: o,
                     visitorId: V,
                     onSelectTicket: (x) => {
                       var Ne;
@@ -3911,17 +3961,17 @@ function hr({
                     }
                   }
                 ),
-                (h === "conversation" || h === "new-conversation") && G && ee !== null ? /* @__PURE__ */ i("div", { className: "pitaj-inline-form-shell", children: /* @__PURE__ */ i(
+                (m === "conversation" || m === "new-conversation") && G && ee !== null ? /* @__PURE__ */ i("div", { className: "pitaj-inline-form-shell", children: /* @__PURE__ */ i(
                   pr,
                   {
                     embedded: !0,
-                    config: s,
-                    widgetId: s.companyId,
+                    config: o,
+                    widgetId: o.companyId,
                     activeConversationId: H,
                     initialActionId: ee,
                     visitorContact: L,
                     onApiError: P,
-                    blockedReason: I !== null ? `Sačekajte ${I}s prije novog zahtjeva.` : null,
+                    blockedReason: N !== null ? `Sačekajte ${N}s prije novog zahtjeva.` : null,
                     onSubmitted: (x) => {
                       U(H, x, "user");
                     },
@@ -3932,16 +3982,16 @@ function hr({
             ]
           }
         ),
-        (!m || !W) && /* @__PURE__ */ i("div", { className: `pitaj-launcher-wrap ${m ? "is-widget-open" : "is-widget-closed"}`, children: [
+        (!h || !W) && /* @__PURE__ */ i("div", { className: `pitaj-launcher-wrap ${h ? "is-widget-open" : "is-widget-closed"}`, children: [
           /* @__PURE__ */ i(
             or,
             {
-              isOpen: m,
+              isOpen: h,
               onOpen: () => {
                 J(!0), p(!0);
               },
-              config: s,
-              pendingRating: O && !m ? {
+              config: o,
+              pendingRating: O && !h ? {
                 conversationId: O,
                 onSubmitRating: F,
                 onDismiss: E
@@ -3951,12 +4001,12 @@ function hr({
           /* @__PURE__ */ i(
             nr,
             {
-              isOpen: m,
+              isOpen: h,
               onClick: () => {
-                m || J(!0), p(!m);
+                h || J(!0), p(!h);
               },
-              unreadCount: f + (O && !m ? 1 : 0),
-              config: s
+              unreadCount: f + (O && !h ? 1 : 0),
+              config: o
             }
           )
         ] })
@@ -4055,11 +4105,11 @@ const oe = {
     sendAccent: "#2563eb"
   }
 };
-function mr(t) {
+function hr(t) {
   const e = t.trim();
   if (!/^#[0-9A-Fa-f]{6}$/.test(e)) return "#ffffff";
-  const a = Number.parseInt(e.slice(1, 3), 16), r = Number.parseInt(e.slice(3, 5), 16), o = Number.parseInt(e.slice(5, 7), 16);
-  return (0.2126 * a + 0.7152 * r + 0.0722 * o) / 255 > 0.62 ? "#111827" : "#ffffff";
+  const a = Number.parseInt(e.slice(1, 3), 16), r = Number.parseInt(e.slice(3, 5), 16), s = Number.parseInt(e.slice(5, 7), 16);
+  return (0.2126 * a + 0.7152 * r + 0.0722 * s) / 255 > 0.62 ? "#111827" : "#ffffff";
 }
 function fr(t, e) {
   if (typeof t != "string") return e;
@@ -4070,22 +4120,22 @@ function gr(t) {
   const e = t.trim(), a = /^#[0-9A-Fa-f]{3}$/.test(e) ? `#${e[1]}${e[1]}${e[2]}${e[2]}${e[3]}${e[3]}` : e;
   if (!/^#[0-9A-Fa-f]{6}$/.test(a))
     return { h: 210, s: 70, l: 50 };
-  const r = Number.parseInt(a.slice(1, 3), 16) / 255, o = Number.parseInt(a.slice(3, 5), 16) / 255, n = Number.parseInt(a.slice(5, 7), 16) / 255, s = Math.max(r, o, n), u = Math.min(r, o, n), m = s - u;
+  const r = Number.parseInt(a.slice(1, 3), 16) / 255, s = Number.parseInt(a.slice(3, 5), 16) / 255, n = Number.parseInt(a.slice(5, 7), 16) / 255, o = Math.max(r, s, n), u = Math.min(r, s, n), h = o - u;
   let p = 0;
-  const h = (s + u) / 2, c = m === 0 ? 0 : m / (1 - Math.abs(2 * h - 1));
-  if (m !== 0)
-    switch (s) {
+  const m = (o + u) / 2, c = h === 0 ? 0 : h / (1 - Math.abs(2 * m - 1));
+  if (h !== 0)
+    switch (o) {
       case r:
-        p = (o - n) / m % 6;
+        p = (s - n) / h % 6;
         break;
-      case o:
-        p = (n - r) / m + 2;
+      case s:
+        p = (n - r) / h + 2;
         break;
       default:
-        p = (r - o) / m + 4;
+        p = (r - s) / h + 4;
         break;
     }
-  return { h: Math.round((p * 60 + 360) % 360), s: Math.round(c * 100), l: Math.round(h * 100) };
+  return { h: Math.round((p * 60 + 360) % 360), s: Math.round(c * 100), l: Math.round(m * 100) };
 }
 function br(t) {
   const e = typeof t == "string" ? t : "";
@@ -4108,14 +4158,14 @@ function br(t) {
 }
 function xr(t) {
   return Array.isArray(t) ? t.filter((e) => typeof e == "object" && e !== null).map((e) => {
-    const a = e.schema_json && typeof e.schema_json == "object" ? e.schema_json : {}, o = (Array.isArray(a.fields) ? a.fields : []).filter((n) => typeof n == "object" && n !== null).map((n) => ({
+    const a = e.schema_json && typeof e.schema_json == "object" ? e.schema_json : {}, s = (Array.isArray(a.fields) ? a.fields : []).filter((n) => typeof n == "object" && n !== null).map((n) => ({
       key: typeof n.key == "string" ? n.key : "",
       type: br(n.type),
       label: typeof n.label == "string" ? n.label : "",
       required: n.required === !0,
       placeholder: typeof n.placeholder == "string" ? n.placeholder : void 0,
-      options: Array.isArray(n.options) ? n.options.filter((s) => typeof s == "string" && s.trim() !== "") : void 0,
-      accept: Array.isArray(n.accept) ? n.accept.filter((s) => typeof s == "string" && s.trim() !== "") : void 0,
+      options: Array.isArray(n.options) ? n.options.filter((o) => typeof o == "string" && o.trim() !== "") : void 0,
+      accept: Array.isArray(n.accept) ? n.accept.filter((o) => typeof o == "string" && o.trim() !== "") : void 0,
       max_size_kb: typeof n.max_size_kb == "number" ? n.max_size_kb : void 0,
       value: typeof n.value == "string" ? n.value : void 0
     })).filter((n) => n.key !== "");
@@ -4126,7 +4176,7 @@ function xr(t) {
       submit_label: typeof e.submit_label == "string" ? e.submit_label : "Pošalji",
       success_message: typeof e.success_message == "string" ? e.success_message : void 0,
       schema_version: typeof e.schema_version == "string" ? e.schema_version : "v1",
-      schema_json: { fields: o }
+      schema_json: { fields: s }
     };
   }).filter((e) => e.id > 0 && e.name.trim() !== "" && e.schema_json.fields.length > 0) : [];
 }
@@ -4141,7 +4191,7 @@ function jr(t) {
   })).filter((e) => e.id > 0 && e.form_id > 0 && e.name.trim() !== "") : [];
 }
 async function vr(t, e) {
-  var r, o, n, s, u, m, p, h, c;
+  var r, s, n, o, u, h, p, m, c;
   if (t === "default")
     return { ...oe, companyId: t || "default" };
   const a = (e || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, "");
@@ -4167,11 +4217,11 @@ async function vr(t, e) {
       }
       return console.warn(`[ChatWidget] Failed to fetch config (${d.status}), using defaults.`), { ...oe, companyId: t, apiUrl: a };
     }
-    const f = await d.json(), j = f.accent_color || ((r = oe.colors) == null ? void 0 : r.primaryColor) || "#2563eb", I = Array.isArray(f.suggested_questions) ? f.suggested_questions.filter((A) => typeof A == "string" && A.trim() !== "").slice(0, 4) : [], k = Array.isArray(f.contact_fields) ? f.contact_fields.filter(
+    const f = await d.json(), k = f.accent_color || ((r = oe.colors) == null ? void 0 : r.primaryColor) || "#2563eb", N = Array.isArray(f.suggested_questions) ? f.suggested_questions.filter((A) => typeof A == "string" && A.trim() !== "").slice(0, 4) : [], _ = Array.isArray(f.contact_fields) ? f.contact_fields.filter(
       (A) => A === "name" || A === "email" || A === "phone"
-    ) : [], _ = (Array.isArray(f.channels) ? f.channels : []).find(
+    ) : [], I = (Array.isArray(f.channels) ? f.channels : []).find(
       (A) => typeof A == "object" && A !== null && A.channel === "chat_bubble"
-    ), N = (_ == null ? void 0 : _.enabled) !== !1, l = f.widget_content && typeof f.widget_content == "object" ? f.widget_content : null, C = Array.isArray(l == null ? void 0 : l.suggested_message_rows) ? l.suggested_message_rows.filter((A) => typeof A == "object" && A !== null).map((A) => {
+    ), j = (I == null ? void 0 : I.enabled) !== !1, l = f.widget_content && typeof f.widget_content == "object" ? f.widget_content : null, C = Array.isArray(l == null ? void 0 : l.suggested_message_rows) ? l.suggested_message_rows.filter((A) => typeof A == "object" && A !== null).map((A) => {
       const W = typeof A.text == "string" ? A.text.trim() : "", R = Array.isArray(A.children) ? A.children.filter((G) => typeof G == "string" && G.trim() !== "") : [];
       return {
         text: W,
@@ -4220,7 +4270,7 @@ async function vr(t, e) {
       defaultLanguage: typeof (l == null ? void 0 : l.default_language) == "string" ? l.default_language : "en",
       supportedLanguages: Array.isArray(l == null ? void 0 : l.supported_languages) ? l.supported_languages : ["en"],
       guardrails: l == null ? void 0 : l.guardrails
-    }, L = M.themeMode === "dark" ? "dark" : "light", V = M.accentColorEnabled !== !1, H = M.accentColorForHeaderEnabled === !0, U = M.accentColorForSendIconEnabled === !0, P = M.tintedGrayscaleEnabled === !0, ie = M.tintedGrayscaleHue ?? 0, re = M.tintedGrayscaleTint ?? 0, ce = M.tintedGrayscaleShade ?? 0, J = V ? j : L === "dark" ? "#9ca3af" : "#6b7280", $ = (gr(J).h + ie + 360) % 360, q = Math.max(0, Math.min(46, 10 + re * 0.36)), Z = Math.max(-24, Math.min(24, ce * 0.24)), O = L === "dark" ? {
+    }, L = M.themeMode === "dark" ? "dark" : "light", V = M.accentColorEnabled !== !1, H = M.accentColorForHeaderEnabled === !0, U = M.accentColorForSendIconEnabled === !0, P = M.tintedGrayscaleEnabled === !0, ie = M.tintedGrayscaleHue ?? 0, re = M.tintedGrayscaleTint ?? 0, ce = M.tintedGrayscaleShade ?? 0, J = V ? k : L === "dark" ? "#9ca3af" : "#6b7280", $ = (gr(J).h + ie + 360) % 360, q = Math.max(0, Math.min(46, 10 + re * 0.36)), Z = Math.max(-24, Math.min(24, ce * 0.24)), O = L === "dark" ? {
       surfaceBg: "#0b1220",
       headerBg: "#111827",
       headerFg: "#f9fafb",
@@ -4241,7 +4291,7 @@ async function vr(t, e) {
       hover: "#f3f4f6",
       subtle: "#f3f4f6"
     };
-    if (H && (O.headerBg = J, O.headerFg = mr(J)), P) {
+    if (H && (O.headerBg = J, O.headerFg = hr(J)), P) {
       const A = L === "dark" ? Math.max(8, Math.min(20, 12 + Z)) : Math.max(88, Math.min(97, 95 + Z * 0.22)), W = L === "dark" ? Math.max(10, Math.min(24, 16 + Z)) : Math.max(80, Math.min(94, 89 + Z * 0.35)), R = L === "dark" ? Math.max(11, Math.min(26, 18 + Z * 0.9)) : Math.max(83, Math.min(95, W + 3)), G = L === "dark" ? Math.max(22, Math.min(40, 30 + Z)) : Math.max(70, Math.min(88, 82 + Z * 0.38)), B = L === "dark" ? Math.max(16, Math.min(30, 22 + Z)) : Math.max(78, Math.min(92, W - 2));
       O.surfaceBg = `hsl(${$} ${q}% ${A}%)`, O.bubbleAiBg = `hsl(${$} ${Math.max(0, q - 2)}% ${R}%)`, O.subtle = `hsl(${$} ${Math.max(0, q - 4)}% ${W}%)`, O.border = `hsl(${$} ${Math.max(0, q - 5)}% ${G}%)`, O.hover = `hsl(${$} ${Math.max(0, q - 3)}% ${B}%)`;
     }
@@ -4251,7 +4301,7 @@ async function vr(t, e) {
     return {
       ...oe,
       companyId: t,
-      enabled: N,
+      enabled: j,
       apiUrl: a,
       name: f.company_name || oe.name,
       title: f.bot_name || oe.title,
@@ -4259,13 +4309,13 @@ async function vr(t, e) {
       welcomeHeadline: f.bot_name ? `Ćaskajte sa ${f.bot_name}` : oe.welcomeHeadline,
       welcomeMessage: f.welcome_message || oe.welcomeMessage,
       placeholder: M.messagePlaceholder || oe.placeholder,
-      suggestedQuestions: I,
-      contactFields: k.length > 0 ? k : oe.contactFields,
+      suggestedQuestions: N,
+      contactFields: _.length > 0 ? _ : oe.contactFields,
       contact: {
-        enabled: typeof ((o = f.contact) == null ? void 0 : o.enabled) == "boolean" ? f.contact.enabled : (n = oe.contact) == null ? void 0 : n.enabled,
-        title: typeof ((s = f.contact) == null ? void 0 : s.title) == "string" && f.contact.title.trim() !== "" ? f.contact.title : (u = oe.contact) == null ? void 0 : u.title,
-        subtitle: typeof ((m = f.contact) == null ? void 0 : m.subtitle) == "string" && f.contact.subtitle.trim() !== "" ? f.contact.subtitle : (p = oe.contact) == null ? void 0 : p.subtitle,
-        submitLabel: typeof ((h = f.contact) == null ? void 0 : h.submit_label) == "string" && f.contact.submit_label.trim() !== "" ? f.contact.submit_label : (c = oe.contact) == null ? void 0 : c.submitLabel
+        enabled: typeof ((s = f.contact) == null ? void 0 : s.enabled) == "boolean" ? f.contact.enabled : (n = oe.contact) == null ? void 0 : n.enabled,
+        title: typeof ((o = f.contact) == null ? void 0 : o.title) == "string" && f.contact.title.trim() !== "" ? f.contact.title : (u = oe.contact) == null ? void 0 : u.title,
+        subtitle: typeof ((h = f.contact) == null ? void 0 : h.subtitle) == "string" && f.contact.subtitle.trim() !== "" ? f.contact.subtitle : (p = oe.contact) == null ? void 0 : p.subtitle,
+        submitLabel: typeof ((m = f.contact) == null ? void 0 : m.submit_label) == "string" && f.contact.submit_label.trim() !== "" ? f.contact.submit_label : (c = oe.contact) == null ? void 0 : c.submitLabel
       },
       poweredBy: f.show_branding !== void 0 ? f.show_branding : oe.poweredBy,
       position: f.position || oe.position,
@@ -4300,13 +4350,13 @@ async function vr(t, e) {
     return console.warn("[ChatWidget] Network error fetching widget config, falling back to defaults:", g), { ...oe, companyId: t, apiUrl: a, mockMode: !1 };
   }
 }
-const wr = '@import"https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap";:host{--pitaj-accent: #2563eb;--pitaj-accent-hover: #1d4ed8;--pitaj-accent-contrast: #ffffff;--pitaj-accent-soft: rgba(37, 99, 235, .08);--pitaj-accent-soft-strong: rgba(37, 99, 235, .14);--pitaj-accent-ring: rgba(37, 99, 235, .25);--pitaj-send-accent: #2563eb;--pitaj-send-accent-contrast: #ffffff;--pitaj-launcher-bg: #090d16;--pitaj-launcher-fg: #ffffff;--pitaj-header-bg: #ffffff;--pitaj-header-fg: #0f172a;--pitaj-header-icon-hover: rgba(15, 23, 42, .06);--pitaj-chrome-border: #e2e8f0;--pitaj-surface: #ffffff;--pitaj-surface-subtle: #f8fafc;--pitaj-bubble-ai: #ffffff;--pitaj-bubble-ai-fg: #0f172a;--pitaj-bubble-user: #2563eb;--pitaj-bubble-user-fg: #ffffff;--pitaj-fg: #0f172a;--pitaj-muted: #64748b;--pitaj-border: #e2e8f0;--pitaj-hover: #f1f5f9;--pitaj-card-border: #e2e8f0;--pitaj-danger: #ef4444;--pitaj-danger-soft: rgba(239, 68, 68, .12);--pitaj-success: #10b981;--pitaj-radius: 16px;--pitaj-radius-bubble: 18px;--pitaj-radius-input: 14px;--pitaj-radius-btn: 10px;--pitaj-radius-avatar: 50%;--pitaj-radius-full: 999px;--pitaj-radius-corner-sm: 4px;--pitaj-launcher-radius: 50%;--pitaj-launcher-pill-radius: 999px;--pitaj-badge-radius: 999px;--pitaj-shadow: 0 0 0 1px rgba(15, 23, 42, .08), 0 12px 32px -4px rgba(15, 23, 42, .12), 0 24px 60px -12px rgba(15, 23, 42, .18);--pitaj-font: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;--pitaj-font-size: 14px;display:block;font-family:var(--pitaj-font);font-size:var(--pitaj-font-size, 14px);line-height:1.5;color:var(--pitaj-fg);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}button{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;background:transparent;border:none;cursor:pointer;padding:0;outline:none}button:focus-visible{outline:2px solid var(--pitaj-accent);outline-offset:2px}textarea,input{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;border:none;background:transparent;outline:none}.pitaj-shadow-mount{width:100%;height:100%;min-height:0;max-height:100%;overflow:visible}.pitaj-root{position:fixed;z-index:2147483647;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:12px;pointer-events:none;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);color:var(--pitaj-fg);font-family:var(--pitaj-font);font-size:var(--pitaj-font-size, 14px)}.pitaj-root.is-inline{position:relative;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;width:100%;height:100%;min-height:0;max-height:100%;align-items:center!important;gap:8px;z-index:auto;pointer-events:auto;overflow:visible}.pitaj-root.is-inline:not(.show-inline-launcher) .pitaj-launcher-btn,.pitaj-root.is-inline:not(.show-inline-launcher) .pitaj-launcher-wrap{display:none!important}.pitaj-root.is-inline.show-inline-launcher .pitaj-launcher-btn,.pitaj-root.is-inline.show-inline-launcher .pitaj-launcher-wrap{align-self:flex-end;margin-right:8px}.pitaj-root.is-inline.show-inline-launcher .pitaj-window{height:calc(100% - 62px);max-height:calc(100% - 62px)}.pitaj-root.is-inline .pitaj-window{position:relative;width:min(100%,380px);height:auto;flex:1 1 auto;min-height:0;max-width:380px;max-height:100%;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}.pitaj-root.pos-bottom-right{bottom:20px;right:20px;top:20px;align-items:flex-end;justify-content:flex-end}.pitaj-root.pos-bottom-left{bottom:20px;left:20px;top:20px;right:auto;align-items:flex-start;justify-content:flex-end}.pitaj-root.pos-top-right{top:20px;right:20px;bottom:20px;align-items:flex-end;flex-direction:column-reverse;justify-content:flex-start}.pitaj-root.pos-top-left{top:20px;left:20px;bottom:20px;right:auto;align-items:flex-start;flex-direction:column-reverse;justify-content:flex-start}.pitaj-root.is-inline.is-mobile{position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;margin:0!important;padding:0!important;pointer-events:none;justify-content:flex-end;align-items:stretch!important}.pitaj-root.is-inline.is-mobile .pitaj-launcher-wrap{position:absolute;bottom:16px;right:16px;z-index:2147483647;margin:0!important}.pitaj-root.is-inline.is-mobile.is-widget-open .pitaj-launcher-wrap,.pitaj-root.is-inline.is-mobile .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root.is-inline.is-mobile .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}.pitaj-root.is-inline.is-mobile.pos-bottom-left .pitaj-launcher-wrap{right:auto;left:16px}.pitaj-root.is-inline.is-mobile .pitaj-launcher-popup{max-width:calc(100% - 32px);min-width:180px}.pitaj-root.is-inline.is-mobile .pitaj-window{position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1}.pitaj-root.is-inline.is-mobile .pitaj-window.is-closed{display:none!important;pointer-events:none}.pitaj-window{width:380px;max-width:100%;height:590px;max-height:calc(100% - 72px);min-height:0;flex:0 1 590px;background-color:var(--pitaj-surface);color:var(--pitaj-fg);border-radius:var(--pitaj-radius);box-shadow:0 0 0 1px #0f172a14,0 12px 32px -4px #0f172a1f,0 24px 60px -12px #0f172a2e;border:none;display:flex;flex-direction:column;overflow:hidden;pointer-events:auto;transform-origin:bottom right;transition:opacity .24s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1),visibility .24s;opacity:1;transform:scale(1) translateY(0)}.pos-bottom-left .pitaj-window{transform-origin:bottom left}.pitaj-window.is-closed{opacity:0;transform:scale(.94) translateY(14px);pointer-events:none;visibility:hidden}.pitaj-header{background:var(--pitaj-header-bg);color:var(--pitaj-header-fg);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pitaj-border);flex-shrink:0;position:relative;z-index:10;box-shadow:0 1px 2px #0f172a05}.pitaj-header-info{display:flex;align-items:center;gap:12px;min-width:0;flex:1}.pitaj-avatar{width:36px;height:36px;border-radius:var(--pitaj-radius-avatar, 50%);background:transparent!important;display:flex;align-items:center;justify-content:center;color:var(--pitaj-accent);flex-shrink:0;overflow:visible;transition:transform .15s ease;box-shadow:none!important;border:none!important}.pitaj-header .pitaj-avatar{color:var(--pitaj-header-fg);background:transparent!important;border:none!important;box-shadow:none!important}.pitaj-avatar.with-border,.pitaj-avatar.no-border{border:none!important}.pitaj-avatar img{width:100%;height:100%;border-radius:inherit;object-fit:contain}.pitaj-header-text{min-width:0;flex:1;display:flex;flex-direction:column;gap:1px}.pitaj-header-title{font-size:calc(var(--pitaj-font-size, 14px) * 1.08);font-weight:600;letter-spacing:-.015em;color:var(--pitaj-header-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.pitaj-header-ticket{display:flex;align-items:center}.pitaj-header-ticket-badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:1px 7px;border-radius:999px;background:#fff3;color:var(--pitaj-header-fg);line-height:1.4}.pitaj-header-status{display:inline-flex;align-items:center;gap:6px;font-size:calc(var(--pitaj-font-size, 14px) * .85);font-weight:500;color:var(--pitaj-muted);line-height:1}.pitaj-status-indicator{position:relative;width:7px;height:7px;display:inline-flex;align-items:center;justify-content:center}.pitaj-status-dot{width:7px;height:7px;border-radius:50%;background-color:var(--pitaj-success)}.pitaj-status-indicator.is-offline .pitaj-status-dot{background-color:var(--pitaj-muted)}.pitaj-status-ping{position:absolute;top:-2px;right:-2px;bottom:-2px;left:-2px;border-radius:50%;background-color:var(--pitaj-success);opacity:.45;animation:pitaj-ping 2s cubic-bezier(0,0,.2,1) infinite}@keyframes pitaj-ping{75%,to{transform:scale(2.2);opacity:0}}.pitaj-header-actions{display:flex;align-items:center;gap:4px}.pitaj-icon-btn{width:32px;height:32px;min-width:32px;min-height:32px;flex-shrink:0;aspect-ratio:1 / 1;border-radius:var(--pitaj-radius-btn, 8px);display:flex;align-items:center;justify-content:center;color:var(--pitaj-muted);transition:all .15s ease;border:1px solid transparent}.pitaj-header .pitaj-icon-btn{color:var(--pitaj-muted)}.pitaj-icon-btn:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-header .pitaj-icon-btn:hover,.pitaj-header .pitaj-icon-btn.is-active{background-color:var(--pitaj-hover);color:var(--pitaj-fg);border-color:#0f172a0d}.pitaj-icon-btn.is-active{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-header-menu{position:relative}.pitaj-menu-dropdown{position:absolute;top:40px;right:0;min-width:210px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 14px);box-shadow:0 12px 30px -4px #0f172a24,0 4px 12px -2px #0f172a14;padding:6px;z-index:30;animation:pitaj-menu-in .15s cubic-bezier(.16,1,.3,1)}@keyframes pitaj-menu-in{0%{opacity:0;transform:translateY(-4px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}.pitaj-menu-item{width:100%;padding:10px 12px;border-radius:var(--pitaj-radius-btn, 8px);font-size:13px;font-weight:500;color:var(--pitaj-fg);text-align:left;display:flex;align-items:center;gap:10px;transition:background-color .15s}.pitaj-menu-item-icon{color:currentColor;flex-shrink:0}.pitaj-menu-item:hover:not(:disabled){background-color:var(--pitaj-hover)}.pitaj-menu-item:disabled{color:var(--pitaj-muted);cursor:not-allowed;opacity:.6}.pitaj-menu-item:disabled .pitaj-menu-item-icon{color:var(--pitaj-muted)}.pitaj-body{flex:1;overflow:hidden;position:relative;display:flex;flex-direction:column}.pitaj-history-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;background-color:var(--pitaj-surface)}.pitaj-history-screen::-webkit-scrollbar{display:none}.pitaj-tickets-screen{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 16px;background:var(--pitaj-surface);color:var(--pitaj-fg);box-sizing:border-box;width:100%;max-width:100%;scrollbar-width:thin;scrollbar-color:var(--pitaj-border) transparent}.pitaj-tickets-screen::-webkit-scrollbar{width:6px;height:0px}.pitaj-tickets-screen::-webkit-scrollbar-track{background:transparent}.pitaj-tickets-screen::-webkit-scrollbar-thumb{background-color:var(--pitaj-border);border-radius:9999px;transition:background-color .15s ease}.pitaj-tickets-screen::-webkit-scrollbar-thumb:hover{background-color:var(--pitaj-muted)}.pitaj-ticket-tabs{display:grid;grid-template-columns:1fr 1fr;padding:3px;margin-bottom:14px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 12px);background:var(--pitaj-surface-subtle);width:100%;max-width:100%;box-sizing:border-box}.pitaj-ticket-tabs button{padding:8px 12px;border-radius:var(--pitaj-radius-btn, 9px);color:var(--pitaj-muted);font-size:13px;font-weight:500;transition:all .15s ease;cursor:pointer;text-align:center;border:none;background:transparent}.pitaj-ticket-tabs button.is-active{background:var(--pitaj-surface);color:var(--pitaj-fg);font-weight:600;box-shadow:0 1px 3px #00000014}.pitaj-tickets-empty{min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--pitaj-muted);text-align:center;padding:24px 16px}.pitaj-tickets-empty strong{color:var(--pitaj-fg);font-size:15px;font-weight:600}.pitaj-tickets-empty span{font-size:12.5px;color:var(--pitaj-muted)}.pitaj-ticket-list{display:flex;flex-direction:column;gap:8px;width:100%;max-width:100%;min-width:0;box-sizing:border-box}.pitaj-ticket-card{display:flex;align-items:stretch;padding:12px 14px;background:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-bubble, 12px);color:var(--pitaj-fg);transition:background-color .15s ease,border-color .15s ease;width:100%;max-width:100%;min-width:0;box-sizing:border-box;text-align:left;cursor:pointer;font:inherit;outline:none;overflow:hidden}.pitaj-ticket-card:hover{background:var(--pitaj-hover);border-color:var(--pitaj-border)}.pitaj-ticket-card:focus-visible{border-color:var(--pitaj-primary);box-shadow:0 0 0 2px var(--pitaj-accent-soft)}.pitaj-ticket-card-content{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;max-width:100%;box-sizing:border-box;overflow:hidden}.pitaj-ticket-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;max-width:100%;min-width:0}.pitaj-ticket-number{color:var(--pitaj-fg)!important;font-size:13.5px;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.pitaj-ticket-card-preview{font-size:12px;line-height:1.45;color:var(--pitaj-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;word-break:break-word;margin-top:2px;max-width:100%}.pitaj-ticket-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;width:100%;max-width:100%;min-width:0}.pitaj-ticket-card-time{font-size:11px;color:var(--pitaj-muted);flex-shrink:0}.pitaj-ticket-card-count{font-size:10.5px;color:var(--pitaj-muted);opacity:.85;flex-shrink:0}.pitaj-ticket-status-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;line-height:1.3;flex-shrink:0}.pitaj-ticket-status-badge.is-open{background:#10b98126;color:#10b981;border:1px solid rgba(16,185,129,.3)}.pitaj-ticket-status-badge.is-closed{background:#94a3b826;color:var(--pitaj-muted);border:1px solid var(--pitaj-border)}.pitaj-ticket-status-dot{width:5px;height:5px;border-radius:50%;background:currentColor}.pitaj-tickets-loading-more{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 0 2px;font-size:12px;color:var(--pitaj-muted);width:100%}.pitaj-tickets-loading-more-spinner{width:14px;height:14px;border:2px solid var(--pitaj-border);border-top-color:var(--pitaj-primary);border-radius:50%;animation:pitaj-spin .75s linear infinite;flex-shrink:0}@keyframes pitaj-spin{to{transform:rotate(360deg)}}.pitaj-history-list{display:flex;flex-direction:column;gap:6px;padding:12px;flex:1}.pitaj-history-item{width:100%;padding:10px 12px;border-radius:10px;display:flex;align-items:flex-start;gap:10px;text-align:left;transition:background-color .15s ease}.pitaj-history-item:hover{background-color:var(--pitaj-hover)}.pitaj-history-icon{width:30px;height:30px;border-radius:50%;background-color:var(--pitaj-hover);color:var(--pitaj-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}.pitaj-history-content{flex:1;min-width:0}.pitaj-history-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.pitaj-history-title-wrap{display:flex;align-items:center;gap:6px;min-width:0;flex:1}.pitaj-history-title{font-size:13px;font-weight:500;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pitaj-history-ticket-badge{font-size:10px;font-weight:600;color:var(--pitaj-primary);background:var(--pitaj-accent-soft);padding:1px 6px;border-radius:4px;white-space:nowrap;flex-shrink:0}.pitaj-conversation-ticket-chip-wrap{display:flex;justify-content:center;margin:4px 0 10px}.pitaj-conversation-ticket-chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:11.5px;background:var(--pitaj-surface-subtle);border:1px solid var(--pitaj-border);color:var(--pitaj-muted)}.pitaj-conversation-ticket-chip strong{color:var(--pitaj-fg);font-weight:600}.pitaj-history-time{font-size:10px;color:var(--pitaj-muted);flex-shrink:0}.pitaj-history-bottom{display:flex;align-items:center;gap:8px;margin-top:3px}.pitaj-history-preview{font-size:12px;color:var(--pitaj-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}.pitaj-ended-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--pitaj-muted);border:1px solid var(--pitaj-border);border-radius:999px;padding:2px 7px;flex-shrink:0}.pitaj-history-unread{background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:8px;padding:0 4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-history-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;color:var(--pitaj-muted)}.pitaj-history-empty-icon{width:44px;height:44px;border-radius:50%;background-color:var(--pitaj-hover);display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px;color:var(--pitaj-muted)}.pitaj-history-cta{margin-top:12px;padding:9px 18px;border-radius:999px;background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13px;font-weight:600;transition:transform .15s ease,box-shadow .15s ease}.pitaj-history-cta:hover{background-color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 4px 14px #00000026}.pitaj-chat-screen{flex:1;display:flex;flex-direction:column;height:100%;background-color:var(--pitaj-surface-subtle)}.pitaj-messages-container{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;scrollbar-color:var(--pitaj-border) transparent;background-color:var(--pitaj-surface-subtle)}.pitaj-date-divider{display:flex;align-items:center;gap:10px;margin:4px 0}.pitaj-date-line{flex:1;height:1px;background-color:var(--pitaj-border)}.pitaj-date-label{font-size:10px;font-weight:500;color:var(--pitaj-muted);text-transform:uppercase}.pitaj-msg-row{display:flex;align-items:flex-end;gap:8px;width:100%}.pitaj-msg-row.user{flex-direction:row-reverse}.pitaj-msg-avatar{display:none!important;width:0!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}.pitaj-msg-body{display:flex;flex-direction:column;max-width:85%;gap:4px}.pitaj-msg-row.user .pitaj-msg-body{align-items:flex-end}.pitaj-msg-row.ai .pitaj-msg-body{align-items:flex-start}.pitaj-msg-bubble{padding:11px 16px;font-size:var(--pitaj-font-size, 14px);line-height:1.55;border-radius:var(--pitaj-radius-bubble, 18px);word-break:break-word;width:fit-content;max-width:100%;box-sizing:border-box}.pitaj-msg-row.ai .pitaj-msg-bubble{background-color:var(--pitaj-bubble-ai);color:var(--pitaj-bubble-ai-fg);border:1px solid var(--pitaj-border);border-bottom-left-radius:var(--pitaj-radius-corner-sm, 4px);box-shadow:0 1px 2px #0f172a08;width:fit-content;max-width:100%}.pitaj-msg-row.user .pitaj-msg-bubble{background:linear-gradient(135deg,var(--pitaj-accent) 0%,var(--pitaj-accent-hover) 100%);color:var(--pitaj-bubble-user-fg);border-bottom-right-radius:var(--pitaj-radius-corner-sm, 4px);box-shadow:0 2px 8px -1px #2563eb40}.pitaj-msg-row.user .pitaj-msg-bubble.is-form-submission{background:var(--pitaj-surface);color:var(--pitaj-fg);border:1px solid var(--pitaj-border);border-bottom-right-radius:var(--pitaj-radius-bubble, 18px);box-shadow:0 1px 3px #0f172a0d}.pitaj-form-submission-card{display:grid;gap:8px;min-width:230px}.pitaj-form-submission-title{font-size:12px;font-weight:700;letter-spacing:-.01em;color:var(--pitaj-accent)}.pitaj-form-submission-grid{display:grid;gap:6px}.pitaj-form-submission-row{display:grid;grid-template-columns:minmax(0,115px) minmax(0,1fr);gap:8px}.pitaj-form-submission-row dt{font-size:11px;color:var(--pitaj-muted)}.pitaj-form-submission-row dd{font-size:12px;font-weight:600;color:var(--pitaj-fg);word-break:break-word;text-align:right}.pitaj-markdown{font-size:var(--pitaj-font-size, 14px);line-height:1.55}.pitaj-markdown p{margin-bottom:8px}.pitaj-markdown p:last-child{margin-bottom:0}.pitaj-markdown strong{font-weight:600;color:var(--pitaj-fg)}.pitaj-markdown em{font-style:italic}.pitaj-markdown code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12.5px;background-color:#0f172a0f;padding:2px 6px;border-radius:5px;border:1px solid rgba(15,23,42,.04)}.pitaj-markdown pre{background-color:#0f172a;color:#f8fafc;padding:12px 14px;border-radius:10px;overflow-x:auto;margin:8px 0;font-size:12.5px;border:1px solid rgba(255,255,255,.08)}.pitaj-markdown pre code{background:transparent;padding:0;color:inherit;border:none}.pitaj-markdown ul,.pitaj-markdown ol{padding-left:20px;margin:8px 0}.pitaj-markdown li{margin-bottom:4px}.pitaj-markdown a{color:var(--pitaj-accent);text-decoration:underline;text-underline-offset:3px;font-weight:500}.pitaj-markdown a:hover{color:var(--pitaj-accent-hover)}.pitaj-sources{margin-top:8px;display:flex;flex-direction:column;gap:6px}.pitaj-sources-title{font-size:10.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--pitaj-muted)}.pitaj-source-pill{display:inline-flex;align-items:center;gap:6px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:8px;padding:5px 10px;font-size:11.5px;font-weight:500;color:var(--pitaj-fg);text-decoration:none;transition:all .15s ease;box-shadow:0 1px 2px #0f172a08}.pitaj-source-pill:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 2px 5px #2563eb1f}.pitaj-followups{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.pitaj-followup-chip{background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);color:var(--pitaj-accent);border-radius:var(--pitaj-radius-full, 999px);padding:6px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s ease;box-shadow:0 1px 2px #0f172a08}.pitaj-followup-chip:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);transform:translateY(-1px);box-shadow:0 2px 6px #2563eb33}.pitaj-hidden-input{display:none}.pitaj-attachment-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;padding:0 2px}.pitaj-attachment-card{display:inline-flex;align-items:center;gap:8px;max-width:220px;padding:4px 8px 4px 4px;border-radius:var(--pitaj-radius-btn, 8px);background:var(--pitaj-surface);border:1px solid var(--pitaj-border);box-shadow:0 1px 2px #0000000a;transition:border-color .15s ease,box-shadow .15s ease}.pitaj-attachment-card:hover{border-color:var(--pitaj-muted)}.pitaj-attachment-thumb-wrap{width:28px;height:28px;border-radius:var(--pitaj-radius-corner-sm, 6px);overflow:hidden;background:var(--pitaj-hover);display:flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-attachment-thumb{width:100%;height:100%;object-fit:cover;display:block}.pitaj-attachment-icon-wrap{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--pitaj-accent)}.pitaj-attachment-name{font-size:11.5px;font-weight:500;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.pitaj-attachment-remove{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:var(--pitaj-radius-full, 999px);border:0;background:transparent;color:var(--pitaj-muted);cursor:pointer;flex-shrink:0;transition:background-color .15s ease,color .15s ease;padding:0}.pitaj-attachment-remove:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-attachment-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--pitaj-border);background:var(--pitaj-surface);border-radius:var(--pitaj-radius-full, 999px);padding:4px 10px;font-size:11px;color:var(--pitaj-fg)}.pitaj-attachment-chip button{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:var(--pitaj-muted);padding:0;cursor:pointer}.pitaj-msg-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:var(--pitaj-muted);padding:0 4px}.pitaj-msg-actions{display:inline-flex;align-items:center;gap:6px}.pitaj-msg-action-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;border:0;border-radius:var(--pitaj-radius-btn, 999px);background:transparent;color:var(--pitaj-muted);cursor:pointer;transition:color .15s ease,background-color .15s ease,transform .15s ease}.pitaj-msg-action-btn svg{width:14px!important;height:14px!important;display:block;flex-shrink:0;color:currentColor!important;overflow:visible!important;transform:none!important}.pitaj-msg-action-btn:hover{color:var(--pitaj-fg);background-color:var(--pitaj-hover)}.pitaj-msg-action-btn:active{transform:scale(.94)}.pitaj-msg-action-btn:focus-visible{outline:2px solid var(--pitaj-accent, #2563eb);outline-offset:1px}.pitaj-msg-action-btn.is-active{color:var(--pitaj-accent, #2563eb);background-color:#2563eb1a}.pitaj-msg-action-btn.is-positive.is-active{color:#10b981;background-color:#10b9811f}.pitaj-msg-action-btn.is-negative.is-active{color:#ef4444;background-color:#ef44441f}.pitaj-mic-btn.is-active{color:var(--pitaj-accent, #2563eb);background-color:#2563eb1a}.pitaj-history-item-wrap{position:relative}.pitaj-history-delete-btn{position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:0;border-radius:999px;background:var(--pitaj-surface);border:1px solid var(--pitaj-border);color:var(--pitaj-muted);cursor:pointer;transition:background-color .15s ease,color .15s ease}.pitaj-history-delete-btn:hover{background:#ef44441a;color:#dc2626}.pitaj-msg-row.ai.is-thinking-row{margin-top:2px;margin-bottom:8px;padding-left:2px}.pitaj-thinking-standalone{display:inline-flex;align-items:center;min-height:28px;padding:4px 2px;-webkit-user-select:none;user-select:none}.pitaj-msg-bubble.is-thinking{padding:8px 14px;display:inline-flex;align-items:center;width:fit-content}.pitaj-thinking-indicator{display:inline-flex;align-items:center;gap:8px;background:transparent;border:none;padding:0;box-shadow:none}.pitaj-ai-spinner{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;line-height:1;color:var(--pitaj-accent);filter:drop-shadow(0 0 5px var(--pitaj-accent-soft-strong, rgba(37, 99, 235, .2)))}.pitaj-thinking-spinner{animation:pitaj-spinner-appear .28s cubic-bezier(.16,1,.3,1) forwards}@keyframes pitaj-spinner-appear{0%{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}.pitaj-ai-spinner .pitaj-spinner-segments{transform-origin:50px 50px;transform-box:view-box;animation:pitaj-spinner-rotate 2.4s linear infinite;will-change:transform}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(1){opacity:1}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(2){opacity:.85}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(3){opacity:.7}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(4){opacity:.55}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(5){opacity:.4}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(6){opacity:.25}.pitaj-ai-spinner .pitaj-spinner-sparkle{transform-origin:50px 50px;transform-box:view-box;animation:pitaj-sparkle-breathe 2s ease-in-out infinite;will-change:transform,opacity}@keyframes pitaj-spinner-rotate{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes pitaj-sparkle-breathe{0%,to{transform:scale(.86);opacity:.85}50%{transform:scale(1.14);opacity:1}}.pitaj-streaming-cursor{display:inline-block;width:2px;height:1.15em;margin-left:3px;vertical-align:-.15em;background-color:var(--pitaj-accent);border-radius:1px;animation:pitaj-cursor-blink .85s ease-in-out infinite}@keyframes pitaj-cursor-blink{0%,to{opacity:1}50%{opacity:0}}@media (prefers-reduced-motion: reduce){.pitaj-ai-spinner .pitaj-spinner-segments,.pitaj-ai-spinner .pitaj-spinner-sparkle{animation-duration:6s}}.pitaj-thinking-text{font-size:12.5px;font-weight:400;letter-spacing:-.01em;white-space:nowrap;-webkit-user-select:none;user-select:none;color:var(--pitaj-muted);background:linear-gradient(100deg,var(--pitaj-muted) 15%,var(--pitaj-fg) 48%,var(--pitaj-accent) 65%,var(--pitaj-muted) 85%);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:pitaj-shimmer-sweep 2.2s cubic-bezier(.4,0,.2,1) infinite,pitaj-thinking-fade .25s cubic-bezier(.16,1,.3,1) forwards}@keyframes pitaj-shimmer-sweep{0%{background-position:120% 0}to{background-position:-80% 0}}@keyframes pitaj-thinking-fade{0%{opacity:0;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}.pitaj-typing-indicator{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;box-shadow:none;padding:0}.pitaj-typing-dot{width:5px;height:5px;border-radius:50%;background-color:var(--pitaj-accent);opacity:.35;animation:pitaj-thinking-pulse 1.35s cubic-bezier(.4,0,.2,1) infinite}.pitaj-typing-dot:nth-child(1){animation-delay:0s}.pitaj-typing-dot:nth-child(2){animation-delay:.2s}.pitaj-typing-dot:nth-child(3){animation-delay:.4s}.pitaj-alert-banner{background-color:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:8px 12px;border-radius:10px;font-size:12px;display:flex;align-items:center;justify-content:space-between;margin-top:6px}.pitaj-input-area{background-color:var(--pitaj-surface-subtle);border-top:none;padding:10px 14px 14px;display:flex;flex-direction:column;gap:10px;flex-shrink:0;box-shadow:none}.pitaj-dismissible-notice{display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:12px 12px 0 0;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-bottom:none;padding:8px 12px 18px;margin-bottom:-12px;position:relative;z-index:1}.pitaj-dismissible-notice:after{content:"";position:absolute;left:-1px;right:-1px;bottom:-10px;height:10px;border-left:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);background-color:var(--pitaj-surface);pointer-events:none}.pitaj-dismissible-notice-text{font-size:12px;color:var(--pitaj-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pitaj-dismissible-notice-close{width:18px;height:18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted);flex-shrink:0}.pitaj-dismissible-notice-close:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-input-wrapper{display:flex;align-items:center;gap:8px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 14px);min-height:48px;padding:7px 10px 7px 14px;transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;position:relative;z-index:2;box-shadow:0 1px 2px #0f172a08}.pitaj-input-wrapper.is-recording{padding-right:10px}.pitaj-input-wrapper:focus-within{background-color:var(--pitaj-surface);border-color:var(--pitaj-accent);box-shadow:0 0 0 3px var(--pitaj-accent-soft)}.pitaj-dictation-processing{font-size:12px;color:var(--pitaj-muted);padding:0 2px}.pitaj-textarea{flex:1;min-height:22px;max-height:100px;resize:none;font-size:var(--pitaj-font-size, 14px);color:var(--pitaj-fg);line-height:1.45;padding:2px 0;align-content:center;scrollbar-width:none}.pitaj-textarea::-webkit-scrollbar{display:none}.pitaj-textarea::placeholder{color:var(--pitaj-muted)}.pitaj-recording-shell{display:flex;align-items:center;gap:8px;width:100%}.pitaj-recording-btn{width:34px;height:34px;border-radius:var(--pitaj-radius-full, 999px);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--pitaj-border);background:var(--pitaj-surface);color:var(--pitaj-muted);transition:all .15s ease}.pitaj-recording-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-recording-btn.is-confirm{background-color:var(--pitaj-send-accent);color:var(--pitaj-send-accent-contrast);border-color:var(--pitaj-send-accent)}.pitaj-recording-btn.is-confirm:hover:not(:disabled){filter:brightness(.92);color:var(--pitaj-send-accent-contrast)}.pitaj-recording-btn:disabled{opacity:.6;cursor:not-allowed}.pitaj-wave-track{position:relative;flex:1;min-width:90px;height:22px}.pitaj-wave-track:before{content:none}.pitaj-wave{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:space-between;gap:2px;z-index:1;padding:0 1px}.pitaj-wave>span{width:2.5px;min-height:3px;border-radius:999px;background-color:var(--pitaj-accent);transition:height 80ms ease-out}.pitaj-composer-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 8px);color:var(--pitaj-muted);background:transparent;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;padding:0;transition:all .15s ease}.pitaj-composer-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-composer-btn:disabled{opacity:.4;cursor:not-allowed}.pitaj-composer-btn.is-active{color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft)}.pitaj-attach-btn{color:var(--pitaj-muted)}.pitaj-mic-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 8px);color:var(--pitaj-muted);background:transparent;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;padding:0;transition:all .15s ease}.pitaj-mic-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-mic-btn.is-active{color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft)}.pitaj-send-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 10px);border:1px solid transparent;background-color:var(--pitaj-send-accent);color:var(--pitaj-send-accent-contrast);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease;box-shadow:0 2px 6px -1px #2563eb59}.pitaj-send-btn:hover:not(:disabled){transform:scale(1.04);background-color:var(--pitaj-accent-hover);box-shadow:0 4px 10px -1px #2563eb73}.pitaj-send-btn:active:not(:disabled){transform:scale(.96)}.pitaj-send-btn:disabled{opacity:.4;color:var(--pitaj-muted);background-color:var(--pitaj-border);box-shadow:none;cursor:not-allowed}.pitaj-custom-footer{text-align:center;font-size:11px;color:var(--pitaj-muted);margin-top:-2px}.pitaj-footer{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--pitaj-muted);padding:2px 0 0;background-color:transparent;letter-spacing:-.01em}.pitaj-history-screen .pitaj-footer{background-color:var(--pitaj-surface);padding:10px 12px 12px}.pitaj-footer a{color:var(--pitaj-muted);font-weight:500;text-decoration:none;transition:color .15s ease}.pitaj-footer a:hover{color:var(--pitaj-fg);text-decoration:underline}.pitaj-powered-icon{width:13px;height:13px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.7}.pitaj-new-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:18px;gap:14px;scrollbar-width:none;background-color:var(--pitaj-surface-subtle)}.pitaj-suggestion-pills{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:6px}.pitaj-suggestion-pill{max-width:min(100%,290px);padding:8px 14px;border-radius:var(--pitaj-radius-bubble, 12px);border:1px solid var(--pitaj-border);background-color:var(--pitaj-surface);font-size:calc(var(--pitaj-font-size, 14px) * .93);font-weight:500;color:var(--pitaj-fg);transition:all .15s cubic-bezier(.16,1,.3,1);text-align:left;white-space:normal;box-shadow:0 1px 2px #0f172a05}.pitaj-suggestion-pill:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 3px 8px -1px #2563eb1f}.pitaj-suggestion-pill:active{transform:scale(.98)}.pitaj-suggestion-enter{animation:pitaj-suggestion-fade-in .18s ease}@keyframes pitaj-suggestion-fade-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.pitaj-contact-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:16px;gap:14px;scrollbar-width:none}.pitaj-contact-screen::-webkit-scrollbar{display:none}.pitaj-inline-form-shell{position:absolute;top:0;right:0;bottom:0;left:0;z-index:25;display:flex;align-items:stretch;background:#0f172a2e;-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px);padding:10px}.pitaj-contact-screen-embedded{flex:1;width:100%;max-height:100%;overflow-y:auto;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius, 12px);background:var(--pitaj-surface);padding-top:12px;box-shadow:0 16px 36px #0f172a38}.pitaj-contact-head-embedded{justify-content:space-between;padding-bottom:2px}.pitaj-contact-entry{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;padding:8px 14px;border-radius:var(--pitaj-radius-full, 999px);border:1px solid var(--pitaj-accent-ring);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-size:12.5px;font-weight:600;transition:all .15s ease}.pitaj-contact-entry:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft-strong)}.pitaj-contact-head{display:flex;align-items:center;gap:10px;padding-bottom:4px}.pitaj-contact-title{font-size:15px;font-weight:700;color:var(--pitaj-fg)}.pitaj-contact-sub{font-size:12px;color:var(--pitaj-muted);line-height:1.4}.pitaj-contact-form{display:flex;flex-direction:column;gap:12px}.pitaj-contact-field{display:flex;flex-direction:column;gap:5px}.pitaj-contact-label{font-size:12px;font-weight:600;color:var(--pitaj-fg)}.pitaj-required-indicator{color:var(--pitaj-danger);font-weight:700}.pitaj-contact-input{width:100%;padding:10px 12px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);font-size:13.5px;color:var(--pitaj-fg);transition:border-color .15s ease,background-color .15s ease}.pitaj-contact-field textarea.pitaj-contact-input{min-height:90px;resize:vertical}.pitaj-contact-input:focus{border-color:var(--pitaj-accent);background-color:var(--pitaj-surface)}.pitaj-contact-input::placeholder{color:var(--pitaj-muted)}.pitaj-contact-input.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-custom-select{position:relative}.pitaj-custom-select-trigger{width:100%;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);font-size:13.5px;transition:border-color .15s ease,background-color .15s ease}.pitaj-custom-select-trigger:hover{border-color:var(--pitaj-accent-ring);background-color:var(--pitaj-surface)}.pitaj-custom-select-trigger .is-open{transform:rotate(180deg);transition:transform .15s ease}.pitaj-custom-select.has-error .pitaj-custom-select-trigger{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-custom-select-menu{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:20;display:grid;gap:4px;max-height:180px;overflow-y:auto;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);box-shadow:0 12px 30px #0f172a29;padding:6px}.pitaj-custom-select-option{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;border-radius:var(--pitaj-radius-btn, 7px);padding:7px 8px;color:var(--pitaj-fg);font-size:12.5px;border:1px solid transparent}.pitaj-custom-select-option:hover{background-color:var(--pitaj-hover);border-color:var(--pitaj-border)}.pitaj-custom-select-option.is-active{background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-weight:600;border-color:var(--pitaj-accent-ring)}.pitaj-number-stepper{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;align-items:center;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);overflow:hidden;background-color:var(--pitaj-surface-subtle)}.pitaj-number-stepper.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-number-stepper-btn{height:100%;display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted);background-color:transparent}.pitaj-number-stepper-btn:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-number-stepper .pitaj-contact-input{border:0;border-left:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);border-radius:0;background:transparent;text-align:center;padding:10px 6px}.pitaj-number-stepper .pitaj-contact-input:focus{background:transparent}.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill,.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill:hover,.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill:focus{-webkit-text-fill-color:var(--pitaj-fg);-webkit-box-shadow:0 0 0 1000px var(--pitaj-surface-subtle) inset}.pitaj-number-input{font-variant-numeric:tabular-nums;letter-spacing:.01em}.pitaj-contact-error{font-size:11.5px;color:var(--pitaj-danger)}.pitaj-contact-submit{margin-top:4px;padding:11px 16px;border-radius:var(--pitaj-radius-btn, 10px);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13.5px;font-weight:600;transition:background-color .15s ease,transform .15s ease,opacity .15s ease}.pitaj-contact-submit:hover{background-color:var(--pitaj-accent-hover);transform:translateY(-1px)}.pitaj-contact-submit:disabled{opacity:.84;cursor:wait}.pitaj-contact-submit.is-success{background-color:var(--pitaj-success);animation:pitaj-submit-pop .24s ease}.pitaj-contact-submit.is-error{background-color:var(--pitaj-danger);animation:pitaj-submit-shake .28s ease}@keyframes pitaj-submit-pop{0%{transform:scale(.98)}65%{transform:scale(1.02)}to{transform:scale(1)}}@keyframes pitaj-submit-shake{0%{transform:translate(0)}33%{transform:translate(-2px)}66%{transform:translate(2px)}to{transform:translate(0)}}.pitaj-contact-success{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px 12px}.pitaj-contact-success-icon{width:52px;height:52px;border-radius:50%;background-color:#10b9811f;color:var(--pitaj-success);display:flex;align-items:center;justify-content:center;margin-bottom:4px}.pitaj-contact-btn{margin-top:10px;padding:10px 18px;border-radius:var(--pitaj-radius-full, 999px);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13px;font-weight:600;transition:background-color .15s ease}.pitaj-contact-btn:hover{background-color:var(--pitaj-accent-hover)}.pitaj-form-actions{display:flex;flex-wrap:wrap;gap:8px}.pitaj-form-action-chip{border:1px solid var(--pitaj-border);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);border-radius:var(--pitaj-radius-full, 999px);padding:7px 12px;font-size:12px;font-weight:600;transition:all .15s ease}.pitaj-form-action-chip.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-form-checkbox{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--pitaj-fg)}.pitaj-form-option-group{display:flex;flex-direction:column;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);padding:10px 12px}.pitaj-form-option-group.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-form-option-item{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--pitaj-fg)}.pitaj-form-radio-option{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:9px 10px;cursor:pointer;transition:border-color .15s ease,background-color .15s ease,color .15s ease}.pitaj-form-radio-option:hover{border-color:var(--pitaj-accent-ring);background-color:var(--pitaj-hover)}.pitaj-form-radio-option.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-form-radio-native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.pitaj-form-radio-indicator{width:17px;height:17px;border-radius:999px;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-form-radio-dot{width:8px;height:8px;border-radius:999px;background:currentColor;transform:scale(0);opacity:0;transition:transform .15s ease,opacity .15s ease}.pitaj-form-radio-option.is-active .pitaj-form-radio-dot{transform:scale(1);opacity:1}.pitaj-form-radio-text{font-size:12.5px;font-weight:600}.pitaj-multi-option{display:inline-flex;align-items:center;gap:8px;text-align:left;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:8px 10px;font-size:12.5px}.pitaj-multi-option.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-multi-option-check{width:16px;height:16px;border:1px solid currentColor;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}.pitaj-file-picker{display:flex;flex-direction:column;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);padding:8px}.pitaj-file-picker.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-file-hidden-input{display:none}.pitaj-file-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-btn, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:8px 10px;font-size:12.5px;font-weight:600}.pitaj-file-name{font-size:12px;color:var(--pitaj-muted)}.pitaj-file-uploading{font-size:11.5px;color:var(--pitaj-accent);font-weight:600}.pitaj-file-progress{width:100%;height:6px;border-radius:999px;background-color:var(--pitaj-border-soft);overflow:hidden}.pitaj-file-progress-bar{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--pitaj-accent),var(--pitaj-accent-hover));transition:width .2s ease}.pitaj-date-picker{position:relative}.pitaj-date-picker.has-error .pitaj-date-trigger{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-date-trigger{width:100%;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);padding:10px 12px;font-size:13.5px}.pitaj-calendar-popover{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:20;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 10px);background-color:var(--pitaj-surface);box-shadow:0 12px 30px #0f172a29;padding:8px}.pitaj-calendar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.pitaj-calendar-head strong{font-size:12px;text-transform:capitalize;color:var(--pitaj-fg)}.pitaj-calendar-nav{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-btn, 7px);color:var(--pitaj-muted)}.pitaj-calendar-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;margin-bottom:4px}.pitaj-calendar-weekdays span{text-align:center;font-size:11px;color:var(--pitaj-muted)}.pitaj-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}.pitaj-calendar-day{height:28px;border-radius:var(--pitaj-radius-corner-sm, 7px);font-size:12px;color:var(--pitaj-fg)}.pitaj-calendar-day.is-muted{color:var(--pitaj-muted);opacity:.6}.pitaj-calendar-day.is-selected{background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-weight:700}.pitaj-form-success-inline{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pitaj-radius-input, 8px);border:1px solid rgba(16,185,129,.35);background-color:#10b9811f;color:var(--pitaj-success);padding:8px 10px;font-size:12.5px}.pitaj-form-success-inline.is-error{border-color:#ef444466;background-color:#ef44441f;color:var(--pitaj-danger)}.pitaj-launcher-wrap{position:relative;display:flex;flex-direction:column;align-items:flex-end;pointer-events:auto;flex-shrink:0}.pos-bottom-left .pitaj-launcher-wrap{align-items:flex-start}.pos-top-right .pitaj-launcher-wrap{align-items:flex-end}.pos-top-left .pitaj-launcher-wrap{align-items:flex-start}.pitaj-launcher-popup{position:absolute;bottom:calc(100% + 14px);right:0;width:max-content;max-width:310px;min-width:220px;background-color:var(--pitaj-surface);color:var(--pitaj-fg);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius, 16px);padding:12px 14px;box-shadow:0 4px 6px -1px #0f172a14,0 12px 28px -4px #0f172a29,0 0 0 1px #0f172a0a;cursor:pointer;pointer-events:auto;-webkit-user-select:none;user-select:none;z-index:20;transform-origin:bottom right;animation:pitaj-popup-in .28s cubic-bezier(.16,1,.3,1) forwards;transition:transform .15s ease,box-shadow .15s ease}.pos-bottom-left .pitaj-launcher-popup{right:auto;left:0;transform-origin:bottom left}.pos-top-right .pitaj-launcher-popup{bottom:auto;top:calc(100% + 14px);transform-origin:top right}.pos-top-left .pitaj-launcher-popup{bottom:auto;top:calc(100% + 14px);right:auto;left:0;transform-origin:top left}.pitaj-launcher-popup:hover{transform:translateY(-2px);box-shadow:0 6px 12px -2px #0f172a1f,0 16px 32px -4px #0f172a33}.pitaj-launcher-popup:focus-visible{outline:2px solid var(--pitaj-accent);outline-offset:2px}@keyframes pitaj-popup-in{0%{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}.pitaj-popup-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}.pitaj-popup-author{display:flex;align-items:center;gap:7px;min-width:0}.pitaj-popup-avatar{width:22px;height:22px;border-radius:0;overflow:visible;flex-shrink:0;background:transparent!important;border:none!important;box-shadow:none!important;display:flex;align-items:center;justify-content:center;color:var(--pitaj-accent)}.pitaj-popup-avatar img{width:100%;height:100%;object-fit:contain}.pitaj-popup-title{font-size:12.5px;font-weight:600;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}.pitaj-popup-status-dot{display:none!important}.pitaj-popup-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:1.5px 6px;border-radius:var(--pitaj-radius-full, 999px);background:#2563eb1f;color:var(--pitaj-accent);margin-left:4px}.pitaj-popup-close-btn{border:none;background:transparent;padding:3px;margin:-3px -3px 0 0;color:var(--pitaj-muted);cursor:pointer;border-radius:var(--pitaj-radius-btn, 6px);display:flex;align-items:center;justify-content:center;transition:color .15s ease,background-color .15s ease;line-height:1}.pitaj-popup-close-btn:hover{color:var(--pitaj-fg);background-color:var(--pitaj-hover)}.pitaj-popup-body{font-size:calc(var(--pitaj-font-size, 14px) * .93);line-height:1.45;color:var(--pitaj-fg);white-space:pre-line;word-break:break-word;max-height:120px;overflow-y:auto;font-weight:450}.pitaj-launcher-popup.is-rating-popup{max-width:320px;min-width:280px;padding:12px 14px 14px}.pitaj-popup-body.is-rating-body{max-height:none;overflow:visible;padding-top:2px}.pitaj-satisfaction-card{display:flex;flex-direction:column;align-items:stretch;-webkit-user-select:none;user-select:none}.pitaj-satisfaction-header{text-align:center;margin-bottom:2px}.pitaj-satisfaction-prompt{display:block;font-size:13.5px;font-weight:650;color:var(--pitaj-fg);line-height:1.35}.pitaj-satisfaction-subtitle{display:block;font-size:11.5px;color:var(--pitaj-muted);margin-top:2px}.pitaj-mood-display{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:10px 0 6px;gap:3px}.pitaj-mood-emoji{font-size:38px;line-height:1;display:inline-block;transition:transform .22s cubic-bezier(.34,1.56,.64,1);transform-origin:center}.pitaj-mood-emoji.is-bouncing{transform:scale(1.25)}.pitaj-mood-label{font-size:13.5px;font-weight:700;letter-spacing:-.01em;transition:color .18s ease}.pitaj-slider-container{position:relative;width:100%;padding:8px 4px 2px}.pitaj-range-slider{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;outline:none;cursor:pointer;transition:background .15s ease}.pitaj-range-slider::-webkit-slider-thumb{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid currentColor;box-shadow:0 2px 8px #00000038;cursor:grab;transition:transform .12s ease,box-shadow .12s ease}.pitaj-range-slider::-webkit-slider-thumb:hover{transform:scale(1.1);box-shadow:0 3px 10px #0000004d}.pitaj-range-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.18)}.pitaj-range-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid currentColor;box-shadow:0 2px 8px #00000038;cursor:grab;transition:transform .12s ease,box-shadow .12s ease}.pitaj-range-slider::-moz-range-thumb:hover{transform:scale(1.1)}.pitaj-range-slider::-moz-range-thumb:active{cursor:grabbing;transform:scale(1.18)}.pitaj-slider-ticks{display:flex;justify-content:space-between;align-items:center;position:absolute;top:18px;left:10px;right:10px;pointer-events:none}.pitaj-slider-tick{width:10px;height:10px;border-radius:50%;background:var(--pitaj-surface);border:2px solid var(--pitaj-border);display:flex;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;padding:0;transition:border-color .15s ease,transform .15s ease}.pitaj-slider-tick:hover{transform:scale(1.2)}.pitaj-slider-tick-dot{width:4px;height:4px;border-radius:50%;background:transparent;transition:background-color .15s ease}.pitaj-slider-scale-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--pitaj-muted);margin-top:6px;padding:0 6px}.pitaj-mood-submit-btn{width:100%;height:36px;border-radius:10px;border:none;color:#fff;font-size:13px;font-weight:650;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-top:12px;transition:transform .15s ease,filter .15s ease,box-shadow .15s ease}.pitaj-mood-submit-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}.pitaj-mood-submit-btn:active:not(:disabled){transform:scale(.98)}.pitaj-satisfaction-error{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;line-height:1.4;color:#b91c1c;background-color:#fef2f2;border:1px solid #fee2e2;border-radius:8px;padding:7px 10px;margin-top:10px;text-align:center;animation:pitaj-popup-in .2s ease-out}.pitaj-theme-dark .pitaj-satisfaction-error{color:#fca5a5;background-color:#ef44441f;border-color:#ef444438}.pitaj-satisfaction-success{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;text-align:center;gap:6px;animation:pitaj-popup-in .25s ease-out}.pitaj-satisfaction-success-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2px}.pitaj-satisfaction-success-title{font-size:15px;font-weight:700;color:var(--pitaj-fg)}.pitaj-satisfaction-success-desc{font-size:12px;color:var(--pitaj-muted)}.pitaj-inline-satisfaction{margin:10px 14px 4px;padding:12px 14px;border:1px solid var(--pitaj-border);border-radius:16px;background:var(--pitaj-surface);box-shadow:0 2px 10px #0000000a;animation:pitaj-popup-in .25s ease-out}.pitaj-launcher-popup-tail{position:absolute;bottom:-6px;right:22px;width:12px;height:12px;background-color:var(--pitaj-surface);border-bottom:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);transform:rotate(45deg);border-bottom-right-radius:2px}.pos-bottom-left .pitaj-launcher-popup-tail{right:auto;left:22px;border-bottom:1px solid var(--pitaj-border);border-left:1px solid var(--pitaj-border);border-right:none}.pos-top-right .pitaj-launcher-popup-tail{bottom:auto;top:-6px;right:22px;border-bottom:none;border-right:1px solid var(--pitaj-border);border-top:1px solid var(--pitaj-border)}.pos-top-left .pitaj-launcher-popup-tail{bottom:auto;top:-6px;left:22px;right:auto;border-bottom:none;border-right:none;border-top:1px solid var(--pitaj-border);border-left:1px solid var(--pitaj-border)}.pitaj-launcher-btn{position:relative;width:56px;height:56px;min-width:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;box-sizing:border-box;border-radius:var(--pitaj-launcher-radius, 50%);padding:0;background-color:var(--pitaj-launcher-bg);color:var(--pitaj-launcher-fg);display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 12px #0f172a26,0 10px 24px -4px #0f172a40;cursor:pointer;pointer-events:auto;transition:transform .24s cubic-bezier(.34,1.56,.64,1),box-shadow .24s ease}.pitaj-launcher-btn:hover{transform:scale(1.06);box-shadow:0 6px 16px #0f172a2e,0 16px 32px -4px #0f172a52}.pitaj-launcher-btn:active{transform:scale(.94)}.pitaj-launcher-btn.is-open{width:56px;height:56px;min-width:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;padding:0;justify-content:center;border-radius:var(--pitaj-launcher-radius, 50%)}.pitaj-launcher-label{display:none}.pitaj-launcher-btn.has-label{width:auto;min-width:56px;max-width:none;height:56px;min-height:56px;max-height:56px;aspect-ratio:auto;padding:0 20px;border-radius:var(--pitaj-launcher-pill-radius, 999px)}.pitaj-launcher-btn.has-label.is-open{width:56px;min-width:56px;height:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;padding:0;border-radius:var(--pitaj-launcher-radius, 50%)}.pitaj-launcher-btn.has-label.label-left{flex-direction:row-reverse}.pitaj-launcher-btn.has-label .pitaj-launcher-label{display:inline-flex;align-items:center;white-space:nowrap;font-size:var(--pitaj-font-size, 14px);font-weight:600;line-height:1;letter-spacing:-.01em}.pitaj-launcher-icon-wrap{position:relative;width:24px;height:24px;display:flex;align-items:center;justify-content:center}.pitaj-launcher-icon{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;transition:opacity .22s cubic-bezier(.16,1,.3,1),transform .26s cubic-bezier(.34,1.56,.64,1)}.pitaj-launcher-custom-icon{width:24px;height:24px;object-fit:contain}.pitaj-launcher-icon.open-icon{opacity:1;transform:rotate(0) scale(1)}.pitaj-launcher-icon.close-icon{opacity:0;transform:rotate(-90deg) scale(.6);pointer-events:none}.pitaj-launcher-btn.is-open .pitaj-launcher-icon.open-icon{opacity:0;transform:rotate(90deg) scale(.6);pointer-events:none}.pitaj-launcher-btn.is-open .pitaj-launcher-icon.close-icon{opacity:1;transform:rotate(0) scale(1);pointer-events:auto}.pitaj-unread-badge{position:absolute;top:-2px;right:-2px;min-width:20px;height:20px;padding:0 5px;border-radius:var(--pitaj-badge-radius, 999px);background-color:var(--pitaj-danger);color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;border:2px solid var(--pitaj-surface);box-shadow:0 2px 8px #ef444473;animation:pitaj-badge-pop .3s cubic-bezier(.34,1.56,.64,1),pitaj-badge-pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes pitaj-badge-pop{0%{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}@keyframes pitaj-badge-pulse{0%,to{transform:scale(1);box-shadow:0 2px 8px #ef444473}50%{transform:scale(1.12);box-shadow:0 0 12px #ef4444b3}}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed{position:fixed!important;top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;padding:0!important;margin:0!important;pointer-events:none!important;z-index:2147483647!important;box-shadow:none!important;border:none!important;background:transparent!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed.pos-bottom-left{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed .pitaj-launcher-wrap{pointer-events:auto!important;position:relative!important;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;margin:0!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;padding:0!important;margin:0!important;pointer-events:auto!important;z-index:2147483647!important;overscroll-behavior:contain!important;justify-content:flex-end;align-items:stretch!important;box-shadow:none!important;border:none!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open .pitaj-window{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1!important;z-index:2147483646!important;overscroll-behavior:contain!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-header{padding-top:calc(14px + env(safe-area-inset-top,0px))!important;flex-shrink:0!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-body{flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-messages-container{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-input-area{flex-shrink:0!important;padding-bottom:var(--pitaj-input-safe-bottom, calc(12px + env(safe-area-inset-bottom, 0px)) )!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-window.is-closed{display:none!important;pointer-events:none!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open .pitaj-launcher-wrap,.pitaj-root:not(.is-inline).is-mobile .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root:not(.is-inline).is-mobile .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}@media (max-width: 640px){.pitaj-root:not(.is-inline).is-widget-closed{position:fixed!important;top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;padding:0!important;margin:0!important;pointer-events:none!important;z-index:2147483647!important;box-shadow:none!important;border:none!important;background:transparent!important}.pitaj-root:not(.is-inline).is-widget-closed.pos-bottom-left{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline).is-widget-closed .pitaj-launcher-wrap{pointer-events:auto!important;position:relative!important;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;margin:0!important}.pitaj-root:not(.is-inline).is-widget-open{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;padding:0!important;margin:0!important;pointer-events:auto!important;z-index:2147483647!important;overscroll-behavior:contain!important;justify-content:flex-end;align-items:stretch!important;box-shadow:none!important;border:none!important}.pitaj-root:not(.is-inline) .pitaj-window{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1!important;z-index:2147483646!important;overscroll-behavior:contain!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline) .pitaj-header{padding-top:calc(14px + env(safe-area-inset-top,0px))!important;flex-shrink:0!important}.pitaj-root:not(.is-inline) .pitaj-body{flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline) .pitaj-messages-container{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}.pitaj-root:not(.is-inline) .pitaj-input-area{flex-shrink:0!important;padding-bottom:var(--pitaj-input-safe-bottom, calc(12px + env(safe-area-inset-bottom, 0px)) )!important}.pitaj-root:not(.is-inline) .pitaj-window.is-closed{display:none!important;pointer-events:none!important}.pitaj-root:not(.is-inline).is-widget-open .pitaj-launcher-wrap,.pitaj-root:not(.is-inline) .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root:not(.is-inline) .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}.pitaj-root:not(.is-inline).pos-bottom-left .pitaj-launcher-wrap{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline) .pitaj-launcher-btn{position:relative;bottom:auto;right:auto}.pitaj-root:not(.is-inline) .pitaj-launcher-popup{max-width:calc(100vw - 32px)}}.pitaj-msg-row.has-widget{align-items:flex-start}.pitaj-msg-row.has-widget .pitaj-msg-body{max-width:95%;width:100%}.pitaj-msg-row.has-widget .pitaj-msg-bubble{width:fit-content;max-width:100%}.pitaj-widget-wrapper{width:100%;margin-top:6px}.pitaj-widget-wrapper:first-child{margin-top:0}.dynamic-jsx-widget{width:100%}.pitaj-inline-widget-card{margin-top:0;background:var(--pitaj-surface, #ffffff);border:1px solid var(--pitaj-border, #e5e7eb);border-radius:var(--pitaj-radius-bubble, 12px);padding:12px;font-family:inherit;color:var(--pitaj-fg, #111827);overflow:hidden;max-width:100%}.pitaj-inline-widget-card .pitaj-inline-widget-card{border:none!important;box-shadow:none!important;background:transparent!important;padding:0!important;margin:0!important}.pitaj-inline-widget-card.custom-html-widget{padding:0;border:none;background:transparent;box-shadow:none;border-radius:0;margin:0;width:100%}.pitaj-inline-widget-card.iframe-widget{padding:0}.pitaj-inline-widget-card.is-success{text-align:center;padding:24px 16px;background:#f0fdf4;border-color:#bbf7d0}.pitaj-widget-success-icon{width:40px;height:40px;border-radius:50%;background:#16a34a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:8px}.pitaj-widget-success-title{font-weight:600;font-size:15px;color:#15803d;margin-bottom:4px}.pitaj-widget-success-desc{font-size:13px;color:#166534}.pitaj-widget-header{margin-bottom:12px}.pitaj-widget-title{font-size:15px;font-weight:600;color:var(--pitaj-fg, #111827)}.pitaj-widget-subtitle{font-size:12.5px;color:var(--pitaj-muted, #6b7280);margin-top:2px}.pitaj-widget-form{display:flex;flex-direction:column;gap:10px}.pitaj-widget-field{display:flex;flex-direction:column;gap:4px}.pitaj-widget-field label{font-size:11.5px;font-weight:500;color:var(--pitaj-muted, #4b5563)}.pitaj-widget-field input,.pitaj-widget-field textarea,.pitaj-widget-field select{width:100%;box-sizing:border-box;padding:7px 10px;border-radius:var(--pitaj-radius-input, 7px);border:1px solid var(--pitaj-border, #d1d5db);background:var(--pitaj-surface, #ffffff);color:var(--pitaj-fg, #111827);font-size:13px;font-family:inherit;outline:none;transition:border-color .15s ease}.pitaj-widget-field input:focus,.pitaj-widget-field textarea:focus,.pitaj-widget-field select:focus{border-color:var(--pitaj-accent, #2563eb)}.pitaj-widget-checkbox-row{display:flex;align-items:center;gap:8px;margin-top:3px}.pitaj-widget-checkbox-row input[type=checkbox]{width:16px;height:16px;cursor:pointer;accent-color:var(--pitaj-accent, #2563eb)}.pitaj-widget-checkbox-row label{font-size:12px;cursor:pointer;color:var(--pitaj-fg, #111827);-webkit-user-select:none;user-select:none}.pitaj-hotel-booking-section{margin-top:12px;padding-top:12px;border-top:1px solid var(--pitaj-border, #e5e7eb)}.pitaj-hotel-booking-title{font-size:12.5px;font-weight:600;margin-bottom:8px;color:var(--pitaj-fg, #111827)}.pitaj-widget-btn-primary{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:9px 14px;background-color:var(--pitaj-accent, #0f172a);color:var(--pitaj-accent-contrast, #ffffff);font-size:13px;font-weight:500;border:none;border-radius:var(--pitaj-radius-btn, 8px);cursor:pointer;transition:opacity .15s ease,transform .1s ease;margin-top:4px}.pitaj-widget-btn-primary:hover{opacity:.92}.pitaj-widget-btn-primary:active{transform:scale(.99)}.pitaj-widget-btn-primary.is-booked{background-color:#16a34a}.pitaj-widget-bar{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--pitaj-border, #f3f4f6);margin-bottom:12px;font-size:13.5px;font-weight:600}.pitaj-widget-badge-icon{display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted, #64748b)}.pitaj-widget-bar-title{flex:1}.pitaj-widget-counter{font-size:11.5px;font-weight:500;color:var(--pitaj-muted, #9ca3af);background:var(--pitaj-surface-subtle, #f3f4f6);padding:2px 7px;border-radius:12px}.pitaj-product-card{display:flex;flex-direction:column;gap:10px}.pitaj-product-image-wrap{position:relative;width:100%;height:160px;border-radius:var(--pitaj-radius-btn, 8px);overflow:hidden;background:#f8fafc}.pitaj-product-img{width:100%;height:100%;object-fit:cover}.pitaj-carousel-controls{position:absolute;top:0;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 8px;pointer-events:none}.pitaj-carousel-btn{pointer-events:auto;width:28px;height:28px;border-radius:50%;background:#ffffffe0;border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 4px #0000001f;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;font-weight:700;color:#1e293b}.pitaj-product-info{display:flex;flex-direction:column;gap:4px}.pitaj-product-name{font-size:14.5px;font-weight:600}.pitaj-product-sub{font-size:12px;color:var(--pitaj-muted, #64748b)}.pitaj-product-price{font-size:15px;font-weight:700;color:var(--pitaj-accent, #0f172a);margin-top:2px}.pitaj-cart-items-list{display:flex;flex-direction:column;gap:10px}.pitaj-cart-item-row{display:flex;align-items:center;gap:10px}.pitaj-cart-thumb{width:44px;height:44px;border-radius:var(--pitaj-radius-corner-sm, 6px);object-fit:cover;background:#f1f5f9}.pitaj-cart-details{flex:1;min-width:0}.pitaj-cart-item-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pitaj-cart-item-sub{font-size:11.5px;color:var(--pitaj-muted, #64748b)}.pitaj-cart-item-price{font-size:13.5px;font-weight:600}.pitaj-cart-divider{height:1px;background:var(--pitaj-border, #e5e7eb);margin:10px 0}.pitaj-cart-summary{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;font-weight:600;margin-bottom:8px}.pitaj-cart-payment{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--pitaj-muted, #64748b);margin-bottom:12px}.pitaj-cart-card-pill{font-weight:600;color:#1e293b;background:#f1f5f9;padding:3px 8px;border-radius:6px}.chart-widget .pitaj-chart-label{font-size:12px;color:var(--pitaj-muted, #64748b)}.chart-widget .pitaj-chart-big-number{font-size:26px;font-weight:700;color:var(--pitaj-fg, #0f172a);margin:4px 0 16px}.pitaj-bar-chart-container{display:flex;align-items:flex-end;justify-content:space-between;height:110px;padding:6px 4px 0;border-bottom:1px solid var(--pitaj-border, #e2e8f0)}.pitaj-bar-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}.pitaj-bar-track{width:14px;height:85px;background:#f1f5f9;border-radius:4px;display:flex;align-items:flex-end;overflow:hidden}.pitaj-bar-fill{width:100%;background:var(--pitaj-accent, #3b82f6);border-radius:4px 4px 0 0;transition:height .3s ease}.pitaj-bar-day{font-size:10px;color:var(--pitaj-muted, #94a3b8);font-weight:600}.pitaj-classes-list{display:flex;flex-direction:column;gap:10px}.pitaj-class-item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:var(--pitaj-radius-btn, 8px);background:var(--pitaj-surface-subtle, #f8fafc);border:1px solid var(--pitaj-border, #e2e8f0)}.pitaj-class-thumb{width:52px;height:52px;border-radius:var(--pitaj-radius-corner-sm, 6px);object-fit:cover}.pitaj-class-info{flex:1;min-width:0}.pitaj-class-header{display:flex;align-items:center;gap:6px}.pitaj-class-title{font-size:13px;font-weight:600}.pitaj-level-badge{font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px}.pitaj-level-badge.level-green{background:#dcfce7;color:#15803d}.pitaj-level-badge.level-purple{background:#f3e8ff;color:#7e22ce}.pitaj-class-time{font-size:11.5px;font-weight:500;color:var(--pitaj-fg, #1e293b);margin-top:1px}.pitaj-class-instructor{font-size:10.5px;color:var(--pitaj-muted, #64748b)}.pitaj-book-btn{padding:6px 12px;font-size:12px;font-weight:600;background:#16a34a;color:#fff;border:none;border-radius:var(--pitaj-radius-btn, 14px);cursor:pointer;white-space:nowrap}.pitaj-book-btn.is-booked{background:#e2e8f0;color:#475569}.pitaj-hotel-image-wrap{position:relative;width:100%;height:140px;border-radius:var(--pitaj-radius-btn, 8px);overflow:hidden;margin-bottom:10px}.pitaj-hotel-img{width:100%;height:100%;object-fit:cover}.pitaj-hotel-badge-price{position:absolute;top:8px;right:8px;background:#0f172ad9;color:#fff;font-size:12px;font-weight:600;padding:3px 8px;border-radius:6px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}.pitaj-hotel-name{font-size:15px;font-weight:600}.pitaj-hotel-meta{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--pitaj-muted, #64748b);margin:4px 0 10px}.pitaj-meta-item{display:inline-flex;align-items:center;gap:4px}.pitaj-meta-icon{color:var(--pitaj-muted, #64748b)}.pitaj-rating{color:#f59e0b;font-weight:600}.pitaj-star-icon{color:#f59e0b}.pitaj-amenities-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.pitaj-amenity-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 8px;background:var(--pitaj-surface-subtle, #f1f5f9);border:1px solid var(--pitaj-border, #e2e8f0);border-radius:6px;color:var(--pitaj-fg, #334155)}.pitaj-amenity-icon{flex-shrink:0;color:var(--pitaj-muted, #64748b)}.pitaj-inline-widget-card.weather-widget{background:linear-gradient(135deg,#2563eb,#3b82f6,#60a5fa);color:#fff;border:none;padding:16px}.pitaj-weather-top{display:flex;align-items:center;justify-content:space-between}.pitaj-weather-svg{color:#fef08a}.pitaj-weather-temp{font-size:32px;font-weight:700}.pitaj-weather-city{font-size:16px;font-weight:600;margin-top:6px}.pitaj-weather-cond{font-size:13px;font-weight:500;opacity:.9}.pitaj-weather-desc{font-size:11.5px;opacity:.82;margin-top:6px;line-height:1.4}.pitaj-iframe-container{position:relative;width:100%;border-radius:8px;overflow:hidden;background:#f8fafc}.pitaj-iframe-frame{width:100%;height:100%;border:none}.pitaj-iframe-loading{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:#ffffffb3}.pitaj-iframe-open-btn{font-size:14px;text-decoration:none;color:var(--pitaj-muted, #64748b);padding:2px 6px;border-radius:4px}.pitaj-iframe-open-btn:hover{background:var(--pitaj-surface-subtle, #f1f5f9);color:var(--pitaj-fg, #0f172a)}', ke = {};
+const wr = '@import"https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap";:host{--pitaj-accent: #2563eb;--pitaj-accent-hover: #1d4ed8;--pitaj-accent-contrast: #ffffff;--pitaj-accent-soft: rgba(37, 99, 235, .08);--pitaj-accent-soft-strong: rgba(37, 99, 235, .14);--pitaj-accent-ring: rgba(37, 99, 235, .25);--pitaj-send-accent: #2563eb;--pitaj-send-accent-contrast: #ffffff;--pitaj-launcher-bg: #090d16;--pitaj-launcher-fg: #ffffff;--pitaj-header-bg: #ffffff;--pitaj-header-fg: #0f172a;--pitaj-header-icon-hover: rgba(15, 23, 42, .06);--pitaj-chrome-border: #e2e8f0;--pitaj-surface: #ffffff;--pitaj-surface-subtle: #f8fafc;--pitaj-bubble-ai: #ffffff;--pitaj-bubble-ai-fg: #0f172a;--pitaj-bubble-user: #2563eb;--pitaj-bubble-user-fg: #ffffff;--pitaj-fg: #0f172a;--pitaj-muted: #64748b;--pitaj-border: #e2e8f0;--pitaj-hover: #f1f5f9;--pitaj-card-border: #e2e8f0;--pitaj-danger: #ef4444;--pitaj-danger-soft: rgba(239, 68, 68, .12);--pitaj-success: #10b981;--pitaj-radius: 16px;--pitaj-radius-bubble: 18px;--pitaj-radius-input: 14px;--pitaj-radius-btn: 10px;--pitaj-radius-avatar: 50%;--pitaj-radius-full: 999px;--pitaj-radius-corner-sm: 4px;--pitaj-launcher-radius: 50%;--pitaj-launcher-pill-radius: 999px;--pitaj-badge-radius: 999px;--pitaj-shadow: 0 0 0 1px rgba(15, 23, 42, .08), 0 12px 32px -4px rgba(15, 23, 42, .12), 0 24px 60px -12px rgba(15, 23, 42, .18);--pitaj-font: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;--pitaj-font-size: 14px;display:block;font-family:var(--pitaj-font);font-size:var(--pitaj-font-size, 14px);line-height:1.5;color:var(--pitaj-fg);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}button{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;background:transparent;border:none;cursor:pointer;padding:0;outline:none}button:focus-visible{outline:2px solid var(--pitaj-accent);outline-offset:2px}textarea,input{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;border:none;background:transparent;outline:none}.pitaj-shadow-mount{width:100%;height:100%;min-height:0;max-height:100%;overflow:visible}.pitaj-root{position:fixed;z-index:2147483647;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:12px;pointer-events:none;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);color:var(--pitaj-fg);font-family:var(--pitaj-font);font-size:var(--pitaj-font-size, 14px)}.pitaj-root.is-inline{position:relative;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;width:100%;height:100%;min-height:0;max-height:100%;align-items:center!important;gap:8px;z-index:auto;pointer-events:auto;overflow:visible}.pitaj-root.is-inline:not(.show-inline-launcher) .pitaj-launcher-btn,.pitaj-root.is-inline:not(.show-inline-launcher) .pitaj-launcher-wrap{display:none!important}.pitaj-root.is-inline.show-inline-launcher .pitaj-launcher-btn,.pitaj-root.is-inline.show-inline-launcher .pitaj-launcher-wrap{align-self:flex-end;margin-right:8px}.pitaj-root.is-inline.show-inline-launcher .pitaj-window{height:calc(100% - 62px);max-height:calc(100% - 62px)}.pitaj-root.is-inline .pitaj-window{position:relative;width:min(100%,380px);height:auto;flex:1 1 auto;min-height:0;max-width:380px;max-height:100%;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}.pitaj-root.pos-bottom-right{bottom:20px;right:20px;top:20px;align-items:flex-end;justify-content:flex-end}.pitaj-root.pos-bottom-left{bottom:20px;left:20px;top:20px;right:auto;align-items:flex-start;justify-content:flex-end}.pitaj-root.pos-top-right{top:20px;right:20px;bottom:20px;align-items:flex-end;flex-direction:column-reverse;justify-content:flex-start}.pitaj-root.pos-top-left{top:20px;left:20px;bottom:20px;right:auto;align-items:flex-start;flex-direction:column-reverse;justify-content:flex-start}.pitaj-root.is-inline.is-mobile{position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;margin:0!important;padding:0!important;pointer-events:none;justify-content:flex-end;align-items:stretch!important}.pitaj-root.is-inline.is-mobile .pitaj-launcher-wrap{position:absolute;bottom:16px;right:16px;z-index:2147483647;margin:0!important}.pitaj-root.is-inline.is-mobile.is-widget-open .pitaj-launcher-wrap,.pitaj-root.is-inline.is-mobile .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root.is-inline.is-mobile .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}.pitaj-root.is-inline.is-mobile.pos-bottom-left .pitaj-launcher-wrap{right:auto;left:16px}.pitaj-root.is-inline.is-mobile .pitaj-launcher-popup{max-width:calc(100% - 32px);min-width:180px}.pitaj-root.is-inline.is-mobile .pitaj-window{position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1}.pitaj-root.is-inline.is-mobile .pitaj-window.is-closed{display:none!important;pointer-events:none}.pitaj-window{width:380px;max-width:100%;height:590px;max-height:calc(100% - 72px);min-height:0;flex:0 1 590px;background-color:var(--pitaj-surface);color:var(--pitaj-fg);border-radius:var(--pitaj-radius);box-shadow:0 0 0 1px #0f172a14,0 12px 32px -4px #0f172a1f,0 24px 60px -12px #0f172a2e;border:none;display:flex;flex-direction:column;overflow:hidden;pointer-events:auto;transform-origin:bottom right;transition:opacity .24s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1),visibility .24s;opacity:1;transform:scale(1) translateY(0)}.pos-bottom-left .pitaj-window{transform-origin:bottom left}.pitaj-window.is-closed{opacity:0;transform:scale(.94) translateY(14px);pointer-events:none;visibility:hidden}.pitaj-header{background:var(--pitaj-header-bg);color:var(--pitaj-header-fg);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pitaj-border);flex-shrink:0;position:relative;z-index:10;box-shadow:0 1px 2px #0f172a05}.pitaj-header-info{display:flex;align-items:center;gap:12px;min-width:0;flex:1}.pitaj-avatar{width:36px;height:36px;border-radius:var(--pitaj-radius-avatar, 50%);background:transparent!important;display:flex;align-items:center;justify-content:center;color:var(--pitaj-accent);flex-shrink:0;overflow:visible;transition:transform .15s ease;box-shadow:none!important;border:none!important}.pitaj-header .pitaj-avatar{color:var(--pitaj-header-fg);background:transparent!important;border:none!important;box-shadow:none!important}.pitaj-avatar.with-border,.pitaj-avatar.no-border{border:none!important}.pitaj-avatar img{width:100%;height:100%;border-radius:inherit;object-fit:contain}.pitaj-header-text{min-width:0;flex:1;display:flex;flex-direction:column;gap:1px}.pitaj-header-title{font-size:calc(var(--pitaj-font-size, 14px) * 1.08);font-weight:600;letter-spacing:-.015em;color:var(--pitaj-header-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.pitaj-header-ticket{display:flex;align-items:center}.pitaj-header-ticket-badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:1px 7px;border-radius:999px;background:#fff3;color:var(--pitaj-header-fg);line-height:1.4}.pitaj-header-status{display:inline-flex;align-items:center;gap:6px;font-size:calc(var(--pitaj-font-size, 14px) * .85);font-weight:500;color:var(--pitaj-muted);line-height:1}.pitaj-status-indicator{position:relative;width:7px;height:7px;display:inline-flex;align-items:center;justify-content:center}.pitaj-status-dot{width:7px;height:7px;border-radius:50%;background-color:var(--pitaj-success)}.pitaj-status-indicator.is-offline .pitaj-status-dot{background-color:var(--pitaj-muted)}.pitaj-status-ping{position:absolute;top:-2px;right:-2px;bottom:-2px;left:-2px;border-radius:50%;background-color:var(--pitaj-success);opacity:.45;animation:pitaj-ping 2s cubic-bezier(0,0,.2,1) infinite}@keyframes pitaj-ping{75%,to{transform:scale(2.2);opacity:0}}.pitaj-header-actions{display:flex;align-items:center;gap:4px}.pitaj-icon-btn{width:32px;height:32px;min-width:32px;min-height:32px;flex-shrink:0;aspect-ratio:1 / 1;border-radius:var(--pitaj-radius-btn, 8px);display:flex;align-items:center;justify-content:center;color:var(--pitaj-muted);transition:all .15s ease;border:1px solid transparent}.pitaj-header .pitaj-icon-btn{color:var(--pitaj-muted)}.pitaj-icon-btn:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-header .pitaj-icon-btn:hover,.pitaj-header .pitaj-icon-btn.is-active{background-color:var(--pitaj-hover);color:var(--pitaj-fg);border-color:#0f172a0d}.pitaj-icon-btn.is-active{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-header-menu{position:relative}.pitaj-menu-dropdown{position:absolute;top:40px;right:0;min-width:210px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 14px);box-shadow:0 12px 30px -4px #0f172a24,0 4px 12px -2px #0f172a14;padding:6px;z-index:30;animation:pitaj-menu-in .15s cubic-bezier(.16,1,.3,1)}@keyframes pitaj-menu-in{0%{opacity:0;transform:translateY(-4px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}.pitaj-menu-item{width:100%;padding:10px 12px;border-radius:var(--pitaj-radius-btn, 8px);font-size:13px;font-weight:500;color:var(--pitaj-fg);text-align:left;display:flex;align-items:center;gap:10px;transition:background-color .15s}.pitaj-menu-item-icon{color:currentColor;flex-shrink:0}.pitaj-menu-item:hover:not(:disabled){background-color:var(--pitaj-hover)}.pitaj-menu-item:disabled{color:var(--pitaj-muted);cursor:not-allowed;opacity:.6}.pitaj-menu-item:disabled .pitaj-menu-item-icon{color:var(--pitaj-muted)}.pitaj-body{flex:1;overflow:hidden;position:relative;display:flex;flex-direction:column}.pitaj-history-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;background-color:var(--pitaj-surface)}.pitaj-history-screen::-webkit-scrollbar{display:none}.pitaj-tickets-screen{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 16px;background:var(--pitaj-surface);color:var(--pitaj-fg);box-sizing:border-box;width:100%;max-width:100%;scrollbar-width:thin;scrollbar-color:var(--pitaj-border) transparent}.pitaj-tickets-screen::-webkit-scrollbar{width:6px;height:0px}.pitaj-tickets-screen::-webkit-scrollbar-track{background:transparent}.pitaj-tickets-screen::-webkit-scrollbar-thumb{background-color:var(--pitaj-border);border-radius:9999px;transition:background-color .15s ease}.pitaj-tickets-screen::-webkit-scrollbar-thumb:hover{background-color:var(--pitaj-muted)}.pitaj-ticket-tabs{display:grid;grid-template-columns:1fr 1fr;padding:3px;margin-bottom:14px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 12px);background:var(--pitaj-surface-subtle);width:100%;max-width:100%;box-sizing:border-box}.pitaj-ticket-tabs button{padding:8px 12px;border-radius:var(--pitaj-radius-btn, 9px);color:var(--pitaj-muted);font-size:13px;font-weight:500;transition:all .15s ease;cursor:pointer;text-align:center;border:none;background:transparent}.pitaj-ticket-tabs button.is-active{background:var(--pitaj-surface);color:var(--pitaj-fg);font-weight:600;box-shadow:0 1px 3px #00000014}.pitaj-tickets-empty{min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--pitaj-muted);text-align:center;padding:24px 16px}.pitaj-tickets-empty strong{color:var(--pitaj-fg);font-size:15px;font-weight:600}.pitaj-tickets-empty span{font-size:12.5px;color:var(--pitaj-muted)}.pitaj-ticket-list{display:flex;flex-direction:column;gap:8px;width:100%;max-width:100%;min-width:0;box-sizing:border-box}.pitaj-ticket-card{display:flex;align-items:stretch;padding:12px 14px;background:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-bubble, 12px);color:var(--pitaj-fg);transition:background-color .15s ease,border-color .15s ease;width:100%;max-width:100%;min-width:0;box-sizing:border-box;text-align:left;cursor:pointer;font:inherit;outline:none;overflow:hidden}.pitaj-ticket-card:hover{background:var(--pitaj-hover);border-color:var(--pitaj-border)}.pitaj-ticket-card:focus-visible{border-color:var(--pitaj-primary);box-shadow:0 0 0 2px var(--pitaj-accent-soft)}.pitaj-ticket-card-content{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;max-width:100%;box-sizing:border-box;overflow:hidden}.pitaj-ticket-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;max-width:100%;min-width:0}.pitaj-ticket-number{color:var(--pitaj-fg)!important;font-size:13.5px;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.pitaj-ticket-card-preview{font-size:12px;line-height:1.45;color:var(--pitaj-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;word-break:break-word;margin-top:2px;max-width:100%}.pitaj-ticket-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;width:100%;max-width:100%;min-width:0}.pitaj-ticket-card-time{font-size:11px;color:var(--pitaj-muted);flex-shrink:0}.pitaj-ticket-card-count{font-size:10.5px;color:var(--pitaj-muted);opacity:.85;flex-shrink:0}.pitaj-ticket-status-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;line-height:1.3;flex-shrink:0}.pitaj-ticket-status-badge.is-open{background:#10b98126;color:#10b981;border:1px solid rgba(16,185,129,.3)}.pitaj-ticket-status-badge.is-closed{background:#94a3b826;color:var(--pitaj-muted);border:1px solid var(--pitaj-border)}.pitaj-ticket-status-dot{width:5px;height:5px;border-radius:50%;background:currentColor}.pitaj-tickets-loading-more{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 0 2px;font-size:12px;color:var(--pitaj-muted);width:100%}.pitaj-tickets-loading-more-spinner{width:14px;height:14px;border:2px solid var(--pitaj-border);border-top-color:var(--pitaj-primary);border-radius:50%;animation:pitaj-spin .75s linear infinite;flex-shrink:0}@keyframes pitaj-spin{to{transform:rotate(360deg)}}.pitaj-history-list{display:flex;flex-direction:column;gap:6px;padding:12px;flex:1}.pitaj-history-item{width:100%;padding:10px 12px;border-radius:10px;display:flex;align-items:flex-start;gap:10px;text-align:left;transition:background-color .15s ease}.pitaj-history-item:hover{background-color:var(--pitaj-hover)}.pitaj-history-icon{width:30px;height:30px;border-radius:50%;background-color:var(--pitaj-hover);color:var(--pitaj-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}.pitaj-history-content{flex:1;min-width:0}.pitaj-history-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.pitaj-history-title-wrap{display:flex;align-items:center;gap:6px;min-width:0;flex:1}.pitaj-history-title{font-size:13px;font-weight:500;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pitaj-history-ticket-badge{font-size:10px;font-weight:600;color:var(--pitaj-primary);background:var(--pitaj-accent-soft);padding:1px 6px;border-radius:4px;white-space:nowrap;flex-shrink:0}.pitaj-conversation-ticket-chip-wrap{display:flex;justify-content:center;margin:4px 0 10px}.pitaj-conversation-ticket-chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:11.5px;background:var(--pitaj-surface-subtle);border:1px solid var(--pitaj-border);color:var(--pitaj-muted)}.pitaj-conversation-ticket-chip strong{color:var(--pitaj-fg);font-weight:600}.pitaj-history-time{font-size:10px;color:var(--pitaj-muted);flex-shrink:0}.pitaj-history-bottom{display:flex;align-items:center;gap:8px;margin-top:3px}.pitaj-history-preview{font-size:12px;color:var(--pitaj-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}.pitaj-ended-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--pitaj-muted);border:1px solid var(--pitaj-border);border-radius:999px;padding:2px 7px;flex-shrink:0}.pitaj-history-unread{background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:8px;padding:0 4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-history-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;color:var(--pitaj-muted)}.pitaj-history-empty-icon{width:44px;height:44px;border-radius:50%;background-color:var(--pitaj-hover);display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px;color:var(--pitaj-muted)}.pitaj-history-cta{margin-top:12px;padding:9px 18px;border-radius:999px;background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13px;font-weight:600;transition:transform .15s ease,box-shadow .15s ease}.pitaj-history-cta:hover{background-color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 4px 14px #00000026}.pitaj-chat-screen{flex:1;display:flex;flex-direction:column;height:100%;background-color:var(--pitaj-surface-subtle)}.pitaj-messages-container{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;scrollbar-color:var(--pitaj-border) transparent;background-color:var(--pitaj-surface-subtle)}.pitaj-date-divider{display:flex;align-items:center;gap:10px;margin:4px 0}.pitaj-date-line{flex:1;height:1px;background-color:var(--pitaj-border)}.pitaj-date-label{font-size:10px;font-weight:500;color:var(--pitaj-muted);text-transform:uppercase}.pitaj-msg-row{display:flex;align-items:flex-end;gap:8px;width:100%}.pitaj-msg-row.user{flex-direction:row-reverse}.pitaj-msg-avatar{display:none!important;width:0!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}.pitaj-msg-body{display:flex;flex-direction:column;max-width:85%;gap:4px}.pitaj-msg-row.user .pitaj-msg-body{align-items:flex-end}.pitaj-msg-row.ai .pitaj-msg-body{align-items:flex-start}.pitaj-msg-bubble{padding:11px 16px;font-size:var(--pitaj-font-size, 14px);line-height:1.55;border-radius:var(--pitaj-radius-bubble, 18px);word-break:break-word;width:fit-content;max-width:100%;box-sizing:border-box}.pitaj-msg-row.ai .pitaj-msg-bubble{background-color:var(--pitaj-bubble-ai);color:var(--pitaj-bubble-ai-fg);border:1px solid var(--pitaj-border);border-bottom-left-radius:var(--pitaj-radius-corner-sm, 4px);box-shadow:0 1px 2px #0f172a08;width:fit-content;max-width:100%}.pitaj-msg-row.user .pitaj-msg-bubble{background:linear-gradient(135deg,var(--pitaj-accent) 0%,var(--pitaj-accent-hover) 100%);color:var(--pitaj-bubble-user-fg);border-bottom-right-radius:var(--pitaj-radius-corner-sm, 4px);box-shadow:0 2px 8px -1px #2563eb40}.pitaj-msg-row.user .pitaj-msg-bubble.is-form-submission{background:var(--pitaj-surface);color:var(--pitaj-fg);border:1px solid var(--pitaj-border);border-bottom-right-radius:var(--pitaj-radius-bubble, 18px);box-shadow:0 1px 3px #0f172a0d}.pitaj-form-submission-card{display:grid;gap:8px;min-width:230px}.pitaj-form-submission-title{font-size:12px;font-weight:700;letter-spacing:-.01em;color:var(--pitaj-accent)}.pitaj-form-submission-grid{display:grid;gap:6px}.pitaj-form-submission-row{display:grid;grid-template-columns:minmax(0,115px) minmax(0,1fr);gap:8px}.pitaj-form-submission-row dt{font-size:11px;color:var(--pitaj-muted)}.pitaj-form-submission-row dd{font-size:12px;font-weight:600;color:var(--pitaj-fg);word-break:break-word;text-align:right}.pitaj-markdown{font-size:var(--pitaj-font-size, 14px);line-height:1.55}.pitaj-markdown p{margin-bottom:8px}.pitaj-markdown p:last-child{margin-bottom:0}.pitaj-markdown strong{font-weight:600;color:var(--pitaj-fg)}.pitaj-markdown em{font-style:italic}.pitaj-markdown code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12.5px;background-color:#0f172a0f;padding:2px 6px;border-radius:5px;border:1px solid rgba(15,23,42,.04)}.pitaj-markdown pre{background-color:#0f172a;color:#f8fafc;padding:12px 14px;border-radius:10px;overflow-x:auto;margin:8px 0;font-size:12.5px;border:1px solid rgba(255,255,255,.08)}.pitaj-markdown pre code{background:transparent;padding:0;color:inherit;border:none}.pitaj-markdown ul,.pitaj-markdown ol{padding-left:20px;margin:8px 0}.pitaj-markdown li{margin-bottom:4px}.pitaj-markdown a{color:var(--pitaj-accent);text-decoration:underline;text-underline-offset:3px;font-weight:500}.pitaj-markdown a:hover{color:var(--pitaj-accent-hover)}.pitaj-sources{margin-top:8px;display:flex;flex-direction:column;gap:6px}.pitaj-sources-title{font-size:10.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--pitaj-muted)}.pitaj-source-pill{display:inline-flex;align-items:center;gap:6px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:8px;padding:5px 10px;font-size:11.5px;font-weight:500;color:var(--pitaj-fg);text-decoration:none;transition:all .15s ease;box-shadow:0 1px 2px #0f172a08}.pitaj-source-pill:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 2px 5px #2563eb1f}.pitaj-followups{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.pitaj-followup-chip{background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);color:var(--pitaj-accent);border-radius:var(--pitaj-radius-full, 999px);padding:6px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s ease;box-shadow:0 1px 2px #0f172a08}.pitaj-followup-chip:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);transform:translateY(-1px);box-shadow:0 2px 6px #2563eb33}.pitaj-hidden-input{display:none}.pitaj-attachment-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;padding:0 2px}.pitaj-attachment-card{display:inline-flex;align-items:center;gap:8px;max-width:220px;padding:4px 8px 4px 4px;border-radius:var(--pitaj-radius-btn, 8px);background:var(--pitaj-surface);border:1px solid var(--pitaj-border);box-shadow:0 1px 2px #0000000a;transition:border-color .15s ease,box-shadow .15s ease}.pitaj-attachment-card:hover{border-color:var(--pitaj-muted)}.pitaj-attachment-thumb-wrap{width:28px;height:28px;border-radius:var(--pitaj-radius-corner-sm, 6px);overflow:hidden;background:var(--pitaj-hover);display:flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-attachment-thumb{width:100%;height:100%;object-fit:cover;display:block}.pitaj-attachment-icon-wrap{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--pitaj-accent)}.pitaj-attachment-name{font-size:11.5px;font-weight:500;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.pitaj-attachment-remove{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:var(--pitaj-radius-full, 999px);border:0;background:transparent;color:var(--pitaj-muted);cursor:pointer;flex-shrink:0;transition:background-color .15s ease,color .15s ease;padding:0}.pitaj-attachment-remove:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-attachment-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--pitaj-border);background:var(--pitaj-surface);border-radius:var(--pitaj-radius-full, 999px);padding:4px 10px;font-size:11px;color:var(--pitaj-fg)}.pitaj-attachment-chip button{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:var(--pitaj-muted);padding:0;cursor:pointer}.pitaj-msg-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:var(--pitaj-muted);padding:0 4px}.pitaj-msg-actions{display:inline-flex;align-items:center;gap:6px}.pitaj-msg-action-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;border:0;border-radius:var(--pitaj-radius-btn, 999px);background:transparent;color:var(--pitaj-muted);cursor:pointer;transition:color .15s ease,background-color .15s ease,transform .15s ease}.pitaj-msg-action-btn svg{width:14px!important;height:14px!important;display:block;flex-shrink:0;color:currentColor!important;overflow:visible!important;transform:none!important}.pitaj-msg-action-btn:hover{color:var(--pitaj-fg);background-color:var(--pitaj-hover)}.pitaj-msg-action-btn:active{transform:scale(.94)}.pitaj-msg-action-btn:focus-visible{outline:2px solid var(--pitaj-accent, #2563eb);outline-offset:1px}.pitaj-msg-action-btn.is-active{color:var(--pitaj-accent, #2563eb);background-color:#2563eb1a}.pitaj-msg-action-btn.is-positive.is-active{color:#10b981;background-color:#10b9811f}.pitaj-msg-action-btn.is-negative.is-active{color:#ef4444;background-color:#ef44441f}.pitaj-mic-btn.is-active{color:var(--pitaj-accent, #2563eb);background-color:#2563eb1a}.pitaj-history-item-wrap{position:relative}.pitaj-history-delete-btn{position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:0;border-radius:999px;background:var(--pitaj-surface);border:1px solid var(--pitaj-border);color:var(--pitaj-muted);cursor:pointer;transition:background-color .15s ease,color .15s ease}.pitaj-history-delete-btn:hover{background:#ef44441a;color:#dc2626}.pitaj-msg-row.ai.is-thinking-row{margin-top:2px;margin-bottom:8px;padding-left:2px}.pitaj-thinking-standalone{display:inline-flex;align-items:center;min-height:28px;padding:4px 2px;-webkit-user-select:none;user-select:none}.pitaj-msg-bubble.is-thinking{padding:8px 14px;display:inline-flex;align-items:center;width:fit-content}.pitaj-thinking-indicator{display:inline-flex;align-items:center;gap:8px;background:transparent;border:none;padding:0;box-shadow:none}.pitaj-ai-spinner{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;line-height:1;color:var(--pitaj-accent);filter:drop-shadow(0 0 5px var(--pitaj-accent-soft-strong, rgba(37, 99, 235, .2)))}.pitaj-thinking-spinner{animation:pitaj-spinner-appear .28s cubic-bezier(.16,1,.3,1) forwards}@keyframes pitaj-spinner-appear{0%{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}.pitaj-ai-spinner .pitaj-spinner-segments{transform-origin:50px 50px;transform-box:view-box;animation:pitaj-spinner-rotate 2.4s linear infinite;will-change:transform}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(1){opacity:1}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(2){opacity:.85}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(3){opacity:.7}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(4){opacity:.55}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(5){opacity:.4}.pitaj-ai-spinner .pitaj-spinner-segments rect:nth-child(6){opacity:.25}.pitaj-ai-spinner .pitaj-spinner-sparkle{transform-origin:50px 50px;transform-box:view-box;animation:pitaj-sparkle-breathe 2s ease-in-out infinite;will-change:transform,opacity}@keyframes pitaj-spinner-rotate{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes pitaj-sparkle-breathe{0%,to{transform:scale(.86);opacity:.85}50%{transform:scale(1.14);opacity:1}}.pitaj-streaming-cursor{display:inline-block;width:2px;height:1.15em;margin-left:3px;vertical-align:-.15em;background-color:var(--pitaj-accent);border-radius:1px;animation:pitaj-cursor-blink .85s ease-in-out infinite}@keyframes pitaj-cursor-blink{0%,to{opacity:1}50%{opacity:0}}@media (prefers-reduced-motion: reduce){.pitaj-ai-spinner .pitaj-spinner-segments,.pitaj-ai-spinner .pitaj-spinner-sparkle{animation-duration:6s}}.pitaj-thinking-text{font-size:12.5px;font-weight:400;letter-spacing:-.01em;white-space:nowrap;-webkit-user-select:none;user-select:none;color:var(--pitaj-muted);background:linear-gradient(100deg,var(--pitaj-muted) 15%,var(--pitaj-fg) 48%,var(--pitaj-accent) 65%,var(--pitaj-muted) 85%);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:pitaj-shimmer-sweep 2.2s cubic-bezier(.4,0,.2,1) infinite,pitaj-thinking-fade .25s cubic-bezier(.16,1,.3,1) forwards}@keyframes pitaj-shimmer-sweep{0%{background-position:120% 0}to{background-position:-80% 0}}@keyframes pitaj-thinking-fade{0%{opacity:0;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}.pitaj-typing-indicator{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;box-shadow:none;padding:0}.pitaj-typing-dot{width:5px;height:5px;border-radius:50%;background-color:var(--pitaj-accent);opacity:.35;animation:pitaj-thinking-pulse 1.35s cubic-bezier(.4,0,.2,1) infinite}.pitaj-typing-dot:nth-child(1){animation-delay:0s}.pitaj-typing-dot:nth-child(2){animation-delay:.2s}.pitaj-typing-dot:nth-child(3){animation-delay:.4s}.pitaj-alert-banner{background-color:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:8px 12px;border-radius:10px;font-size:12px;display:flex;align-items:center;justify-content:space-between;margin-top:6px}.pitaj-input-area{background-color:var(--pitaj-surface-subtle);border-top:none;padding:10px 14px 14px;display:flex;flex-direction:column;gap:10px;flex-shrink:0;box-shadow:none}.pitaj-dismissible-notice{display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:12px 12px 0 0;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-bottom:none;padding:8px 12px 18px;margin-bottom:-12px;position:relative;z-index:1}.pitaj-dismissible-notice:after{content:"";position:absolute;left:-1px;right:-1px;bottom:-10px;height:10px;border-left:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);background-color:var(--pitaj-surface);pointer-events:none}.pitaj-dismissible-notice-text{font-size:12px;color:var(--pitaj-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pitaj-dismissible-notice-close{width:18px;height:18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted);flex-shrink:0}.pitaj-dismissible-notice-close:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-input-wrapper{display:flex;align-items:center;gap:8px;background-color:var(--pitaj-surface);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 14px);min-height:48px;padding:7px 10px 7px 14px;transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;position:relative;z-index:2;box-shadow:0 1px 2px #0f172a08}.pitaj-input-wrapper.is-recording{padding-right:10px}.pitaj-input-wrapper:focus-within{background-color:var(--pitaj-surface);border-color:var(--pitaj-accent);box-shadow:0 0 0 3px var(--pitaj-accent-soft)}.pitaj-dictation-processing{font-size:12px;color:var(--pitaj-muted);padding:0 2px}.pitaj-textarea{flex:1;min-height:22px;max-height:100px;resize:none;font-size:var(--pitaj-font-size, 14px);color:var(--pitaj-fg);line-height:1.45;padding:2px 0;align-content:center;scrollbar-width:none}.pitaj-textarea::-webkit-scrollbar{display:none}.pitaj-textarea::placeholder{color:var(--pitaj-muted)}.pitaj-recording-shell{display:flex;align-items:center;gap:8px;width:100%}.pitaj-recording-btn{width:34px;height:34px;border-radius:var(--pitaj-radius-full, 999px);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--pitaj-border);background:var(--pitaj-surface);color:var(--pitaj-muted);transition:all .15s ease}.pitaj-recording-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-recording-btn.is-confirm{background-color:var(--pitaj-send-accent);color:var(--pitaj-send-accent-contrast);border-color:var(--pitaj-send-accent)}.pitaj-recording-btn.is-confirm:hover:not(:disabled){filter:brightness(.92);color:var(--pitaj-send-accent-contrast)}.pitaj-recording-btn:disabled{opacity:.6;cursor:not-allowed}.pitaj-wave-track{position:relative;flex:1;min-width:90px;height:22px}.pitaj-wave-track:before{content:none}.pitaj-wave{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:space-between;gap:2px;z-index:1;padding:0 1px}.pitaj-wave>span{width:2.5px;min-height:3px;border-radius:999px;background-color:var(--pitaj-accent);transition:height 80ms ease-out}.pitaj-composer-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 8px);color:var(--pitaj-muted);background:transparent;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;padding:0;transition:all .15s ease}.pitaj-composer-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-composer-btn:disabled{opacity:.4;cursor:not-allowed}.pitaj-composer-btn.is-active{color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft)}.pitaj-attach-btn{color:var(--pitaj-muted)}.pitaj-mic-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 8px);color:var(--pitaj-muted);background:transparent;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;padding:0;transition:all .15s ease}.pitaj-mic-btn:hover:not(:disabled){background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-mic-btn.is-active{color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft)}.pitaj-send-btn{width:32px;height:32px;border-radius:var(--pitaj-radius-btn, 10px);border:1px solid transparent;background-color:var(--pitaj-send-accent);color:var(--pitaj-send-accent-contrast);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease;box-shadow:0 2px 6px -1px #2563eb59}.pitaj-send-btn:hover:not(:disabled){transform:scale(1.04);background-color:var(--pitaj-accent-hover);box-shadow:0 4px 10px -1px #2563eb73}.pitaj-send-btn:active:not(:disabled){transform:scale(.96)}.pitaj-send-btn:disabled{opacity:.4;color:var(--pitaj-muted);background-color:var(--pitaj-border);box-shadow:none;cursor:not-allowed}.pitaj-custom-footer{text-align:center;font-size:11px;color:var(--pitaj-muted);margin-top:-2px}.pitaj-footer{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--pitaj-muted);padding:2px 0 0;background-color:transparent;letter-spacing:-.01em}.pitaj-history-screen .pitaj-footer{background-color:var(--pitaj-surface);padding:10px 12px 12px}.pitaj-footer a{color:var(--pitaj-muted);font-weight:500;text-decoration:none;transition:color .15s ease}.pitaj-footer a:hover{color:var(--pitaj-fg);text-decoration:underline}.pitaj-powered-icon{width:13px;height:13px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.7}.pitaj-new-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:18px;gap:14px;scrollbar-width:none;background-color:var(--pitaj-surface-subtle)}.pitaj-suggestion-pills{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:6px}.pitaj-suggestion-pill{max-width:min(100%,290px);padding:8px 14px;border-radius:var(--pitaj-radius-bubble, 12px);border:1px solid var(--pitaj-border);background-color:var(--pitaj-surface);font-size:calc(var(--pitaj-font-size, 14px) * .93);font-weight:500;color:var(--pitaj-fg);transition:all .15s cubic-bezier(.16,1,.3,1);text-align:left;white-space:normal;box-shadow:0 1px 2px #0f172a05}.pitaj-suggestion-pill:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent-hover);transform:translateY(-1px);box-shadow:0 3px 8px -1px #2563eb1f}.pitaj-suggestion-pill:active{transform:scale(.98)}.pitaj-suggestion-enter{animation:pitaj-suggestion-fade-in .18s ease}@keyframes pitaj-suggestion-fade-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.pitaj-contact-screen{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:16px;gap:14px;scrollbar-width:none}.pitaj-contact-screen::-webkit-scrollbar{display:none}.pitaj-inline-form-shell{position:absolute;top:0;right:0;bottom:0;left:0;z-index:25;display:flex;align-items:stretch;background:#0f172a2e;-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px);padding:10px}.pitaj-contact-screen-embedded{flex:1;width:100%;max-height:100%;overflow-y:auto;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius, 12px);background:var(--pitaj-surface);padding-top:12px;box-shadow:0 16px 36px #0f172a38}.pitaj-contact-head-embedded{justify-content:space-between;padding-bottom:2px}.pitaj-contact-entry{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;padding:8px 14px;border-radius:var(--pitaj-radius-full, 999px);border:1px solid var(--pitaj-accent-ring);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-size:12.5px;font-weight:600;transition:all .15s ease}.pitaj-contact-entry:hover{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft-strong)}.pitaj-contact-head{display:flex;align-items:center;gap:10px;padding-bottom:4px}.pitaj-contact-title{font-size:15px;font-weight:700;color:var(--pitaj-fg)}.pitaj-contact-sub{font-size:12px;color:var(--pitaj-muted);line-height:1.4}.pitaj-contact-form{display:flex;flex-direction:column;gap:12px}.pitaj-contact-field{display:flex;flex-direction:column;gap:5px}.pitaj-contact-label{font-size:12px;font-weight:600;color:var(--pitaj-fg)}.pitaj-required-indicator{color:var(--pitaj-danger);font-weight:700}.pitaj-contact-input{width:100%;padding:10px 12px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);font-size:13.5px;color:var(--pitaj-fg);transition:border-color .15s ease,background-color .15s ease}.pitaj-contact-field textarea.pitaj-contact-input{min-height:90px;resize:vertical}.pitaj-contact-input:focus{border-color:var(--pitaj-accent);background-color:var(--pitaj-surface)}.pitaj-contact-input::placeholder{color:var(--pitaj-muted)}.pitaj-contact-input.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-custom-select{position:relative}.pitaj-custom-select-trigger{width:100%;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);font-size:13.5px;transition:border-color .15s ease,background-color .15s ease}.pitaj-custom-select-trigger:hover{border-color:var(--pitaj-accent-ring);background-color:var(--pitaj-surface)}.pitaj-custom-select-trigger .is-open{transform:rotate(180deg);transition:transform .15s ease}.pitaj-custom-select.has-error .pitaj-custom-select-trigger{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-custom-select-menu{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:20;display:grid;gap:4px;max-height:180px;overflow-y:auto;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);box-shadow:0 12px 30px #0f172a29;padding:6px}.pitaj-custom-select-option{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;border-radius:var(--pitaj-radius-btn, 7px);padding:7px 8px;color:var(--pitaj-fg);font-size:12.5px;border:1px solid transparent}.pitaj-custom-select-option:hover{background-color:var(--pitaj-hover);border-color:var(--pitaj-border)}.pitaj-custom-select-option.is-active{background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-weight:600;border-color:var(--pitaj-accent-ring)}.pitaj-number-stepper{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;align-items:center;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);overflow:hidden;background-color:var(--pitaj-surface-subtle)}.pitaj-number-stepper.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-number-stepper-btn{height:100%;display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted);background-color:transparent}.pitaj-number-stepper-btn:hover{background-color:var(--pitaj-hover);color:var(--pitaj-fg)}.pitaj-number-stepper .pitaj-contact-input{border:0;border-left:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);border-radius:0;background:transparent;text-align:center;padding:10px 6px}.pitaj-number-stepper .pitaj-contact-input:focus{background:transparent}.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill,.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill:hover,.pitaj-number-stepper .pitaj-contact-input:-webkit-autofill:focus{-webkit-text-fill-color:var(--pitaj-fg);-webkit-box-shadow:0 0 0 1000px var(--pitaj-surface-subtle) inset}.pitaj-number-input{font-variant-numeric:tabular-nums;letter-spacing:.01em}.pitaj-contact-error{font-size:11.5px;color:var(--pitaj-danger)}.pitaj-contact-submit{margin-top:4px;padding:11px 16px;border-radius:var(--pitaj-radius-btn, 10px);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13.5px;font-weight:600;transition:background-color .15s ease,transform .15s ease,opacity .15s ease}.pitaj-contact-submit:hover{background-color:var(--pitaj-accent-hover);transform:translateY(-1px)}.pitaj-contact-submit:disabled{opacity:.84;cursor:wait}.pitaj-contact-submit.is-success{background-color:var(--pitaj-success);animation:pitaj-submit-pop .24s ease}.pitaj-contact-submit.is-error{background-color:var(--pitaj-danger);animation:pitaj-submit-shake .28s ease}@keyframes pitaj-submit-pop{0%{transform:scale(.98)}65%{transform:scale(1.02)}to{transform:scale(1)}}@keyframes pitaj-submit-shake{0%{transform:translate(0)}33%{transform:translate(-2px)}66%{transform:translate(2px)}to{transform:translate(0)}}.pitaj-contact-success{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px 12px}.pitaj-contact-success-icon{width:52px;height:52px;border-radius:50%;background-color:#10b9811f;color:var(--pitaj-success);display:flex;align-items:center;justify-content:center;margin-bottom:4px}.pitaj-contact-btn{margin-top:10px;padding:10px 18px;border-radius:var(--pitaj-radius-full, 999px);background-color:var(--pitaj-accent);color:var(--pitaj-accent-contrast);font-size:13px;font-weight:600;transition:background-color .15s ease}.pitaj-contact-btn:hover{background-color:var(--pitaj-accent-hover)}.pitaj-form-actions{display:flex;flex-wrap:wrap;gap:8px}.pitaj-form-action-chip{border:1px solid var(--pitaj-border);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);border-radius:var(--pitaj-radius-full, 999px);padding:7px 12px;font-size:12px;font-weight:600;transition:all .15s ease}.pitaj-form-action-chip.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-form-checkbox{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--pitaj-fg)}.pitaj-form-option-group{display:flex;flex-direction:column;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);padding:10px 12px}.pitaj-form-option-group.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-form-option-item{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--pitaj-fg)}.pitaj-form-radio-option{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:9px 10px;cursor:pointer;transition:border-color .15s ease,background-color .15s ease,color .15s ease}.pitaj-form-radio-option:hover{border-color:var(--pitaj-accent-ring);background-color:var(--pitaj-hover)}.pitaj-form-radio-option.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-form-radio-native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.pitaj-form-radio-indicator{width:17px;height:17px;border-radius:999px;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}.pitaj-form-radio-dot{width:8px;height:8px;border-radius:999px;background:currentColor;transform:scale(0);opacity:0;transition:transform .15s ease,opacity .15s ease}.pitaj-form-radio-option.is-active .pitaj-form-radio-dot{transform:scale(1);opacity:1}.pitaj-form-radio-text{font-size:12.5px;font-weight:600}.pitaj-multi-option{display:inline-flex;align-items:center;gap:8px;text-align:left;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:8px 10px;font-size:12.5px}.pitaj-multi-option.is-active{border-color:var(--pitaj-accent);background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent)}.pitaj-multi-option-check{width:16px;height:16px;border:1px solid currentColor;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}.pitaj-file-picker{display:flex;flex-direction:column;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);padding:8px}.pitaj-file-picker.has-error{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-file-hidden-input{display:none}.pitaj-file-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-btn, 8px);background-color:var(--pitaj-surface);color:var(--pitaj-fg);padding:8px 10px;font-size:12.5px;font-weight:600}.pitaj-file-name{font-size:12px;color:var(--pitaj-muted)}.pitaj-file-uploading{font-size:11.5px;color:var(--pitaj-accent);font-weight:600}.pitaj-file-progress{width:100%;height:6px;border-radius:999px;background-color:var(--pitaj-border-soft);overflow:hidden}.pitaj-file-progress-bar{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--pitaj-accent),var(--pitaj-accent-hover));transition:width .2s ease}.pitaj-date-picker{position:relative}.pitaj-date-picker.has-error .pitaj-date-trigger{border-color:var(--pitaj-danger);background-color:var(--pitaj-danger-soft)}.pitaj-date-trigger{width:100%;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 8px);background-color:var(--pitaj-surface-subtle);color:var(--pitaj-fg);padding:10px 12px;font-size:13.5px}.pitaj-calendar-popover{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:20;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-input, 10px);background-color:var(--pitaj-surface);box-shadow:0 12px 30px #0f172a29;padding:8px}.pitaj-calendar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.pitaj-calendar-head strong{font-size:12px;text-transform:capitalize;color:var(--pitaj-fg)}.pitaj-calendar-nav{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius-btn, 7px);color:var(--pitaj-muted)}.pitaj-calendar-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;margin-bottom:4px}.pitaj-calendar-weekdays span{text-align:center;font-size:11px;color:var(--pitaj-muted)}.pitaj-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}.pitaj-calendar-day{height:28px;border-radius:var(--pitaj-radius-corner-sm, 7px);font-size:12px;color:var(--pitaj-fg)}.pitaj-calendar-day.is-muted{color:var(--pitaj-muted);opacity:.6}.pitaj-calendar-day.is-selected{background-color:var(--pitaj-accent-soft);color:var(--pitaj-accent);font-weight:700}.pitaj-form-success-inline{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pitaj-radius-input, 8px);border:1px solid rgba(16,185,129,.35);background-color:#10b9811f;color:var(--pitaj-success);padding:8px 10px;font-size:12.5px}.pitaj-form-success-inline.is-error{border-color:#ef444466;background-color:#ef44441f;color:var(--pitaj-danger)}.pitaj-launcher-wrap{position:relative;display:flex;flex-direction:column;align-items:flex-end;pointer-events:auto;flex-shrink:0}.pos-bottom-left .pitaj-launcher-wrap{align-items:flex-start}.pos-top-right .pitaj-launcher-wrap{align-items:flex-end}.pos-top-left .pitaj-launcher-wrap{align-items:flex-start}.pitaj-launcher-popup{position:absolute;bottom:calc(100% + 14px);right:0;width:max-content;max-width:310px;min-width:220px;background-color:var(--pitaj-surface);color:var(--pitaj-fg);border:1px solid var(--pitaj-border);border-radius:var(--pitaj-radius, 16px);padding:12px 14px;box-shadow:0 4px 6px -1px #0f172a14,0 12px 28px -4px #0f172a29,0 0 0 1px #0f172a0a;cursor:pointer;pointer-events:auto;-webkit-user-select:none;user-select:none;z-index:20;transform-origin:bottom right;animation:pitaj-popup-in .28s cubic-bezier(.16,1,.3,1) forwards;transition:transform .15s ease,box-shadow .15s ease}.pos-bottom-left .pitaj-launcher-popup{right:auto;left:0;transform-origin:bottom left}.pos-top-right .pitaj-launcher-popup{bottom:auto;top:calc(100% + 14px);transform-origin:top right}.pos-top-left .pitaj-launcher-popup{bottom:auto;top:calc(100% + 14px);right:auto;left:0;transform-origin:top left}.pitaj-launcher-popup:hover{transform:translateY(-2px);box-shadow:0 6px 12px -2px #0f172a1f,0 16px 32px -4px #0f172a33}.pitaj-launcher-popup:focus-visible{outline:2px solid var(--pitaj-accent);outline-offset:2px}@keyframes pitaj-popup-in{0%{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}.pitaj-popup-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}.pitaj-popup-author{display:flex;align-items:center;gap:7px;min-width:0}.pitaj-popup-avatar{width:22px;height:22px;border-radius:0;overflow:visible;flex-shrink:0;background:transparent!important;border:none!important;box-shadow:none!important;display:flex;align-items:center;justify-content:center;color:var(--pitaj-accent)}.pitaj-popup-avatar img{width:100%;height:100%;object-fit:contain}.pitaj-popup-title{font-size:12.5px;font-weight:600;color:var(--pitaj-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}.pitaj-popup-status-dot{display:none!important}.pitaj-popup-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:1.5px 6px;border-radius:var(--pitaj-radius-full, 999px);background:#2563eb1f;color:var(--pitaj-accent);margin-left:4px}.pitaj-popup-close-btn{border:none;background:transparent;padding:3px;margin:-3px -3px 0 0;color:var(--pitaj-muted);cursor:pointer;border-radius:var(--pitaj-radius-btn, 6px);display:flex;align-items:center;justify-content:center;transition:color .15s ease,background-color .15s ease;line-height:1}.pitaj-popup-close-btn:hover{color:var(--pitaj-fg);background-color:var(--pitaj-hover)}.pitaj-popup-body{font-size:calc(var(--pitaj-font-size, 14px) * .93);line-height:1.45;color:var(--pitaj-fg);white-space:pre-line;word-break:break-word;max-height:120px;overflow-y:auto;font-weight:450}.pitaj-launcher-popup.is-rating-popup{max-width:320px;min-width:280px;padding:12px 14px 14px}.pitaj-popup-body.is-rating-body{max-height:none;overflow:visible;padding-top:2px}.pitaj-satisfaction-card{display:flex;flex-direction:column;align-items:stretch;-webkit-user-select:none;user-select:none}.pitaj-satisfaction-header{text-align:center;margin-bottom:12px}.pitaj-satisfaction-prompt{display:block;font-size:14px;font-weight:700;color:var(--pitaj-fg);line-height:1.35;letter-spacing:-.01em}.pitaj-satisfaction-subtitle{display:block;font-size:11.5px;color:var(--pitaj-muted);margin-top:3px}.pitaj-mood-pill-wrap{display:flex;justify-content:center;margin-bottom:14px}.pitaj-mood-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;border:1px solid transparent;font-size:13px;font-weight:700;transition:all .2s cubic-bezier(.34,1.56,.64,1)}.pitaj-mood-pill-emoji{font-size:18px;line-height:1;display:inline-block;transition:transform .2s cubic-bezier(.34,1.56,.64,1)}.pitaj-mood-pill-emoji.is-bouncing{transform:scale(1.35)}.pitaj-mood-pill-label{line-height:1}.pitaj-mood-pill-score{font-size:11px;opacity:.75;font-weight:600;padding-left:2px}.pitaj-mood-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}.pitaj-mood-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px;border-radius:12px;background:var(--pitaj-surface-subtle);border:1.5px solid transparent;cursor:pointer;transition:all .18s cubic-bezier(.2,.8,.4,1);position:relative;outline:none}.pitaj-mood-btn:hover{transform:translateY(-2px);background:var(--pitaj-surface);border-color:var(--pitaj-border);box-shadow:0 4px 12px #0000000f}.pitaj-mood-btn.is-active{transform:translateY(-2px) scale(1.05)}.pitaj-mood-btn-emoji{font-size:26px;line-height:1.1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.08));transition:transform .18s ease}.pitaj-mood-btn:hover .pitaj-mood-btn-emoji{transform:scale(1.15)}.pitaj-mood-btn.is-active .pitaj-mood-btn-emoji{transform:scale(1.18)}.pitaj-mood-btn-num{font-size:11px;font-weight:700;color:var(--pitaj-muted);margin-top:4px;line-height:1;transition:color .15s ease}.pitaj-slider-track-wrap{position:relative;width:100%;padding:4px 0 2px}.pitaj-range-slider{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;height:7px;border-radius:999px;outline:none;cursor:pointer;transition:background .15s ease;display:block;margin:0}.pitaj-range-slider::-webkit-slider-thumb{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:3.5px solid currentColor;box-shadow:0 2px 8px #00000038;cursor:grab;transition:transform .15s ease,box-shadow .15s ease}.pitaj-range-slider::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 3px 12px #0000004d}.pitaj-range-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.22)}.pitaj-range-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3.5px solid currentColor;box-shadow:0 2px 8px #00000038;cursor:grab;transition:transform .15s ease,box-shadow .15s ease}.pitaj-slider-segments{display:flex;justify-content:space-between;padding:4px 6px 0;font-size:10px;font-weight:700;color:var(--pitaj-muted);letter-spacing:-.01em}.pitaj-mood-submit-btn{width:100%;height:38px;border-radius:11px;border:none;color:#fff;font-size:13.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;transition:all .18s ease}.pitaj-mood-submit-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1.5px)}.pitaj-mood-submit-btn:active:not(:disabled){transform:scale(.98)}.pitaj-satisfaction-dismiss{background:none;border:none;font-size:11.5px;font-weight:600;color:var(--pitaj-muted);margin-top:8px;cursor:pointer;text-align:center;padding:4px;transition:color .15s ease}.pitaj-satisfaction-dismiss:hover{color:var(--pitaj-fg)}.pitaj-satisfaction-error{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;line-height:1.4;color:#b91c1c;background-color:#fef2f2;border:1px solid #fee2e2;border-radius:8px;padding:7px 10px;margin-top:10px;text-align:center;animation:pitaj-popup-in .2s ease-out}.pitaj-theme-dark .pitaj-satisfaction-error{color:#fca5a5;background-color:#ef44441f;border-color:#ef444438}.pitaj-satisfaction-success{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;text-align:center;gap:6px;animation:pitaj-popup-in .25s ease-out}.pitaj-satisfaction-success-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2px}.is-compact .pitaj-satisfaction-header{margin-bottom:8px}.is-compact .pitaj-satisfaction-prompt{font-size:13px}.is-compact .pitaj-mood-pill-wrap{margin-bottom:10px}.is-compact .pitaj-mood-pill{font-size:12px;padding:3px 10px}.is-compact .pitaj-mood-pill-emoji{font-size:15px}.is-compact .pitaj-mood-row{gap:5px;margin-bottom:10px}.is-compact .pitaj-mood-btn{padding:6px 2px;border-radius:9px}.is-compact .pitaj-mood-btn-emoji{font-size:21px}.is-compact .pitaj-mood-btn-num{font-size:10px;margin-top:2px}.is-compact .pitaj-mood-submit-btn{height:34px;font-size:12.5px;margin-top:10px;border-radius:9px}.pitaj-satisfaction-success-title{font-size:15px;font-weight:700;color:var(--pitaj-fg)}.pitaj-satisfaction-success-desc{font-size:12px;color:var(--pitaj-muted)}.pitaj-inline-satisfaction{margin:10px 14px 4px;padding:12px 14px;border:1px solid var(--pitaj-border);border-radius:16px;background:var(--pitaj-surface);box-shadow:0 2px 10px #0000000a;animation:pitaj-popup-in .25s ease-out}.pitaj-launcher-popup-tail{position:absolute;bottom:-6px;right:22px;width:12px;height:12px;background-color:var(--pitaj-surface);border-bottom:1px solid var(--pitaj-border);border-right:1px solid var(--pitaj-border);transform:rotate(45deg);border-bottom-right-radius:2px}.pos-bottom-left .pitaj-launcher-popup-tail{right:auto;left:22px;border-bottom:1px solid var(--pitaj-border);border-left:1px solid var(--pitaj-border);border-right:none}.pos-top-right .pitaj-launcher-popup-tail{bottom:auto;top:-6px;right:22px;border-bottom:none;border-right:1px solid var(--pitaj-border);border-top:1px solid var(--pitaj-border)}.pos-top-left .pitaj-launcher-popup-tail{bottom:auto;top:-6px;left:22px;right:auto;border-bottom:none;border-right:none;border-top:1px solid var(--pitaj-border);border-left:1px solid var(--pitaj-border)}.pitaj-launcher-btn{position:relative;width:56px;height:56px;min-width:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;box-sizing:border-box;border-radius:var(--pitaj-launcher-radius, 50%);padding:0;background-color:var(--pitaj-launcher-bg);color:var(--pitaj-launcher-fg);display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 12px #0f172a26,0 10px 24px -4px #0f172a40;cursor:pointer;pointer-events:auto;transition:transform .24s cubic-bezier(.34,1.56,.64,1),box-shadow .24s ease}.pitaj-launcher-btn:hover{transform:scale(1.06);box-shadow:0 6px 16px #0f172a2e,0 16px 32px -4px #0f172a52}.pitaj-launcher-btn:active{transform:scale(.94)}.pitaj-launcher-btn.is-open{width:56px;height:56px;min-width:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;padding:0;justify-content:center;border-radius:var(--pitaj-launcher-radius, 50%)}.pitaj-launcher-label{display:none}.pitaj-launcher-btn.has-label{width:auto;min-width:56px;max-width:none;height:56px;min-height:56px;max-height:56px;aspect-ratio:auto;padding:0 20px;border-radius:var(--pitaj-launcher-pill-radius, 999px)}.pitaj-launcher-btn.has-label.is-open{width:56px;min-width:56px;height:56px;min-height:56px;max-width:56px;max-height:56px;aspect-ratio:1 / 1;padding:0;border-radius:var(--pitaj-launcher-radius, 50%)}.pitaj-launcher-btn.has-label.label-left{flex-direction:row-reverse}.pitaj-launcher-btn.has-label .pitaj-launcher-label{display:inline-flex;align-items:center;white-space:nowrap;font-size:var(--pitaj-font-size, 14px);font-weight:600;line-height:1;letter-spacing:-.01em}.pitaj-launcher-icon-wrap{position:relative;width:24px;height:24px;display:flex;align-items:center;justify-content:center}.pitaj-launcher-icon{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;transition:opacity .22s cubic-bezier(.16,1,.3,1),transform .26s cubic-bezier(.34,1.56,.64,1)}.pitaj-launcher-custom-icon{width:24px;height:24px;object-fit:contain}.pitaj-launcher-icon.open-icon{opacity:1;transform:rotate(0) scale(1)}.pitaj-launcher-icon.close-icon{opacity:0;transform:rotate(-90deg) scale(.6);pointer-events:none}.pitaj-launcher-btn.is-open .pitaj-launcher-icon.open-icon{opacity:0;transform:rotate(90deg) scale(.6);pointer-events:none}.pitaj-launcher-btn.is-open .pitaj-launcher-icon.close-icon{opacity:1;transform:rotate(0) scale(1);pointer-events:auto}.pitaj-unread-badge{position:absolute;top:-2px;right:-2px;min-width:20px;height:20px;padding:0 5px;border-radius:var(--pitaj-badge-radius, 999px);background-color:var(--pitaj-danger);color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;border:2px solid var(--pitaj-surface);box-shadow:0 2px 8px #ef444473;animation:pitaj-badge-pop .3s cubic-bezier(.34,1.56,.64,1),pitaj-badge-pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes pitaj-badge-pop{0%{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}@keyframes pitaj-badge-pulse{0%,to{transform:scale(1);box-shadow:0 2px 8px #ef444473}50%{transform:scale(1.12);box-shadow:0 0 12px #ef4444b3}}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed{position:fixed!important;top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;padding:0!important;margin:0!important;pointer-events:none!important;z-index:2147483647!important;box-shadow:none!important;border:none!important;background:transparent!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed.pos-bottom-left{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-closed .pitaj-launcher-wrap{pointer-events:auto!important;position:relative!important;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;margin:0!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;padding:0!important;margin:0!important;pointer-events:auto!important;z-index:2147483647!important;overscroll-behavior:contain!important;justify-content:flex-end;align-items:stretch!important;box-shadow:none!important;border:none!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open .pitaj-window{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1!important;z-index:2147483646!important;overscroll-behavior:contain!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-header{padding-top:calc(14px + env(safe-area-inset-top,0px))!important;flex-shrink:0!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-body{flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-messages-container{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-input-area{flex-shrink:0!important;padding-bottom:var(--pitaj-input-safe-bottom, calc(12px + env(safe-area-inset-bottom, 0px)) )!important}.pitaj-root:not(.is-inline).is-mobile .pitaj-window.is-closed{display:none!important;pointer-events:none!important}.pitaj-root:not(.is-inline).is-mobile.is-widget-open .pitaj-launcher-wrap,.pitaj-root:not(.is-inline).is-mobile .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root:not(.is-inline).is-mobile .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}@media (max-width: 640px){.pitaj-root:not(.is-inline).is-widget-closed{position:fixed!important;top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;padding:0!important;margin:0!important;pointer-events:none!important;z-index:2147483647!important;box-shadow:none!important;border:none!important;background:transparent!important}.pitaj-root:not(.is-inline).is-widget-closed.pos-bottom-left{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline).is-widget-closed .pitaj-launcher-wrap{pointer-events:auto!important;position:relative!important;bottom:auto!important;right:auto!important;left:auto!important;top:auto!important;margin:0!important}.pitaj-root:not(.is-inline).is-widget-open{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;padding:0!important;margin:0!important;pointer-events:auto!important;z-index:2147483647!important;overscroll-behavior:contain!important;justify-content:flex-end;align-items:stretch!important;box-shadow:none!important;border:none!important}.pitaj-root:not(.is-inline) .pitaj-window{position:fixed!important;top:var(--pitaj-viewport-top, 0px)!important;left:var(--pitaj-viewport-left, 0px)!important;right:0!important;bottom:auto!important;width:100%!important;width:100dvw!important;max-width:100%!important;height:var(--pitaj-viewport-height, 100dvh)!important;max-height:var(--pitaj-viewport-height, 100dvh)!important;min-height:0!important;border-radius:0!important;border:none!important;box-shadow:none!important;transform:none!important;opacity:1!important;z-index:2147483646!important;overscroll-behavior:contain!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline) .pitaj-header{padding-top:calc(14px + env(safe-area-inset-top,0px))!important;flex-shrink:0!important}.pitaj-root:not(.is-inline) .pitaj-body{flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}.pitaj-root:not(.is-inline) .pitaj-messages-container{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}.pitaj-root:not(.is-inline) .pitaj-input-area{flex-shrink:0!important;padding-bottom:var(--pitaj-input-safe-bottom, calc(12px + env(safe-area-inset-bottom, 0px)) )!important}.pitaj-root:not(.is-inline) .pitaj-window.is-closed{display:none!important;pointer-events:none!important}.pitaj-root:not(.is-inline).is-widget-open .pitaj-launcher-wrap,.pitaj-root:not(.is-inline) .pitaj-window.is-open~.pitaj-launcher-wrap,.pitaj-root:not(.is-inline) .pitaj-launcher-wrap.is-widget-open{display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}.pitaj-root:not(.is-inline).pos-bottom-left .pitaj-launcher-wrap{right:auto!important;left:16px!important}.pitaj-root:not(.is-inline) .pitaj-launcher-btn{position:relative;bottom:auto;right:auto}.pitaj-root:not(.is-inline) .pitaj-launcher-popup{max-width:calc(100vw - 32px)}}.pitaj-msg-row.has-widget{align-items:flex-start}.pitaj-msg-row.has-widget .pitaj-msg-body{max-width:95%;width:100%}.pitaj-msg-row.has-widget .pitaj-msg-bubble{width:fit-content;max-width:100%}.pitaj-widget-wrapper{width:100%;margin-top:6px}.pitaj-widget-wrapper:first-child{margin-top:0}.dynamic-jsx-widget{width:100%}.pitaj-inline-widget-card{margin-top:0;background:var(--pitaj-surface, #ffffff);border:1px solid var(--pitaj-border, #e5e7eb);border-radius:var(--pitaj-radius-bubble, 12px);padding:12px;font-family:inherit;color:var(--pitaj-fg, #111827);overflow:hidden;max-width:100%}.pitaj-inline-widget-card .pitaj-inline-widget-card{border:none!important;box-shadow:none!important;background:transparent!important;padding:0!important;margin:0!important}.pitaj-inline-widget-card.custom-html-widget{padding:0;border:none;background:transparent;box-shadow:none;border-radius:0;margin:0;width:100%}.pitaj-inline-widget-card.iframe-widget{padding:0}.pitaj-inline-widget-card.is-success{text-align:center;padding:24px 16px;background:#f0fdf4;border-color:#bbf7d0}.pitaj-widget-success-icon{width:40px;height:40px;border-radius:50%;background:#16a34a;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:8px}.pitaj-widget-success-title{font-weight:600;font-size:15px;color:#15803d;margin-bottom:4px}.pitaj-widget-success-desc{font-size:13px;color:#166534}.pitaj-widget-header{margin-bottom:12px}.pitaj-widget-title{font-size:15px;font-weight:600;color:var(--pitaj-fg, #111827)}.pitaj-widget-subtitle{font-size:12.5px;color:var(--pitaj-muted, #6b7280);margin-top:2px}.pitaj-widget-form{display:flex;flex-direction:column;gap:10px}.pitaj-widget-field{display:flex;flex-direction:column;gap:4px}.pitaj-widget-field label{font-size:11.5px;font-weight:500;color:var(--pitaj-muted, #4b5563)}.pitaj-widget-field input,.pitaj-widget-field textarea,.pitaj-widget-field select{width:100%;box-sizing:border-box;padding:7px 10px;border-radius:var(--pitaj-radius-input, 7px);border:1px solid var(--pitaj-border, #d1d5db);background:var(--pitaj-surface, #ffffff);color:var(--pitaj-fg, #111827);font-size:13px;font-family:inherit;outline:none;transition:border-color .15s ease}.pitaj-widget-field input:focus,.pitaj-widget-field textarea:focus,.pitaj-widget-field select:focus{border-color:var(--pitaj-accent, #2563eb)}.pitaj-widget-checkbox-row{display:flex;align-items:center;gap:8px;margin-top:3px}.pitaj-widget-checkbox-row input[type=checkbox]{width:16px;height:16px;cursor:pointer;accent-color:var(--pitaj-accent, #2563eb)}.pitaj-widget-checkbox-row label{font-size:12px;cursor:pointer;color:var(--pitaj-fg, #111827);-webkit-user-select:none;user-select:none}.pitaj-hotel-booking-section{margin-top:12px;padding-top:12px;border-top:1px solid var(--pitaj-border, #e5e7eb)}.pitaj-hotel-booking-title{font-size:12.5px;font-weight:600;margin-bottom:8px;color:var(--pitaj-fg, #111827)}.pitaj-widget-btn-primary{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:9px 14px;background-color:var(--pitaj-accent, #0f172a);color:var(--pitaj-accent-contrast, #ffffff);font-size:13px;font-weight:500;border:none;border-radius:var(--pitaj-radius-btn, 8px);cursor:pointer;transition:opacity .15s ease,transform .1s ease;margin-top:4px}.pitaj-widget-btn-primary:hover{opacity:.92}.pitaj-widget-btn-primary:active{transform:scale(.99)}.pitaj-widget-btn-primary.is-booked{background-color:#16a34a}.pitaj-widget-bar{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--pitaj-border, #f3f4f6);margin-bottom:12px;font-size:13.5px;font-weight:600}.pitaj-widget-badge-icon{display:inline-flex;align-items:center;justify-content:center;color:var(--pitaj-muted, #64748b)}.pitaj-widget-bar-title{flex:1}.pitaj-widget-counter{font-size:11.5px;font-weight:500;color:var(--pitaj-muted, #9ca3af);background:var(--pitaj-surface-subtle, #f3f4f6);padding:2px 7px;border-radius:12px}.pitaj-product-card{display:flex;flex-direction:column;gap:10px}.pitaj-product-image-wrap{position:relative;width:100%;height:160px;border-radius:var(--pitaj-radius-btn, 8px);overflow:hidden;background:#f8fafc}.pitaj-product-img{width:100%;height:100%;object-fit:cover}.pitaj-carousel-controls{position:absolute;top:0;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 8px;pointer-events:none}.pitaj-carousel-btn{pointer-events:auto;width:28px;height:28px;border-radius:50%;background:#ffffffe0;border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 4px #0000001f;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;font-weight:700;color:#1e293b}.pitaj-product-info{display:flex;flex-direction:column;gap:4px}.pitaj-product-name{font-size:14.5px;font-weight:600}.pitaj-product-sub{font-size:12px;color:var(--pitaj-muted, #64748b)}.pitaj-product-price{font-size:15px;font-weight:700;color:var(--pitaj-accent, #0f172a);margin-top:2px}.pitaj-cart-items-list{display:flex;flex-direction:column;gap:10px}.pitaj-cart-item-row{display:flex;align-items:center;gap:10px}.pitaj-cart-thumb{width:44px;height:44px;border-radius:var(--pitaj-radius-corner-sm, 6px);object-fit:cover;background:#f1f5f9}.pitaj-cart-details{flex:1;min-width:0}.pitaj-cart-item-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pitaj-cart-item-sub{font-size:11.5px;color:var(--pitaj-muted, #64748b)}.pitaj-cart-item-price{font-size:13.5px;font-weight:600}.pitaj-cart-divider{height:1px;background:var(--pitaj-border, #e5e7eb);margin:10px 0}.pitaj-cart-summary{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;font-weight:600;margin-bottom:8px}.pitaj-cart-payment{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--pitaj-muted, #64748b);margin-bottom:12px}.pitaj-cart-card-pill{font-weight:600;color:#1e293b;background:#f1f5f9;padding:3px 8px;border-radius:6px}.chart-widget .pitaj-chart-label{font-size:12px;color:var(--pitaj-muted, #64748b)}.chart-widget .pitaj-chart-big-number{font-size:26px;font-weight:700;color:var(--pitaj-fg, #0f172a);margin:4px 0 16px}.pitaj-bar-chart-container{display:flex;align-items:flex-end;justify-content:space-between;height:110px;padding:6px 4px 0;border-bottom:1px solid var(--pitaj-border, #e2e8f0)}.pitaj-bar-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}.pitaj-bar-track{width:14px;height:85px;background:#f1f5f9;border-radius:4px;display:flex;align-items:flex-end;overflow:hidden}.pitaj-bar-fill{width:100%;background:var(--pitaj-accent, #3b82f6);border-radius:4px 4px 0 0;transition:height .3s ease}.pitaj-bar-day{font-size:10px;color:var(--pitaj-muted, #94a3b8);font-weight:600}.pitaj-classes-list{display:flex;flex-direction:column;gap:10px}.pitaj-class-item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:var(--pitaj-radius-btn, 8px);background:var(--pitaj-surface-subtle, #f8fafc);border:1px solid var(--pitaj-border, #e2e8f0)}.pitaj-class-thumb{width:52px;height:52px;border-radius:var(--pitaj-radius-corner-sm, 6px);object-fit:cover}.pitaj-class-info{flex:1;min-width:0}.pitaj-class-header{display:flex;align-items:center;gap:6px}.pitaj-class-title{font-size:13px;font-weight:600}.pitaj-level-badge{font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px}.pitaj-level-badge.level-green{background:#dcfce7;color:#15803d}.pitaj-level-badge.level-purple{background:#f3e8ff;color:#7e22ce}.pitaj-class-time{font-size:11.5px;font-weight:500;color:var(--pitaj-fg, #1e293b);margin-top:1px}.pitaj-class-instructor{font-size:10.5px;color:var(--pitaj-muted, #64748b)}.pitaj-book-btn{padding:6px 12px;font-size:12px;font-weight:600;background:#16a34a;color:#fff;border:none;border-radius:var(--pitaj-radius-btn, 14px);cursor:pointer;white-space:nowrap}.pitaj-book-btn.is-booked{background:#e2e8f0;color:#475569}.pitaj-hotel-image-wrap{position:relative;width:100%;height:140px;border-radius:var(--pitaj-radius-btn, 8px);overflow:hidden;margin-bottom:10px}.pitaj-hotel-img{width:100%;height:100%;object-fit:cover}.pitaj-hotel-badge-price{position:absolute;top:8px;right:8px;background:#0f172ad9;color:#fff;font-size:12px;font-weight:600;padding:3px 8px;border-radius:6px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}.pitaj-hotel-name{font-size:15px;font-weight:600}.pitaj-hotel-meta{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--pitaj-muted, #64748b);margin:4px 0 10px}.pitaj-meta-item{display:inline-flex;align-items:center;gap:4px}.pitaj-meta-icon{color:var(--pitaj-muted, #64748b)}.pitaj-rating{color:#f59e0b;font-weight:600}.pitaj-star-icon{color:#f59e0b}.pitaj-amenities-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.pitaj-amenity-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 8px;background:var(--pitaj-surface-subtle, #f1f5f9);border:1px solid var(--pitaj-border, #e2e8f0);border-radius:6px;color:var(--pitaj-fg, #334155)}.pitaj-amenity-icon{flex-shrink:0;color:var(--pitaj-muted, #64748b)}.pitaj-inline-widget-card.weather-widget{background:linear-gradient(135deg,#2563eb,#3b82f6,#60a5fa);color:#fff;border:none;padding:16px}.pitaj-weather-top{display:flex;align-items:center;justify-content:space-between}.pitaj-weather-svg{color:#fef08a}.pitaj-weather-temp{font-size:32px;font-weight:700}.pitaj-weather-city{font-size:16px;font-weight:600;margin-top:6px}.pitaj-weather-cond{font-size:13px;font-weight:500;opacity:.9}.pitaj-weather-desc{font-size:11.5px;opacity:.82;margin-top:6px;line-height:1.4}.pitaj-iframe-container{position:relative;width:100%;border-radius:8px;overflow:hidden;background:#f8fafc}.pitaj-iframe-frame{width:100%;height:100%;border:none}.pitaj-iframe-loading{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:#ffffffb3}.pitaj-iframe-open-btn{font-size:14px;text-decoration:none;color:var(--pitaj-muted, #64748b);padding:2px 6px;border-radius:4px}.pitaj-iframe-open-btn:hover{background:var(--pitaj-surface-subtle, #f1f5f9);color:var(--pitaj-fg, #0f172a)}', ke = {};
 function vi(t, e) {
   (ke[t] || []).forEach((r) => {
     try {
       r(e);
-    } catch (o) {
-      console.error(`[Pitaj.io] Error in event listener for ${t}:`, o);
+    } catch (s) {
+      console.error(`[Pitaj.io] Error in event listener for ${t}:`, s);
     }
   });
 }
@@ -4329,21 +4379,21 @@ function kr(t, e) {
 const Fe = /* @__PURE__ */ new WeakMap();
 async function at(t, e = {}) {
   const a = Fe.get(t), r = async () => {
-    const n = e.widgetId || e.companyId || "default", s = await vr(n, e.apiUrl), u = kr(s, e);
+    const n = e.widgetId || e.companyId || "default", o = await vr(n, e.apiUrl), u = kr(o, e);
     if (u.enabled === !1 || u.blocked === !0)
       return {
         controller: void 0,
         unmount: () => {
         }
       };
-    let m = t.shadowRoot;
-    m || (m = t.attachShadow({ mode: "open" })), m.innerHTML = "";
+    let h = t.shadowRoot;
+    h || (h = t.attachShadow({ mode: "open" })), h.innerHTML = "";
     const p = document.createElement("style");
-    p.textContent = wr, m.appendChild(p);
-    const h = document.createElement("div");
-    h.className = "pitaj-shadow-mount", m.appendChild(h), Nt(
+    p.textContent = wr, h.appendChild(p);
+    const m = document.createElement("div");
+    m.className = "pitaj-shadow-mount", h.appendChild(m), Nt(
       /* @__PURE__ */ i(
-        hr,
+        mr,
         {
           config: u,
           startOpen: e.startOpen ?? !1,
@@ -4353,21 +4403,21 @@ async function at(t, e = {}) {
           onEvent: vi
         }
       ),
-      h
+      m
     );
     const c = ve();
     return c && (t.__pitajController = c), {
       controller: c,
       unmount: () => {
-        Nt(null, h), m && (m.innerHTML = "");
+        Nt(null, m), h && (h.innerHTML = "");
       }
     };
-  }, o = (a || Promise.resolve()).then(r, r);
-  Fe.set(t, o);
+  }, s = (a || Promise.resolve()).then(r, r);
+  Fe.set(t, s);
   try {
-    return await o;
+    return await s;
   } finally {
-    Fe.get(t) === o && Fe.delete(t);
+    Fe.get(t) === s && Fe.delete(t);
   }
 }
 let Ce = null;
@@ -4442,7 +4492,7 @@ class _r extends HTMLElement {
     ye(this, "unmountFn", null);
   }
   async connectedCallback() {
-    const a = this.getAttribute("widget-id") || this.getAttribute("data-widget-id") || this.getAttribute("company") || this.getAttribute("company-id") || this.getAttribute("data-company") || "default", r = this.getAttribute("api-url") || this.getAttribute("data-api-url") || void 0, o = this.getAttribute("position") || this.getAttribute("data-position") || "bottom-right", n = (this.getAttribute("start-open") || this.getAttribute("data-start-open")) === "true", s = (this.getAttribute("inline") || this.getAttribute("data-inline")) === "true", { unmount: u } = await at(this, { widgetId: a, apiUrl: r, position: o, startOpen: n, isInline: s });
+    const a = this.getAttribute("widget-id") || this.getAttribute("data-widget-id") || this.getAttribute("company") || this.getAttribute("company-id") || this.getAttribute("data-company") || "default", r = this.getAttribute("api-url") || this.getAttribute("data-api-url") || void 0, s = this.getAttribute("position") || this.getAttribute("data-position") || "bottom-right", n = (this.getAttribute("start-open") || this.getAttribute("data-start-open")) === "true", o = (this.getAttribute("inline") || this.getAttribute("data-inline")) === "true", { unmount: u } = await at(this, { widgetId: a, apiUrl: r, position: s, startOpen: n, isInline: o });
     this.unmountFn = u;
   }
   disconnectedCallback() {
@@ -4453,8 +4503,8 @@ function Ft(t) {
   if (!t) return null;
   const e = t.getAttribute("data-company") || t.getAttribute("data-widget-id") || t.getAttribute("data-company-id") || t.getAttribute("company") || t.getAttribute("company-id") || void 0;
   if (!e) return null;
-  const a = t.getAttribute("data-api-url") || void 0, r = t.getAttribute("data-position") || "bottom-right", o = t.getAttribute("data-start-open") === "true", n = t.getAttribute("data-inline") === "true";
-  return { companyId: e, apiUrl: a, position: r, startOpen: o, isInline: n };
+  const a = t.getAttribute("data-api-url") || void 0, r = t.getAttribute("data-position") || "bottom-right", s = t.getAttribute("data-start-open") === "true", n = t.getAttribute("data-inline") === "true";
+  return { companyId: e, apiUrl: a, position: r, startOpen: s, isInline: n };
 }
 var Rt;
 if (typeof window < "u") {
@@ -4464,18 +4514,18 @@ if (typeof window < "u") {
   if (e)
     window.__pitajIoInit = void 0, Re.init(e).then(() => {
       t.forEach(({ method: a, args: r }) => {
-        const o = Re[a];
-        typeof o == "function" && o(...r);
+        const s = Re[a];
+        typeof s == "function" && s(...r);
       });
     });
   else {
     const a = document.currentScript;
     let r = Ft(a);
     if (!r) {
-      const o = Array.prototype.slice.call(document.scripts || []);
-      for (let n = o.length - 1; n >= 0; n--) {
-        const s = o[n];
-        if (s.src && /widget(\.iife)?\.js/i.test(s.src) && (r = Ft(s), r))
+      const s = Array.prototype.slice.call(document.scripts || []);
+      for (let n = s.length - 1; n >= 0; n--) {
+        const o = s[n];
+        if (o.src && /widget(\.iife)?\.js/i.test(o.src) && (r = Ft(o), r))
           break;
       }
     }
