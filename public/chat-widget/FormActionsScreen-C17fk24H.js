@@ -1,5 +1,11 @@
-import { t as ue, T as B, d as I, A as E, y as T, u as n, a as J, C as Ne, b as me, U as fe, k as pe, c as ve, e as $e, f as we, M as Se, g as xe, h as Ie } from "./widget-BUiWBxGg.js";
+import { t as ue, T as B, d as x, A as E, y as T, u as n, a as J, C as Ne, b as me, U as fe, k as pe, c as ve, e as $e, f as we, M as Se, g as Ie, h as xe } from "./widget-DKVhpPJx.js";
 async function Fe(a) {
+  if (a.widgetId === "preview" || a.widgetId === "default" || a.mockMode)
+    return a.onUploadProgress && a.onUploadProgress(100), {
+      message: "Forma je uspješno poslana (pregled).",
+      submission_uuid: a.submissionUuid || `preview-${Date.now()}`,
+      duplicate: !1
+    };
   const m = (a.apiUrl || (typeof window < "u" ? window.location.origin : "")).replace(/\/$/, "");
   if (!Number.isInteger(a.formId) || a.formId <= 0)
     throw new Error("Forma nije pravilno konfigurisana.");
@@ -59,25 +65,25 @@ async function Fe(a) {
     method: "POST",
     headers: h,
     body: u
-  }), M = await j.json().catch(() => null);
+  }), z = await j.json().catch(() => null);
   if (!j.ok) {
     if (j.status === 413)
       throw new Error("Datoteka je prevelika za slanje.");
     ue(
       j.status,
-      M,
+      z,
       "Greška pri slanju forme.",
       j.headers.get("Retry-After")
     );
   }
-  return M;
+  return z;
 }
-function ze(a) {
+function Me(a) {
   if (!a) return "";
   const m = /* @__PURE__ */ new Date(`${a}T00:00:00`);
   return Number.isNaN(m.getTime()) ? a : m.toLocaleDateString("bs-BA", { day: "2-digit", month: "2-digit", year: "numeric" });
 }
-const Me = [
+const ze = [
   "januar",
   "februar",
   "mart",
@@ -92,7 +98,7 @@ const Me = [
   "decembar"
 ];
 function De(a) {
-  return `${Me[a.getMonth()]} ${a.getFullYear()}`;
+  return `${ze[a.getMonth()]} ${a.getFullYear()}`;
 }
 function L(a) {
   const m = a ? /* @__PURE__ */ new Date(`${a}T00:00:00`) : /* @__PURE__ */ new Date(), N = m.getFullYear(), p = String(m.getMonth() + 1).padStart(2, "0");
@@ -128,7 +134,7 @@ function Ce({
   visitorContact: u,
   onBack: h,
   embedded: j = !1,
-  onSubmitted: M,
+  onSubmitted: z,
   onApiError: f,
   blockedReason: D = null
 }) {
@@ -143,9 +149,9 @@ function Ce({
       form_name: e.name || null
     })),
     [k, v]
-  ), [w, q] = I(
+  ), [w, q] = x(
     p ?? ((le = d[0]) == null ? void 0 : le.id) ?? null
-  ), [l, C] = I({}), [X, z] = I({}), [Q, O] = I(null), [S, P] = I({}), [V, Y] = I(!1), [g, F] = I(null), [ee, G] = I(null), [U, R] = I(null), [de, H] = I({}), K = E({}), te = E({}), ne = E({}), x = E({}), A = E(null), re = d.find((e) => e.id === w) || null, c = re ? v.find((e) => e.id === re.form_id) || null : v[0] || null, W = B(
+  ), [l, C] = x({}), [X, M] = x({}), [Q, O] = x(null), [S, P] = x({}), [V, Y] = x(!1), [g, F] = x(null), [ee, G] = x(null), [K, R] = x(null), [de, H] = x({}), U = E({}), te = E({}), ne = E({}), I = E({}), A = E(null), re = d.find((e) => e.id === w) || null, c = re ? v.find((e) => e.id === re.form_id) || null : v[0] || null, W = B(
     () => {
       var e;
       return (((e = c == null ? void 0 : c.schema_json) == null ? void 0 : e.fields) || []).filter((t) => t.type !== "hidden");
@@ -165,26 +171,26 @@ function Ce({
     }
     !w && d.length > 0 && q(d[0].id);
   }, [p, d, w]), T(() => {
-    G(null), R(null), z({}), O(null);
+    G(null), R(null), M({}), O(null);
   }, [w, c == null ? void 0 : c.id]), T(() => () => {
     A.current !== null && window.clearTimeout(A.current);
   }, []), T(() => {
     const e = (t) => {
-      if (!U) return;
-      const r = te.current[U];
+      if (!K) return;
+      const r = te.current[K];
       if (!r) return;
       const s = typeof t.composedPath == "function" ? t.composedPath() : [];
       (s.length > 0 ? s.includes(r) : r.contains(t.target)) || R(null);
     };
     return document.addEventListener("mousedown", e), () => document.removeEventListener("mousedown", e);
-  }, [U]);
+  }, [K]);
   const $ = (e, t) => {
     C((r) => ({ ...r, [e]: t })), P((r) => ({ ...r, [e]: "" })), F((r) => (r == null ? void 0 : r.type) === "error" ? null : r);
   }, _ = (e) => Array.isArray(e) ? e.map((t) => String(t).trim()).filter((t) => t.length > 0) : [], se = (e) => Array.isArray(e) ? e.map((t) => String(t)).filter((t) => t.length > 0) : [], ie = (e) => e.required === !0 || e.required === 1 || e.required === "1" || e.required === "true", ye = (e) => {
     window.requestAnimationFrame(() => {
       const t = ne.current[e];
       t == null || t.scrollIntoView({ behavior: "smooth", block: "center" });
-      const r = x.current[e];
+      const r = I.current[e];
       r == null || r.focus();
     });
   }, oe = (e) => {
@@ -260,7 +266,7 @@ ${t.join(`
       O(null), F({
         type: "success",
         message: c.success_message || "Hvala! Prijava je poslana."
-      }), M && M(ce(s)), C({}), z({}), P({}), r();
+      }), z && z(ce(s)), C({}), M({}), P({}), r();
       return;
     }
     Y(!0);
@@ -290,7 +296,7 @@ ${t.join(`
       F({
         type: "success",
         message: y.message || c.success_message || "Hvala! Prijava je poslana."
-      }), M && M(ce(i)), C({}), z({}), O(null), P({}), r();
+      }), z && z(ce(i)), C({}), M({}), O(null), P({}), r();
     } catch (s) {
       const i = (s == null ? void 0 : s.message) || "Greška pri slanju forme.";
       O(null), F({ type: "error", message: `Nije poslano. ${i}` }), f == null || f(s, "Greška pri slanju forme.");
@@ -321,7 +327,7 @@ ${t.join(`
         type: "button",
         className: `pitaj-form-action-chip ${w === e.id ? "is-active" : ""}`,
         onClick: () => {
-          q(e.id), C({}), z({}), O(null), P({}), F(null);
+          q(e.id), C({}), M({}), O(null), P({}), F(null);
         },
         children: e.name
       },
@@ -345,7 +351,7 @@ ${t.join(`
               {
                 id: `cd-form-${e.key}`,
                 ref: (t) => {
-                  x.current[e.key] = t;
+                  I.current[e.key] = t;
                 },
                 value: String(l[e.key] ?? ""),
                 onInput: (t) => $(e.key, t.target.value),
@@ -366,7 +372,7 @@ ${t.join(`
                         name: `cd-form-${e.key}`,
                         className: "pitaj-form-radio-native",
                         ref: (i) => {
-                          r === 0 && (x.current[e.key] = i);
+                          r === 0 && (I.current[e.key] = i);
                         },
                         checked: s,
                         onChange: () => $(e.key, t)
@@ -393,16 +399,16 @@ ${t.join(`
                       type: "button",
                       className: "pitaj-custom-select-trigger",
                       ref: (t) => {
-                        x.current[e.key] = t;
+                        I.current[e.key] = t;
                       },
                       onClick: () => R((t) => t === e.key ? null : e.key),
                       children: [
                         /* @__PURE__ */ n("span", { children: String(l[e.key] ?? "") || "Odaberite..." }),
-                        /* @__PURE__ */ n(Ne, { size: 14, className: U === e.key ? "is-open" : "" })
+                        /* @__PURE__ */ n(Ne, { size: 14, className: K === e.key ? "is-open" : "" })
                       ]
                     }
                   ),
-                  U === e.key ? /* @__PURE__ */ n("div", { className: "pitaj-custom-select-menu", children: _(e.options).map((t) => /* @__PURE__ */ n(
+                  K === e.key ? /* @__PURE__ */ n("div", { className: "pitaj-custom-select-menu", children: _(e.options).map((t) => /* @__PURE__ */ n(
                     "button",
                     {
                       type: "button",
@@ -425,7 +431,7 @@ ${t.join(`
                 {
                   id: `cd-form-${e.key}`,
                   ref: (t) => {
-                    K.current[e.key] = t;
+                    U.current[e.key] = t;
                   },
                   type: "file",
                   accept: _(e.accept).join(","),
@@ -434,29 +440,29 @@ ${t.join(`
                     const r = (s = t.target.files) == null ? void 0 : s[0];
                     if (r) {
                       if (!ke(r, e)) {
-                        z((o) => {
+                        M((o) => {
                           const y = { ...o };
                           return delete y[e.key], y;
                         }), C((o) => ({ ...o, [e.key]: "" })), P((o) => ({
                           ...o,
                           [e.key]: "Odabrani tip datoteke nije dozvoljen."
-                        })), K.current[e.key] && (K.current[e.key].value = "");
+                        })), U.current[e.key] && (U.current[e.key].value = "");
                         return;
                       }
                       const i = oe(e);
                       if (r.size > i) {
-                        z((o) => {
+                        M((o) => {
                           const y = { ...o };
                           return delete y[e.key], y;
                         }), C((o) => ({ ...o, [e.key]: "" })), P((o) => ({
                           ...o,
                           [e.key]: `Datoteka je prevelika. Maksimalno ${he(e)}.`
-                        })), K.current[e.key] && (K.current[e.key].value = "");
+                        })), U.current[e.key] && (U.current[e.key].value = "");
                         return;
                       }
-                      z((o) => ({ ...o, [e.key]: r })), $(e.key, r.name);
+                      M((o) => ({ ...o, [e.key]: r })), $(e.key, r.name);
                     } else
-                      z((i) => {
+                      M((i) => {
                         const o = { ...i };
                         return delete o[e.key], o;
                       }), $(e.key, "");
@@ -470,11 +476,11 @@ ${t.join(`
                   type: "button",
                   className: "pitaj-file-trigger",
                   ref: (t) => {
-                    x.current[e.key] = t;
+                    I.current[e.key] = t;
                   },
                   onClick: () => {
                     var t;
-                    return (t = K.current[e.key]) == null ? void 0 : t.click();
+                    return (t = U.current[e.key]) == null ? void 0 : t.click();
                   },
                   children: [
                     /* @__PURE__ */ n(fe, { size: 14 }),
@@ -505,7 +511,7 @@ ${t.join(`
                   type: "button",
                   className: `pitaj-multi-option ${i ? "is-active" : ""}`,
                   ref: (o) => {
-                    r === 0 && (x.current[e.key] = o);
+                    r === 0 && (I.current[e.key] = o);
                   },
                   onClick: () => {
                     const o = i ? s.filter((y) => y !== t) : [...s, t];
@@ -525,7 +531,7 @@ ${t.join(`
                   id: `cd-form-${e.key}`,
                   type: "checkbox",
                   ref: (t) => {
-                    x.current[e.key] = t;
+                    I.current[e.key] = t;
                   },
                   checked: l[e.key] === !0,
                   onChange: (t) => $(e.key, !!t.target.checked)
@@ -539,7 +545,7 @@ ${t.join(`
                   type: "button",
                   className: "pitaj-date-trigger",
                   ref: (t) => {
-                    x.current[e.key] = t;
+                    I.current[e.key] = t;
                   },
                   onClick: () => {
                     const t = ee === e.key ? null : e.key;
@@ -552,7 +558,7 @@ ${t.join(`
                     }
                   },
                   children: [
-                    /* @__PURE__ */ n("span", { children: l[e.key] ? ze(String(l[e.key])) : e.placeholder || "Odaberite datum" }),
+                    /* @__PURE__ */ n("span", { children: l[e.key] ? Me(String(l[e.key])) : e.placeholder || "Odaberite datum" }),
                     /* @__PURE__ */ n(ve, { size: 14 })
                   ]
                 }
@@ -625,7 +631,7 @@ ${t.join(`
                   type: "text",
                   inputMode: "decimal",
                   ref: (t) => {
-                    x.current[e.key] = t;
+                    I.current[e.key] = t;
                   },
                   value: String(l[e.key] ?? ""),
                   onInput: (t) => {
@@ -645,7 +651,7 @@ ${t.join(`
                     const t = Number(String(l[e.key] ?? "0").replace(",", ".")), r = Number.isFinite(t) ? t + 1 : 1;
                     $(e.key, String(r));
                   },
-                  children: /* @__PURE__ */ n(xe, { size: 14 })
+                  children: /* @__PURE__ */ n(Ie, { size: 14 })
                 }
               )
             ] }) : /* @__PURE__ */ n(
@@ -654,7 +660,7 @@ ${t.join(`
                 id: `cd-form-${e.key}`,
                 type: e.type === "email" ? "email" : e.type === "phone" ? "tel" : "text",
                 ref: (t) => {
-                  x.current[e.key] = t;
+                  I.current[e.key] = t;
                 },
                 value: String(l[e.key] ?? ""),
                 onInput: (t) => $(e.key, t.target.value),
@@ -668,7 +674,7 @@ ${t.join(`
         e.key
       )),
       g ? /* @__PURE__ */ n("div", { className: `pitaj-form-success-inline ${g.type === "error" ? "is-error" : "is-success"}`, children: [
-        g.type === "error" ? /* @__PURE__ */ n(Ie, { size: 16 }) : /* @__PURE__ */ n(me, { size: 16 }),
+        g.type === "error" ? /* @__PURE__ */ n(xe, { size: 16 }) : /* @__PURE__ */ n(me, { size: 16 }),
         /* @__PURE__ */ n("span", { children: g.message })
       ] }) : null,
       /* @__PURE__ */ n(
