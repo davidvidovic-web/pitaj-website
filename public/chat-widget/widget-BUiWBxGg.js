@@ -1452,7 +1452,7 @@ function Aa({
   onViewTickets: c
 }) {
   var C;
-  const [m, d] = T(!1), g = te(null), u = t === "conversation" && e, N = u || t === "history" || t === "tickets", _ = a.title || a.name || "Pitaj.io AI Agent";
+  const [m, d] = T(!1), g = te(null), u = t === "conversation" && e, N = u || t === "history" || t === "tickets", _ = a.title || a.name || "Pitaj.io Asistent";
   Y(() => {
     var I;
     const v = (M) => {
@@ -3441,7 +3441,7 @@ function sr({ isOpen: t, onOpen: e, config: a, pendingRating: r }) {
     F.stopPropagation(), F.preventDefault(), r ? r.onDismiss() : l(!0), c(!1);
   }, v = () => {
     e();
-  }, s = a.title || a.name || "AI Asistent", I = a.logo || a.avatar;
+  }, s = a.title || a.name || "Pitaj.io Asistent", I = a.logo || a.avatar;
   return /* @__PURE__ */ i(
     "div",
     {
@@ -3629,7 +3629,7 @@ function pr({ config: t, visitorId: e, onSelectTicket: a }) {
     }
   );
 }
-const cr = pi(() => import("./HistoryScreen-B38O5XDh.js"), (t) => t.HistoryScreen), dr = pi(() => import("./FormActionsScreen-Cc0Cd5Ys.js"), (t) => t.FormActionsScreen);
+const cr = pi(() => import("./HistoryScreen-CoQ8oZHa.js"), (t) => t.HistoryScreen), dr = pi(() => import("./FormActionsScreen-DxufqPG_.js"), (t) => t.FormActionsScreen);
 function Ie(t, e) {
   const a = t.trim(), r = /^#[0-9A-Fa-f]{3}$/.test(a) ? `#${a[1]}${a[1]}${a[2]}${a[2]}${a[3]}${a[3]}` : a;
   if (!/^#[0-9A-Fa-f]{6}$/.test(r)) return null;
@@ -4025,7 +4025,7 @@ const oe = {
   companyId: "default",
   enabled: !0,
   name: "AI Podrška",
-  title: "AI Asistent",
+  title: "Pitaj.io Asistent",
   position: "bottom-right",
   welcomeHeadline: "Zdravo! Kako mogu pomoći danas?",
   welcomeMessage: "Pitajte me bilo šta o našim uslugama i cijenama. Odgovaram odmah 24/7.",
