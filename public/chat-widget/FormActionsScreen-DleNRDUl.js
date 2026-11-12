@@ -1,4 +1,4 @@
-import { a as ue, T as B, d as x, A as E, y as T, u as n, b as J, C as Ne, c as me, U as fe, k as pe, e as ve, f as $e, g as we, M as Se, h as Ie, i as xe } from "./widget-B8BhuM9X.js";
+import { a as ue, T as B, d as x, A as E, y as T, u as n, b as J, C as Ne, c as me, U as fe, k as pe, e as ve, f as $e, g as we, M as Se, h as Ie, i as xe } from "./widget-CcHgFq2V.js";
 async function Fe(a) {
   if (a.widgetId === "preview" || a.widgetId === "default" || a.mockMode)
     return a.onUploadProgress && a.onUploadProgress(100), {
