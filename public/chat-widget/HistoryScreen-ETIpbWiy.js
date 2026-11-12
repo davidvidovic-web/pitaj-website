@@ -1,4 +1,4 @@
-import { u as e, P as d, t as l } from "./widget-CcHgFq2V.js";
+import { u as e, P as d, t as l } from "./widget-Cg2pFz4g.js";
 function p(t) {
   const a = typeof t == "string" ? new Date(t) : t, s = (/* @__PURE__ */ new Date()).getTime() - a.getTime(), r = Math.floor(s / (1e3 * 60)), o = Math.floor(s / (1e3 * 60 * 60)), i = Math.floor(s / (1e3 * 60 * 60 * 24));
   return isNaN(r) || r < 1 ? "sada" : r < 60 ? `prije ${r}m` : o < 24 ? `prije ${o}h` : i < 7 ? `prije ${i}d` : a.toLocaleDateString();
