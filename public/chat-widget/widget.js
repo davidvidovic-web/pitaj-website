@@ -1,4 +1,4 @@
-import { I as f } from "./widget-CfxLoUCZ.js";
+import { O as f } from "./widget-CMWo4xdN.js";
 export {
   f as default
 };
