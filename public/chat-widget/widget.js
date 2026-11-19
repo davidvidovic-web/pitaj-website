@@ -1,4 +1,4 @@
-import { V as f } from "./widget-B61-uR28.js";
+import { V as f } from "./widget-BNqrztIP.js";
 export {
   f as default
 };
