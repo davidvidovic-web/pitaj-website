@@ -7,7 +7,6 @@ const industries = [
     tagline: 'Kupci žele znati veličinu, cijenu dostave i status paketa odmah.',
     description: 'Agent povezan s WooCommerce ili Shopify katalogom odgovara na upite o zalihama, vodi posjetioce do kupovine i smanjuje napuštene košarice.',
     badge: 'E-Commerce',
-    video: '/chatbase-assets/industry-retail.mp4',
     gradient: 'from-[#1e1b4b]/95 via-[#1e1b4b]/40 to-transparent',
     accentColor: '#4f46e5'
   },
@@ -18,7 +17,6 @@ const industries = [
     tagline: 'Pružite klijentima AI agente pod vlastitim brendom i domenom.',
     description: 'Multi-client platforma za digitalne agencije. Uvođenje u par minuta uz potpunu whitelabel podršku i centralizirano upravljanje računima.',
     badge: 'SaaS & Agencije',
-    video: '/chatbase-assets/industry-technology.mp4',
     gradient: 'from-[#064e3b]/95 via-[#064e3b]/40 to-transparent',
     accentColor: '#059669'
   },
@@ -29,7 +27,6 @@ const industries = [
     tagline: 'Gosti pitaju za slobodne sobe, parking, doručak i check-in u svako doba.',
     description: 'Višejezični asistent odgovara domaćim i stranim turistima na njihovom jeziku te šalje upute i direktne linkove za rezervaciju smještaja.',
     badge: 'Turizam & Ugostiteljstvo',
-    video: '/chatbase-assets/industry-hospitality.mp4',
     gradient: 'from-[#78350f]/95 via-[#78350f]/40 to-transparent',
     accentColor: '#d97706'
   },
@@ -40,7 +37,6 @@ const industries = [
     tagline: 'Pacijenti traže termine, pripremu za pregled i cijene i van radnog vremena.',
     description: 'Pružite pouzdane informacije 24/7, rasteretite medicinsko osoblje telefonskih poziva i automatski prikupite termine za preglede i tretmane.',
     badge: 'Zdravstvo & Saloni',
-    video: '/chatbase-assets/industry-financial-services.mp4',
     gradient: 'from-[#1e293b]/95 via-[#1e293b]/40 to-transparent',
     accentColor: '#0284c7'
   }
@@ -88,7 +84,7 @@ const industries = [
       </div>
     </div>
 
-    <!-- Desktop: Chatbase Expanding Video Accordion -->
+    <!-- Desktop: Expanding Industry Accordion -->
     <div id="industry-accordion" class="mt-12 hidden h-[560px] gap-4 lg:flex">
       {industries.map((ind, index) => (
         <div
@@ -97,16 +93,6 @@ const industries = [
           style="transition: flex-grow 620ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease;"
         >
           <!-- Background Looping Video -->
-          <video
-            src={ind.video}
-            muted
-            loop
-            autoplay
-            playsinline
-            preload="auto"
-            class="pointer-events-none absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            style="transform: scale(1.08);"
-          ></video>
 
           <!-- Gradient Overlay -->
           <div class={`pointer-events-none absolute inset-0 bg-gradient-to-t ${ind.gradient}`}></div>
@@ -158,15 +144,6 @@ const industries = [
     <div class="mt-8 flex flex-col gap-6 lg:hidden">
       {industries.map((ind) => (
         <div class="relative overflow-hidden rounded-2xl border border-[#e4e4e7] min-h-[360px] shadow-sm">
-          <video
-            src={ind.video}
-            muted
-            loop
-            autoplay
-            playsinline
-            preload="auto"
-            class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          ></video>
           <div class={`pointer-events-none absolute inset-0 bg-gradient-to-t ${ind.gradient}`}></div>
           <div class="relative z-10 flex h-full min-h-[360px] flex-col justify-end p-6">
             <span class="rounded-md border border-white/30 bg-black/40 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-md w-max">
@@ -187,7 +164,7 @@ const industries = [
 </section>
 
 <script>
-  // Chatbase-like Interactive Video Accordion Logic
+  // Interactive Industry Accordion Logic
   const cards = document.querySelectorAll<HTMLElement>('.industry-card');
   const prevBtn = document.getElementById('prev-industry-btn');
   const nextBtn = document.getElementById('next-industry-btn');
