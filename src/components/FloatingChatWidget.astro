@@ -11,8 +11,15 @@
 
     function initPitajWidget() {
       const script = document.createElement('script');
-      script.src = '/chat-widget/widget.iife.js';
+      script.type = 'module';
+      script.src = '/chat-widget/widget.js';
       script.defer = true;
+      script.onerror = function () {
+        const fallback = document.createElement('script');
+        fallback.src = '/chat-widget/widget.iife.js';
+        fallback.onload = script.onload;
+        document.body.appendChild(fallback);
+      };
       script.onload = function () {
         if (window.PitajIO && typeof window.PitajIO.init === 'function') {
           window.PitajIO.init({

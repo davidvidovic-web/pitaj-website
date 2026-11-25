@@ -191,6 +191,7 @@ const uniqueId = 'pitaj-demo-' + Math.random().toString(36).substring(2, 9);
       }
       const script = document.createElement('script');
       script.src = src;
+      script.type = 'module';
       script.defer = true;
       script.onload = () => {
         const checkInterval = setInterval(() => {
@@ -203,7 +204,7 @@ const uniqueId = 'pitaj-demo-' + Math.random().toString(36).substring(2, 9);
       document.body.appendChild(script);
     }
 
-    loadScript('/chat-widget/widget.iife.js', async function () {
+    loadScript('/chat-widget/widget.js', async function () {
       if (!window.PitajIO || typeof window.PitajIO.mount !== 'function') return;
 
       const mountRes = await window.PitajIO.mount(container, {
